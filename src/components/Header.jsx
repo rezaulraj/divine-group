@@ -1,7 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "/logo-blue.png?url";
+import logowhite from "/logo-white.png?url";
+import clineLogo1 from "../assets/cliend/cl1.png?url";
+import clineLogo2 from "../assets/cliend/cl2.png?url";
+import clineLogo3 from "../assets/cliend/cl3.png?url";
+import clineLogo4 from "../assets/cliend/cl4.png?url";
+import clineLogo5 from "../assets/cliend/cl5.png?url";
+import clineLogo6 from "../assets/cliend/cl6.png?url";
+import clineLogo7 from "../assets/cliend/cl7.png?url";
+import clineLogo8 from "../assets/cliend/cl8.png?url";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const navItem = [
   { label: "Home", path: "/" },
@@ -9,11 +19,25 @@ const navItem = [
   { label: "Our Impact", path: "/our-impact" },
 ];
 
+const clientLogos = [
+  clineLogo1,
+  clineLogo2,
+  clineLogo3,
+  clineLogo4,
+  clineLogo5,
+  clineLogo6,
+  clineLogo7,
+  clineLogo8,
+];
+
 const Header = () => {
   const location = useLocation();
   const [showIntro, setShowIntro] = useState(true);
   const [navOpen, setNavOpen] = useState(false);
   const [logoVisible, setLogoVisible] = useState(false);
+  const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
+  const containerRef = useRef(null);
 
   // Animate on route change
   useEffect(() => {
@@ -24,6 +48,26 @@ const Header = () => {
     }, 2500);
     return () => clearTimeout(timer);
   }, [location.pathname]);
+
+  // Auto-rotate client logos with smooth sliding effect
+  useEffect(() => {
+    if (navOpen && !isHovering) {
+      const interval = setInterval(() => {
+        setCurrentLogoIndex((prev) => (prev + 1) % clientLogos.length);
+      }, 3000);
+      return () => clearInterval(interval);
+    }
+  }, [navOpen, isHovering]);
+
+  const nextLogo = () => {
+    setCurrentLogoIndex((prev) => (prev + 1) % clientLogos.length);
+  };
+
+  const prevLogo = () => {
+    setCurrentLogoIndex(
+      (prev) => (prev - 1 + clientLogos.length) % clientLogos.length
+    );
+  };
 
   return (
     <>
@@ -95,6 +139,7 @@ const Header = () => {
           xmlns="http://www.w3.org/2000/svg"
           width="160.722"
           height="70.42"
+          className="hover:h-[80px] transition-all duration-500"
           viewBox="0 0 214.722 92.42"
         >
           <defs>
@@ -157,42 +202,133 @@ const Header = () => {
       {/* Nav Menu with Logo and Items */}
       <AnimatePresence>
         {navOpen && (
-          <motion.div
-            className="fixed inset-0 bg-amber-700 z-[65] flex flex-col items-center justify-center gap-8 text-2xl font-semibold"
-            initial={{ rotateY: -90, opacity: 0 }}
-            animate={{ rotateY: 0, opacity: 1 }}
-            exit={{ rotateY: 90, opacity: 0 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-            style={{ transformStyle: "preserve-3d" }}
-          >
-            {/* Logo in Menu */}
-            <motion.img
-              src={logo}
-              alt="Logo"
-              className="h-16 mb-6 fixed right-4 top-0"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+          <>
+            {/* Background with bottom-left rounded animation */}
+            <motion.div
+              className="fixed inset-0 bg-[#712d8c] z-[64]"
+              initial={{ clipPath: "circle(0% at right top)" }}
+              animate={{ clipPath: "circle(150% at right top)" }}
+              exit={{ clipPath: "circle(0% at right top)" }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
             />
 
-            {/* Navigation Items */}
-            {navItem.map((item, i) => (
-              <motion.a
-                key={i}
-                href={item.path}
-                className="hover:text-purple-300"
-                onClick={() => {
-                  setNavOpen(false);
-                  setLogoVisible(true);
-                }}
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4 + i * 0.2 }}
-              >
-                {item.label}
-              </motion.a>
-            ))}
-          </motion.div>
+            {/* Nav content */}
+            <motion.div
+              className="fixed inset-0 z-[65] flex flex-col items-center justify-center gap-8 text-2xl font-semibold"
+              initial={{ opacity: 0, y: -30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -30 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              <motion.img
+                src={logowhite}
+                alt="logowhite"
+                className="fixed top-0 right-4 h-16 mb-6"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              />
+
+              <div className="flex items-center justify-between gap-10 w-full px-20">
+                {/* Left side - Navigation */}
+                <div className="flex flex-col gap-6">
+                  {navItem.map((item, i) => (
+                    <motion.a
+                      key={i}
+                      href={item.path}
+                      className="text-white hover:text-purple-300 text-3xl"
+                      onClick={() => {
+                        setNavOpen(false);
+                        setLogoVisible(true);
+                      }}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.4 + i * 0.1 }}
+                    >
+                      {item.label}
+                    </motion.a>
+                  ))}
+                </div>
+
+                {/* Right side - Enhanced Client Logo Carousel */}
+                <div
+                  className="relative h-96 w-96"
+                  ref={containerRef}
+                  onMouseEnter={() => setIsHovering(true)}
+                  onMouseLeave={() => setIsHovering(false)}
+                >
+                  {/* Continuous Border Animation */}
+                  <motion.div
+                    className="absolute inset-0 border-4 border-white rounded-full"
+                    style={{
+                      borderImage:
+                        "linear-gradient(90deg, transparent, white, transparent) 1",
+                      borderImageSlice: 1,
+                    }}
+                    animate={{
+                      rotate: 360,
+                    }}
+                    transition={{
+                      duration: 12,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  />
+
+                  {/* Dashed Border for Loading Effect */}
+                  <motion.div
+                    className="absolute inset-0 border-4 border-dashed border-white rounded-full opacity-30"
+                    animate={{
+                      rotate: -360,
+                    }}
+                    transition={{
+                      duration: 24,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  />
+
+                  {/* Logo Container with Smooth Slide Animation */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <AnimatePresence custom={currentLogoIndex} mode="wait">
+                      <motion.div
+                        key={currentLogoIndex}
+                        className="bg-white rounded-full h-64 w-64 flex items-center justify-center overflow-hidden"
+                        initial={{ x: 300, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        exit={{ x: -300, opacity: 0 }}
+                        transition={{ duration: 0.6, ease: "easeInOut" }}
+                      >
+                        <motion.img
+                          src={clientLogos[currentLogoIndex]}
+                          alt={`Client ${currentLogoIndex + 1}`}
+                          className="h-48 object-contain"
+                          initial={{ scale: 0.9 }}
+                          animate={{ scale: 1 }}
+                          transition={{ duration: 0.3, delay: 0.3 }}
+                        />
+                      </motion.div>
+                    </AnimatePresence>
+                  </div>
+
+                  {/* Navigation Dots */}
+                  <div className="absolute bottom-0 left-0 right-0 flex justify-center gap-2">
+                    {clientLogos.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentLogoIndex(index)}
+                        className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                          index === currentLogoIndex
+                            ? "bg-white scale-125"
+                            : "bg-white/50"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>
