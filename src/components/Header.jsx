@@ -75,14 +75,14 @@ const Header = () => {
       <AnimatePresence>
         {showIntro && (
           <motion.div
-            className="fixed inset-0 bg-[#09cece] z-[60] flex items-center justify-center"
+            className="fixed inset-0 bg-[#712D8C] z-[60] flex items-center justify-center"
             initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8 }}
           >
             <motion.img
-              src={logo}
+              src={logowhite}
               alt="Logo"
               initial={{ scale: 1.5, opacity: 0 }}
               animate={{
@@ -103,9 +103,9 @@ const Header = () => {
         {logoVisible && !navOpen && !showIntro && (
           <motion.img
             key="top-logo"
-            src={logo}
+            src={logowhite}
             alt="Logo"
-            className="fixed top-0 right-4 h-16 z-50"
+            className="fixed top-0 right-10 h-20 z-50 bg-[#712D8C] p-2 rounded-bl-2xl rounded-br-2xl"
             initial={{ opacity: 0, y: -30, scale: 0.8 }}
             animate={{
               opacity: 1,
@@ -126,6 +126,9 @@ const Header = () => {
       {/* Sticky SVG Menu Icon - Top Left */}
       <div
         className="fixed top-0 left-2 z-[70] cursor-pointer"
+        style={{ height: "70px" }}
+        whileHover={{ height: 80, scale: 1.05 }}
+        transition={{ duration: 0.3 }}
         onClick={() => {
           setNavOpen(!navOpen);
           if (!navOpen) {
@@ -137,9 +140,9 @@ const Header = () => {
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
+          className="transition-all duration-500 hover:h-[100%]"
           width="160.722"
-          height="70.42"
-          className="hover:h-[80px] transition-all duration-500"
+          height="90%" // make it responsive to parent
           viewBox="0 0 214.722 92.42"
         >
           <defs>
@@ -223,7 +226,7 @@ const Header = () => {
               <motion.img
                 src={logowhite}
                 alt="logowhite"
-                className="fixed top-0 right-4 h-16 mb-6"
+                className="fixed top-2 right-10 h-16 mb-6"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
