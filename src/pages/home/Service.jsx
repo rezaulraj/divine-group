@@ -46,11 +46,8 @@ const Service = () => {
         whileInView={{ scale: 1, opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8 }}
-        className="relative z-30 mx-auto w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full border-4 border-white shadow-xl overflow-hidden"
-        style={{
-          top: "-5rem", // Adjust this value as needed
-          marginBottom: "-5rem", // Compensate for the negative top
-        }}
+        className="relative z-20 mx-auto w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-[45rem] xl:h-[45rem] rounded-full border-4 border-white shadow-xl overflow-hidden"
+       
       >
         <img
           src={service1}

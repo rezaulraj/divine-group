@@ -105,7 +105,7 @@ const Header = () => {
             key="top-logo"
             src={logowhite}
             alt="Logo"
-            className="fixed top-0 right-10 h-20 z-50 bg-[#712D8C] p-2 rounded-bl-2xl rounded-br-2xl"
+            className="fixed top-0 right-2 h-20 z-50 bg-[#712D8C] p-2 rounded-bl-2xl rounded-br-2xl"
             initial={{ opacity: 0, y: -30, scale: 0.8 }}
             animate={{
               opacity: 1,
