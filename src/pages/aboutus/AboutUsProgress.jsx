@@ -1,19 +1,12 @@
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import React, { useState } from "react";
 import logo from "/logo-blue.png";
 import divineGroup from "../../assets/impact/recuitment.webp?url";
 import mission from "../../assets/about/mission.avif?url";
 import value from "../../assets/about/value.avif?url";
-import { AnimatePresence } from "framer-motion";
-
+import valuebg from "../../assets/about/bgvalue.png?url";
+import { motion, AnimatePresence } from "framer-motion";
 const AboutUsProgress = () => {
-  const [activeValue, setActiveValue] = React.useState(null);
-  const containerRef = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
+  const [activeValue, setActiveValue] = useState(null);
 
   const toggleValue = (index) => {
     setActiveValue(activeValue === index ? null : index);
@@ -61,366 +54,268 @@ const AboutUsProgress = () => {
       textColor: "text-white",
     },
   ];
-
   return (
-    <div className="bg-blue-400 min-h-screen" ref={containerRef}>
-      {/* Hero Section */}
+    <div className="bg-blue-400 min-h-screen ">
       <div className="max-w-screen-xl mx-auto flex items-center justify-center relative p-3 mb-[15rem] sm:mb-[18rem] md:mb-[32rem] lg:mb-[40rem] p-4">
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="bg-white w-[20rem] h-[20rem] md:w-[35rem] md:h-[35rem] lg:w-[45rem] lg:h-[45rem] rounded-full absolute -top-32 flex flex-col items-center justify-center"
-        >
+        <div className="bg-white w-[20rem] h-[20rem] md:w-[35rem] md:h-[35rem] lg:w-[45rem] lg:h-[45rem] rounded-full absolute -top-32 flex flex-col items-center justify-center ">
           <img
             src={logo}
             alt="Company Logo"
             className="h-24 sm:h-28 md:h-32 lg:h-44 mb-9 md:mb-12 lg:mb-16"
           />
-          <motion.h2
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-[#0C3F75] text-3xl md:text-5xl lg:text-6xl font-bold mt-4"
-          >
+          <h2 className="text-[#0C3F75] text-3xl md:text-5xl lg:text-6xl font-bold mt-4">
             About Us
-          </motion.h2>
-        </motion.div>
+          </h2>
+        </div>
       </div>
-
-      {/* Content Sections */}
       <div className="max-w-screen-xl mx-auto flex flex-col items-center space-y-32 justify-center p-4">
-        {/* First Section */}
-        <SectionWrapper>
-          <TextContent side="left">
-            <SectionHeading>About Divine Group</SectionHeading>
-            <SectionParagraph>
+        {/* first para */}
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-14 lg:gap-24 ">
+          <div className="space-y-8">
+            <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wider">
+              About Divine Group
+            </h1>
+            <p className="text-gray-100 text-xl font-medium text-justify">
               Divine Group has become a force for transformation and growth
               across the region boldly reshaping industries, empowering people,
               and driving economic diversification from the heart of the UAE to
               the shores of Malta and Romania.
-            </SectionParagraph>
-            <SectionParagraph>
+            </p>
+            <p className="text-gray-100 text-xl font-medium text-justify">
               With a strong belief in innovation-led progress, we continue to
               build a future where sustainable development, digital
               transformation, and inclusive growth go hand-in-hand. From real
               estate to renewable energy, tourism to tech, our presence is felt
               in communities, cities, and boardrooms alike.
-            </SectionParagraph>
-            <SectionParagraph>
+            </p>
+            <p className="text-gray-100 text-xl font-medium text-justify">
               Our portfolio spans sectors that matter ICT, Real Estate,
               Hospitality, Media, Design, Manufacturing & Logistics, Education,
               Tourism, SMEs & Entrepreneurship, Science, and Retail.
-            </SectionParagraph>
-          </TextContent>
-          <ImageContent side="right" src={divineGroup} alt="Divine Group" />
-        </SectionWrapper>
-
-        {/* Second Section */}
-        <SectionWrapper>
-          <ImageContent side="left" src={logo} alt="Company Logo" withBg />
-          <TextContent side="right">
-            <SectionHeading>Our Legacy</SectionHeading>
-            <SectionParagraph>
+            </p>
+          </div>
+          <div className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[30rem] lg:h-[30rem] rounded-full">
+            <img
+              src={divineGroup}
+              alt=""
+              className="w-full h-full rounded-full"
+            />
+          </div>
+        </div>
+        {/* second para */}
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-14 lg:gap-24 p-4">
+          <div>
+            <div className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[30rem] lg:h-[30rem] rounded-full bg-white flex items-center justify-center">
+              <img
+                src={logo}
+                alt="Company Logo"
+                className="h-24 sm:h-28 md:h-32 lg:h-44 mb-9 md:mb-12 lg:mb-16"
+              />
+            </div>
+          </div>
+          <div className="space-y-8">
+            <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wider">
+              Our Legacy
+            </h1>
+            <p className="text-gray-100 text-xl font-medium text-justify">
               Today, Divine Group is proud to be home to over 45,000
               professionals, managing assets worth more than USD 76.3 billion,
               and shaping the future across three dynamic countries: UAE, Malta,
               and Romania.
-            </SectionParagraph>
-          </TextContent>
-        </SectionWrapper>
-
-        {/* Third Section */}
-        <SectionWrapper>
-          <TextContent side="left">
-            <SectionHeading>Our Mission</SectionHeading>
-            <SectionParagraph>
+            </p>
+          </div>
+        </div>
+        {/* third para */}
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-14 lg:gap-24">
+          <div className="space-y-8">
+            <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wider">
+              Our Misstion
+            </h1>
+            <p className="text-gray-100 text-xl font-medium text-justify">
               Today, Divine Group is proud to be home to over 45,000
               professionals, managing assets worth more than USD 76.3 billion,
               and shaping the future across three dynamic countries: UAE, Malta,
               and Romania.
-            </SectionParagraph>
-          </TextContent>
-          <ImageContent side="right" src={mission} alt="Our Mission" />
-        </SectionWrapper>
+            </p>
+          </div>
+          <div>
+            <div className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[30rem] lg:h-[30rem] rounded-full ">
+              <img
+                src={mission}
+                alt="Company Logo"
+                className="w-full h-full rounded-full"
+              />
+            </div>
+          </div>
+        </div>
+        {/* forth our values */}
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center lg:gap-24 pl-4">
+          <div>
+            <div className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[30rem] lg:h-[30rem] rounded-full bg-white flex items-center justify-center shadow-xl">
+              <img
+                src={value}
+                alt="Company Values"
+                className="w-full h-full rounded-full object-cover"
+              />
+            </div>
+          </div>
+          <div className="space-y-8 w-full">
+            <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wider">
+              Our Values
+            </h1>
 
-        {/* Fourth Section - Our Values */}
-        <SectionWrapper>
-          <ImageContent side="left" src={value} alt="Our Values" withBg />
-          <TextContent side="right">
-            <SectionHeading>Our Values</SectionHeading>
+            {/* Values Dropdown Section */}
             <div className="space-y-4 w-full">
               {values.map((value, index) => (
-                <ValueItem
+                <div
                   key={index}
-                  value={value}
-                  index={index}
-                  activeValue={activeValue}
-                  toggleValue={toggleValue}
-                />
+                  className={`${value.bgColor} ${value.textColor} rounded-2xl shadow-lg overflow-hidden transition-all duration-300 `}
+                >
+                  <button
+                    onClick={() => toggleValue(index)}
+                    className="w-full p-6 text-left flex gap-2 items-center"
+                  >
+                    <h3 className="text-xl sm:text-2xl font-bold">
+                      {value.title}
+                    </h3>
+                    <svg
+                      className={`w-6 h-6 transform transition-transform duration-300 border rounded-full ${
+                        activeValue === index ? "rotate-180" : ""
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {activeValue === index && (
+                      <motion.div
+                        key="content"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="overflow-hidden px-6 pb-6 pt-2"
+                      >
+                        <ul className="space-y-3">
+                          {value.items.map((item, itemIndex) => (
+                            <li key={itemIndex} className="flex items-start">
+                              <span className="mr-2 mt-1">✅</span>
+                              <span className="text-lg">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
               ))}
             </div>
-          </TextContent>
-        </SectionWrapper>
-
-        {/* Fifth Section */}
-        <SectionWrapper>
-          <TextContent side="left">
+          </div>
+        </div>
+        {/* fifth */}
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-14 lg:gap-24 p-4">
+          <div className="space-y-8">
             <div className="space-y-3">
-              <SectionHeading>Leadership Message</SectionHeading>
-              <motion.h2
-                initial={{ x: -20, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: 0.2, duration: 0.6 }}
-                className="text-gray-300 text-xl md:text-2xl lg:text-2xl font-bold leading-tight tracking-wider"
-              >
+              <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wider">
+                Leadership Message
+              </h1>
+              <h2 className="text-gray-300 text-xl md:text-2xl lg:text-2xl font-bold leading-tight tracking-wider">
                 — Group Chief Executive Officer
-              </motion.h2>
+              </h2>
             </div>
-            <SectionParagraph>
+            <p className="text-gray-100 text-xl font-medium text-justify">
               At Divine Group, we have always believed that true impact begins
               with a bold idea, backed by strong values and executed with
-              excellence. Over the years, we've laid down roots in sectors that
+              excellence. Over the years, we’ve laid down roots in sectors that
               shape society, spark innovation, and support inclusive prosperity.
-            </SectionParagraph>
-            <SectionParagraph>
+            </p>
+            <p className="text-gray-100 text-xl font-medium text-justify">
               As we look to the future, our focus remains steadfast: building
               industries that stand the test of time while embracing change with
               agility and purpose. We are not just investors in markets, we are
               partners in progress, catalysts of innovation, and stewards of
               sustainability.
-            </SectionParagraph>
-            <SectionParagraph>
+            </p>
+            <p className="text-gray-100 text-xl font-medium text-justify">
               Our people are our greatest strength. Together, we will continue
               to lead with vision, act with integrity, and deliver with impact.
               The road ahead is bright, and we are just getting started.
-            </SectionParagraph>
-          </TextContent>
-          <ImageContent side="right" src={logo} alt="Company Logo" withBg />
-        </SectionWrapper>
-
-        {/* Sixth Section */}
-        <SectionWrapper>
-          <ImageContent side="left" src={logo} alt="Company Logo" withBg />
-          <TextContent side="right">
-            <SectionHeading>Organizational Identity</SectionHeading>
-            <SectionParagraph>
+            </p>
+          </div>
+          <div>
+            <div className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[30rem] lg:h-[30rem] rounded-full bg-white flex items-center justify-center">
+              <img
+                src={logo}
+                alt="Company Logo"
+                className="h-24 sm:h-28 md:h-32 lg:h-44 mb-9 md:mb-12 lg:mb-16"
+              />
+            </div>
+          </div>
+        </div>
+        {/* sixth para */}
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-14 lg:gap-24">
+          <div>
+            <div className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[30rem] lg:h-[30rem] rounded-full bg-white flex items-center justify-center">
+              <img
+                src={logo}
+                alt="Company Logo"
+                className="h-24 sm:h-28 md:h-32 lg:h-44 mb-9 md:mb-12 lg:mb-16"
+              />
+            </div>
+          </div>
+          <div className="space-y-8">
+            <h1 className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider">
+              Organizational Identity
+            </h1>
+            <p className="text-gray-100 text-xl font-medium text-justify">
               At Divine Group, our corporate culture is the foundation of
               everything we do. It drives how we lead, innovate, and collaborate
               across our operations in the UAE, Malta, and Romania. As a
               diversified investment and development group, we recognize that
               sustainable success starts from within with a people-first
-              approach that values talent, diversity, and accountability.
-            </SectionParagraph>
-            <SectionParagraph>
+              approach that values talent, diversity, and accountability. Our
+              culture is built on trust, inclusion, and a shared commitment to
+              excellence. We encourage ownership at every level, foster agile
+              thinking, and empower teams to take initiative while upholding the
+              highest standards of integrity and performance.
+            </p>
+            <p className="text-gray-100 text-xl font-medium text-justify">
               Innovation is central to our business ethos. At Divine Group, we
-              don't just adapt to change, we lead it. Whether launching
+              don’t just adapt to change, we lead it. Whether launching
               transformative real estate projects or investing in
               next-generation sustainability ventures, our people are encouraged
               to think boldly, act decisively, and continuously seek
               improvement.
-            </SectionParagraph>
-            <SectionParagraph>
+            </p>
+            <p className="text-gray-100 text-xl font-medium text-justify">
               This passion for progress is coupled with a deep sense of purpose.
               Beyond commercial goals, we are committed to creating long-term
               value for communities, stakeholders, and future generations.
               Through social impact programs, environmental stewardship, and
               inclusive workplace practices, we embed our values into our
               operations and partnerships.
-            </SectionParagraph>
-            <SectionParagraph>
-              Ultimately, Divine Group's culture is what sets us apart in the
+            </p>
+            <p className="text-gray-100 text-xl font-medium text-justify">
+              Ultimately, Divine Group’s culture is what sets us apart in the
               global marketplace. It connects our diverse portfolio, strengthens
               our reputation, and enables us to build trust with clients,
               investors, and partners. In every venture we undertake, our
               culture ensures we deliver not only measurable results but also
               meaningful impact.
-            </SectionParagraph>
-          </TextContent>
-        </SectionWrapper>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-  );
-};
-
-// Reusable Components
-
-const SectionWrapper = ({ children }) => {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-14 lg:gap-24">
-      {children}
-    </div>
-  );
-};
-
-const TextContent = ({ side, children }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const variants = {
-    hidden: { opacity: 0, x: side === "left" ? -100 : 100 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={variants}
-      className={`space-y-8 ${side === "left" ? "order-1" : "order-2"}`}
-    >
-      {children}
-    </motion.div>
-  );
-};
-
-const ImageContent = ({ side, src, alt, withBg = false }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const variants = {
-    hidden: { opacity: 0, x: side === "left" ? -100 : 100, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      scale: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={variants}
-      className={`w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[30rem] lg:h-[30rem] rounded-full ${
-        withBg ? "bg-white flex items-center justify-center" : ""
-      } ${side === "left" ? "order-1" : "order-2"}`}
-      whileHover={{ scale: 1.02 }}
-      transition={{ duration: 0.3 }}
-    >
-      <img
-        src={src}
-        alt={alt}
-        className={`w-full h-full rounded-full ${
-          withBg ? "object-contain" : "object-cover"
-        }`}
-      />
-    </motion.div>
-  );
-};
-
-const SectionHeading = ({ children }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-
-  return (
-    <motion.h1
-      ref={ref}
-      initial={{ y: 50, opacity: 0 }}
-      animate={isInView ? { y: 0, opacity: 1 } : {}}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wider"
-    >
-      {children}
-    </motion.h1>
-  );
-};
-
-const SectionParagraph = ({ children }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-
-  return (
-    <motion.p
-      ref={ref}
-      initial={{ y: 30, opacity: 0 }}
-      animate={isInView ? { y: 0, opacity: 1 } : {}}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="text-gray-100 text-xl font-medium text-justify"
-    >
-      {children}
-    </motion.p>
-  );
-};
-
-const ValueItem = ({ value, index, activeValue, toggleValue }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ y: 50, opacity: 0 }}
-      animate={isInView ? { y: 0, opacity: 1 } : {}}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className={`${value.bgColor} ${value.textColor} rounded-2xl shadow-lg overflow-hidden transition-all duration-300`}
-    >
-      <button
-        onClick={() => toggleValue(index)}
-        className="w-full p-6 text-left flex gap-2 items-center"
-      >
-        <h3 className="text-xl sm:text-2xl font-bold">{value.title}</h3>
-        <svg
-          className={`w-6 h-6 transform transition-transform duration-300 border rounded-full ${
-            activeValue === index ? "rotate-180" : ""
-          }`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
-      </button>
-      <AnimatePresence initial={false}>
-        {activeValue === index && (
-          <motion.div
-            key="content"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="overflow-hidden px-6 pb-6 pt-2"
-          >
-            <ul className="space-y-3">
-              {value.items.map((item, itemIndex) => (
-                <motion.li
-                  key={itemIndex}
-                  initial={{ x: -20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: itemIndex * 0.1 }}
-                  className="flex items-start"
-                >
-                  <span className="mr-2 mt-1">✅</span>
-                  <span className="text-lg">{item}</span>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
   );
 };
 
