@@ -15,7 +15,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const navItem = [
   { label: "Home", path: "/" },
-  { label: "Who We Are", path: "/who-we-are" },
+  { label: "Who We Are", path: "/about-us" },
   { label: "Our Impact", path: "/our-impact" },
 ];
 
