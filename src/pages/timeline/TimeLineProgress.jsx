@@ -128,7 +128,7 @@ const TimeLineProgress = () => {
 
   return (
     <div
-      className="bg-blue-500 relative"
+      className="bg-blue-500 relative pb-40"
       ref={containerRef}
     >
       {/* Hero Section */}
@@ -150,7 +150,7 @@ const TimeLineProgress = () => {
       </motion.div>
 
       {/* Timeline with Year Markers */}
-      <div className="max-w-screen-xl mx-auto px-4 pb-32 relative">
+      <div className="max-w-screen-xl mx-auto px-4 relative">
         {/* Central Timeline Line */}
         <div className="absolute left-1/2 h-full w-1 bg-white/30 top-0 -translate-x-1/2 hidden md:block">
           <motion.div

@@ -141,7 +141,7 @@ const Header = () => {
       <AnimatePresence>
         {showIntro && (
           <motion.div
-            className="fixed inset-0 bg-[#712D8C] z-[60] flex items-center justify-center"
+            className="fixed inset-0 bg-primary z-[60] flex items-center justify-center"
             initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -188,7 +188,7 @@ const Header = () => {
             <motion.img
               src={logowhite}
               alt="Logo"
-              className="h-20 bg-[#712D8C] p-2 rounded-bl-2xl rounded-br-2xl"
+              className="h-24 bg-primary p-3 rounded-bl-2xl rounded-br-2xl"
             />
           </motion.a>
         )}
@@ -254,21 +254,21 @@ const Header = () => {
                 <g transform="translate(0 -8)">
                   <line
                     x2="37.291"
-                    stroke="#712d8c"
+                    stroke="#0C3F75"
                     strokeWidth="5"
                     strokeLinecap="round"
                   />
                   <path
                     d="M0,0H37.291"
                     transform="translate(0 10.659)"
-                    stroke="#712d8c"
+                    stroke="#0C3F75"
                     strokeWidth="5"
                     strokeLinecap="round"
                   />
                   <path
                     d="M0,0H37.291"
                     transform="translate(0 21.319)"
-                    stroke="#712d8c"
+                    stroke="#0C3F75"
                     strokeWidth="5"
                     strokeLinecap="round"
                   />
@@ -285,7 +285,7 @@ const Header = () => {
           <>
             {/* Background with bottom-left rounded animation */}
             <motion.div
-              className="fixed inset-0 bg-[#712d8c] z-[64]"
+              className="fixed inset-0 bg-primary z-[64]"
               initial={{ clipPath: "circle(0% at right top)" }}
               animate={{ clipPath: "circle(150% at right top)" }}
               exit={{ clipPath: "circle(0% at right top)" }}

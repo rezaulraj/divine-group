@@ -177,7 +177,7 @@ const HeroHome = () => {
                   : "-translate-x-10 opacity-0"
               }`}
             >
-              <div className="text-white bg-[#712D8C]/80 p-3 rounded-full mr-4">
+              <div className="text-white bg-primary/80 p-3 rounded-full mr-4">
                 {services[currentIndex].iconComponent}
               </div>
               <h1 className="text-5xl font-bold text-white">
@@ -229,7 +229,7 @@ const HeroHome = () => {
               <div
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? "bg-[#712D8C] scale-125"
+                    ? "bg-primary scale-125"
                     : "bg-white/60"
                 }`}
               />
