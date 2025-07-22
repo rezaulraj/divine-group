@@ -167,11 +167,10 @@ const Header = () => {
       {/* Fixed Logo - Top Right */}
       <AnimatePresence>
         {logoVisible && !navOpen && !showIntro && (
-          <motion.img
-            key="top-logo"
-            src={logowhite}
-            alt="Logo"
-            className="fixed top-0 right-2 h-20 z-50 bg-[#712D8C] p-2 rounded-bl-2xl rounded-br-2xl"
+          <motion.a
+            href="/" // Add your link destination here
+            key="top-logo-link"
+            className="fixed top-0 right-2 z-50"
             initial={{ opacity: 0, y: -30, scale: 0.8 }}
             animate={{
               opacity: 1,
@@ -185,7 +184,13 @@ const Header = () => {
               scale: 0.8,
               transition: { duration: 0.4 },
             }}
-          />
+          >
+            <motion.img
+              src={logowhite}
+              alt="Logo"
+              className="h-20 bg-[#712D8C] p-2 rounded-bl-2xl rounded-br-2xl"
+            />
+          </motion.a>
         )}
       </AnimatePresence>
 
