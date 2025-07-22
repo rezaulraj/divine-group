@@ -6,55 +6,6 @@ import logowhite from "/logo-white.png?url";
 const NotFoundPage = () => {
   return (
     <div className="min-h-screen bg-[#712D8C] flex flex-col items-center justify-center text-white p-8 overflow-hidden">
-      {/* Animated background elements */}
-      <motion.div
-        className="absolute top-0 left-0 w-full h-full opacity-10"
-        animate={{
-          scale: [1, 1.2, 1],
-          rotate: [0, 5, 0],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        style={{
-          background: `radial-gradient(circle at center, #ffffff 0%, transparent 70%)`,
-        }}
-      />
-
-      <motion.div
-        className="absolute -bottom-1/3 -left-1/3 w-2/3 h-2/3 rounded-full opacity-10"
-        animate={{
-          x: ["-20%", "20%", "-20%"],
-          y: ["10%", "-10%", "10%"],
-        }}
-        transition={{
-          duration: 25,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        style={{
-          background: `radial-gradient(circle at center, #ffffff 0%, transparent 70%)`,
-        }}
-      />
-
-      <motion.div
-        className="absolute -top-1/4 -right-1/4 w-1/2 h-1/2 rounded-full opacity-10"
-        animate={{
-          x: ["20%", "-20%", "20%"],
-          y: ["-10%", "10%", "-10%"],
-        }}
-        transition={{
-          duration: 30,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        style={{
-          background: `radial-gradient(circle at center, #ffffff 0%, transparent 70%)`,
-        }}
-      />
-
       {/* Content */}
       <motion.div
         className="relative z-10 flex flex-col items-center text-center max-w-2xl"
