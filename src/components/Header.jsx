@@ -15,8 +15,73 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const navItem = [
   { label: "Home", path: "/" },
-  { label: "Who We Are", path: "/about-us" },
-  { label: "Our Impact", path: "/our-impact" },
+  {
+    label: "Who We Are",
+    subNav: [
+      {
+        label: "About Us",
+        path: "/about-us",
+      },
+      {
+        label: "Timeline",
+        path: "/timeline",
+      },
+      {
+        label: "Expansion",
+        path: "/expansion",
+      },
+    ],
+  },
+  {
+    label: "Portfolios",
+    subNav: [
+      {
+        label: "ICT",
+        path: "/information-communication-technology",
+      },
+      {
+        label: "Real Rstate",
+        path: "/real-estate",
+      },
+      {
+        label: "Hospitality",
+        path: "/hospitality",
+      },
+      {
+        label: "Media",
+        path: "/media",
+      },
+      {
+        label: "Design",
+        path: "/design",
+      },
+      {
+        label: "Manufacturing & Logistics",
+        path: "/manufacturing-and-logistics",
+      },
+      {
+        label: "Education",
+        path: "/education",
+      },
+      {
+        label: "Tourism",
+        path: "/tourism",
+      },
+      {
+        label: "SMEs & Entrepreneurship",
+        path: "/smes-and-entrepreneurship",
+      },
+      {
+        label: "Science",
+        path: "/science",
+      },
+      {
+        label: "Retail",
+        path: "/retail",
+      },
+    ],
+  },
+  { label: "Contact Us", path: "/contact-us" },
 ];
 
 const clientLogos = [
@@ -37,6 +102,7 @@ const Header = () => {
   const [logoVisible, setLogoVisible] = useState(false);
   const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
+  const [hoveredNavItem, setHoveredNavItem] = useState(null);
   const containerRef = useRef(null);
 
   // Animate on route change
@@ -84,15 +150,15 @@ const Header = () => {
             <motion.img
               src={logowhite}
               alt="Logo"
-              initial={{ scale: 1.5, opacity: 0 }}
+              initial={{ scale: 2, opacity: 0 }}
               animate={{
-                scale: 1,
-                opacity: 1,
-                x: [0, 0, window.innerWidth / 2 - 100],
-                y: [0, 0, -window.innerHeight / 2 + 90],
+                scale: [3, 2.5, 1],
+                opacity: [0, 0.5, 1],
+                x: [0, 0, window.innerWidth / 2 - 150],
+                y: [0, 0, -window.innerHeight / 2 + 40],
               }}
               transition={{ duration: 2, ease: "easeInOut" }}
-              className=" h-16 fixed z-[70]"
+              className="h-16 fixed z-[70]"
             />
           </motion.div>
         )}
@@ -124,11 +190,17 @@ const Header = () => {
       </AnimatePresence>
 
       {/* Sticky SVG Menu Icon - Top Left */}
-      <div
+      <motion.div
         className="fixed top-0 left-2 z-[70] cursor-pointer"
         style={{ height: "70px" }}
-        whileHover={{ height: 80, scale: 1.05 }}
-        transition={{ duration: 0.3 }}
+        whileHover={{ height: 70, scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        transition={{
+          duration: 0.3,
+          type: "spring",
+          stiffness: 400,
+          damping: 17,
+        }}
         onClick={() => {
           setNavOpen(!navOpen);
           if (!navOpen) {
@@ -142,7 +214,7 @@ const Header = () => {
           xmlns="http://www.w3.org/2000/svg"
           className="transition-all duration-500 hover:h-[100%]"
           width="160.722"
-          height="90%" // make it responsive to parent
+          height="90%"
           viewBox="0 0 214.722 92.42"
         >
           <defs>
@@ -200,7 +272,7 @@ const Header = () => {
             </g>
           </g>
         </svg>
-      </div>
+      </motion.div>
 
       {/* Nav Menu with Logo and Items */}
       <AnimatePresence>
@@ -212,7 +284,7 @@ const Header = () => {
               initial={{ clipPath: "circle(0% at right top)" }}
               animate={{ clipPath: "circle(150% at right top)" }}
               exit={{ clipPath: "circle(0% at right top)" }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             />
 
             {/* Nav content */}
@@ -236,30 +308,102 @@ const Header = () => {
                 {/* Left side - Navigation */}
                 <div className="flex flex-col gap-6">
                   {navItem.map((item, i) => (
-                    <motion.a
+                    <motion.div
                       key={i}
-                      href={item.path}
-                      className="text-white hover:text-purple-300 text-3xl"
-                      onClick={() => {
-                        setNavOpen(false);
-                        setLogoVisible(true);
-                      }}
+                      className="relative"
+                      onMouseEnter={() => setHoveredNavItem(i)}
+                      onMouseLeave={() => setHoveredNavItem(null)}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.4 + i * 0.1 }}
                     >
-                      {item.label}
-                    </motion.a>
+                      <a
+                        href={item.path}
+                        className="text-white hover:text-purple-300 text-3xl relative z-10 flex items-center"
+                        onClick={() => {
+                          setNavOpen(false);
+                          setLogoVisible(true);
+                        }}
+                      >
+                        {item.label}
+                        {item.subNav && (
+                          <motion.span
+                            className="ml-2"
+                            animate={{
+                              rotate: hoveredNavItem === i ? 90 : 0,
+                            }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <FaArrowRight size={16} />
+                          </motion.span>
+                        )}
+                      </a>
+
+                      {/* Subnav indicator */}
+                      {hoveredNavItem === i && (
+                        <motion.div
+                          className="absolute left-0 right-0 h-1 bg-white/30 bottom-0"
+                          initial={{ width: 0 }}
+                          animate={{ width: "100%" }}
+                          transition={{ duration: 0.4, ease: "easeOut" }}
+                          layoutId="navIndicator"
+                        />
+                      )}
+
+                      {/* Subnav items */}
+                      {item.subNav && hoveredNavItem === i && (
+                        <motion.div
+                          className="ml-6 mt-2 flex flex-col gap-3"
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          {item.subNav.map((subItem, subIndex) => (
+                            <a
+                              key={subIndex}
+                              href={subItem.path}
+                              className="text-white/80 hover:text-white text-xl font-medium transition-all duration-300 pl-4 py-1 border-l-2 border-white/20 hover:border-white/50 hover:pl-6"
+                              onClick={() => {
+                                setNavOpen(false);
+                                setLogoVisible(true);
+                              }}
+                            >
+                              {subItem.label}
+                            </a>
+                          ))}
+                        </motion.div>
+                      )}
+                    </motion.div>
                   ))}
                 </div>
 
                 {/* Right side - Enhanced Client Logo Carousel */}
                 <div
-                  className="relative h-96 w-96"
+                  className="hidden md:inline-flex relative h-96 w-96"
                   ref={containerRef}
                   onMouseEnter={() => setIsHovering(true)}
                   onMouseLeave={() => setIsHovering(false)}
                 >
+                  {/* Sunburst background animation */}
+                  <motion.div
+                    className="absolute inset-0 opacity-20"
+                    animate={{
+                      rotate: 360,
+                    }}
+                    transition={{
+                      duration: 30,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                    style={{
+                      background: `radial-gradient(transparent 40%, #712d8c 70%), 
+                                  repeating-conic-gradient(from 0deg, 
+                                    #ffffff 0deg 10deg, 
+                                    transparent 10deg 20deg)`,
+                    }}
+                  />
+
                   {/* Continuous Border Animation */}
                   <motion.div
                     className="absolute inset-0 border-4 border-white rounded-full"
@@ -296,11 +440,11 @@ const Header = () => {
                     <AnimatePresence custom={currentLogoIndex} mode="wait">
                       <motion.div
                         key={currentLogoIndex}
-                        className="bg-white rounded-full h-64 w-64 flex items-center justify-center overflow-hidden"
+                        className="bg-white rounded-full h-64 w-64 flex items-center justify-center overflow-hidden shadow-lg"
                         initial={{ x: 300, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
                         exit={{ x: -300, opacity: 0 }}
-                        transition={{ duration: 0.6, ease: "easeInOut" }}
+                        transition={{ duration: 0.6, ease: [0.32, 0, 0.67, 0] }}
                       >
                         <motion.img
                           src={clientLogos[currentLogoIndex]}
@@ -309,15 +453,52 @@ const Header = () => {
                           initial={{ scale: 0.9 }}
                           animate={{ scale: 1 }}
                           transition={{ duration: 0.3, delay: 0.3 }}
+                          whileHover={{ scale: 1.05 }}
                         />
                       </motion.div>
                     </AnimatePresence>
                   </div>
 
+                  {/* Navigation Arrows */}
+                  {isHovering && (
+                    <>
+                      <motion.button
+                        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/30 hover:bg-white/50 rounded-full p-2 z-10"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          prevLogo();
+                        }}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -20 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <FaArrowLeft className="text-white" size={20} />
+                      </motion.button>
+                      <motion.button
+                        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/30 hover:bg-white/50 rounded-full p-2 z-10"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          nextLogo();
+                        }}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 20 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <FaArrowRight className="text-white" size={20} />
+                      </motion.button>
+                    </>
+                  )}
+
                   {/* Navigation Dots */}
-                  <div className="absolute bottom-0 left-0 right-0 flex justify-center gap-2">
+                  <div className="absolute bottom-0 left-0 right-0 flex justify-center gap-2 pb-4">
                     {clientLogos.map((_, index) => (
-                      <button
+                      <motion.button
                         key={index}
                         onClick={() => setCurrentLogoIndex(index)}
                         className={`w-3 h-3 rounded-full transition-all duration-300 ${
@@ -325,6 +506,8 @@ const Header = () => {
                             ? "bg-white scale-125"
                             : "bg-white/50"
                         }`}
+                        whileHover={{ scale: 1.2 }}
+                        transition={{ type: "spring", stiffness: 500 }}
                       />
                     ))}
                   </div>
