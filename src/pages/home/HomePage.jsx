@@ -4,7 +4,7 @@ import Service from "./Service";
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-hidden">
       <HeroHome />
       <Service />
     </div>

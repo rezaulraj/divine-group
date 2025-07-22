@@ -188,7 +188,7 @@ const Header = () => {
             <motion.img
               src={logowhite}
               alt="Logo"
-              className="h-24 bg-primary p-3 rounded-bl-2xl rounded-br-2xl"
+              className="h-14 md:h-24 bg-primary p-3 rounded-bl-2xl rounded-br-2xl"
             />
           </motion.a>
         )}

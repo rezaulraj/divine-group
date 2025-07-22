@@ -39,23 +39,23 @@ const Service = () => {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section className="relative bg-gray-50/30 overflow-hidden">
+    <section className="relative bg-gray-50/30 pb-44">
       {/* Top Big Image - Responsive sizing */}
-      <motion.div
-        initial={{ scale: 0.8, opacity: 0, y: 50 }}
-        whileInView={{ scale: 1, opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8 }}
-        className="relative z-20 mx-auto w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-[45rem] xl:h-[45rem] rounded-full border-4 border-white shadow-xl overflow-hidden"
-       
-      >
-        <img
-          src={service1}
-          alt="Main Service"
-          className="w-full h-full object-cover"
-        />
-      </motion.div>
-
+      <div className="py-32 md:py-16 lg:py-60 relative z-30">
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0, y: 50 }}
+          whileInView={{ scale: 1, opacity: 1, y: 0 }}
+          viewport={{ once: false, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="absolute -top-20 md:-top-40 left-1/2 translate-x-[-50%] z-20 w-80 h-80 lg:w-96 lg:h-96 xl:w-[45rem] xl:h-[45rem] rounded-full border-4 border-white shadow-xl overflow-hidden"
+        >
+          <img
+            src={service1}
+            alt="Main Service"
+            className="w-full h-full object-cover"
+          />
+        </motion.div>
+      </div>
       {/* Timeline Container */}
       <div
         ref={containerRef}
@@ -151,7 +151,7 @@ const ServiceItem = ({ image, text, index }) => {
           },
         }}
       >
-        <div className="w-2 h-2 rounded-full bg-white"></div>
+        <div className="w-2 h-2 rounded-full bg-primary"></div>
       </motion.div>
 
       {/* Right Side (Text or Image) */}
