@@ -15,6 +15,7 @@ import Education from "./pages/education/Education";
 import Tourism from "./pages/tourism/Tourism";
 import SmeEntor from "./pages/sme/SmeEntor";
 import Science from "./pages/science/Science";
+import Retail from "./pages/retail/Retail";
 function App() {
   return (
     <>
@@ -34,6 +35,7 @@ function App() {
           <Route path="/education" element={<Education />} />
           <Route path="/tourism" element={<Tourism />} />
           <Route path="/science" element={<Science />} />
+          <Route path="/retail" element={<Retail />} />
           <Route path="/smes-and-entrepreneurship" element={<SmeEntor />} />
           <Route
             path="/manufacturing-and-logistics"
