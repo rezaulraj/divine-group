@@ -26,10 +26,6 @@ const navItem = [
         label: "Timeline",
         path: "/timeline",
       },
-      {
-        label: "Expansion",
-        path: "/expansion",
-      },
     ],
   },
   {
@@ -154,11 +150,11 @@ const Header = () => {
               animate={{
                 scale: [3, 2.5, 1],
                 opacity: [0, 0.5, 1],
-                x: [0, 0, window.innerWidth / 2 - 150],
-                y: [0, 0, -window.innerHeight / 2 + 40],
+                x: [0, 0, window.innerWidth / 2 - 140],
+                y: [0, 0, -window.innerHeight / 2 + 50],
               }}
               transition={{ duration: 2, ease: "easeInOut" }}
-              className="h-16 fixed z-[70]"
+              className="h-8 md:h-16 fixed z-[70]"
             />
           </motion.div>
         )}
@@ -170,7 +166,7 @@ const Header = () => {
           <motion.a
             href="/" // Add your link destination here
             key="top-logo-link"
-            className="fixed top-0 right-2 z-50"
+            className="absolute top-0 right-12 z-50"
             initial={{ opacity: 0, y: -30, scale: 0.8 }}
             animate={{
               opacity: 1,
@@ -188,7 +184,7 @@ const Header = () => {
             <motion.img
               src={logowhite}
               alt="Logo"
-              className="h-14 md:h-24 bg-primary p-3 rounded-bl-2xl rounded-br-2xl"
+              className="h-10 sm:h-14 md:h-24 bg-primary p-1 pb-2 shadow-2xl md:p-3 rounded-bl-xl rounded-br-xl md:rounded-bl-2xl md:rounded-br-2xl"
             />
           </motion.a>
         )}
@@ -217,9 +213,9 @@ const Header = () => {
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="transition-all duration-500 hover:h-[100%]"
-          width="160.722"
-          height="90%"
+          className="transition-all duration-500 w-[110px] h-[60%] hover:h-[70%] md:w-[160.73px] md:h-[90%] hover:md:h-[100%]"
+          // width="160.722"
+          // height="90%"
           viewBox="0 0 214.722 92.42"
         >
           <defs>
@@ -392,7 +388,7 @@ const Header = () => {
                 >
                   {/* Sunburst background animation */}
                   <motion.div
-                    className="absolute inset-0 opacity-20"
+                    className="absolute inset-0 opacity-20 rounded-full"
                     animate={{
                       rotate: 360,
                     }}
