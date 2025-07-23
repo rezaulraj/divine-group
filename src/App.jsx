@@ -9,6 +9,9 @@ import InfoComTech from "./pages/ict/InfoComTech";
 import RealState from "./pages/realstate/RealState";
 import Hospitality from "./pages/hospitality/Hospitality";
 import Media from "./pages/media/Media";
+import Design from "./pages/design/Design";
+import ManufacturingLogic from "./pages/manufacturing/ManufacturingLogic";
+import Education from "./pages/education/Education";
 function App() {
   return (
     <>
@@ -24,6 +27,12 @@ function App() {
           <Route path="/real-estate" element={<RealState />} />
           <Route path="/hospitality" element={<Hospitality />} />
           <Route path="/media" element={<Media />} />
+          <Route path="/design" element={<Design />} />
+          <Route path="/education" element={<Education />} />
+          <Route
+            path="/manufacturing-and-logistics"
+            element={<ManufacturingLogic />}
+          />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
