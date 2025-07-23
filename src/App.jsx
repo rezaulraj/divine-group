@@ -12,6 +12,9 @@ import Media from "./pages/media/Media";
 import Design from "./pages/design/Design";
 import ManufacturingLogic from "./pages/manufacturing/ManufacturingLogic";
 import Education from "./pages/education/Education";
+import Tourism from "./pages/tourism/Tourism";
+import SmeEntor from "./pages/sme/SmeEntor";
+import Science from "./pages/science/Science";
 function App() {
   return (
     <>
@@ -29,6 +32,9 @@ function App() {
           <Route path="/media" element={<Media />} />
           <Route path="/design" element={<Design />} />
           <Route path="/education" element={<Education />} />
+          <Route path="/tourism" element={<Tourism />} />
+          <Route path="/science" element={<Science />} />
+          <Route path="/smes-and-entrepreneurship" element={<SmeEntor />} />
           <Route
             path="/manufacturing-and-logistics"
             element={<ManufacturingLogic />}
