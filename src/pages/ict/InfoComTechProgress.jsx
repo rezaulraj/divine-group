@@ -40,10 +40,7 @@ const InfoComTechProgress = () => {
   const textOpacity = useTransform(scrollYProgress, [0.1, 0.2], [0, 1]);
 
   return (
-    <div
-      className="min-h-screen relative pb-20"
-      ref={containerRef}
-    >
+    <div className="min-h-screen relative pb-20" ref={containerRef}>
       {/* Animated Background with Gradient Mesh */}
       <motion.div
         className="fixed inset-0 -z-10"
@@ -156,14 +153,88 @@ const InfoComTechProgress = () => {
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.8, type: "spring" }}
-                className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl overflow-hidden"
+                className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl relative"
                 style={{ y: yImage1 }}
               >
                 <img
                   src={ictGobal}
                   alt="Global ICT Solutions"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover rounded-full hover:scale-105 transition-transform duration-500 relative z-10"
                 />
+                <motion.div
+                  className="absolute inset-0 w-full h-full rounded-full left-30 z-0"
+                  animate={{ rotate: 360 }}
+                  transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
+                  style={{
+                    background: `
+                      conic-gradient(
+                        rgba(255,255,255,0.7) 0deg 5deg,
+                        transparent 5deg 10deg,
+                        rgba(255,255,255,0.7) 10deg 15deg,
+                        transparent 15deg 20deg,
+                        rgba(255,255,255,0.7) 20deg 25deg,
+                        transparent 25deg 30deg,
+                        rgba(255,255,255,0.7) 30deg 35deg,
+                        transparent 35deg 40deg,
+                        rgba(255,255,255,0.7) 40deg 45deg,
+                        transparent 45deg 50deg,
+                        rgba(255,255,255,0.7) 50deg 55deg,
+                        transparent 55deg 60deg,
+                        rgba(255,255,255,0.7) 60deg 65deg,
+                        transparent 65deg 70deg,
+                        rgba(255,255,255,0.7) 70deg 75deg,
+                        transparent 75deg 80deg,
+                        rgba(255,255,255,0.7) 80deg 85deg,
+                        transparent 85deg 90deg,
+                        rgba(255,255,255,0.7) 90deg 95deg,
+                        transparent 95deg 100deg,
+                        rgba(255,255,255,0.7) 100deg 105deg,
+                        transparent 105deg 110deg,
+                        rgba(255,255,255,0.7) 110deg 115deg,
+                        transparent 115deg 120deg,
+                        rgba(255,255,255,0.7) 120deg 125deg,
+                        transparent 125deg 130deg,
+                        rgba(255,255,255,0.7) 130deg 135deg,
+                        transparent 135deg 140deg,
+                        rgba(255,255,255,0.7) 140deg 145deg,
+                        transparent 145deg 150deg,
+                        rgba(255,255,255,0.7) 150deg 155deg,
+                        transparent 155deg 160deg,
+                        rgba(255,255,255,0.7) 160deg 165deg,
+                        transparent 165deg 170deg,
+                        rgba(255,255,255,0.7) 170deg 175deg,
+                        transparent 175deg 180deg,
+                        rgba(255,255,255,0.7) 180deg 185deg,
+                        transparent 185deg 190deg,
+                        rgba(255,255,255,0.7) 190deg 195deg,
+                        transparent 195deg 200deg,
+                        rgba(255,255,255,0.7) 200deg 205deg,
+                        transparent 205deg 210deg,
+                        rgba(255,255,255,0.7) 210deg 215deg,
+                        transparent 215deg 220deg,
+                        rgba(255,255,255,0.7) 220deg 225deg,
+                        transparent 225deg 230deg,
+                        rgba(255,255,255,0.7) 230deg 235deg,
+                        transparent 235deg 240deg,
+                        rgba(255,255,255,0.7) 240deg 245deg,
+                        transparent 245deg 250deg,
+                        rgba(255,255,255,0.7) 250deg 255deg,
+                        transparent 255deg 260deg,
+                        rgba(255,255,255,0.7) 260deg 265deg,
+                        transparent 265deg 270deg,
+                        rgba(255,255,255,0.7) 270deg 275deg,
+                        transparent 275deg 280deg,
+                        rgba(255,255,255,0.7) 280deg 285deg,
+                        transparent 285deg 290deg,
+                        rgba(255,255,255,0.7) 290deg 295deg,
+                        transparent 295deg 300deg)
+                    `,
+                    maskImage:
+                      "radial-gradient(circle, black 80%, transparent 100%)",
+                    WebkitMaskImage:
+                      "radial-gradient(circle, black 80%, transparent 100%)",
+                  }}
+                ></motion.div>
               </motion.div>
             </ImageContent>
           </SectionWrapper>
@@ -176,15 +247,89 @@ const InfoComTechProgress = () => {
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.8, type: "spring" }}
-                className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-2xl overflow-hidden"
+                className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-2xl relative"
                 style={{ y: yImage2 }}
               >
                 <motion.img
                   src={busnessIct}
                   alt="Business ICT"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover rounded-full hover:scale-105 transition-transform duration-500 relative z-10"
                   whileHover={{ scale: 1.05 }}
                 />
+                <motion.div
+                  className="absolute inset-0 w-full h-full rounded-full -left-30 z-0"
+                  animate={{ rotate: 360 }}
+                  transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
+                  style={{
+                    background: `
+                      conic-gradient(
+                        rgba(255,255,255,0.7) 0deg 5deg,
+                        transparent 5deg 10deg,
+                        rgba(255,255,255,0.7) 10deg 15deg,
+                        transparent 15deg 20deg,
+                        rgba(255,255,255,0.7) 20deg 25deg,
+                        transparent 25deg 30deg,
+                        rgba(255,255,255,0.7) 30deg 35deg,
+                        transparent 35deg 40deg,
+                        rgba(255,255,255,0.7) 40deg 45deg,
+                        transparent 45deg 50deg,
+                        rgba(255,255,255,0.7) 50deg 55deg,
+                        transparent 55deg 60deg,
+                        rgba(255,255,255,0.7) 60deg 65deg,
+                        transparent 65deg 70deg,
+                        rgba(255,255,255,0.7) 70deg 75deg,
+                        transparent 75deg 80deg,
+                        rgba(255,255,255,0.7) 80deg 85deg,
+                        transparent 85deg 90deg,
+                        rgba(255,255,255,0.7) 90deg 95deg,
+                        transparent 95deg 100deg,
+                        rgba(255,255,255,0.7) 100deg 105deg,
+                        transparent 105deg 110deg,
+                        rgba(255,255,255,0.7) 110deg 115deg,
+                        transparent 115deg 120deg,
+                        rgba(255,255,255,0.7) 120deg 125deg,
+                        transparent 125deg 130deg,
+                        rgba(255,255,255,0.7) 130deg 135deg,
+                        transparent 135deg 140deg,
+                        rgba(255,255,255,0.7) 140deg 145deg,
+                        transparent 145deg 150deg,
+                        rgba(255,255,255,0.7) 150deg 155deg,
+                        transparent 155deg 160deg,
+                        rgba(255,255,255,0.7) 160deg 165deg,
+                        transparent 165deg 170deg,
+                        rgba(255,255,255,0.7) 170deg 175deg,
+                        transparent 175deg 180deg,
+                        rgba(255,255,255,0.7) 180deg 185deg,
+                        transparent 185deg 190deg,
+                        rgba(255,255,255,0.7) 190deg 195deg,
+                        transparent 195deg 200deg,
+                        rgba(255,255,255,0.7) 200deg 205deg,
+                        transparent 205deg 210deg,
+                        rgba(255,255,255,0.7) 210deg 215deg,
+                        transparent 215deg 220deg,
+                        rgba(255,255,255,0.7) 220deg 225deg,
+                        transparent 225deg 230deg,
+                        rgba(255,255,255,0.7) 230deg 235deg,
+                        transparent 235deg 240deg,
+                        rgba(255,255,255,0.7) 240deg 245deg,
+                        transparent 245deg 250deg,
+                        rgba(255,255,255,0.7) 250deg 255deg,
+                        transparent 255deg 260deg,
+                        rgba(255,255,255,0.7) 260deg 265deg,
+                        transparent 265deg 270deg,
+                        rgba(255,255,255,0.7) 270deg 275deg,
+                        transparent 275deg 280deg,
+                        rgba(255,255,255,0.7) 280deg 285deg,
+                        transparent 285deg 290deg,
+                        rgba(255,255,255,0.7) 290deg 295deg,
+                        transparent 295deg 300deg)
+                    `,
+                    maskImage:
+                      "radial-gradient(circle, black 80%, transparent 100%)",
+                    WebkitMaskImage:
+                      "radial-gradient(circle, black 80%, transparent 100%)",
+                  }}
+                ></motion.div>
               </motion.div>
             </ImageContent>
             <TextContent>
@@ -252,14 +397,88 @@ const InfoComTechProgress = () => {
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.8, type: "spring" }}
-                className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl overflow-hidden"
+                className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl relative"
                 style={{ y: yImage3 }}
               >
                 <img
                   src={callsupIct}
                   alt="Call Support ICT"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover rounded-full hover:scale-105 transition-transform duration-500 relative z-10"
                 />
+                <motion.div
+                  className="absolute inset-0 w-full h-full rounded-full left-30 z-0"
+                  animate={{ rotate: 360 }}
+                  transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
+                  style={{
+                    background: `
+                      conic-gradient(
+                        rgba(255,255,255,0.7) 0deg 5deg,
+                        transparent 5deg 10deg,
+                        rgba(255,255,255,0.7) 10deg 15deg,
+                        transparent 15deg 20deg,
+                        rgba(255,255,255,0.7) 20deg 25deg,
+                        transparent 25deg 30deg,
+                        rgba(255,255,255,0.7) 30deg 35deg,
+                        transparent 35deg 40deg,
+                        rgba(255,255,255,0.7) 40deg 45deg,
+                        transparent 45deg 50deg,
+                        rgba(255,255,255,0.7) 50deg 55deg,
+                        transparent 55deg 60deg,
+                        rgba(255,255,255,0.7) 60deg 65deg,
+                        transparent 65deg 70deg,
+                        rgba(255,255,255,0.7) 70deg 75deg,
+                        transparent 75deg 80deg,
+                        rgba(255,255,255,0.7) 80deg 85deg,
+                        transparent 85deg 90deg,
+                        rgba(255,255,255,0.7) 90deg 95deg,
+                        transparent 95deg 100deg,
+                        rgba(255,255,255,0.7) 100deg 105deg,
+                        transparent 105deg 110deg,
+                        rgba(255,255,255,0.7) 110deg 115deg,
+                        transparent 115deg 120deg,
+                        rgba(255,255,255,0.7) 120deg 125deg,
+                        transparent 125deg 130deg,
+                        rgba(255,255,255,0.7) 130deg 135deg,
+                        transparent 135deg 140deg,
+                        rgba(255,255,255,0.7) 140deg 145deg,
+                        transparent 145deg 150deg,
+                        rgba(255,255,255,0.7) 150deg 155deg,
+                        transparent 155deg 160deg,
+                        rgba(255,255,255,0.7) 160deg 165deg,
+                        transparent 165deg 170deg,
+                        rgba(255,255,255,0.7) 170deg 175deg,
+                        transparent 175deg 180deg,
+                        rgba(255,255,255,0.7) 180deg 185deg,
+                        transparent 185deg 190deg,
+                        rgba(255,255,255,0.7) 190deg 195deg,
+                        transparent 195deg 200deg,
+                        rgba(255,255,255,0.7) 200deg 205deg,
+                        transparent 205deg 210deg,
+                        rgba(255,255,255,0.7) 210deg 215deg,
+                        transparent 215deg 220deg,
+                        rgba(255,255,255,0.7) 220deg 225deg,
+                        transparent 225deg 230deg,
+                        rgba(255,255,255,0.7) 230deg 235deg,
+                        transparent 235deg 240deg,
+                        rgba(255,255,255,0.7) 240deg 245deg,
+                        transparent 245deg 250deg,
+                        rgba(255,255,255,0.7) 250deg 255deg,
+                        transparent 255deg 260deg,
+                        rgba(255,255,255,0.7) 260deg 265deg,
+                        transparent 265deg 270deg,
+                        rgba(255,255,255,0.7) 270deg 275deg,
+                        transparent 275deg 280deg,
+                        rgba(255,255,255,0.7) 280deg 285deg,
+                        transparent 285deg 290deg,
+                        rgba(255,255,255,0.7) 290deg 295deg,
+                        transparent 295deg 300deg)
+                    `,
+                    maskImage:
+                      "radial-gradient(circle, black 80%, transparent 100%)",
+                    WebkitMaskImage:
+                      "radial-gradient(circle, black 80%, transparent 100%)",
+                  }}
+                ></motion.div>
               </motion.div>
             </ImageContent>
           </SectionWrapper>
@@ -272,14 +491,88 @@ const InfoComTechProgress = () => {
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.8, type: "spring" }}
-                className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl overflow-hidden"
+                className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl relative"
                 style={{ y: yImage4 }}
               >
                 <img
                   src={ictGrobal}
                   alt="Global ICT Expansion"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover rounded-full hover:scale-105 transition-transform duration-500 relative z-10"
                 />
+                <motion.div
+                  className="absolute inset-0 w-full h-full rounded-full -left-30 z-0"
+                  animate={{ rotate: 360 }}
+                  transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
+                  style={{
+                    background: `
+                      conic-gradient(
+                        rgba(255,255,255,0.7) 0deg 5deg,
+                        transparent 5deg 10deg,
+                        rgba(255,255,255,0.7) 10deg 15deg,
+                        transparent 15deg 20deg,
+                        rgba(255,255,255,0.7) 20deg 25deg,
+                        transparent 25deg 30deg,
+                        rgba(255,255,255,0.7) 30deg 35deg,
+                        transparent 35deg 40deg,
+                        rgba(255,255,255,0.7) 40deg 45deg,
+                        transparent 45deg 50deg,
+                        rgba(255,255,255,0.7) 50deg 55deg,
+                        transparent 55deg 60deg,
+                        rgba(255,255,255,0.7) 60deg 65deg,
+                        transparent 65deg 70deg,
+                        rgba(255,255,255,0.7) 70deg 75deg,
+                        transparent 75deg 80deg,
+                        rgba(255,255,255,0.7) 80deg 85deg,
+                        transparent 85deg 90deg,
+                        rgba(255,255,255,0.7) 90deg 95deg,
+                        transparent 95deg 100deg,
+                        rgba(255,255,255,0.7) 100deg 105deg,
+                        transparent 105deg 110deg,
+                        rgba(255,255,255,0.7) 110deg 115deg,
+                        transparent 115deg 120deg,
+                        rgba(255,255,255,0.7) 120deg 125deg,
+                        transparent 125deg 130deg,
+                        rgba(255,255,255,0.7) 130deg 135deg,
+                        transparent 135deg 140deg,
+                        rgba(255,255,255,0.7) 140deg 145deg,
+                        transparent 145deg 150deg,
+                        rgba(255,255,255,0.7) 150deg 155deg,
+                        transparent 155deg 160deg,
+                        rgba(255,255,255,0.7) 160deg 165deg,
+                        transparent 165deg 170deg,
+                        rgba(255,255,255,0.7) 170deg 175deg,
+                        transparent 175deg 180deg,
+                        rgba(255,255,255,0.7) 180deg 185deg,
+                        transparent 185deg 190deg,
+                        rgba(255,255,255,0.7) 190deg 195deg,
+                        transparent 195deg 200deg,
+                        rgba(255,255,255,0.7) 200deg 205deg,
+                        transparent 205deg 210deg,
+                        rgba(255,255,255,0.7) 210deg 215deg,
+                        transparent 215deg 220deg,
+                        rgba(255,255,255,0.7) 220deg 225deg,
+                        transparent 225deg 230deg,
+                        rgba(255,255,255,0.7) 230deg 235deg,
+                        transparent 235deg 240deg,
+                        rgba(255,255,255,0.7) 240deg 245deg,
+                        transparent 245deg 250deg,
+                        rgba(255,255,255,0.7) 250deg 255deg,
+                        transparent 255deg 260deg,
+                        rgba(255,255,255,0.7) 260deg 265deg,
+                        transparent 265deg 270deg,
+                        rgba(255,255,255,0.7) 270deg 275deg,
+                        transparent 275deg 280deg,
+                        rgba(255,255,255,0.7) 280deg 285deg,
+                        transparent 285deg 290deg,
+                        rgba(255,255,255,0.7) 290deg 295deg,
+                        transparent 295deg 300deg)
+                    `,
+                    maskImage:
+                      "radial-gradient(circle, black 80%, transparent 100%)",
+                    WebkitMaskImage:
+                      "radial-gradient(circle, black 80%, transparent 100%)",
+                  }}
+                ></motion.div>
               </motion.div>
             </ImageContent>
             <TextContent>
@@ -346,14 +639,88 @@ const InfoComTechProgress = () => {
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.8, type: "spring" }}
-                className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl overflow-hidden"
+                className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl relative"
                 style={{ y: yImage5 }}
               >
                 <img
                   src={ictTelecom}
                   alt="Telecom Investments"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover rounded-full hover:scale-105 transition-transform duration-500 relative z-10"
                 />
+                <motion.div
+                  className="absolute inset-0 w-full h-full rounded-full left-30 z-0"
+                  animate={{ rotate: 360 }}
+                  transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
+                  style={{
+                    background: `
+                      conic-gradient(
+                        rgba(255,255,255,0.7) 0deg 5deg,
+                        transparent 5deg 10deg,
+                        rgba(255,255,255,0.7) 10deg 15deg,
+                        transparent 15deg 20deg,
+                        rgba(255,255,255,0.7) 20deg 25deg,
+                        transparent 25deg 30deg,
+                        rgba(255,255,255,0.7) 30deg 35deg,
+                        transparent 35deg 40deg,
+                        rgba(255,255,255,0.7) 40deg 45deg,
+                        transparent 45deg 50deg,
+                        rgba(255,255,255,0.7) 50deg 55deg,
+                        transparent 55deg 60deg,
+                        rgba(255,255,255,0.7) 60deg 65deg,
+                        transparent 65deg 70deg,
+                        rgba(255,255,255,0.7) 70deg 75deg,
+                        transparent 75deg 80deg,
+                        rgba(255,255,255,0.7) 80deg 85deg,
+                        transparent 85deg 90deg,
+                        rgba(255,255,255,0.7) 90deg 95deg,
+                        transparent 95deg 100deg,
+                        rgba(255,255,255,0.7) 100deg 105deg,
+                        transparent 105deg 110deg,
+                        rgba(255,255,255,0.7) 110deg 115deg,
+                        transparent 115deg 120deg,
+                        rgba(255,255,255,0.7) 120deg 125deg,
+                        transparent 125deg 130deg,
+                        rgba(255,255,255,0.7) 130deg 135deg,
+                        transparent 135deg 140deg,
+                        rgba(255,255,255,0.7) 140deg 145deg,
+                        transparent 145deg 150deg,
+                        rgba(255,255,255,0.7) 150deg 155deg,
+                        transparent 155deg 160deg,
+                        rgba(255,255,255,0.7) 160deg 165deg,
+                        transparent 165deg 170deg,
+                        rgba(255,255,255,0.7) 170deg 175deg,
+                        transparent 175deg 180deg,
+                        rgba(255,255,255,0.7) 180deg 185deg,
+                        transparent 185deg 190deg,
+                        rgba(255,255,255,0.7) 190deg 195deg,
+                        transparent 195deg 200deg,
+                        rgba(255,255,255,0.7) 200deg 205deg,
+                        transparent 205deg 210deg,
+                        rgba(255,255,255,0.7) 210deg 215deg,
+                        transparent 215deg 220deg,
+                        rgba(255,255,255,0.7) 220deg 225deg,
+                        transparent 225deg 230deg,
+                        rgba(255,255,255,0.7) 230deg 235deg,
+                        transparent 235deg 240deg,
+                        rgba(255,255,255,0.7) 240deg 245deg,
+                        transparent 245deg 250deg,
+                        rgba(255,255,255,0.7) 250deg 255deg,
+                        transparent 255deg 260deg,
+                        rgba(255,255,255,0.7) 260deg 265deg,
+                        transparent 265deg 270deg,
+                        rgba(255,255,255,0.7) 270deg 275deg,
+                        transparent 275deg 280deg,
+                        rgba(255,255,255,0.7) 280deg 285deg,
+                        transparent 285deg 290deg,
+                        rgba(255,255,255,0.7) 290deg 295deg,
+                        transparent 295deg 300deg)
+                    `,
+                    maskImage:
+                      "radial-gradient(circle, black 80%, transparent 100%)",
+                    WebkitMaskImage:
+                      "radial-gradient(circle, black 80%, transparent 100%)",
+                  }}
+                ></motion.div>
               </motion.div>
             </ImageContent>
           </SectionWrapper>

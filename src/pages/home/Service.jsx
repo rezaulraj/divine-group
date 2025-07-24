@@ -1,5 +1,15 @@
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import React, { useRef, useState, useEffect } from "react";
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+
+import science_ecosystem from "../../assets/impact/busniess.webp?url";
+import collaboration from "../../assets/impact/recuitsolution.jpg?url";
+import sustent from "../../assets/impact/sustent.jpg?url";
+// servucess image
 import service1 from "../../assets/impact/recuitment.webp?url";
 import service2 from "../../assets/impact/ict.webp?url";
 import service3 from "../../assets/impact/real-state.webp?url";
@@ -14,18 +24,18 @@ import service11 from "../../assets/impact/science.webp?url";
 import service12 from "../../assets/impact/retail-store.webp?url";
 
 const services = [
-  { image: service1, text: "Recruitment Services" },
-  { image: service2, text: "ICT Solutions" },
-  { image: service3, text: "Real Estate" },
-  { image: service4, text: "Hospitality" },
-  { image: service5, text: "Media & Entertainment" },
-  { image: service6, text: "Design & Creatives" },
-  { image: service7, text: "Manufacturing & Logistics" },
-  { image: service8, text: "Education Sector" },
-  { image: service9, text: "Tourism & Travel" },
-  { image: service10, text: "SMEs & Entrepreneurs" },
-  { image: service11, text: "Science & Research" },
-  { image: service12, text: "Retail & E-commerce" },
+  { image: service1, title: "Recruitment" },
+  { image: service2, title: "ICT" },
+  { image: service3, title: "Real Estate" },
+  { image: service4, title: "Hospitality" },
+  { image: service5, title: "Media" },
+  { image: service6, title: "Design" },
+  { image: service7, title: "Manufacturing & Logistics" },
+  { image: service8, title: "Education" },
+  { image: service9, title: "Tourism" },
+  { image: service10, title: "SMEs & Entrepreneurs" },
+  { image: service11, title: "Science" },
+  { image: service12, title: "Retail Store" },
 ];
 
 const Service = () => {
@@ -35,195 +45,723 @@ const Service = () => {
     offset: ["start end", "end start"],
   });
 
-  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-
+  // Enhanced gradient background with more color stops
   const backgroundColor = useTransform(
     scrollYProgress,
     [0, 0.2, 0.4, 0.6, 0.8, 1],
     [
-      "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
-      "linear-gradient(135deg, #e0f7fa 0%, #80deea 50%, #4fc3f7 100%)",
-      "linear-gradient(135deg, #e8f5e9 0%, #a5d6a7 50%, #4caf50 100%)",
-      "linear-gradient(135deg, #fff3e0 0%, #ffcc80 50%, #ff9800 100%)",
-      "linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #e91e63 100%)",
-      "linear-gradient(135deg, #f3e5f5 0%, #e1bee7 50%, #9c27b0 100%)",
+      "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+      "linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%)",
+      "linear-gradient(135deg, #43cea2 0%, #185a9d 100%)",
+      "linear-gradient(135deg, #ff9966 0%, #ff5e62 100%)",
+      "linear-gradient(135deg, #a8ff78 0%, #529619 100%)",
+      "linear-gradient(135deg, #f857a6 0%, #ff5858 100%)",
     ]
   );
 
+  // Parallax effects for images
+  const yImage1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const yImage2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  const yImage3 = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const yImage4 = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  const [visibleIndex, setVisibleIndex] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisibleIndex((prev) => (prev + 1) % services.length);
+    }, 5000); // Change image every 2.5 seconds
+
+    return () => clearInterval(interval);
+  }, [services.length]);
+
+  const sectionRefs = useRef([]);
+  sectionRefs.current = []; // Reset every render
+
+  const addToRefs = (el) => {
+    if (el && !sectionRefs.current.includes(el)) {
+      sectionRefs.current.push(el);
+    }
+  };
+
+  const [dotPositions, setDotPositions] = useState([]);
+
+  useEffect(() => {
+    const updateDotPositions = () => {
+      const positions = sectionRefs.current.map((ref) => ref?.offsetTop ?? 0);
+      setDotPositions(positions);
+    };
+
+    updateDotPositions();
+    window.addEventListener("resize", updateDotPositions);
+    return () => window.removeEventListener("resize", updateDotPositions);
+  }, []);
   return (
-    <section className="relative">
+    <div className="min-h-screen relative pb-20" ref={containerRef}>
+      {/* Animated Background with Gradient Mesh */}
       <motion.div
-        className="fixed inset-0 -z-10 "
+        className="fixed inset-0 -z-10"
         style={{
           background: backgroundColor,
-          transition: "background 0.5s ease-out",
+          transition: "background 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
+        }}
+      >
+        {/* Subtle animated mesh pattern */}
+        <motion.div
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, white 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+            x: useTransform(scrollYProgress, [0, 1], [0, -50]),
+            y: useTransform(scrollYProgress, [0, 1], [0, -50]),
+          }}
+        />
+      </motion.div>
+      <motion.div
+        className="absolute left-1/2 top-0 -translate-x-1/2 w-1 bg-white/40 -z-0 origin-top"
+        style={{
+          height: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]),
         }}
       />
 
-      <div className="relative bg-white/30 backdrop-blur-sm">
-        <div className="py-32 md:py-16 lg:py-60 relative z-30">
+      {/* Dots on the Progress Line */}
+      {dotPositions.map((pos, idx) => (
+        <motion.div
+          key={idx}
+          className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-white rounded-full z-[15]"
+          style={{
+            top: pos,
+            scale: useTransform(
+              scrollYProgress,
+              [
+                pos / document.body.scrollHeight,
+                (pos + 300) / document.body.scrollHeight,
+              ],
+              [0.4, 1]
+            ),
+            opacity: useTransform(
+              scrollYProgress,
+              [
+                pos / document.body.scrollHeight,
+                (pos + 300) / document.body.scrollHeight,
+              ],
+              [0.2, 1]
+            ),
+          }}
+        />
+      ))}
+      {/* Floating Particles */}
+      {[...Array(15)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute rounded-full bg-white/20"
+          style={{
+            width: Math.random() * 10 + 5,
+            height: Math.random() * 10 + 5,
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            x: useTransform(
+              scrollYProgress,
+              [0, 1],
+              [0, (Math.random() - 0.5) * 100]
+            ),
+            y: useTransform(
+              scrollYProgress,
+              [0, 1],
+              [0, (Math.random() - 0.5) * 100]
+            ),
+            opacity: useTransform(scrollYProgress, [0, 1], [0.2, 0.8]),
+          }}
+        />
+      ))}
+
+      {/* Content Container */}
+      <div className="relative max-w-7xl mx-auto">
+        {/* Hero Section with Floating Effect */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.8, type: "spring" }}
+          className="flex items-center justify-center relative p-3 mb-[15rem] sm:mb-[18rem] md:mb-[32rem] lg:mb-[40rem] p-4 z-20"
+          style={{
+            y: useTransform(scrollYProgress, [0, 0.5], [0, -50]),
+          }}
+        >
           <motion.div
-            initial={{ scale: 0.8, opacity: 0, y: 50 }}
-            whileInView={{ scale: 1, opacity: 1, y: 0 }}
-            viewport={{ once: false, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="absolute -top-20 md:-top-40 left-1/2 translate-x-[-50%] z-20 w-80 h-80 lg:w-96 lg:h-96 xl:w-[45rem] xl:h-[45rem] rounded-full border-4 border-white shadow-xl overflow-hidden"
+            className="bg-white/90 backdrop-blur-sm w-[20rem] h-[20rem] md:w-[35rem] md:h-[35rem] lg:w-[45rem] lg:h-[45rem] rounded-full absolute -top-32 flex items-center justify-center shadow-xl "
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            <img
+            <motion.img
               src={service1}
-              alt="Main Service"
-              className="w-full h-full object-cover"
+              alt="Recuitment"
+              className="w-full h-full object-cover rounded-full p-2"
+              style={{
+                scale: useTransform(scrollYProgress, [0, 0.5], [1, 1.05]),
+              }}
             />
           </motion.div>
-        </div>
+        </motion.div>
 
-        <div
-          ref={containerRef}
-          className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative"
-          style={{ zIndex: 20 }}
-        >
-          <div className="absolute left-1/2 md:left-1/2 top-0 h-full w-1 bg-gray-200 overflow-hidden -translate-x-1/2">
-            <motion.div
-              className="w-full h-full bg-blue-500 origin-top"
-              style={{ scaleY: lineHeight }}
-            />
-          </div>
+        {/* Content Sections */}
+        <div className="flex flex-col items-center space-y-32 lg:space-y-48 justify-center p-4">
+          {/* First Section */}
+          <SectionWrapper>
+            <TextContent>
+              <motion.h1
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wider"
+                style={{
+                  textShadow: "0 2px 10px rgba(0,0,0,0.3)",
+                }}
+              >
+                Our Impact
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
+              >
+                We continue to play a vital role in driving economic
+                diversification across the region. With a portfolio spanning 10
+                key sectors, our companies actively contribute to a sustainable,
+                innovation-driven economy, supporting long-term growth and
+                development
+              </motion.p>
+            </TextContent>
+            <ImageContent>
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0, x: 100 }}
+                whileInView={{ scale: 1, opacity: 1, x: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 0.8, type: "spring" }}
+                className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl relative bg-white backdrop-blur-sm"
+                style={{ y: yImage1 }}
+              >
+                {/* 💫 Backface loading shimmer effect */}
+                <motion.div
+                  className="absolute inset-0 w-full h-full left-30 rounded-full z-0"
+                  animate={{ rotate: 360 }}
+                  transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
+                  style={{
+                    background: `
+                      conic-gradient(
+                        rgba(255,255,255,0.7) 0deg 5deg,
+                        transparent 5deg 10deg,
+                        rgba(255,255,255,0.7) 10deg 15deg,
+                        transparent 15deg 20deg,
+                        rgba(255,255,255,0.7) 20deg 25deg,
+                        transparent 25deg 30deg,
+                        rgba(255,255,255,0.7) 30deg 35deg,
+                        transparent 35deg 40deg,
+                        rgba(255,255,255,0.7) 40deg 45deg,
+                        transparent 45deg 50deg,
+                        rgba(255,255,255,0.7) 50deg 55deg,
+                        transparent 55deg 60deg,
+                        rgba(255,255,255,0.7) 60deg 65deg,
+                        transparent 65deg 70deg,
+                        rgba(255,255,255,0.7) 70deg 75deg,
+                        transparent 75deg 80deg,
+                        rgba(255,255,255,0.7) 80deg 85deg,
+                        transparent 85deg 90deg,
+                        rgba(255,255,255,0.7) 90deg 95deg,
+                        transparent 95deg 100deg,
+                        rgba(255,255,255,0.7) 100deg 105deg,
+                        transparent 105deg 110deg,
+                        rgba(255,255,255,0.7) 110deg 115deg,
+                        transparent 115deg 120deg,
+                        rgba(255,255,255,0.7) 120deg 125deg,
+                        transparent 125deg 130deg,
+                        rgba(255,255,255,0.7) 130deg 135deg,
+                        transparent 135deg 140deg,
+                        rgba(255,255,255,0.7) 140deg 145deg,
+                        transparent 145deg 150deg,
+                        rgba(255,255,255,0.7) 150deg 155deg,
+                        transparent 155deg 160deg,
+                        rgba(255,255,255,0.7) 160deg 165deg,
+                        transparent 165deg 170deg,
+                        rgba(255,255,255,0.7) 170deg 175deg,
+                        transparent 175deg 180deg,
+                        rgba(255,255,255,0.7) 180deg 185deg,
+                        transparent 185deg 190deg,
+                        rgba(255,255,255,0.7) 190deg 195deg,
+                        transparent 195deg 200deg,
+                        rgba(255,255,255,0.7) 200deg 205deg,
+                        transparent 205deg 210deg,
+                        rgba(255,255,255,0.7) 210deg 215deg,
+                        transparent 215deg 220deg,
+                        rgba(255,255,255,0.7) 220deg 225deg,
+                        transparent 225deg 230deg,
+                        rgba(255,255,255,0.7) 230deg 235deg,
+                        transparent 235deg 240deg,
+                        rgba(255,255,255,0.7) 240deg 245deg,
+                        transparent 245deg 250deg,
+                        rgba(255,255,255,0.7) 250deg 255deg,
+                        transparent 255deg 260deg,
+                        rgba(255,255,255,0.7) 260deg 265deg,
+                        transparent 265deg 270deg,
+                        rgba(255,255,255,0.7) 270deg 275deg,
+                        transparent 275deg 280deg,
+                        rgba(255,255,255,0.7) 280deg 285deg,
+                        transparent 285deg 290deg,
+                        rgba(255,255,255,0.7) 290deg 295deg,
+                        transparent 295deg 300deg)
+                    `,
+                    maskImage:
+                      "radial-gradient(circle, black 80%, transparent 100%)",
+                    WebkitMaskImage:
+                      "radial-gradient(circle, black 80%, transparent 100%)",
+                  }}
+                />
 
-          <div className="space-y-16 sm:space-y-24 md:space-y-32 pt-16">
-            {services.map((service, index) => (
-              <ServiceItem
-                key={index}
-                {...service}
-                index={index}
-                scrollYProgress={scrollYProgress}
-              />
-            ))}
-          </div>
+                {/* 🖼️ Animated image inside circular frame */}
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={services[visibleIndex].title}
+                    src={services[visibleIndex].image}
+                    alt={services[visibleIndex].title}
+                    className="w-full h-full object-cover rounded-full relative z-10"
+                    initial={{ x: 150, opacity: 0, scale: 0.9 }}
+                    animate={{ x: 0, opacity: 1, scale: 1 }}
+                    exit={{ x: -150, opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.8, ease: "easeInOut" }}
+                  />
+                </AnimatePresence>
+
+                {/* 🏷️ Title overlay */}
+                <motion.div
+                  className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-white text-sm font-semibold bg-black/40 backdrop-blur-sm z-20"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {services[visibleIndex].title}
+                </motion.div>
+              </motion.div>
+            </ImageContent>
+          </SectionWrapper>
+
+          {/* Second Section */}
+          <SectionWrapper reverse>
+            <ImageContent>
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0, x: 100 }}
+                whileInView={{ scale: 1, opacity: 1, x: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 0.8, type: "spring" }}
+                className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-2xl relative"
+                style={{ y: yImage2 }}
+              >
+                <motion.img
+                  src={science_ecosystem}
+                  alt="commercial residential"
+                  className="w-full h-full object-cover hover:scale-105 rounded-full transition-transform duration-500 relative z-10"
+                  whileHover={{ scale: 1.05 }}
+                />
+                <motion.div
+                  className="absolute inset-0 w-full h-full -left-30 rounded-full z-0"
+                  animate={{ rotate: 360 }}
+                  transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
+                  style={{
+                    background: `
+                      conic-gradient(
+                        rgba(255,255,255,0.7) 0deg 5deg,
+                        transparent 5deg 10deg,
+                        rgba(255,255,255,0.7) 10deg 15deg,
+                        transparent 15deg 20deg,
+                        rgba(255,255,255,0.7) 20deg 25deg,
+                        transparent 25deg 30deg,
+                        rgba(255,255,255,0.7) 30deg 35deg,
+                        transparent 35deg 40deg,
+                        rgba(255,255,255,0.7) 40deg 45deg,
+                        transparent 45deg 50deg,
+                        rgba(255,255,255,0.7) 50deg 55deg,
+                        transparent 55deg 60deg,
+                        rgba(255,255,255,0.7) 60deg 65deg,
+                        transparent 65deg 70deg,
+                        rgba(255,255,255,0.7) 70deg 75deg,
+                        transparent 75deg 80deg,
+                        rgba(255,255,255,0.7) 80deg 85deg,
+                        transparent 85deg 90deg,
+                        rgba(255,255,255,0.7) 90deg 95deg,
+                        transparent 95deg 100deg,
+                        rgba(255,255,255,0.7) 100deg 105deg,
+                        transparent 105deg 110deg,
+                        rgba(255,255,255,0.7) 110deg 115deg,
+                        transparent 115deg 120deg,
+                        rgba(255,255,255,0.7) 120deg 125deg,
+                        transparent 125deg 130deg,
+                        rgba(255,255,255,0.7) 130deg 135deg,
+                        transparent 135deg 140deg,
+                        rgba(255,255,255,0.7) 140deg 145deg,
+                        transparent 145deg 150deg,
+                        rgba(255,255,255,0.7) 150deg 155deg,
+                        transparent 155deg 160deg,
+                        rgba(255,255,255,0.7) 160deg 165deg,
+                        transparent 165deg 170deg,
+                        rgba(255,255,255,0.7) 170deg 175deg,
+                        transparent 175deg 180deg,
+                        rgba(255,255,255,0.7) 180deg 185deg,
+                        transparent 185deg 190deg,
+                        rgba(255,255,255,0.7) 190deg 195deg,
+                        transparent 195deg 200deg,
+                        rgba(255,255,255,0.7) 200deg 205deg,
+                        transparent 205deg 210deg,
+                        rgba(255,255,255,0.7) 210deg 215deg,
+                        transparent 215deg 220deg,
+                        rgba(255,255,255,0.7) 220deg 225deg,
+                        transparent 225deg 230deg,
+                        rgba(255,255,255,0.7) 230deg 235deg,
+                        transparent 235deg 240deg,
+                        rgba(255,255,255,0.7) 240deg 245deg,
+                        transparent 245deg 250deg,
+                        rgba(255,255,255,0.7) 250deg 255deg,
+                        transparent 255deg 260deg,
+                        rgba(255,255,255,0.7) 260deg 265deg,
+                        transparent 265deg 270deg,
+                        rgba(255,255,255,0.7) 270deg 275deg,
+                        transparent 275deg 280deg,
+                        rgba(255,255,255,0.7) 280deg 285deg,
+                        transparent 285deg 290deg,
+                        rgba(255,255,255,0.7) 290deg 295deg,
+                        transparent 295deg 300deg)
+                    `,
+                    maskImage:
+                      "radial-gradient(circle, black 80%, transparent 100%)",
+                    WebkitMaskImage:
+                      "radial-gradient(circle, black 80%, transparent 100%)",
+                  }}
+                />
+              </motion.div>
+            </ImageContent>
+            <TextContent>
+              <motion.h1
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wider"
+                style={{
+                  textShadow: "0 2px 10px rgba(0,0,0,0.3)",
+                }}
+              >
+                Business Highlights
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
+              >
+                Divine Group is shaping the future of global industries by
+                launching groundbreaking projects, premier destinations, and
+                untapped opportunities powered by strategic partnerships,
+                investments, and the recruitment of top talent across regions
+              </motion.p>
+            </TextContent>
+          </SectionWrapper>
+
+          {/* Third Section */}
+          <SectionWrapper>
+            <TextContent>
+              <motion.h1
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wider"
+                style={{
+                  textShadow: "0 2px 10px rgba(0,0,0,0.3)",
+                }}
+              >
+                Recruitment Solution
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
+              >
+                In a rapidly evolving global economy, talent is more than just a
+                resource, it is the foundation of progress. At The Divine Group,
+                recruitment goes beyond filling roles; it is about nurturing
+                potential, fostering diversity, and empowering future-ready
+                professionals who will drive innovation across industries.
+              </motion.p>
+            </TextContent>
+            <ImageContent>
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0, x: 100 }}
+                whileInView={{ scale: 1, opacity: 1, x: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 0.8, type: "spring" }}
+                className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] relative z-20 lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl"
+                style={{ y: yImage3 }}
+              >
+                <img
+                  src={collaboration}
+                  alt="retail facility"
+                  className="w-full h-full object-cover hover:scale-105 rounded-full transition-transform duration-500 relative z-10"
+                />
+                <motion.div
+                  className="absolute inset-0 w-full h-full left-30 rounded-full z-0"
+                  animate={{ rotate: 360 }}
+                  transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
+                  style={{
+                    background: `
+                      conic-gradient(
+                        rgba(255,255,255,0.7) 0deg 5deg,
+                        transparent 5deg 10deg,
+                        rgba(255,255,255,0.7) 10deg 15deg,
+                        transparent 15deg 20deg,
+                        rgba(255,255,255,0.7) 20deg 25deg,
+                        transparent 25deg 30deg,
+                        rgba(255,255,255,0.7) 30deg 35deg,
+                        transparent 35deg 40deg,
+                        rgba(255,255,255,0.7) 40deg 45deg,
+                        transparent 45deg 50deg,
+                        rgba(255,255,255,0.7) 50deg 55deg,
+                        transparent 55deg 60deg,
+                        rgba(255,255,255,0.7) 60deg 65deg,
+                        transparent 65deg 70deg,
+                        rgba(255,255,255,0.7) 70deg 75deg,
+                        transparent 75deg 80deg,
+                        rgba(255,255,255,0.7) 80deg 85deg,
+                        transparent 85deg 90deg,
+                        rgba(255,255,255,0.7) 90deg 95deg,
+                        transparent 95deg 100deg,
+                        rgba(255,255,255,0.7) 100deg 105deg,
+                        transparent 105deg 110deg,
+                        rgba(255,255,255,0.7) 110deg 115deg,
+                        transparent 115deg 120deg,
+                        rgba(255,255,255,0.7) 120deg 125deg,
+                        transparent 125deg 130deg,
+                        rgba(255,255,255,0.7) 130deg 135deg,
+                        transparent 135deg 140deg,
+                        rgba(255,255,255,0.7) 140deg 145deg,
+                        transparent 145deg 150deg,
+                        rgba(255,255,255,0.7) 150deg 155deg,
+                        transparent 155deg 160deg,
+                        rgba(255,255,255,0.7) 160deg 165deg,
+                        transparent 165deg 170deg,
+                        rgba(255,255,255,0.7) 170deg 175deg,
+                        transparent 175deg 180deg,
+                        rgba(255,255,255,0.7) 180deg 185deg,
+                        transparent 185deg 190deg,
+                        rgba(255,255,255,0.7) 190deg 195deg,
+                        transparent 195deg 200deg,
+                        rgba(255,255,255,0.7) 200deg 205deg,
+                        transparent 205deg 210deg,
+                        rgba(255,255,255,0.7) 210deg 215deg,
+                        transparent 215deg 220deg,
+                        rgba(255,255,255,0.7) 220deg 225deg,
+                        transparent 225deg 230deg,
+                        rgba(255,255,255,0.7) 230deg 235deg,
+                        transparent 235deg 240deg,
+                        rgba(255,255,255,0.7) 240deg 245deg,
+                        transparent 245deg 250deg,
+                        rgba(255,255,255,0.7) 250deg 255deg,
+                        transparent 255deg 260deg,
+                        rgba(255,255,255,0.7) 260deg 265deg,
+                        transparent 265deg 270deg,
+                        rgba(255,255,255,0.7) 270deg 275deg,
+                        transparent 275deg 280deg,
+                        rgba(255,255,255,0.7) 280deg 285deg,
+                        transparent 285deg 290deg,
+                        rgba(255,255,255,0.7) 290deg 295deg,
+                        transparent 295deg 300deg)
+                    `,
+                    maskImage:
+                      "radial-gradient(circle, black 80%, transparent 100%)",
+                    WebkitMaskImage:
+                      "radial-gradient(circle, black 80%, transparent 100%)",
+                  }}
+                />
+              </motion.div>
+            </ImageContent>
+          </SectionWrapper>
+          {/* Forth Section */}
+          <SectionWrapper>
+            <TextContent>
+              <motion.h1
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wider"
+                style={{
+                  textShadow: "0 2px 10px rgba(0,0,0,0.3)",
+                }}
+              >
+                Sustainability
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-gray-100 text-xl sm:text-2xl md:text-3xl font-medium text-justify"
+              >
+                Sustainability lies at the core of our strategy and operations.
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
+              >
+                We are dedicated to creating long-term value for our
+                stakeholders while continuously improving our social and
+                environmental impact. Our approach is guided by clear
+                sustainability principles that drive responsible growth and
+                operational excellence.
+              </motion.p>
+            </TextContent>
+            <ImageContent>
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0, x: 100 }}
+                whileInView={{ scale: 1, opacity: 1, x: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 0.8, type: "spring" }}
+                className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] relative z-20 lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl"
+                style={{ y: yImage4 }}
+              >
+                <img
+                  src={sustent}
+                  alt="retail facility"
+                  className="w-full h-full object-cover hover:scale-105 rounded-full transition-transform duration-500 relative z-10"
+                />
+                <motion.div
+                  className="absolute inset-0 w-full h-full left-30 rounded-full z-0"
+                  animate={{ rotate: 360 }}
+                  transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
+                  style={{
+                    background: `
+                      conic-gradient(
+                        rgba(255,255,255,0.7) 0deg 5deg,
+                        transparent 5deg 10deg,
+                        rgba(255,255,255,0.7) 10deg 15deg,
+                        transparent 15deg 20deg,
+                        rgba(255,255,255,0.7) 20deg 25deg,
+                        transparent 25deg 30deg,
+                        rgba(255,255,255,0.7) 30deg 35deg,
+                        transparent 35deg 40deg,
+                        rgba(255,255,255,0.7) 40deg 45deg,
+                        transparent 45deg 50deg,
+                        rgba(255,255,255,0.7) 50deg 55deg,
+                        transparent 55deg 60deg,
+                        rgba(255,255,255,0.7) 60deg 65deg,
+                        transparent 65deg 70deg,
+                        rgba(255,255,255,0.7) 70deg 75deg,
+                        transparent 75deg 80deg,
+                        rgba(255,255,255,0.7) 80deg 85deg,
+                        transparent 85deg 90deg,
+                        rgba(255,255,255,0.7) 90deg 95deg,
+                        transparent 95deg 100deg,
+                        rgba(255,255,255,0.7) 100deg 105deg,
+                        transparent 105deg 110deg,
+                        rgba(255,255,255,0.7) 110deg 115deg,
+                        transparent 115deg 120deg,
+                        rgba(255,255,255,0.7) 120deg 125deg,
+                        transparent 125deg 130deg,
+                        rgba(255,255,255,0.7) 130deg 135deg,
+                        transparent 135deg 140deg,
+                        rgba(255,255,255,0.7) 140deg 145deg,
+                        transparent 145deg 150deg,
+                        rgba(255,255,255,0.7) 150deg 155deg,
+                        transparent 155deg 160deg,
+                        rgba(255,255,255,0.7) 160deg 165deg,
+                        transparent 165deg 170deg,
+                        rgba(255,255,255,0.7) 170deg 175deg,
+                        transparent 175deg 180deg,
+                        rgba(255,255,255,0.7) 180deg 185deg,
+                        transparent 185deg 190deg,
+                        rgba(255,255,255,0.7) 190deg 195deg,
+                        transparent 195deg 200deg,
+                        rgba(255,255,255,0.7) 200deg 205deg,
+                        transparent 205deg 210deg,
+                        rgba(255,255,255,0.7) 210deg 215deg,
+                        transparent 215deg 220deg,
+                        rgba(255,255,255,0.7) 220deg 225deg,
+                        transparent 225deg 230deg,
+                        rgba(255,255,255,0.7) 230deg 235deg,
+                        transparent 235deg 240deg,
+                        rgba(255,255,255,0.7) 240deg 245deg,
+                        transparent 245deg 250deg,
+                        rgba(255,255,255,0.7) 250deg 255deg,
+                        transparent 255deg 260deg,
+                        rgba(255,255,255,0.7) 260deg 265deg,
+                        transparent 265deg 270deg,
+                        rgba(255,255,255,0.7) 270deg 275deg,
+                        transparent 275deg 280deg,
+                        rgba(255,255,255,0.7) 280deg 285deg,
+                        transparent 285deg 290deg,
+                        rgba(255,255,255,0.7) 290deg 295deg,
+                        transparent 295deg 300deg)
+                    `,
+                    maskImage:
+                      "radial-gradient(circle, black 80%, transparent 100%)",
+                    WebkitMaskImage:
+                      "radial-gradient(circle, black 80%, transparent 100%)",
+                  }}
+                />
+              </motion.div>
+            </ImageContent>
+          </SectionWrapper>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-const ServiceItem = ({ image, text, index, scrollYProgress }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.3, margin: "-50px" });
-  const isEven = index % 2 === 0;
-
-  const itemColor = useTransform(
-    scrollYProgress,
-    [0, 1],
-    isEven
-      ? ["rgba(255,255,255,0.7)", "rgba(255,255,255,0.9)"]
-      : ["rgba(255,255,255,0.9)", "rgba(255,255,255,0.7)"]
-  );
-
+// Enhanced Reusable Components
+const SectionWrapper = ({ children, reverse = false }) => {
   return (
     <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      className="relative flex flex-col md:flex-row items-center justify-between w-full gap-4 md:gap-0"
+      className={`grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-14 lg:gap-24 ${
+        reverse ? "md:flex-row-reverse" : ""
+      }`}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: false, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
     >
-      <motion.div
-        className={`w-full md:w-5/12 ${isEven ? "md:pr-8" : "md:pl-8"} order-1`}
-        variants={{
-          hidden: { opacity: 0, x: isEven ? -100 : 100 },
-          visible: {
-            opacity: 1,
-            x: 0,
-            transition: {
-              duration: 0.6,
-              ease: "easeOut",
-              delay: isEven ? 0 : 0.2,
-            },
-          },
-        }}
-      >
-        {isEven ? (
-          <motion.div
-            className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full border-4 border-white shadow-lg overflow-hidden mx-auto"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-            style={{ backgroundColor: itemColor }}
-          >
-            <img
-              src={image}
-              alt={text}
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-        ) : (
-          <motion.div
-            className="p-4 sm:p-6 rounded-lg shadow-md h-full flex items-center"
-            style={{ backgroundColor: itemColor }}
-          >
-            <p className="text-base sm:text-lg md:text-xl text-gray-700 text-center w-full">
-              {text}
-            </p>
-          </motion.div>
-        )}
-      </motion.div>
+      {children}
+    </motion.div>
+  );
+};
 
-      <motion.div
-        className="absolute left-1/2 md:left-1/2 top-1/2 md:top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-blue-500 border-4 border-white shadow-md flex items-center justify-center"
-        variants={{
-          hidden: { scale: 0 },
-          visible: {
-            scale: 1,
-            transition: {
-              duration: 0.4,
-              delay: 0.2,
-              type: "spring",
-              stiffness: 200,
-            },
-          },
-        }}
-      >
-        <div className="w-2 h-2 rounded-full bg-white"></div>
-      </motion.div>
+const TextContent = ({ children }) => {
+  return (
+    <motion.div
+      className="space-y-8"
+      whileInView={{
+        transition: { staggerChildren: 0.1 },
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
-      <motion.div
-        className={`w-full md:w-5/12 ${
-          isEven ? "md:pl-8" : "md:pr-8"
-        } order-3 md:order-2`}
-        variants={{
-          hidden: { opacity: 0, x: isEven ? 100 : -100 },
-          visible: {
-            opacity: 1,
-            x: 0,
-            transition: {
-              duration: 0.6,
-              ease: "easeOut",
-              delay: isEven ? 0.2 : 0,
-            },
-          },
-        }}
-      >
-        {isEven ? (
-          <motion.div
-            className="p-4 sm:p-6 rounded-lg shadow-md h-full flex items-center"
-            style={{ backgroundColor: itemColor }}
-          >
-            <p className="text-base sm:text-lg md:text-xl text-gray-700 text-center w-full">
-              {text}
-            </p>
-          </motion.div>
-        ) : (
-          <motion.div
-            className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full border-4 border-white shadow-lg overflow-hidden mx-auto"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-            style={{ backgroundColor: itemColor }}
-          >
-            <img
-              src={image}
-              alt={text}
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-        )}
-      </motion.div>
+const ImageContent = ({ children }) => {
+  return (
+    <motion.div
+      className="flex justify-center"
+      whileInView={{
+        transition: { staggerChildren: 0.1 },
+      }}
+    >
+      {children}
     </motion.div>
   );
 };
