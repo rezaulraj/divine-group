@@ -42,7 +42,7 @@ const Footer = () => {
                   href="#"
                   className="text-gray-200 hover:text-white transition-colors"
                 >
-                  Services
+                  Who We Are
                 </a>
               </li>
               <li>
@@ -50,7 +50,7 @@ const Footer = () => {
                   href="#"
                   className="text-gray-200 hover:text-white transition-colors"
                 >
-                  Projects
+                  Contact Us
                 </a>
               </li>
             </ul>
