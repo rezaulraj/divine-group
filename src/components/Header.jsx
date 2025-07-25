@@ -307,7 +307,7 @@ const Header = () => {
 
               <div className="flex items-center justify-between gap-10 w-full px-20">
                 {/* Left side - Navigation */}
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-3">
                   {navItem.map((item, i) => (
                     <motion.div
                       key={i}
@@ -320,7 +320,7 @@ const Header = () => {
                     >
                       <a
                         href={item.path}
-                        className="text-white hover:text-purple-300 text-3xl relative z-10 flex items-center"
+                        className="text-gray-200 hover:text-purple-300 text-2xl md:text-4xl leading-tight uppercase font-bold relative z-10 flex items-center"
                         onClick={() => {
                           setNavOpen(false);
                           setLogoVisible(true);
