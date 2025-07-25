@@ -213,7 +213,7 @@ const Service = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wider"
+                className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wider"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -225,7 +225,7 @@ const Service = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium text-justify"
               >
                 We continue to play a vital role in driving economic
                 diversification across the region. With a portfolio spanning 10
@@ -239,9 +239,9 @@ const Service = () => {
                 initial={{ scale: 0.8, opacity: 0, x: 100 }}
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.8, type: "spring" }}
+                transition={{ duration: 0.8 }}
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl relative bg-white backdrop-blur-sm"
-                style={{ y: yImage1 }}
+                // style={{ y: yImage1 }}
               >
                 {/* 💫 Backface loading shimmer effect */}
                 <motion.div
@@ -354,9 +354,9 @@ const Service = () => {
                 initial={{ scale: 0.8, opacity: 0, x: 100 }}
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.8, type: "spring" }}
+                transition={{ duration: 0.8 }}
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-2xl relative"
-                style={{ y: yImage2 }}
+                // style={{ y: yImage2 }}
               >
                 <motion.img
                   src={science_ecosystem}
@@ -446,7 +446,7 @@ const Service = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wider"
+                className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wider"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -458,7 +458,7 @@ const Service = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium text-justify"
               >
                 Divine Group is shaping the future of global industries by
                 launching groundbreaking projects, premier destinations, and
@@ -476,7 +476,7 @@ const Service = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wider"
+                className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wider"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -487,8 +487,8 @@ const Service = () => {
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
+                transition={{ duration: 0.7, delay: 0.1 }}
+                className="text-gray-100 text-xl font-medium text-justify"
               >
                 In a rapidly evolving global economy, talent is more than just a
                 resource, it is the foundation of progress. At The Divine Group,
@@ -502,9 +502,9 @@ const Service = () => {
                 initial={{ scale: 0.8, opacity: 0, x: 100 }}
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.8, type: "spring" }}
+                transition={{ duration: 0.8 }}
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] relative z-20 lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl"
-                style={{ y: yImage3 }}
+                // style={{ y: yImage3 }}
               >
                 <img
                   src={collaboration}
@@ -514,7 +514,7 @@ const Service = () => {
                 <motion.div
                   className="absolute inset-0 w-full h-full left-30 rounded-full z-0"
                   animate={{ rotate: 360 }}
-                  transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
+                  transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
                   style={{
                     background: `
                       conic-gradient(
@@ -590,50 +590,14 @@ const Service = () => {
           </SectionWrapper>
           {/* Forth Section */}
           <SectionWrapper>
-            <TextContent>
-              <motion.h1
-                initial={{ opacity: 0, x: -100 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.6 }}
-                className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wider"
-                style={{
-                  textShadow: "0 2px 10px rgba(0,0,0,0.3)",
-                }}
-              >
-                Sustainability
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl sm:text-2xl md:text-3xl font-medium text-justify"
-              >
-                Sustainability lies at the core of our strategy and operations.
-              </motion.p>
-              <motion.p
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
-              >
-                We are dedicated to creating long-term value for our
-                stakeholders while continuously improving our social and
-                environmental impact. Our approach is guided by clear
-                sustainability principles that drive responsible growth and
-                operational excellence.
-              </motion.p>
-            </TextContent>
             <ImageContent>
               <motion.div
                 initial={{ scale: 0.8, opacity: 0, x: 100 }}
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.8, type: "spring" }}
+                transition={{ duration: 0.8 }}
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] relative z-20 lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl"
-                style={{ y: yImage4 }}
+                // style={{ y: yImage4 }}
               >
                 <img
                   src={sustent}
@@ -641,9 +605,9 @@ const Service = () => {
                   className="w-full h-full object-cover hover:scale-105 rounded-full transition-transform duration-500 relative z-10"
                 />
                 <motion.div
-                  className="absolute inset-0 w-full h-full left-30 rounded-full z-0"
+                  className="absolute inset-0 w-full h-full -left-30 rounded-full z-0"
                   animate={{ rotate: 360 }}
-                  transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
+                  transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
                   style={{
                     background: `
                       conic-gradient(
@@ -716,6 +680,43 @@ const Service = () => {
                 />
               </motion.div>
             </ImageContent>
+            <TextContent>
+              <motion.h1
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wider"
+                style={{
+                  textShadow: "0 2px 10px rgba(0,0,0,0.3)",
+                }}
+              >
+                Sustainability
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 0.7, delay: 0.1 }}
+                className="text-gray-100 text-2xl font-medium text-justify"
+              >
+                "Sustainability lies at the core of our strategy and
+                operations."
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                className="text-gray-100 text-xl font-medium text-justify"
+              >
+                We are dedicated to creating long-term value for our
+                stakeholders while continuously improving our social and
+                environmental impact. Our approach is guided by clear
+                sustainability principles that drive responsible growth and
+                operational excellence.
+              </motion.p>
+            </TextContent>
           </SectionWrapper>
         </div>
       </div>

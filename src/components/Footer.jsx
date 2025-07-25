@@ -103,7 +103,7 @@ const Footer = () => {
           <p className="text-gray-500 text-sm mt-4 md:mt-0">
             Powered by{" "}
             <a href="#" className="text-blue-400 hover:text-blue-300">
-              Clicktap Digital
+              Divine Group
             </a>
           </p>
         </div>
