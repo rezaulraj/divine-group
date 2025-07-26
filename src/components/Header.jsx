@@ -320,7 +320,7 @@ const Header = () => {
                     >
                       <a
                         href={item.path}
-                        className="text-gray-200 hover:text-purple-300 text-2xl md:text-4xl leading-tight uppercase font-bold relative z-10 flex items-center"
+                        className="text-gray-200 hover:text-gray-300 text-2xl md:text-4xl hover:translate-x-6 transition-transform duration-500 leading-tight uppercase font-bold relative z-10 flex items-center"
                         onClick={() => {
                           setNavOpen(false);
                           setLogoVisible(true);
