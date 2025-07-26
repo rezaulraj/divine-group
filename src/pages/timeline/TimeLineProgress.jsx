@@ -127,10 +127,7 @@ const TimeLineProgress = () => {
   }
 
   return (
-    <div
-      className="bg-blue-500 relative pb-40"
-      ref={containerRef}
-    >
+    <div className="bg-blue-500 relative pb-40" ref={containerRef}>
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: 25 }}
@@ -145,7 +142,6 @@ const TimeLineProgress = () => {
             alt="Company Logo"
             className="w-full h-full rounded-full"
           />
-          
         </div>
       </motion.div>
 
@@ -206,29 +202,30 @@ const TimeLineProgress = () => {
                 <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
                   {/* Left Side - Image for even, Text for odd */}
                   <motion.div
-                    initial={{ x: -100, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ type: "spring", stiffness: 60, damping: 15 }}
-                    className={`w-full md:w-2/6 ${
+                    initial={{ scale: 0.8, opacity: 0, x: 100 }}
+                    whileInView={{ scale: 1, opacity: 1, x: 0 }}
+                    viewport={{ once: false, margin: "-100px" }}
+                    transition={{ duration: 0.8 }}
+                    className={`w-full md:w-2/5 ${
                       isEven ? "order-1" : "order-2"
                     }`}
                   >
                     {isEven ? (
                       <motion.div
                         whileHover={{ scale: 1.05, rotate: 2 }}
-                        className="w-64 h-64 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-white relative"
+                        className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] relative z-20 lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl"
                       >
                         <img
                           src={item.companyLogo}
                           alt={item.title}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover rounded-full"
                         />
                         <div className="absolute inset-0 bg-blue-600/20 hover:bg-transparent transition-all duration-300 rounded-2xl" />
                       </motion.div>
                     ) : (
                       <motion.div
                         whileHover={{ scale: 1.02 }}
-                        className="w-64 h-64 md:w-96 md:h-96 rounded-full bg-white shadow-xl flex items-center justify-center p-8 text-left"
+                        className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] relative z-20 lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl flex flex-col items-center justify-center bg-white"
                       >
                         <div className="text-center">
                           <h3 className="text-blue-600 text-3xl font-bold mb-2">
@@ -242,24 +239,20 @@ const TimeLineProgress = () => {
 
                   {/* Right Side - Text for even, Image for odd */}
                   <motion.div
-                    initial={{ x: 100, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 60,
-                      damping: 15,
-                      delay: 0.2,
-                    }}
-                    className={`w-full md:w-2/6 rounded-full ${
+                    initial={{ scale: 0.8, opacity: 0, x: 100 }}
+                    whileInView={{ scale: 1, opacity: 1, x: 0 }}
+                    viewport={{ once: false, margin: "100px" }}
+                    transition={{ duration: 0.8 }}
+                    className={`w-full md:w-2/5 rounded-full ${
                       isEven ? "order-2" : "order-1"
                     }`}
                   >
                     {isEven ? (
                       <motion.div
                         whileHover={{ scale: 1.02 }}
-                        className="w-64 h-64 md:w-96 md:h-96 rounded-full bg-white shadow-xl flex items-center justify-center p-8 text-left"
+                        className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] relative z-20 lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl bg-white flex flex-col items-center justify-center"
                       >
-                        <div className="text-center">
+                        <div className="text-center flex flex-col items-center justify-center">
                           <h3 className="text-blue-600 text-3xl font-bold mb-2">
                             {item.title}
                           </h3>
@@ -269,12 +262,12 @@ const TimeLineProgress = () => {
                     ) : (
                       <motion.div
                         whileHover={{ scale: 1.05, rotate: -2 }}
-                        className="w-64 h-64 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-white relative"
+                        className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] relative z-20 lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl"
                       >
                         <img
                           src={item.companyLogo}
                           alt={item.title}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover rounded-full"
                         />
                         <div className="absolute inset-0 bg-blue-600/20 hover:bg-transparent transition-all duration-300 rounded-2xl" />
                       </motion.div>
