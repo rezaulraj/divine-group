@@ -134,10 +134,13 @@ const AboutUsProgress = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-gray-100 text-xl font-medium text-justify"
               >
-                Divine Group has become a force for transformation and growth
-                across the region boldly reshaping industries, empowering
-                people, and driving economic diversification from the heart of
-                the UAE to the shores of Malta and Romania.
+                Divine Group has emerged as a powerful catalyst for
+                transformation and growth across the region boldly reshaping
+                industries, empowering communities, and driving economic
+                diversification. From the heart of the UAE to the shores of
+                Malta, Croatia, Bulgaria, Romania, Serbia, and Macedonia, our
+                impact is both wide-reaching and deeply rooted in innovation and
+                progress.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, x: -50 }}
@@ -364,8 +367,8 @@ const AboutUsProgress = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-gray-100 text-xl font-medium text-justify"
               >
-                Today, Divine Group is proud to be home to over 45,000
-                professionals, managing assets worth more than USD 76.3 billion,
+                Today, Divine Group is proud to be home to over 350
+                professionals, managing assets worth more than million dolar,
                 and shaping the future across three dynamic countries: UAE,
                 Malta, and Romania.
               </motion.p>
@@ -391,10 +394,31 @@ const AboutUsProgress = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-gray-100 text-xl font-medium text-justify"
               >
-                Today, Divine Group is proud to be home to over 45,000
-                professionals, managing assets worth more than USD 76.3 billion,
-                and shaping the future across three dynamic countries: UAE,
-                Malta, and Romania.
+                We exist to shape the future by investing in ventures that spark
+                progress, empower people, and drive sustainable economic growth.
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 0.7, delay: 0.1 }}
+                className="text-gray-100 text-xl font-medium text-justify"
+              >
+                Our goal is to become a leading regional force in innovation,
+                real estate, sustainability, and smart technology while
+                maintaining our unwavering commitment to people, purpose, and
+                planet.
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                className="text-gray-100 text-xl font-medium text-justify"
+              >
+                Every decision we make is guided by our responsibility to
+                communities, our passion for excellence, and our vision for
+                lasting impact.
               </motion.p>
             </TextContent>
             <ImageContent>
