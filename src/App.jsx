@@ -17,6 +17,8 @@ import SmeEntor from "./pages/sme/SmeEntor";
 import Science from "./pages/science/Science";
 import Retail from "./pages/retail/Retail";
 import ContactPage from "./pages/contact/ContactPage";
+import PrivacyPolicy from "./pages/privacy/PrivacyPolicy";
+import TermAndCondition from "./pages/termcondition/TermAndCondition";
 function App() {
   return (
     <>
@@ -38,6 +40,8 @@ function App() {
           <Route path="/science" element={<Science />} />
           <Route path="/retail" element={<Retail />} />
           <Route path="/contact-us" element={<ContactPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-and-conditions" element={<TermAndCondition />} />
           <Route path="/smes-and-entrepreneurship" element={<SmeEntor />} />
           <Route
             path="/manufacturing-and-logistics"

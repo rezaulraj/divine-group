@@ -5,6 +5,7 @@ import education_industry_link from "../../assets/portfolio/education/education_
 import executive_learning from "../../assets/portfolio/education/executive_learning.jpg?url";
 import global_academic_partnerships from "../../assets/portfolio/education/global_academic_partnerships.webp?url";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Link } from "react-router-dom";
 const EducationProgress = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -80,7 +81,7 @@ const EducationProgress = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
-          transition={{ duration: 0.8, type: "spring" }}
+          transition={{ duration: 0.8 }}
           className="flex items-center justify-center relative p-3 mb-[15rem] sm:mb-[18rem] md:mb-[32rem] lg:mb-[40rem] p-4"
           style={{
             y: useTransform(scrollYProgress, [0, 0.5], [0, -50]),
@@ -149,9 +150,9 @@ const EducationProgress = () => {
                 initial={{ scale: 0.8, opacity: 0, x: 100 }}
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.8, type: "spring" }}
+                transition={{ duration: 0.8 }}
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl relative"
-                style={{ y: yImage1 }}
+                // style={{ y: yImage1 }}
               >
                 <img
                   src={academic_districts}
@@ -243,9 +244,9 @@ const EducationProgress = () => {
                 initial={{ scale: 0.8, opacity: 0, x: -100 }}
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.8, type: "spring" }}
+                transition={{ duration: 0.8 }}
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-2xl relative"
-                style={{ y: yImage2 }}
+                // style={{ y: yImage2 }}
               >
                 <motion.img
                   src={education_industry_link}
@@ -415,9 +416,9 @@ const EducationProgress = () => {
                 initial={{ scale: 0.8, opacity: 0, x: 100 }}
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.8, type: "spring" }}
+                transition={{ duration: 0.8 }}
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl relative"
-                style={{ y: yImage3 }}
+                // style={{ y: yImage3 }}
               >
                 <img
                   src={executive_learning}
@@ -508,9 +509,9 @@ const EducationProgress = () => {
                 initial={{ scale: 0.8, opacity: 0, x: -100 }}
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.8, type: "spring" }}
+                transition={{ duration: 0.8 }}
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl relative"
-                style={{ y: yImage4 }}
+                // style={{ y: yImage4 }}
               >
                 <img
                   src={global_academic_partnerships}
@@ -653,9 +654,12 @@ const EducationProgress = () => {
                 Divine Group is building the foundations of a knowledge-driven
                 future.
               </p>
-              <button className="px-8 py-4 bg-white text-blue-600 rounded-full text-lg font-bold hover:bg-blue-50 transition-colors duration-300 shadow-lg">
+              <Link
+                to={"/contact-us"}
+                className="px-8 py-4 bg-white text-blue-600 rounded-full text-lg font-bold hover:bg-blue-50 transition-colors duration-300 shadow-lg"
+              >
                 Partner with Us
-              </button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>

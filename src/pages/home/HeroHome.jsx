@@ -33,6 +33,7 @@ const services = [
     icon: service1,
     iconComponent: <FaUserTie className="text-3xl" />,
     tagline: "Connecting talent with opportunity",
+    link: "/",
   },
   {
     id: 2,
@@ -40,6 +41,7 @@ const services = [
     icon: service2,
     iconComponent: <FaLaptopCode className="text-3xl" />,
     tagline: "Innovative solutions for the digital age",
+    link: "/information-communication-technology",
   },
   {
     id: 3,
@@ -47,6 +49,7 @@ const services = [
     icon: service3,
     iconComponent: <FaBuilding className="text-3xl" />,
     tagline: "Building your dream spaces",
+    link: "/real-estate",
   },
   {
     id: 4,
@@ -54,6 +57,7 @@ const services = [
     icon: service4,
     iconComponent: <FaConciergeBell className="text-3xl" />,
     tagline: "Exceptional experiences every time",
+    link: "/hospitality",
   },
   {
     id: 5,
@@ -61,6 +65,7 @@ const services = [
     icon: service5,
     iconComponent: <FaFilm className="text-3xl" />,
     tagline: "Telling stories that matter",
+    link: "/media",
   },
   {
     id: 6,
@@ -68,6 +73,7 @@ const services = [
     icon: service6,
     iconComponent: <FaPalette className="text-3xl" />,
     tagline: "Beautiful solutions that work",
+    link: "/design",
   },
   {
     id: 7,
@@ -75,6 +81,7 @@ const services = [
     icon: service7,
     iconComponent: <FaTruckMoving className="text-3xl" />,
     tagline: "Efficiency at every step",
+    link: "/manufacturing-and-logistics",
   },
   {
     id: 8,
@@ -82,6 +89,7 @@ const services = [
     icon: service8,
     iconComponent: <FaGraduationCap className="text-3xl" />,
     tagline: "Empowering minds, shaping futures",
+    link: "/education",
   },
   {
     id: 9,
@@ -89,6 +97,7 @@ const services = [
     icon: service9,
     iconComponent: <FaUmbrellaBeach className="text-3xl" />,
     tagline: "Discover unforgettable journeys",
+    link: "/tourism",
   },
   {
     id: 10,
@@ -96,6 +105,7 @@ const services = [
     icon: service10,
     iconComponent: <FaLightbulb className="text-3xl" />,
     tagline: "Fueling innovation and growth",
+    link: "/smes-and-entrepreneurship",
   },
   {
     id: 11,
@@ -103,6 +113,7 @@ const services = [
     icon: service11,
     iconComponent: <FaFlask className="text-3xl" />,
     tagline: "Pushing the boundaries of knowledge",
+    link: "/science",
   },
   {
     id: 12,
@@ -110,6 +121,7 @@ const services = [
     icon: service12,
     iconComponent: <FaStore className="text-3xl" />,
     tagline: "Curated experiences for every customer",
+    link: "/retail",
   },
 ];
 
@@ -204,12 +216,15 @@ const HeroHome = () => {
                   : "-translate-x-10 opacity-0"
               }`}
             >
-              <span className="flex items-center">
+              <a
+                href={services[currentIndex].link}
+                className="flex items-center"
+              >
                 Discover More
                 <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">
                   →
                 </span>
-              </span>
+              </a>
             </button>
           </div>
         </div>

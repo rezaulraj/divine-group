@@ -4,6 +4,7 @@ import topRetail from "../../assets/portfolio/retail/topretail.avif?url";
 import retail1 from "../../assets/portfolio/retail/retail1.avif?url";
 import retail2 from "../../assets/portfolio/retail/retail2.avif?url";
 import retail3 from "../../assets/portfolio/retail/retail3.jpg?url";
+import { Link } from "react-router-dom";
 const RetailProgress = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -86,7 +87,7 @@ const RetailProgress = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
-          transition={{ duration: 0.8, type: "spring" }}
+          transition={{ duration: 0.8 }}
           className="flex items-center justify-center relative p-3 mb-[15rem] sm:mb-[18rem] md:mb-[32rem] lg:mb-[40rem] p-4"
           style={{
             y: useTransform(scrollYProgress, [0, 0.5], [0, -50]),
@@ -144,9 +145,9 @@ const RetailProgress = () => {
                 initial={{ scale: 0.8, opacity: 0, x: 100 }}
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.8, type: "spring" }}
+                transition={{ duration: 0.8 }}
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl relative"
-                style={{ y: yImage1 }}
+                // style={{ y: yImage1 }}
               >
                 <img
                   src={retail1}
@@ -238,9 +239,9 @@ const RetailProgress = () => {
                 initial={{ scale: 0.8, opacity: 0, x: -100 }}
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.8, type: "spring" }}
+                transition={{ duration: 0.8 }}
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-2xl relative"
-                style={{ y: yImage2 }}
+                // style={{ y: yImage2 }}
               >
                 <motion.img
                   src={retail2}
@@ -409,9 +410,9 @@ const RetailProgress = () => {
                 initial={{ scale: 0.8, opacity: 0, x: 100 }}
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.8, type: "spring" }}
+                transition={{ duration: 0.8 }}
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl relative"
-                style={{ y: yImage3 }}
+                // style={{ y: yImage3 }}
               >
                 <img
                   src={retail3}
@@ -516,9 +517,12 @@ const RetailProgress = () => {
                 Whether you’re launching a flagship store or expanding a retail
                 chain, our destinations provide the platform for lasting growth.
               </p>
-              <button className="px-8 py-4 bg-white text-primary rounded-full text-lg font-bold hover:bg-blue-50 transition-colors duration-300 shadow-lg">
+              <Link
+                to={"/contact-us"}
+                className="px-8 py-4 bg-white text-primary rounded-full text-lg font-bold hover:bg-blue-50 transition-colors duration-300 shadow-lg"
+              >
                 Partner with Divine Group
-              </button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>

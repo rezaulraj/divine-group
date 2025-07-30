@@ -4,6 +4,7 @@ import urban_masterplan from "../../assets/portfolio/realstate/urban_masterplan.
 import commercial_residential from "../../assets/portfolio/realstate/commercial_residential.avif?url";
 import retail_facility from "../../assets/portfolio/realstate/retail_facility.avif?url";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Link } from "react-router-dom";
 const RealStateProgress = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -79,7 +80,7 @@ const RealStateProgress = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
-          transition={{ duration: 0.8, type: "spring" }}
+          transition={{ duration: 0.8 }}
           className="flex items-center justify-center relative p-3 mb-[15rem] sm:mb-[18rem] md:mb-[32rem] lg:mb-[40rem] p-4"
           style={{
             y: useTransform(scrollYProgress, [0, 0.5], [0, -50]),
@@ -161,9 +162,9 @@ const RealStateProgress = () => {
                 initial={{ scale: 0.8, opacity: 0, x: 100 }}
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.8, type: "spring" }}
+                transition={{ duration: 0.8 }}
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl relative"
-                style={{ y: yImage1 }}
+                // style={{ y: yImage1 }}
               >
                 <img
                   src={urban_masterplan}
@@ -255,9 +256,9 @@ const RealStateProgress = () => {
                 initial={{ scale: 0.8, opacity: 0, x: -100 }}
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.8, type: "spring" }}
+                transition={{ duration: 0.8 }}
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-2xl relative"
-                style={{ y: yImage2 }}
+                // style={{ y: yImage2 }}
               >
                 <motion.img
                   src={commercial_residential}
@@ -431,9 +432,9 @@ const RealStateProgress = () => {
                 initial={{ scale: 0.8, opacity: 0, x: 100 }}
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.8, type: "spring" }}
+                transition={{ duration: 0.8 }}
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl relative"
-                style={{ y: yImage3 }}
+                // style={{ y: yImage3 }}
               >
                 <img
                   src={retail_facility}
@@ -540,9 +541,12 @@ const RealStateProgress = () => {
                 expertise, and vision to deliver meaningful impact across every
                 dimension of real estate.
               </p>
-              <button className="px-8 py-4 bg-white text-blue-600 rounded-full text-lg font-bold hover:bg-blue-50 transition-colors duration-300 shadow-lg">
+              <Link
+                to={"/contact-us"}
+                className="px-8 py-4 bg-white text-blue-600 rounded-full text-lg font-bold hover:bg-blue-50 transition-colors duration-300 shadow-lg"
+              >
                 Contact Our Real Estate Team
-              </button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>

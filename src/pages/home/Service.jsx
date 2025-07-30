@@ -24,18 +24,22 @@ import service11 from "../../assets/impact/science.webp?url";
 import service12 from "../../assets/impact/retail-store.webp?url";
 
 const services = [
-  { image: service1, title: "Recruitment" },
-  { image: service2, title: "ICT" },
-  { image: service3, title: "Real Estate" },
-  { image: service4, title: "Hospitality" },
-  { image: service5, title: "Media" },
-  { image: service6, title: "Design" },
-  { image: service7, title: "Manufacturing & Logistics" },
-  { image: service8, title: "Education" },
-  { image: service9, title: "Tourism" },
-  { image: service10, title: "SMEs & Entrepreneurs" },
-  { image: service11, title: "Science" },
-  { image: service12, title: "Retail Store" },
+  { image: service1, title: "Recruitment", link: "/" },
+  {
+    image: service2,
+    title: "ICT",
+    link: "/information-communication-technology",
+  },
+  { image: service3, title: "Real Estate", link: "/real-estate" },
+  { image: service4, title: "Hospitality", link: "/hospitality" },
+  { image: service5, title: "Media", link: "/media" },
+  { image: service6, title: "Design", link: "/design" },
+  { image: service7, title: "Manufacturing & Logistics", link: "/manufacturing-and-logistics" },
+  { image: service8, title: "Education", link: "/education" },
+  { image: service9, title: "Tourism", link: "/tourism" },
+  { image: service10, title: "SMEs & Entrepreneurs", link: "/smes-and-entrepreneurship" },
+  { image: service11, title: "Science", link: "/science" },
+  { image: service12, title: "Retail Store", link: "/retail" },
 ];
 
 const Service = () => {

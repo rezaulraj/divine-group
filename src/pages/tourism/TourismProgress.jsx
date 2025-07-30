@@ -6,6 +6,7 @@ import trosium3 from "../../assets/portfolio/trosion/trosium3.avif?url";
 import trosium4 from "../../assets/portfolio/trosion/topimage4.avif?url";
 import trosium5 from "../../assets/portfolio/trosion/topimage5.avif?url";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const TourismProgress = () => {
   const containerRef = useRef(null);
@@ -87,7 +88,7 @@ const TourismProgress = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
-          transition={{ duration: 0.8, type: "spring" }}
+          transition={{ duration: 0.8 }}
           className="flex items-center justify-center relative p-3 mb-[15rem] sm:mb-[18rem] md:mb-[32rem] lg:mb-[40rem] p-4"
           style={{
             y: useTransform(scrollYProgress, [0, 0.5], [0, -50]),
@@ -148,9 +149,9 @@ const TourismProgress = () => {
                 initial={{ scale: 0.8, opacity: 0, x: 100 }}
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.8, type: "spring" }}
+                transition={{ duration: 0.8 }}
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl relative"
-                style={{ y: yImage1 }}
+                // style={{ y: yImage1 }}
               >
                 <img
                   src={trosium1}
@@ -242,9 +243,9 @@ const TourismProgress = () => {
                 initial={{ scale: 0.8, opacity: 0, x: -100 }}
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.8, type: "spring" }}
+                transition={{ duration: 0.8 }}
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-2xl relative"
-                style={{ y: yImage2 }}
+                // style={{ y: yImage2 }}
               >
                 <motion.img
                   src={trosium2}
@@ -396,9 +397,9 @@ const TourismProgress = () => {
                 initial={{ scale: 0.8, opacity: 0, x: 100 }}
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.8, type: "spring" }}
+                transition={{ duration: 0.8 }}
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl relative"
-                style={{ y: yImage3 }}
+                // style={{ y: yImage3 }}
               >
                 <img
                   src={trosium3}
@@ -490,9 +491,9 @@ const TourismProgress = () => {
                 initial={{ scale: 0.8, opacity: 0, x: -100 }}
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.8, type: "spring" }}
+                transition={{ duration: 0.8 }}
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl relative"
-                style={{ y: yImage4 }}
+                // style={{ y: yImage4 }}
               >
                 <img
                   src={trosium4}
@@ -641,9 +642,9 @@ const TourismProgress = () => {
                 initial={{ scale: 0.8, opacity: 0, x: 100 }}
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.8, type: "spring" }}
+                transition={{ duration: 0.8 }}
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl relative"
-                style={{ y: yImage5 }}
+                // style={{ y: yImage5 }}
               >
                 <img
                   src={trosium5}
@@ -735,9 +736,9 @@ const TourismProgress = () => {
                 initial={{ scale: 0.8, opacity: 0, x: -100 }}
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.8, type: "spring" }}
+                transition={{ duration: 0.8 }}
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl relative"
-                style={{ y: yImage6 }}
+                // style={{ y: yImage6 }}
               >
                 <img
                   src={trosium5}
@@ -871,9 +872,12 @@ const TourismProgress = () => {
                 cultural spectacles, Divine Group is redefining how the world
                 explores, engages, and experiences destinations.
               </p>
-              <button className="px-8 py-4 bg-white text-blue-600 rounded-full text-lg font-bold hover:bg-blue-50 transition-colors duration-300 shadow-lg">
+              <Link
+                to={"/contact-us"}
+                className="px-8 py-4 bg-white text-blue-600 rounded-full text-lg font-bold hover:bg-blue-50 transition-colors duration-300 shadow-lg"
+              >
                 Contact Us Today
-              </button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
@@ -881,7 +885,6 @@ const TourismProgress = () => {
     </div>
   );
 };
-
 
 const SectionWrapper = ({ children, reverse = false }) => {
   return (

@@ -40,10 +40,10 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="/timeline"
+                  href="/privacy-policy"
                   className="text-gray-200 hover:text-white transition-colors"
                 >
-                  Who We Are
+                  Privacy Policy
                 </a>
               </li>
               <li>
@@ -115,9 +115,11 @@ const Footer = () => {
             Rights Reserved.
           </p>
           <p className="text-gray-500 text-sm mt-4 md:mt-0">
-            Powered by{" "}
-            <a href="#" className="text-blue-400 hover:text-blue-300">
-              Divine Group
+            <a
+              href="/terms-and-conditions"
+              className="text-blue-400 hover:text-blue-300"
+            >
+              Terms And Conditions
             </a>
           </p>
         </div>
