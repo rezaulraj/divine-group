@@ -5,7 +5,6 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen overflow-hidden">
       <HeroContact />
-      <HeroContact />
     </div>
   );
 };

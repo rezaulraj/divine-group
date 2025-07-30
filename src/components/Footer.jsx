@@ -6,6 +6,7 @@ import {
   FaInstagram,
   FaLinkedin,
   FaYoutube,
+  FaPinterest,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -23,7 +24,7 @@ const Footer = () => {
             <ul className="space-y-3 flex flex-wrap gap-6">
               <li>
                 <a
-                  href="#"
+                  href="/about-us"
                   className="text-gray-200 hover:text-white transition-colors"
                 >
                   About Us
@@ -31,7 +32,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/"
                   className="text-gray-200 hover:text-white transition-colors"
                 >
                   Our Impact
@@ -39,7 +40,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/timeline"
                   className="text-gray-200 hover:text-white transition-colors"
                 >
                   Who We Are
@@ -47,7 +48,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/contact-us"
                   className="text-gray-200 hover:text-white transition-colors"
                 >
                   Contact Us
@@ -59,34 +60,47 @@ const Footer = () => {
           {/* Company */}
           <div className="flex space-x-4">
             <a
-              href="#"
+              href="https://www.facebook.com/divinegroup6061"
+              target="_blank"
               className="text-gray-200 hover:text-white transition-colors"
             >
-              <FaFacebook className="h-5 w-5" />
+              <FaFacebook className="h-8 w-8" />
             </a>
             <a
-              href="#"
+              href="https://x.com/DivineGroup817"
+              target="_blank"
               className="text-gray-200 hover:text-white transition-colors"
             >
-              <FaTwitter className="h-5 w-5" />
+              <FaTwitter className="h-8 w-8" />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/divinegroup20/"
+              target="_blank"
               className="text-gray-200 hover:text-white transition-colors"
             >
-              <FaInstagram className="h-5 w-5" />
+              <FaInstagram className="h-8 w-8" />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/company/106544941/admin/dashboard/"
+              target="_blank"
               className="text-gray-200 hover:text-white transition-colors"
             >
-              <FaLinkedin className="h-5 w-5" />
+              <FaLinkedin className="h-8 w-8" />
+            </a>
+
+            <a
+              href="https://www.youtube.com/@DivineGroup25"
+              target="_blank"
+              className="text-gray-200 hover:text-white transition-colors"
+            >
+              <FaYoutube className="h-8 w-8" />
             </a>
             <a
-              href="#"
+              href="https://www.pinterest.com/divinegroup25/"
+              target="_blank"
               className="text-gray-200 hover:text-white transition-colors"
             >
-              <FaYoutube className="h-5 w-5" />
+              <FaPinterest className="h-8 w-8" />
             </a>
           </div>
         </div>
