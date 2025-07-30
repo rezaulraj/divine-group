@@ -305,7 +305,7 @@ const Header = () => {
                 transition={{ duration: 0.5, delay: 0.3 }}
               />
 
-              <div className="flex items-center justify-between gap-10 w-full px-20">
+              <div className="flex items-center justify-around gap-10 w-full px-20">
                 {/* Left side - Navigation */}
                 <div className="flex flex-col gap-3">
                   {navItem.map((item, i) => (
