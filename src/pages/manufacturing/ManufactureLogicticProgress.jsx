@@ -80,7 +80,7 @@ const ManufactureLogicticProgress = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
-          transition={{ duration: 0.8, }}
+          transition={{ duration: 0.8 }}
           className="flex items-center justify-center relative p-3 mb-[15rem] sm:mb-[18rem] md:mb-[32rem] lg:mb-[40rem] p-4"
           style={{
             y: useTransform(scrollYProgress, [0, 0.5], [0, -50]),
@@ -111,7 +111,7 @@ const ManufactureLogicticProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -123,7 +123,7 @@ const ManufactureLogicticProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium text-justify"
               >
                 Divine Group plays a pivotal role in advancing industrial
                 development by providing high-performance infrastructure and
@@ -136,7 +136,7 @@ const ManufactureLogicticProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium text-justify"
               >
                 With direct access to ports, airports, and major transport
                 corridors, businesses can significantly reduce transit times and
@@ -148,7 +148,7 @@ const ManufactureLogicticProgress = () => {
                 initial={{ scale: 0.8, opacity: 0, x: 100 }}
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.8, }}
+                transition={{ duration: 0.8 }}
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl relative"
                 // style={{ y: yImage1 }}
               >
@@ -242,7 +242,7 @@ const ManufactureLogicticProgress = () => {
                 initial={{ scale: 0.8, opacity: 0, x: -100 }}
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.8, }}
+                transition={{ duration: 0.8 }}
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-2xl relative"
                 // style={{ y: yImage2 }}
               >
@@ -334,7 +334,7 @@ const ManufactureLogicticProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -346,7 +346,7 @@ const ManufactureLogicticProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium text-justify"
               >
                 Our industrial ecosystems cater to a wide range of sectors,
                 including food processing, automotive components, heavy
@@ -359,7 +359,7 @@ const ManufactureLogicticProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium text-justify"
               >
                 By offering flexible, ready-to-build environments and advanced
                 utilities, we enable both SMEs and large manufacturers to scale
@@ -376,7 +376,7 @@ const ManufactureLogicticProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -388,7 +388,7 @@ const ManufactureLogicticProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium text-justify"
               >
                 Divine Group is committed to creating an industrial environment
                 that not only drives economic growth but also promotes
@@ -401,7 +401,7 @@ const ManufactureLogicticProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium text-justify"
               >
                 Our goal is to ensure ease of doing business through supportive
                 policies, future-ready infrastructure, and collaborative
@@ -413,7 +413,7 @@ const ManufactureLogicticProgress = () => {
                 initial={{ scale: 0.8, opacity: 0, x: 100 }}
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
-                transition={{ duration: 0.8, }}
+                transition={{ duration: 0.8 }}
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl relative"
                 // style={{ y: yImage3 }}
               >

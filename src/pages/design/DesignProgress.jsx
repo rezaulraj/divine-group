@@ -108,7 +108,7 @@ const DesignProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -120,7 +120,7 @@ const DesignProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium text-justify"
               >
                 Divine Group is committed to advancing the global design
                 industry by developing a dedicated district where creativity
@@ -133,7 +133,7 @@ const DesignProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium text-justify"
               >
                 With cutting-edge infrastructure, flexible workspaces, and a
                 vibrant community of designers and professionals, our district
@@ -333,7 +333,7 @@ const DesignProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -345,7 +345,7 @@ const DesignProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium text-justify"
               >
                 Our creative district is more than just a workspace—it’s a
                 cultural platform for innovation, expression, and learning.
@@ -358,7 +358,7 @@ const DesignProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium text-justify"
               >
                 We bring together artists, designers, educators, and
                 changemakers in a space where inspiration and opportunity
@@ -380,7 +380,7 @@ const DesignProgress = () => {
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+              <h2 className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider">
                 Shape the Future of Design with Divine Group
               </h2>
               <p className="text-xl sm:text-2xl text-gray-200 mb-8">

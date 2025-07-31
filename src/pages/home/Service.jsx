@@ -34,10 +34,18 @@ const services = [
   { image: service4, title: "Hospitality", link: "/hospitality" },
   { image: service5, title: "Media", link: "/media" },
   { image: service6, title: "Design", link: "/design" },
-  { image: service7, title: "Manufacturing & Logistics", link: "/manufacturing-and-logistics" },
+  {
+    image: service7,
+    title: "Manufacturing & Logistics",
+    link: "/manufacturing-and-logistics",
+  },
   { image: service8, title: "Education", link: "/education" },
   { image: service9, title: "Tourism", link: "/tourism" },
-  { image: service10, title: "SMEs & Entrepreneurs", link: "/smes-and-entrepreneurship" },
+  {
+    image: service10,
+    title: "SMEs & Entrepreneurs",
+    link: "/smes-and-entrepreneurship",
+  },
   { image: service11, title: "Science", link: "/science" },
   { image: service12, title: "Retail Store", link: "/retail" },
 ];
@@ -185,7 +193,7 @@ const Service = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
-          transition={{ duration: 0.8, type: "spring" }}
+          transition={{ duration: 0.8 }}
           className="flex items-center justify-center relative p-3 mb-[15rem] sm:mb-[18rem] md:mb-[32rem] lg:mb-[40rem] p-4 z-20"
           style={{
             y: useTransform(scrollYProgress, [0, 0.5], [0, -50]),

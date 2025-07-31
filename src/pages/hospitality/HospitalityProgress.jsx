@@ -111,7 +111,7 @@ const HospitalityProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -123,7 +123,7 @@ const HospitalityProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium text-justify"
               >
                 Divine Group is redefining hospitality through world-class
                 developments, strategic partnerships, and decades of operational
@@ -137,7 +137,7 @@ const HospitalityProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium text-justify"
               >
                 We operate iconic properties across major global markets—ranging
                 from luxury urban hotels and beachfront resorts to
@@ -338,7 +338,7 @@ const HospitalityProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -350,7 +350,7 @@ const HospitalityProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium text-justify"
               >
                 Our hospitality approach extends beyond accommodation into food,
                 wellness, and immersive guest engagement. We manage a wide range
@@ -363,7 +363,7 @@ const HospitalityProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium text-justify"
               >
                 Wellness is also a key focus, with holistic spa services and
                 health treatments forming a core part of the guest experience.
@@ -381,7 +381,7 @@ const HospitalityProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -393,7 +393,7 @@ const HospitalityProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium text-justify"
               >
                 Divine Group offers unique nature-based tourism through
                 eco-conscious adventure retreats that blend leisure with
@@ -405,7 +405,7 @@ const HospitalityProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-lg sm:text-xl md:text-2xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium text-justify"
               >
                 Our growth is supported by global hospitality brand
                 partnerships, helping us scale, innovate, and push new standards
