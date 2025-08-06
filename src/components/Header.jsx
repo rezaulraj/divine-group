@@ -77,6 +77,8 @@ const navItem = [
       },
     ],
   },
+  { label: "Employer Services", path: "/employer-services" },
+  { label: "Strategic Partnership", path: "/strategic-partnership" },
   { label: "Contact Us", path: "/contact-us" },
 ];
 

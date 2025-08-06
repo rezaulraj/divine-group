@@ -19,6 +19,8 @@ import Retail from "./pages/retail/Retail";
 import ContactPage from "./pages/contact/ContactPage";
 import PrivacyPolicy from "./pages/privacy/PrivacyPolicy";
 import TermAndCondition from "./pages/termcondition/TermAndCondition";
+import Partnership from "./pages/partnership/Partnership";
+import EmployerService from "./pages/employer/EmployerService";
 function App() {
   return (
     <>
@@ -26,6 +28,8 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
+          <Route path="/strategic-partnership" element={<Partnership />} />
+          <Route path="/employer-services" element={<EmployerService />} />
           <Route path="/timeline" element={<TimeLine />} />
           <Route
             path="/information-communication-technology"
