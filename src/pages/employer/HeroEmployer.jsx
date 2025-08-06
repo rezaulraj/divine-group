@@ -15,9 +15,6 @@ const HeroEmployer = () => {
               Struggling to Find Quality Employees?
             </h1>
             <p className="text-4xl md:text-5xl font-bold mb-6">We Can Help!</p>
-            <button className="bg-primary hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
-              Get Started
-            </button>
           </div>
         </div>
       </div>

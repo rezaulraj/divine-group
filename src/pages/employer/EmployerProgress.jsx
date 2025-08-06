@@ -534,12 +534,9 @@ const EmployerProgress = () => {
                 Our recruitment experts are ready to help you build your perfect
                 team
               </p>
-              <Link
-                to={"/contact-us"}
-                className="px-8 py-4 bg-white text-blue-600 rounded-full text-lg font-bold hover:bg-blue-50 transition-colors duration-300 shadow-lg"
-              >
+              <button className="px-8 py-4 bg-white text-blue-600 rounded-full text-lg font-bold hover:bg-blue-50 transition-colors duration-300 shadow-lg">
                 Connect With Our Team
-              </Link>
+              </button>
             </motion.div>
           </motion.div>
         </div>
