@@ -16,7 +16,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-12">
           {/* Logo and Social Media */}
           <div className="space-y-6">
-            <img src={logo} alt="Company Logo" className="h-12 w-auto" />
+            <a href="/">
+              <img src={logo} alt="Company Logo" className="h-12 w-auto" />
+            </a>
           </div>
 
           {/* Quick Links */}
