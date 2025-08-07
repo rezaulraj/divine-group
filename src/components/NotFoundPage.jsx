@@ -28,7 +28,7 @@ const NotFoundPage = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          404
+          Current we Working On this page Please Another Time Vesit
         </motion.h1>
 
         <motion.h2
