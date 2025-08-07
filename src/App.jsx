@@ -22,9 +22,11 @@ import TermAndCondition from "./pages/termcondition/TermAndCondition";
 import Partnership from "./pages/partnership/Partnership";
 import EmployerService from "./pages/employer/EmployerService";
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import ScrollToTop from "./components/ScrollToTop";
 function App() {
   return (
     <>
+      <ScrollToTop />
       <ScrollToTopButton />
       <Routes>
         <Route path="/" element={<Layout />}>

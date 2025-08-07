@@ -139,7 +139,7 @@ const Header = () => {
       <AnimatePresence>
         {showIntro && (
           <motion.div
-            className="fixed inset-0 bg-primary z-[60] flex items-center justify-center"
+            className="fixed inset-0 bg-[#6BC04B] z-[60] flex items-center justify-center"
             initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -283,7 +283,7 @@ const Header = () => {
           <>
             {/* Background with bottom-left rounded animation */}
             <motion.div
-              className="fixed inset-0 bg-primary z-[64]"
+              className="fixed inset-0 bg-[#6BC04B] z-[64]"
               initial={{ clipPath: "circle(0% at right top)" }}
               animate={{ clipPath: "circle(150% at right top)" }}
               exit={{ clipPath: "circle(0% at right top)" }}
@@ -301,7 +301,7 @@ const Header = () => {
               <motion.img
                 src={logowhite}
                 alt="logowhite"
-                className="fixed top-2 right-10 h-16 mb-6"
+                className="fixed top-0 right-10 h-22 mb-6 bg-primary p-2 rounded-b-2xl"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
@@ -322,7 +322,7 @@ const Header = () => {
                     >
                       <a
                         href={item.path}
-                        className="text-gray-200 hover:text-gray-300 text-2xl md:text-4xl hover:translate-x-6 transition-transform duration-500 leading-tight uppercase font-bold relative z-10 flex items-center"
+                        className="text-gray-100 hover:text-gray-200 text-2xl md:text-4xl hover:translate-x-6 transition-transform duration-500 leading-tight uppercase font-raleway font-extrabold relative z-10 flex items-center"
                         onClick={() => {
                           setNavOpen(false);
                           setLogoVisible(true);
@@ -337,7 +337,7 @@ const Header = () => {
                             }}
                             transition={{ duration: 0.3 }}
                           >
-                            <FaArrowRight size={16} />
+                            <FaArrowRight size={22} />
                           </motion.span>
                         )}
                       </a>
@@ -345,7 +345,7 @@ const Header = () => {
                       {/* Subnav indicator */}
                       {hoveredNavItem === i && (
                         <motion.div
-                          className="absolute left-0 right-0 h-1 bg-white/30 bottom-0"
+                          className="absolute left-0 right-0 h-1 bg-white/50 bottom-0"
                           initial={{ width: 0 }}
                           animate={{ width: "100%" }}
                           transition={{ duration: 0.4, ease: "easeOut" }}
@@ -366,7 +366,7 @@ const Header = () => {
                             <a
                               key={subIndex}
                               href={subItem.path}
-                              className="text-white/80 hover:text-white text-xl font-medium transition-all duration-300 pl-4 py-1 border-l-2 border-white/20 hover:border-white/50 hover:pl-6"
+                              className="text-white/80 hover:text-white text-xl font-medium transition-all duration-300 pl-4 py-1 border-l-2 border-white/50 hover:border-white/70 hover:pl-6"
                               onClick={() => {
                                 setNavOpen(false);
                                 setLogoVisible(true);
@@ -400,7 +400,7 @@ const Header = () => {
                       ease: "linear",
                     }}
                     style={{
-                      background: `radial-gradient(transparent 40%, #712d8c 70%), 
+                      background: `radial-gradient(transparent 70%, #2d8c64 70%), 
                                   repeating-conic-gradient(from 0deg, 
                                     #ffffff 0deg 10deg, 
                                     transparent 10deg 20deg)`,
@@ -427,7 +427,7 @@ const Header = () => {
 
                   {/* Dashed Border for Loading Effect */}
                   <motion.div
-                    className="absolute inset-0 border-4 border-dashed border-white rounded-full opacity-30"
+                    className="absolute inset-0 border-4 border-dashed border-white rounded-full opacity-60"
                     animate={{
                       rotate: -360,
                     }}
