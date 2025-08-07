@@ -23,7 +23,7 @@ const NotFoundPage = () => {
         />
 
         <motion.h1
-          className="text-8xl font-bold mb-6"
+          className="text-5xl font-bold mb-6"
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
