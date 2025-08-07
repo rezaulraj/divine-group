@@ -21,9 +21,11 @@ import PrivacyPolicy from "./pages/privacy/PrivacyPolicy";
 import TermAndCondition from "./pages/termcondition/TermAndCondition";
 import Partnership from "./pages/partnership/Partnership";
 import EmployerService from "./pages/employer/EmployerService";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 function App() {
   return (
     <>
+      <ScrollToTopButton />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<HomePage />} />

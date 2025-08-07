@@ -63,7 +63,7 @@ const EmployeeContact = () => {
 
   return (
     <div
-      id="work-force"
+      id="employee-service"
       className="py-16 bg-gradient-to-b from-blue-50 to-gray-100"
     >
       <div className="container mx-auto px-4 max-w-6xl">

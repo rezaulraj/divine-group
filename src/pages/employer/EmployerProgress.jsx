@@ -534,7 +534,13 @@ const EmployerProgress = () => {
                 Our recruitment experts are ready to help you build your perfect
                 team
               </p>
-              <button className="px-8 py-4 bg-white text-blue-600 rounded-full text-lg font-bold hover:bg-blue-50 transition-colors duration-300 shadow-lg">
+              <button
+                onClick={() => {
+                  const section = document.querySelector("#employee-service");
+                  section?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="px-8 py-4 bg-white text-blue-600 rounded-full text-lg font-bold hover:bg-blue-50 transition-colors duration-300 shadow-lg cursor-pointer"
+              >
                 Connect With Our Team
               </button>
             </motion.div>
