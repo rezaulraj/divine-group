@@ -111,7 +111,7 @@ const MediaProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -123,7 +123,7 @@ const MediaProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Divine Group plays a leading role in empowering the global media
                 and entertainment industry through purpose-built infrastructure
@@ -136,7 +136,7 @@ const MediaProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 These zones host a thriving community of global media houses,
                 production studios, creative agencies, and startups. With
@@ -336,7 +336,7 @@ const MediaProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -348,7 +348,7 @@ const MediaProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 To foster the next generation of media innovation, Divine Group
                 has launched dedicated platforms that support creative
@@ -361,7 +361,7 @@ const MediaProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 By encouraging cross-sector collaboration and digital
                 experimentation, we create a fertile ground for future-forward
@@ -378,7 +378,7 @@ const MediaProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -390,7 +390,7 @@ const MediaProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Our media operations extend into large-scale broadcasting and
                 digital communication. We manage multiple radio stations and
@@ -402,7 +402,7 @@ const MediaProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Additionally, we offer a wide range of multimedia advertising
                 solutions—including branded content, out-of-home media, event

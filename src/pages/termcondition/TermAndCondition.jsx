@@ -16,7 +16,7 @@ import { MdGavel, MdPrivacyTip, MdSecurity } from "react-icons/md";
 
 const TermAndCondition = () => {
   return (
-    <div className="bg-gray-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gray-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8 font-bebasneue">
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-800 to-blue-600 p-8 text-white">

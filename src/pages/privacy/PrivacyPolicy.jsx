@@ -23,7 +23,7 @@ const PrivacyPolicy = () => {
           <div className="flex items-center">
             <FaShieldAlt className="text-4xl mr-4" />
             <div>
-              <h1 className="text-3xl font-bold">Privacy Policy</h1>
+              <h1 className="text-3xl font-bold font-bebasneue">Privacy Policy</h1>
               <p className="text-blue-100 mt-1">
                 Last updated: {new Date().toLocaleDateString()}
               </p>
@@ -32,16 +32,16 @@ const PrivacyPolicy = () => {
         </div>
 
         {/* Content */}
-        <div className="p-8">
+        <div className="p-8 font-raleway">
           {/* Introduction */}
           <div className="mb-12">
             <div className="flex items-start mb-6">
               <MdPrivacyTip className="text-2xl text-blue-600 mr-4 mt-1" />
               <div>
-                <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+                <h2 className="text-2xl font-semibold text-gray-800 mb-4 font-bebasneue">
                   Introduction
                 </h2>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 mb-4 font-raleway">
                   At Divine Group, we are committed to protecting your privacy
                   and handling your personal data with transparency and care.
                   This Privacy Notice ("Notice") outlines how Divine Group and

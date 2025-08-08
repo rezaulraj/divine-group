@@ -112,7 +112,7 @@ const EducationProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -124,7 +124,7 @@ const EducationProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Divine Group develops large-scale academic districts designed to
                 host global universities, training providers, and diverse
@@ -137,7 +137,7 @@ const EducationProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 By offering advanced infrastructure and integrated services, we
                 create an attractive environment for institutions looking to
@@ -336,7 +336,7 @@ const EducationProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -348,7 +348,7 @@ const EducationProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Our education hubs offer a wide range of academic programs—from
                 undergraduate degrees to postgraduate research and vocational
@@ -361,7 +361,7 @@ const EducationProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 This integration helps students gain practical experience and
                 enables institutions to align their curricula with real-world
@@ -379,7 +379,7 @@ const EducationProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -391,7 +391,7 @@ const EducationProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Beyond traditional academia, Divine Group operates talent
                 development centers focused on executive education, corporate
@@ -404,7 +404,7 @@ const EducationProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 By working with both public and private sector partners, we
                 ensure that organizations have access to future-ready talent
@@ -600,7 +600,7 @@ const EducationProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -612,7 +612,7 @@ const EducationProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 We support specialized academic ventures in fields such as
                 design, hospitality, and innovation—developed in partnership
@@ -625,7 +625,7 @@ const EducationProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Through strategic alliances, global events, and knowledge
                 exchange platforms, Divine Group is helping shape a globally

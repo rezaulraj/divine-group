@@ -119,7 +119,7 @@ const ScienceProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -131,7 +131,7 @@ const ScienceProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 We support innovation-driven growth by providing purpose-built
                 environments that empower businesses in science and technology
@@ -145,7 +145,7 @@ const ScienceProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Home to hundreds of companies and thousands of professionals,
                 this thriving business district plays a vital role in advancing
@@ -346,7 +346,7 @@ const ScienceProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -358,7 +358,7 @@ const ScienceProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Designed to meet the unique needs of science-based enterprises,
                 our ecosystem provides access to flexible office and laboratory
@@ -370,7 +370,7 @@ const ScienceProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 From startups and SMEs to multinational corporations, we offer
                 the tools and support businesses need to scale efficiently.
@@ -386,7 +386,7 @@ const ScienceProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -398,7 +398,7 @@ const ScienceProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 By bringing together entrepreneurs, researchers, investors, and
                 regulatory bodies in one cohesive space, we create opportunities
@@ -412,7 +412,7 @@ const ScienceProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Discover how our innovation-driven environment empowers
                 science-focused enterprises to thrive.

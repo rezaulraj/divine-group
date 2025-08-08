@@ -111,7 +111,7 @@ const RealStateProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -123,7 +123,7 @@ const RealStateProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 At Divine Group, we are reshaping regional landscapes through
                 strategic real estate investments and large-scale urban
@@ -136,7 +136,7 @@ const RealStateProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 We actively plan, design, and manage mixed-use developments that
                 integrate commercial, residential, hospitality, and retail
@@ -149,7 +149,7 @@ const RealStateProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 From waterfront residences and urban communities to cultural
                 hubs and retail centers, our master-planned developments serve
@@ -348,7 +348,7 @@ const RealStateProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -360,7 +360,7 @@ const RealStateProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Divine Group offers enterprise-ready leasing solutions through
                 business parks, office districts, and commercial zones tailored
@@ -373,7 +373,7 @@ const RealStateProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 In the residential space, we manage a wide range of
                 income-generating properties, including upscale housing, gated
@@ -393,7 +393,7 @@ const RealStateProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -405,7 +405,7 @@ const RealStateProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 To meet the demands of the evolving retail sector, Divine Group
                 develops lifestyle destinations and high-footfall mixed-use
@@ -417,7 +417,7 @@ const RealStateProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Beyond development, our specialized facilities and community
                 management division ensures the smooth day-to-day operation of

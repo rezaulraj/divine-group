@@ -184,7 +184,7 @@ const EmployerProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -196,7 +196,7 @@ const EmployerProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 From talent acquisition to workforce management, our services
                 are designed to help employers streamline hiring, reduce costs,
@@ -207,7 +207,7 @@ const EmployerProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 We understand the challenges of modern recruitment. Our
                 comprehensive solutions address pain points at every stage of
@@ -257,7 +257,7 @@ const EmployerProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -269,7 +269,7 @@ const EmployerProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 We don't believe in one-size-fits-all. Our recruitment services
                 are customized to meet your specific industry, skill, and
@@ -280,7 +280,7 @@ const EmployerProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Whether you need specialized tech talent, executive search, or
                 high-volume hiring, we adapt our approach to deliver candidates
@@ -297,7 +297,7 @@ const EmployerProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -309,7 +309,7 @@ const EmployerProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 From job posting to onboarding, we handle every stage of the
                 recruitment process, ensuring a smooth, compliant, and efficient
@@ -320,7 +320,7 @@ const EmployerProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Our full-cycle recruitment services include candidate sourcing,
                 screening, interview coordination, offer negotiation, and
@@ -370,7 +370,7 @@ const EmployerProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -382,7 +382,7 @@ const EmployerProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Access a talent pool of thoroughly vetted professionals, tested
                 for skills, attitude, and industry fit. Save time — hire with
@@ -393,7 +393,7 @@ const EmployerProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Our rigorous screening process includes technical assessments,
                 behavioral interviews, reference checks, and culture fit
@@ -410,7 +410,7 @@ const EmployerProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -422,7 +422,7 @@ const EmployerProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 We combine industry expertise, data-driven methods, and a
                 commitment to service excellence. Our track record speaks for
@@ -433,7 +433,7 @@ const EmployerProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 With an average placement retention rate of 92% and client
                 satisfaction scores consistently above 95%, we've earned our
@@ -482,7 +482,7 @@ const EmployerProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -494,7 +494,7 @@ const EmployerProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Whether you need local hires or international staffing
                 solutions, our network and infrastructure are built to scale
@@ -505,7 +505,7 @@ const EmployerProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 With offices in 12 countries and recruitment partners in 35+
                 markets, we can source talent wherever your business operates

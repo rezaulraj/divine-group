@@ -225,7 +225,7 @@ const Service = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wider"
+                className="text-white text-2xl font-bebasneue sm:text-3xl md:text-4xl lg:text-5xl font-bold "
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -237,7 +237,7 @@ const Service = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 We continue to play a vital role in driving economic
                 diversification across the region. With a portfolio spanning 10
@@ -458,7 +458,7 @@ const Service = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wider"
+                className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-bebasneue "
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -470,7 +470,7 @@ const Service = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Divine Group is shaping the future of global industries by
                 launching groundbreaking projects, premier destinations, and
@@ -488,7 +488,7 @@ const Service = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wider"
+                className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-bebasneue "
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -500,7 +500,7 @@ const Service = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium "
               >
                 In a rapidly evolving global economy, talent is more than just a
                 resource, it is the foundation of progress. At The Divine Group,
@@ -698,7 +698,7 @@ const Service = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wider"
+                className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-bebasneue "
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -710,7 +710,7 @@ const Service = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-2xl font-medium text-justify"
+                className="text-gray-100 text-2xl font-medium text-justify font-raleway italic"
               >
                 "Sustainability lies at the core of our strategy and
                 operations."
@@ -720,7 +720,7 @@ const Service = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 We are dedicated to creating long-term value for our
                 stakeholders while continuously improving our social and

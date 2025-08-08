@@ -107,7 +107,7 @@ const AboutUsProgress = () => {
               alt="Company Logo"
               className="h-24 sm:h-28 md:h-32 lg:h-44 mb-9 md:mb-12 lg:mb-16"
             />
-            <h2 className="text-[#0C3F75] text-3xl md:text-5xl lg:text-6xl font-bold mt-4">
+            <h2 className="text-[#0C3F75] text-3xl md:text-5xl lg:text-6xl font-bold mt-4 font-bebasneue uppercase">
               About Us
             </h2>
           </div>
@@ -123,7 +123,7 @@ const AboutUsProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wider"
+                className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-bebasneue"
               >
                 About Divine Group
               </motion.h1>
@@ -132,7 +132,7 @@ const AboutUsProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Divine Group has emerged as a powerful catalyst for
                 transformation and growth across the region boldly reshaping
@@ -147,7 +147,7 @@ const AboutUsProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 With a strong belief in innovation-led progress, we continue to
                 build a future where sustainable development, digital
@@ -160,7 +160,7 @@ const AboutUsProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Our portfolio spans sectors that matter ICT, Real Estate,
                 Hospitality, Media, Design, Manufacturing & Logistics,
@@ -356,7 +356,7 @@ const AboutUsProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wider"
+                className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-bebasneue"
               >
                 Our Legacy
               </motion.h1>
@@ -365,7 +365,7 @@ const AboutUsProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Today, Divine Group is proud to be home to over 350
                 professionals, managing assets worth more than million dolar,
@@ -383,7 +383,7 @@ const AboutUsProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wider"
+                className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-bebasneue"
               >
                 Our Mission
               </motion.h1>
@@ -392,7 +392,7 @@ const AboutUsProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 We exist to shape the future by investing in ventures that spark
                 progress, empower people, and drive sustainable economic growth.
@@ -402,7 +402,7 @@ const AboutUsProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Our goal is to become a leading regional force in innovation,
                 real estate, sustainability, and smart technology while
@@ -414,7 +414,7 @@ const AboutUsProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Every decision we make is guided by our responsibility to
                 communities, our passion for excellence, and our vision for
@@ -609,7 +609,7 @@ const AboutUsProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wider"
+                className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-bebasneue"
               >
                 Our Values
               </motion.h1>
@@ -631,7 +631,7 @@ const AboutUsProgress = () => {
                       onClick={() => toggleValue(index)}
                       className="w-full p-6 text-left flex gap-2 items-center"
                     >
-                      <h3 className="text-xl sm:text-2xl font-bold">
+                      <h3 className="text-xl sm:text-2xl font-bold font-bebasneue">
                         {value.title}
                       </h3>
                       <svg
@@ -661,7 +661,7 @@ const AboutUsProgress = () => {
                           transition={{ duration: 0.3, ease: "easeInOut" }}
                           className="overflow-hidden px-6 pb-6 pt-2"
                         >
-                          <ul className="space-y-3">
+                          <ul className="space-y-3 font-raleway">
                             {value.items.map((item, itemIndex) => (
                               <li key={itemIndex} className="flex items-start">
                                 <span className="mr-2 mt-1">✅</span>
@@ -688,10 +688,10 @@ const AboutUsProgress = () => {
                 transition={{ duration: 0.6 }}
                 className="space-y-3"
               >
-                <motion.h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wider">
+                <motion.h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-bebasneue">
                   Leadership Message
                 </motion.h1>
-                <motion.h2 className="text-gray-300 text-xl md:text-2xl lg:text-2xl font-bold leading-tight tracking-wider">
+                <motion.h2 className="text-gray-300 text-xl md:text-2xl lg:text-2xl font-bold font-bebasneue">
                   — Group Chief Executive Officer
                 </motion.h2>
               </motion.div>
@@ -700,7 +700,7 @@ const AboutUsProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 At Divine Group, we have always believed that true impact begins
                 with a bold idea, backed by strong values and executed with
@@ -713,7 +713,7 @@ const AboutUsProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 As we look to the future, our focus remains steadfast: building
                 industries that stand the test of time while embracing change
@@ -726,7 +726,7 @@ const AboutUsProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Our people are our greatest strength. Together, we will continue
                 to lead with vision, act with integrity, and deliver with
@@ -922,7 +922,7 @@ const AboutUsProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wider"
+                className="text-white sm:text-3xl md:text-3xl lg:text-5xl font-bold font-bebasneue"
               >
                 Organizational Identity
               </motion.h1>
@@ -931,7 +931,7 @@ const AboutUsProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 At Divine Group, our corporate culture is the foundation of
                 everything we do. It drives how we lead, innovate, and
@@ -950,7 +950,7 @@ const AboutUsProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Innovation is central to our business ethos. At Divine Group, we
                 don't just adapt to change, we lead it. Whether launching
@@ -964,7 +964,7 @@ const AboutUsProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 This passion for progress is coupled with a deep sense of
                 purpose. Beyond commercial goals, we are committed to creating
@@ -978,7 +978,7 @@ const AboutUsProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-gray-100 text-xl font-medium text-justify"
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 Ultimately, Divine Group's culture is what sets us apart in the
                 global marketplace. It connects our diverse portfolio,

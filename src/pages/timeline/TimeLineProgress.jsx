@@ -228,10 +228,10 @@ const TimeLineProgress = () => {
                         className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] relative z-20 lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl flex flex-col items-center justify-center bg-white"
                       >
                         <div className="text-center">
-                          <h3 className="text-blue-600 text-3xl font-bold mb-2">
+                          <h3 className="text-blue-600 text-3xl font-bold mb-2 font-bebasneue">
                             {item.title}
                           </h3>
-                          <p className="text-gray-700">{item.text}</p>
+                          <p className="text-gray-700 font-raleway">{item.text}</p>
                         </div>
                       </motion.div>
                     )}
@@ -253,10 +253,10 @@ const TimeLineProgress = () => {
                         className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] relative z-20 lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl bg-white flex flex-col items-center justify-center"
                       >
                         <div className="text-center flex flex-col items-center justify-center">
-                          <h3 className="text-blue-600 text-3xl font-bold mb-2">
+                          <h3 className="text-blue-600 text-3xl font-bold mb-2 font-bebasneue">
                             {item.title}
                           </h3>
-                          <p className="text-gray-700">{item.text}</p>
+                          <p className="text-gray-700 font-raleway">{item.text}</p>
                         </div>
                       </motion.div>
                     ) : (

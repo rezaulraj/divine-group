@@ -322,7 +322,7 @@ const Header = () => {
                     >
                       <a
                         href={item.path}
-                        className="text-gray-100 hover:text-gray-200 text-2xl md:text-4xl hover:translate-x-6 transition-transform duration-500 leading-tight uppercase font-raleway font-extrabold relative z-10 flex items-center"
+                        className="text-gray-100 hover:text-gray-200 text-2xl md:text-4xl hover:translate-x-6 transition-transform duration-500 leading-tight uppercase font-bebasneue font-extrabold relative z-10 flex items-center"
                         onClick={() => {
                           setNavOpen(false);
                           setLogoVisible(true);
@@ -366,7 +366,7 @@ const Header = () => {
                             <a
                               key={subIndex}
                               href={subItem.path}
-                              className="text-white/80 hover:text-white text-xl font-medium transition-all duration-300 pl-4 py-1 border-l-2 border-white/50 hover:border-white/70 hover:pl-6"
+                              className="text-white/80 hover:text-white text-xl font-bebasneue font-medium transition-all duration-300 pl-4 py-1 border-l-2 border-white/50 hover:border-white/70 hover:pl-6"
                               onClick={() => {
                                 setNavOpen(false);
                                 setLogoVisible(true);

@@ -192,14 +192,14 @@ const HeroHome = () => {
               <div className="text-white bg-primary/80 p-3 rounded-full mr-4">
                 {services[currentIndex].iconComponent}
               </div>
-              <h1 className="text-5xl font-bold text-white">
+              <h1 className="text-5xl font-bold font-bebasneue text-white">
                 {services[currentIndex].name}
               </h1>
             </div>
 
             {/* Positive tagline */}
             <p
-              className={`text-xl text-white mb-6 font-light italic transition-all duration-500 ease-out delay-100 ${
+              className={`text-xl text-white mb-6 font-light font-serif transition-all duration-500 ease-out delay-100 ${
                 animate
                   ? "translate-x-0 opacity-100"
                   : "-translate-x-10 opacity-0"
@@ -210,7 +210,7 @@ const HeroHome = () => {
 
             {/* Border-only button */}
             <button
-              className={`px-8 py-3 border-2 border-white text-white hover:bg-white/10 transition-all duration-500 ease-out delay-200 ${
+              className={`px-8 py-3 border-2 border-white font-raleway text-white hover:bg-white/10 transition-all duration-500 ease-out delay-200 ${
                 animate
                   ? "translate-x-0 opacity-100"
                   : "-translate-x-10 opacity-0"
@@ -218,7 +218,7 @@ const HeroHome = () => {
             >
               <a
                 href={services[currentIndex].link}
-                className="flex items-center"
+                className="flex items-center tracking-wider"
               >
                 Discover More
                 <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">

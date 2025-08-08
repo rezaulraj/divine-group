@@ -112,7 +112,7 @@ const HeroContact = () => {
             variants={fadeIn}
             className="bg-white rounded-xl shadow-lg p-8"
           >
-            <h2 className="text-3xl font-bold text-gray-800 mb-6">
+            <h2 className="text-3xl font-bold text-gray-800 mb-6 font-bebasneue">
               Get in Touch
             </h2>
             <form className="space-y-6" onSubmit={handleSubmit}>
@@ -208,7 +208,7 @@ const HeroContact = () => {
 
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center font-bebasneue">
                     <FaMapMarkerAlt className="mr-2 text-red-500" /> Workforce
                     Hub Location
                   </h3>
@@ -251,7 +251,7 @@ const HeroContact = () => {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center font-bebasneue">
                     <FaPhone className="mr-2 text-primary" /> Speak to a
                     Recruiter
                   </h3>
@@ -272,7 +272,7 @@ const HeroContact = () => {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center font-bebasneue">
                     <FaEnvelope className="mr-2 text-primary" /> Recruitment
                     Inbox
                   </h3>
