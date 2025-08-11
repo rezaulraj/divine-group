@@ -139,7 +139,7 @@ const Header = () => {
       <AnimatePresence>
         {showIntro && (
           <motion.div
-            className="fixed inset-0 bg-[#6BC04B] z-[60] flex items-center justify-center"
+            className="fixed inset-0 bg-primary z-[60] flex items-center justify-center"
             initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -283,7 +283,7 @@ const Header = () => {
           <>
             {/* Background with bottom-left rounded animation */}
             <motion.div
-              className="fixed inset-0 bg-[#6BC04B] z-[64]"
+              className="fixed inset-0 bg-primary z-[64]"
               initial={{ clipPath: "circle(0% at right top)" }}
               animate={{ clipPath: "circle(150% at right top)" }}
               exit={{ clipPath: "circle(0% at right top)" }}
@@ -409,7 +409,7 @@ const Header = () => {
 
                   {/* Continuous Border Animation */}
                   <motion.div
-                    className="absolute inset-0 border-4 border-white rounded-full"
+                    className="absolute inset-0 border-4 border-white/90 rounded-full"
                     style={{
                       borderImage:
                         "linear-gradient(90deg, transparent, white, transparent) 1",
@@ -427,7 +427,7 @@ const Header = () => {
 
                   {/* Dashed Border for Loading Effect */}
                   <motion.div
-                    className="absolute inset-0 border-4 border-dashed border-white rounded-full opacity-60"
+                    className="absolute inset-0 border-4 border-dashed border-white rounded-full opacity-40"
                     animate={{
                       rotate: -360,
                     }}

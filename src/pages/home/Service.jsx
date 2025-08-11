@@ -500,7 +500,7 @@ const Service = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-gray-100 text-xl font-medium "
+                className="text-gray-100 text-xl font-medium font-raleway"
               >
                 In a rapidly evolving global economy, talent is more than just a
                 resource, it is the foundation of progress. At The Divine Group,
