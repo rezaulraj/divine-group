@@ -25,6 +25,7 @@ const HeroContact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     company: "",
     message: "",
   });
@@ -45,6 +46,7 @@ const HeroContact = () => {
     if (
       formData.name &&
       formData.email &&
+      formData.phone &&
       formData.company &&
       formData.message
     ) {
@@ -58,6 +60,7 @@ const HeroContact = () => {
       setFormData({
         name: "",
         email: "",
+        phone: "",
         company: "",
         message: "",
       });
@@ -148,6 +151,23 @@ const HeroContact = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-all"
                   placeholder="your.email@example.com"
+                  required
+                />
+              </motion.div>
+              <motion.div variants={fadeIn}>
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-gray-700 mb-1 flex items-center"
+                >
+                  <FaPhone className="mr-2 text-primary" /> Phone
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-all"
+                  placeholder="+4533-434343"
                   required
                 />
               </motion.div>
