@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa";
 
 const EmployeeService = () => {
+  const [showCalendly, setShowCalendly] = useState(false);
   const [showGetStarted, setShowGetStarted] = useState(false);
   const [showAdvisor, setShowAdvisor] = useState(false);
   const [formData, setFormData] = useState({

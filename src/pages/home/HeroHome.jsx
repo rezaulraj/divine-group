@@ -192,14 +192,14 @@ const HeroHome = () => {
               <div className="text-white bg-primary/80 p-3 rounded-full mr-4">
                 {services[currentIndex].iconComponent}
               </div>
-              <h1 className="text-3xl md:text-5xl font-bold font-bebasneue text-white">
+              <h1 className="text-3xl md:text-5xl font-bold font-bebasneue text-white/80">
                 {services[currentIndex].name}
               </h1>
             </div>
 
             {/* Positive tagline */}
             <p
-              className={`text-sm md:text-xl text-white mb-6 font-light font-serif transition-all duration-500 ease-out delay-100 ${
+              className={`text-sm md:text-xl text-white mb-6 font-light font-raleway italic transition-all duration-500 ease-out delay-100 ${
                 animate
                   ? "translate-x-0 opacity-100"
                   : "-translate-x-10 opacity-0"

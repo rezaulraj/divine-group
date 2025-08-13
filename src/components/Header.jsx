@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "/logo-blue.png?url";
-import logowhite from "/logo-white.png?url";
+import logowhite from "/divinelogo.png?url";
 import clineLogo1 from "../assets/cliend/cl1.png?url";
 import clineLogo2 from "../assets/cliend/cl2.png?url";
 import clineLogo3 from "../assets/cliend/cl3.png?url";
@@ -156,7 +156,7 @@ const Header = () => {
                 y: [0, 0, -window.innerHeight / 2 + 50],
               }}
               transition={{ duration: 2, ease: "easeInOut" }}
-              className="h-8 md:h-16 fixed z-[70]"
+              className="h-8 md:h-22 fixed z-[70]"
             />
           </motion.div>
         )}
@@ -186,7 +186,7 @@ const Header = () => {
             <motion.img
               src={logowhite}
               alt="Logo"
-              className="h-10 sm:h-14 md:h-24 bg-primary p-1 pb-2 shadow-2xl md:p-3 rounded-bl-xl rounded-br-xl md:rounded-bl-2xl md:rounded-br-2xl"
+              className="h-10 sm:h-14 md:h-28 bg-primary p-1 pb-2 shadow-2xl md:p-3 rounded-bl-xl rounded-br-xl md:rounded-bl-2xl md:rounded-br-2xl"
             />
           </motion.a>
         )}
@@ -252,21 +252,21 @@ const Header = () => {
                 <g transform="translate(0 -8)">
                   <line
                     x2="37.291"
-                    stroke="#0C3F75"
+                    stroke="#0A1F44"
                     strokeWidth="5"
                     strokeLinecap="round"
                   />
                   <path
                     d="M0,0H37.291"
                     transform="translate(0 10.659)"
-                    stroke="#0C3F75"
+                    stroke="#0A1F44"
                     strokeWidth="5"
                     strokeLinecap="round"
                   />
                   <path
                     d="M0,0H37.291"
                     transform="translate(0 21.319)"
-                    stroke="#0C3F75"
+                    stroke="#0A1F44"
                     strokeWidth="5"
                     strokeLinecap="round"
                   />
@@ -301,7 +301,7 @@ const Header = () => {
               <motion.img
                 src={logowhite}
                 alt="logowhite"
-                className="fixed top-0 right-10 h-22 mb-6 bg-primary p-2 rounded-b-2xl"
+                className="fixed top-0 right-10 h-28 mb-6 bg-primary p-2 rounded-b-2xl"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
@@ -322,7 +322,7 @@ const Header = () => {
                     >
                       <a
                         href={item.path}
-                        className="text-gray-100 hover:text-gray-200 text-2xl md:text-4xl hover:translate-x-6 transition-transform duration-500 leading-tight uppercase font-bebasneue font-extrabold relative z-10 flex items-center"
+                        className="text-gray-100/80 hover:text-gray-200 text-2xl md:text-4xl hover:translate-x-6 transition-transform duration-500 leading-tight uppercase font-bebasneue font-extrabold relative z-10 flex items-center"
                         onClick={() => {
                           setNavOpen(false);
                           setLogoVisible(true);

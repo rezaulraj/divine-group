@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "/logo-white.png";
+import logo from "/divinelogo.png";
 import {
   FaFacebook,
   FaTwitter,
@@ -11,13 +11,13 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0C3F75] text-white pt-16 pb-8 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-primary text-white pt-16 pb-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-12">
           {/* Logo and Social Media */}
           <div className="space-y-6">
             <a href="/">
-              <img src={logo} alt="Company Logo" className="h-12 w-auto" />
+              <img src={logo} alt="Company Logo" className="h-24 w-auto" />
             </a>
           </div>
 
