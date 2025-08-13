@@ -7,9 +7,12 @@ import {
   FaBuilding,
   FaUser,
   FaPaperPlane,
+  FaCalendarAlt,
 } from "react-icons/fa";
+import CalendlyPopup from "../../components/CalendlyPopup";
 
 const HeroContact = () => {
+  const [showCalendly, setShowCalendly] = useState(false);
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -303,6 +306,25 @@ const HeroContact = () => {
                     contact@thedivinegroup.eu
                   </a>
                 </div>
+                {/* New Book a Call Section */}
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center font-bebasneue">
+                    <FaCalendarAlt className="mr-2 text-blue-500" /> Schedule a
+                    Call
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    Book a convenient time to speak with our recruitment team
+                  </p>
+                  <motion.button
+                    onClick={() => setShowCalendly(true)}
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-lg transition-all flex items-center justify-center w-full md:w-auto cursor-pointer"
+                  >
+                    <FaCalendarAlt className="mr-2" />
+                    Book a Call Now
+                  </motion.button>
+                </div>
               </div>
             </div>
 
@@ -321,6 +343,10 @@ const HeroContact = () => {
           </motion.div>
         </motion.div>
       </div>
+      <CalendlyPopup
+        show={showCalendly}
+        onClose={() => setShowCalendly(false)}
+      />
     </div>
   );
 };

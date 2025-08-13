@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import topIct from "../../assets/portfolio/ict/ict.webp?url";
 import ictGobal from "../../assets/portfolio/ict/ictgrobal.jpg?url";
 import busnessIct from "../../assets/portfolio/ict/busnessinvo.jpg?url";
@@ -95,7 +95,7 @@ const InfoComTechProgress = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
-          transition={{ duration: 0.8, }}
+          transition={{ duration: 0.8 }}
           className="flex items-center justify-center relative p-3 mb-[15rem] sm:mb-[18rem] md:mb-[32rem] lg:mb-[40rem] p-4"
           style={{
             y: useTransform(scrollYProgress, [0, 0.5], [0, -50]),

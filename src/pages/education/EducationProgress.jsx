@@ -658,7 +658,7 @@ const EducationProgress = () => {
                 to={"/contact-us"}
                 className="px-8 py-4 bg-white text-blue-600 rounded-full text-lg font-bold hover:bg-blue-50 transition-colors duration-300 shadow-lg"
               >
-                Partner with Us
+                Become an Agent
               </Link>
             </motion.div>
           </motion.div>
