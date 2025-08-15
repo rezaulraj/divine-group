@@ -13,14 +13,14 @@ import {
   FaFlask, // Science
   FaLightbulb, // Entrepreneurs
 } from "react-icons/fa";
-import service1 from "../../assets/impact/recuitment.webp?url";
-import service2 from "../../assets/impact/ict.webp?url";
-import service3 from "../../assets/impact/real-state.webp?url";
+import service1 from "../../assets/impact/recuitment.png?url";
+import service2 from "../../assets/impact/ict.png?url";
+import service3 from "../../assets/impact/real-state.jpg?url";
 import service4 from "../../assets/impact/hospitality.webp?url";
 import service5 from "../../assets/impact/media-scaled.webp?url";
 import service6 from "../../assets/impact/design.webp?url";
 import service7 from "../../assets/impact/manufacturing-logistics-scaled.webp?url";
-import service8 from "../../assets/impact/education.webp?url";
+import service8 from "../../assets/impact/education.png?url";
 import service9 from "../../assets/impact/tourism.webp?url";
 import service10 from "../../assets/impact/smes-entrepreneurs.webp?url";
 import service11 from "../../assets/impact/science.webp?url";
@@ -37,7 +37,7 @@ const services = [
   },
   {
     id: 2,
-    name: "ICT",
+    name: "ICT Recruitment",
     icon: service2,
     iconComponent: <FaLaptopCode className="text-3xl" />,
     tagline: "Innovative solutions for the digital age",

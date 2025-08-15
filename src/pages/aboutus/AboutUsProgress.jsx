@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import logo from "/logo-blue.png";
-import divineGroup from "../../assets/impact/recuitment.webp?url";
+import divineGroup from "../../assets/impact/recuitment.png?url";
 import mission from "../../assets/about/mission.avif?url";
 import value from "../../assets/about/value.avif?url";
 import {

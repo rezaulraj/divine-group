@@ -1,5 +1,5 @@
 import React from "react";
-import reatState from "../../assets/impact/real-state.webp?url";
+import reatState from "../../assets/impact/real-state.jpg?url";
 const HeroRealState = () => {
   return (
     <div

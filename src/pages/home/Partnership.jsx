@@ -82,7 +82,7 @@ const Partnership = () => {
       {/* Header Section */}
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          <span className="text-blue-600">Elevate Together</span> Through
+          <span className="text-primary">Elevate Together</span> Through
           Partnership
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -110,7 +110,7 @@ const Partnership = () => {
       </div>
 
       {/* Divine Group Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl overflow-hidden mb-16">
+      <div className="bg-gradient-to-r from-primary to-primary/90 rounded-2xl overflow-hidden mb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="p-12 lg:p-16">
             <h2 className="text-3xl font-bold text-white mb-4">
@@ -220,16 +220,16 @@ const Partnership = () => {
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <button
             onClick={() => setShowPartnerForm(true)}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+            className="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
           >
             Become a Partner
           </button>
-          <button
-            onClick={() => setShowContactForm(true)}
-            className="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+          <a
+            href="/contact"
+            className="bg-white border-2 border-primary text-primary hover:bg-blue-50 font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 cursor-pointer"
           >
             Contact Our Team
-          </button>
+          </a>
         </div>
       </div>
       {showPartnerForm && (

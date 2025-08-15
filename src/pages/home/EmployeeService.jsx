@@ -83,7 +83,6 @@ const EmployeeService = () => {
     },
   ];
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -145,18 +144,18 @@ const EmployeeService = () => {
       animate="visible"
       variants={containerVariants}
     >
-      {/* Header Section */}
       <motion.div className="text-center mb-16" variants={itemVariants}>
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Elevate Your <span className="text-primary">Career Potential</span>
+          Unlock Your Potential with{" "}
+          <span className="text-primary">Employee Services</span>
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Our comprehensive services are designed to empower your professional
-          journey at every stage.
+          Your career journey matters. Explore tailored programs, skill-building
+          workshops, and career coaching—all crafted to elevate your
+          professional path.
         </p>
       </motion.div>
 
-      {/* Services Grid */}
       <motion.div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20"
         variants={containerVariants}
@@ -189,7 +188,6 @@ const EmployeeService = () => {
         ))}
       </motion.div>
 
-      {/* Stats Section */}
       <motion.div
         className="bg-primary rounded-xl p-8 mb-16"
         variants={itemVariants}
@@ -218,7 +216,6 @@ const EmployeeService = () => {
         </div>
       </motion.div>
 
-      {/* Testimonial Section */}
       <motion.div
         className="bg-white rounded-xl shadow-md p-10 mb-16"
         variants={itemVariants}
@@ -232,7 +229,7 @@ const EmployeeService = () => {
             "
           </motion.div>
           <blockquote className="text-xl md:text-2xl text-gray-700 mb-6 font-medium">
-            Partnering with this team revolutionized our hiring process. We
+            Working with Divine Group team revolutionized our hiring process. We
             filled three critical leadership roles in half the usual time with
             candidates who exceeded our expectations.
           </blockquote>
@@ -251,7 +248,6 @@ const EmployeeService = () => {
         </div>
       </motion.div>
 
-      {/* Call to Action */}
       <motion.div
         className="text-center bg-gradient-to-r from-primary to-primary/80 rounded-xl p-12"
         variants={itemVariants}
@@ -283,7 +279,7 @@ const EmployeeService = () => {
           </motion.button>
         </div>
       </motion.div>
-      {/* Get Started Today Modal */}
+
       <AnimatePresence>
         {showGetStarted && (
           <motion.div
@@ -397,7 +393,7 @@ const EmployeeService = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      {/* Speak to an Advisor Modal */}
+
       <AnimatePresence>
         {showAdvisor && (
           <motion.div

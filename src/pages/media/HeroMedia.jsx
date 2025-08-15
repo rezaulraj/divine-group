@@ -1,5 +1,5 @@
 import React from "react";
-import heroMedia from "../../assets/impact/media-scaled.webp?url"
+import heroMedia from "../../assets/impact/recuitment.png?url"
 const HeroMedia = () => {
   return (
     <div

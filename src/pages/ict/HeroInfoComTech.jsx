@@ -1,5 +1,5 @@
 import React from "react";
-import ictImage from "../../assets/impact/ict.webp?url";
+import ictImage from "../../assets/impact/ict.png?url";
 const HeroInfoComTech = () => {
   return (
     <div

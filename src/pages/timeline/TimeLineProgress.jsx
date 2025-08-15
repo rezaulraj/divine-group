@@ -1,14 +1,14 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import timeline from "../../assets/timeline/timeline.avif";
-import timeLine1 from "../../assets/impact/recuitment.webp";
-import timeLine2 from "../../assets/impact/ict.webp";
-import timeLine3 from "../../assets/impact/real-state.webp";
+import timeLine1 from "../../assets/impact/recuitment.png";
+import timeLine2 from "../../assets/impact/ict.png";
+import timeLine3 from "../../assets/impact/real-state.jpg";
 import timeLine4 from "../../assets/impact/hospitality.webp";
 import timeLine5 from "../../assets/impact/media-scaled.webp";
 import timeLine6 from "../../assets/impact/design.webp";
 import timeLine7 from "../../assets/impact/manufacturing-logistics-scaled.webp";
-import timeLine8 from "../../assets/impact/education.webp";
+import timeLine8 from "../../assets/impact/education.png";
 import timeLine9 from "../../assets/impact/tourism.webp";
 import timeLine10 from "../../assets/impact/smes-entrepreneurs.webp";
 import timeLine11 from "../../assets/impact/science.webp";

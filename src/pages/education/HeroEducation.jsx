@@ -1,5 +1,5 @@
 import React from "react";
-import heroEducation from "../../assets/impact/education.webp?url";
+import heroEducation from "../../assets/impact/education.png?url";
 const HeroEducation = () => {
   return (
     <div

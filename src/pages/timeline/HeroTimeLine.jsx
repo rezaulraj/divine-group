@@ -1,5 +1,5 @@
 import React from "react";
-import heroTimeline from "../../assets/impact/recuitment.webp";
+import heroTimeline from "../../assets/impact/recuitment.png";
 import timeline from "../../assets/timeline/timeline.png";
 
 const HeroTimeLine = () => {
