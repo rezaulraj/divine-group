@@ -10,7 +10,7 @@ import {
   FaTimes,
   FaPhoneAlt,
 } from "react-icons/fa";
-
+import CalendlyPopup from "../../components/CalendlyPopup";
 const EmployeeService = () => {
   const [showCalendly, setShowCalendly] = useState(false);
   const [showGetStarted, setShowGetStarted] = useState(false);
@@ -263,15 +263,15 @@ const EmployeeService = () => {
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <motion.button
             onClick={() => setShowGetStarted(true)}
-            className="bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg shadow-lg"
+            className="bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg shadow-lg cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             Get Started Today
           </motion.button>
           <motion.button
-            onClick={() => setShowAdvisor(true)}
-            className="bg-transparent border-2 border-white text-white hover:bg-blue-600 font-bold py-3 px-8 rounded-full text-lg"
+            onClick={() => setShowCalendly(true)}
+            className="bg-transparent border-2 border-white text-white hover:bg-blue-600 font-bold py-3 px-8 rounded-full text-lg cursor-pointer"
             whileHover={{ scale: 1.05, backgroundColor: "#2563eb" }}
             whileTap={{ scale: 0.95 }}
           >
@@ -381,9 +381,18 @@ const EmployeeService = () => {
                       <option value="other">Other</option>
                     </select>
                   </div>
+                  <div className="mb-6">
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Your Message
+                    </label>
+                    <textarea className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" />
+                  </div>
                   <button
                     type="submit"
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 cursor-pointer"
                   >
                     Begin Your Journey
                   </button>
@@ -394,7 +403,7 @@ const EmployeeService = () => {
         )}
       </AnimatePresence>
 
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {showAdvisor && (
           <motion.div
             className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
@@ -566,7 +575,11 @@ const EmployeeService = () => {
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
+      <CalendlyPopup
+        show={showCalendly}
+        onClose={() => setShowCalendly(false)}
+      />
     </motion.div>
   );
 };

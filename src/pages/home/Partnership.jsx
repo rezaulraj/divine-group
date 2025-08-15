@@ -225,7 +225,7 @@ const Partnership = () => {
             Become a Partner
           </button>
           <a
-            href="/contact"
+            href="/contact-us"
             className="bg-white border-2 border-primary text-primary hover:bg-blue-50 font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 cursor-pointer"
           >
             Contact Our Team

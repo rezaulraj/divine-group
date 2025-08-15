@@ -73,7 +73,7 @@ const CalendlyPopup = ({ show, onClose }) => {
               {/* Loader */}
               {loading && (
                 <div className="flex-1 flex items-center justify-center">
-                  <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-[#e60c30] border-opacity-75"></div>
+                  <div className="animate-spin rounded-full h-22 w-22 border-t-4 border-primary border-opacity-75"></div>
                 </div>
               )}
 
