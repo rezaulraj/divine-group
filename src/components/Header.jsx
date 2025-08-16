@@ -152,8 +152,8 @@ const Header = () => {
               animate={{
                 scale: [3, 2.5, 1],
                 opacity: [0, 0.5, 1],
-                x: [0, 0, window.innerWidth / 2 - 140],
-                y: [0, 0, -window.innerHeight / 2 + 50],
+                x: [0, 0, window.innerWidth / 2 - 110],
+                y: [0, 0, -window.innerHeight / 2 + 40],
               }}
               transition={{ duration: 2, ease: "easeInOut" }}
               className="h-8 md:h-22 fixed z-[70]"
@@ -186,7 +186,7 @@ const Header = () => {
             <motion.img
               src={logowhite}
               alt="Logo"
-              className="h-10 sm:h-14 md:h-28 bg-primary p-1 pb-2 shadow-2xl md:p-3 rounded-bl-xl rounded-br-xl md:rounded-bl-2xl md:rounded-br-2xl"
+              className="h-16 sm:h-18 md:h-28 bg-primary p-1 pb-2 shadow-2xl md:p-3 rounded-bl-xl rounded-br-xl md:rounded-bl-2xl md:rounded-br-2xl"
             />
           </motion.a>
         )}

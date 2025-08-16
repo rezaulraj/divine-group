@@ -9,12 +9,16 @@ import {
   FaHandsHelping,
   FaTimes,
   FaPhoneAlt,
+  FaTools,
+  FaHardHat,
+  FaTruck,
+  FaIndustry,
 } from "react-icons/fa";
 import CalendlyPopup from "../../components/CalendlyPopup";
+
 const EmployeeService = () => {
   const [showCalendly, setShowCalendly] = useState(false);
   const [showGetStarted, setShowGetStarted] = useState(false);
-  const [showAdvisor, setShowAdvisor] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -34,7 +38,6 @@ const EmployeeService = () => {
     e.preventDefault();
     console.log("Form submitted:", formData);
     setShowGetStarted(false);
-    setShowAdvisor(false);
     alert("Thank you for your submission! We will contact you shortly.");
     setFormData({
       name: "",
@@ -80,6 +83,64 @@ const EmployeeService = () => {
       title: "Ongoing Support",
       description:
         "Continued career development support to ensure your long-term success.",
+    },
+  ];
+
+  const blueCollarServices = [
+    {
+      icon: <FaHardHat className="w-8 h-8 text-primary" />,
+      title: "Construction & Trades",
+      description: "Skilled labor placements for all construction specialties",
+    },
+    {
+      icon: <FaTools className="w-8 h-8 text-primary" />,
+      title: "Manufacturing",
+      description: "Reliable workers for factories and production lines",
+    },
+    {
+      icon: <FaTruck className="w-8 h-8 text-primary" />,
+      title: "Transport & Logistics",
+      description: "Qualified drivers and warehouse staff",
+    },
+    {
+      icon: <FaIndustry className="w-8 h-8 text-primary" />,
+      title: "Industrial Services",
+      description: "Technicians and maintenance professionals",
+    },
+  ];
+
+  const testimonials = [
+    {
+      quote:
+        "After struggling to find steady work, Divine Group placed me in a great welding position within a week. The team really understands blue-collar workers.",
+      name: "Miguel Rodriguez",
+      role: "Certified Welder",
+      image: "https://randomuser.me/api/portraits/men/32.jpg",
+      industry: "Construction",
+    },
+    {
+      quote:
+        "I've worked with 3 agencies before, but none took the time to understand my skills like Divine Group. They found me a forklift job with better pay than I expected!",
+      name: "James Wilson",
+      role: "Forklift Operator",
+      image: "https://randomuser.me/api/portraits/men/44.jpg",
+      industry: "Warehousing",
+    },
+    {
+      quote:
+        "As a single mom, I needed flexible hours. Divine Group listened and found me a perfect assembly line position with childcare-friendly shifts.",
+      name: "Tasha Johnson",
+      role: "Assembly Technician",
+      image: "https://randomuser.me/api/portraits/women/63.jpg",
+      industry: "Manufacturing",
+    },
+    {
+      quote:
+        "After my layoff, I thought I'd be unemployed for months. Divine Group had me working at a great plumbing company in just 10 days!",
+      name: "Carlos Mendez",
+      role: "Journeyman Plumber",
+      image: "https://randomuser.me/api/portraits/men/75.jpg",
+      industry: "Skilled Trades",
     },
   ];
 
@@ -145,56 +206,146 @@ const EmployeeService = () => {
       variants={containerVariants}
     >
       <motion.div className="text-center mb-16" variants={itemVariants}>
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Unlock Your Potential with{" "}
-          <span className="text-primary">Employee Services</span>
+        <h1 className="text-4xl md:text-5xl max-w-2xl mx-auto font-bold text-gray-900 mb-4">
+          Your Dream Career Starts with{" "}
+          <span className="text-primary">Divine Group</span>
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Your career journey matters. Explore tailored programs, skill-building
-          workshops, and career coaching—all crafted to elevate your
-          professional path.
+          Whether you're looking for your first job or your next big
+          opportunity, we connect talented workers with great employers across
+          all industries.
         </p>
       </motion.div>
 
-      <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20"
-        variants={containerVariants}
-      >
-        {services.map((service, index) => (
-          <motion.div
-            key={index}
-            className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100"
-            variants={itemVariants}
-            whileHover={cardHover}
-            initial="hidden"
-            animate="visible"
-          >
-            <div className="p-8">
-              <div className="flex items-center mb-6">
-                <motion.div
-                  className="p-3 bg-blue-50 rounded-lg mr-4"
-                  whileHover={{ rotate: 10 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  {service.icon}
-                </motion.div>
-                <h3 className="text-2xl font-semibold text-gray-800">
-                  {service.title}
-                </h3>
-              </div>
-              <p className="text-gray-600 pl-14">{service.description}</p>
-            </div>
-          </motion.div>
-        ))}
+      {/* Why Choose Us Section */}
+      <motion.div className="mb-20" variants={itemVariants}>
+        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+          Why Job Seekers Choose Our Agency
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            {
+              title: "Industry Connections",
+              description:
+                "We work with hundreds of employers who trust us to find quality candidates",
+              icon: "🤝",
+            },
+            {
+              title: "No Cost to You",
+              description:
+                "Our services are completely free for job seekers - employers pay our fees",
+              icon: "💰",
+            },
+            {
+              title: "Career Advocates",
+              description:
+                "We negotiate on your behalf for better pay and benefits",
+              icon: "🛡️",
+            },
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              className="bg-white p-8 rounded-xl shadow-md border border-gray-100 text-center"
+              whileHover={cardHover}
+            >
+              <span className="text-4xl mb-4 block">{item.icon}</span>
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">
+                {item.title}
+              </h3>
+              <p className="text-gray-600">{item.description}</p>
+            </motion.div>
+          ))}
+        </div>
       </motion.div>
 
+      {/* All Services */}
+      <motion.div className="mb-20" variants={itemVariants}>
+        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+          Comprehensive Career Services
+        </h2>
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={containerVariants}
+        >
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100"
+              variants={itemVariants}
+              whileHover={cardHover}
+            >
+              <div className="p-8">
+                <div className="flex items-center mb-6">
+                  <motion.div
+                    className="p-3 bg-blue-50 rounded-lg mr-4"
+                    whileHover={{ rotate: 10 }}
+                  >
+                    {service.icon}
+                  </motion.div>
+                  <h3 className="text-2xl font-semibold text-gray-800">
+                    {service.title}
+                  </h3>
+                </div>
+                <p className="text-gray-600 pl-14">{service.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.div>
+
+      {/* Blue Collar Specialization */}
+      <motion.div className="mb-20" variants={itemVariants}>
+        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+          Specialized Blue Collar Placement
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {blueCollarServices.map((service, index) => (
+            <motion.div
+              key={index}
+              className="bg-white p-6 rounded-xl shadow-md border border-gray-100 text-center"
+              whileHover={cardHover}
+            >
+              <div className="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                {service.icon}
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">
+                {service.title}
+              </h3>
+              <p className="text-gray-600">{service.description}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* <motion.div
+          className="bg-blue-800 text-white p-8 rounded-xl"
+          whileHover={{ scale: 1.01 }}
+        >
+          <div className="max-w-4xl mx-auto text-center">
+            <h3 className="text-2xl font-bold mb-4">
+              We Understand Skilled Labor
+            </h3>
+            <p className="text-lg mb-6">
+              Unlike general staffing agencies, we specialize in placing skilled
+              tradespeople, industrial workers, and manual laborers. Our
+              recruiters speak your language and know what employers really
+              want.
+            </p>
+            <motion.button
+              onClick={() => setShowGetStarted(true)}
+              className="bg-white text-blue-800 hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg shadow-lg"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Register Your Skills
+            </motion.button>
+          </div>
+        </motion.div> */}
+      </motion.div>
+
+      {/* Success Stats */}
       <motion.div
         className="bg-primary rounded-xl p-8 mb-16"
         variants={itemVariants}
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: 20 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
       >
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           {[
@@ -207,7 +358,6 @@ const EmployeeService = () => {
               key={index}
               className="p-4"
               whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400 }}
             >
               <p className="text-4xl font-bold text-white mb-2">{stat.value}</p>
               <p className="text-blue-100">{stat.label}</p>
@@ -216,54 +366,60 @@ const EmployeeService = () => {
         </div>
       </motion.div>
 
-      <motion.div
-        className="bg-white rounded-xl shadow-md p-10 mb-16"
-        variants={itemVariants}
-      >
-        <div className="text-center max-w-4xl mx-auto">
-          <motion.div
-            className="text-primary text-6xl mb-4"
-            animate={{ rotate: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 5 }}
-          >
-            "
-          </motion.div>
-          <blockquote className="text-xl md:text-2xl text-gray-700 mb-6 font-medium">
-            Working with Divine Group team revolutionized our hiring process. We
-            filled three critical leadership roles in half the usual time with
-            candidates who exceeded our expectations.
-          </blockquote>
-          <div className="flex items-center justify-center">
-            <motion.img
-              src="https://randomuser.me/api/portraits/women/44.jpg"
-              alt="Sarah Johnson"
-              className="w-12 h-12 rounded-full mr-4 object-cover"
-              whileHover={{ scale: 1.1 }}
-            />
-            <div>
-              <p className="font-semibold text-gray-800">Sarah Johnson</p>
-              <p className="text-gray-600">Marketing Director at Ted</p>
-            </div>
-          </div>
+      {/* Testimonials */}
+      <motion.div className="mb-20" variants={itemVariants}>
+        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+          Success Stories From Our Candidates
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={index}
+              className="bg-white rounded-xl shadow-md p-8 border border-gray-100"
+              whileHover={cardHover}
+            >
+              <div className="flex items-start mb-6">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="w-14 h-14 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 className="text-xl font-semibold text-gray-800">
+                    {testimonial.name}
+                  </h4>
+                  <p className="text-gray-600">{testimonial.role}</p>
+                  <span className="inline-block mt-1 px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
+                    {testimonial.industry}
+                  </span>
+                </div>
+              </div>
+              <blockquote className="text-gray-700 italic pl-2 border-l-4 border-primary">
+                "{testimonial.quote}"
+              </blockquote>
+            </motion.div>
+          ))}
         </div>
       </motion.div>
 
+      {/* CTA Section */}
       <motion.div
-        className="text-center bg-gradient-to-r from-primary to-primary/80 rounded-xl p-12"
+        className="text-center bg-gradient-to-r from-primary to-blue-600 rounded-xl p-12"
         variants={itemVariants}
         whileHover={{ scale: 1.01 }}
       >
         <h2 className="text-3xl font-bold text-white mb-6">
-          Ready to unlock your career potential?
+          Ready for a Better Job?
         </h2>
         <p className="text-blue-100 text-xl mb-8 max-w-2xl mx-auto">
-          Join thousands of professionals who have accelerated their careers
-          with our expert guidance.
+          Join thousands of workers who found better opportunities through our
+          network.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <motion.button
             onClick={() => setShowGetStarted(true)}
-            className="bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg shadow-lg cursor-pointer"
+            className="bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg shadow-lg"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -271,15 +427,15 @@ const EmployeeService = () => {
           </motion.button>
           <motion.button
             onClick={() => setShowCalendly(true)}
-            className="bg-transparent border-2 border-white text-white hover:bg-blue-600 font-bold py-3 px-8 rounded-full text-lg cursor-pointer"
-            whileHover={{ scale: 1.05, backgroundColor: "#2563eb" }}
-            whileTap={{ scale: 0.95 }}
+            className="bg-transparent border-2 border-white text-white hover:bg-blue-700 font-bold py-3 px-8 rounded-full text-lg"
+            whileHover={{ scale: 1.05 }}
           >
-            Speak to an Advisor
+            Speak to a Recruiter
           </motion.button>
         </div>
       </motion.div>
 
+      {/* Get Started Modal */}
       <AnimatePresence>
         {showGetStarted && (
           <motion.div
@@ -296,7 +452,7 @@ const EmployeeService = () => {
               <div className="p-8">
                 <div className="flex justify-between items-center mb-6">
                   <h3 className="text-2xl font-bold text-gray-900">
-                    Get Started Today
+                    Start Your Job Search
                   </h3>
                   <motion.button
                     onClick={() => setShowGetStarted(false)}
@@ -309,15 +465,11 @@ const EmployeeService = () => {
 
                 <form onSubmit={handleSubmit}>
                   <div className="mb-6">
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
                       Full Name*
                     </label>
                     <input
                       type="text"
-                      id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
@@ -326,15 +478,11 @@ const EmployeeService = () => {
                     />
                   </div>
                   <div className="mb-6">
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
                       Email*
                     </label>
                     <input
                       type="email"
-                      id="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
@@ -343,30 +491,23 @@ const EmployeeService = () => {
                     />
                   </div>
                   <div className="mb-6">
-                    <label
-                      htmlFor="phone"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      Phone Number
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Phone Number*
                     </label>
                     <input
                       type="tel"
-                      id="phone"
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
+                      required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                     />
                   </div>
                   <div className="mb-6">
-                    <label
-                      htmlFor="interest"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      Service Interest*
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      What type of work are you looking for?*
                     </label>
                     <select
-                      id="interest"
                       name="interest"
                       value={formData.interest}
                       onChange={handleChange}
@@ -374,27 +515,27 @@ const EmployeeService = () => {
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                     >
                       <option value="">Select an option</option>
-                      <option value="placement">Job Placement</option>
-                      <option value="resume">Resume Help</option>
-                      <option value="interview">Interview Prep</option>
-                      <option value="career">Career Coaching</option>
+                      <option value="construction">Construction/Trades</option>
+                      <option value="manufacturing">Manufacturing</option>
+                      <option value="warehouse">Warehouse/Logistics</option>
+                      <option value="general">General Labor</option>
                       <option value="other">Other</option>
                     </select>
                   </div>
                   <div className="mb-6">
-                    <label
-                      htmlFor="phone"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      Your Message
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Tell us about your experience
                     </label>
-                    <textarea className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" />
+                    <textarea
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                      rows="3"
+                    />
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 cursor-pointer"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300"
                   >
-                    Begin Your Journey
+                    Submit Application
                   </button>
                 </form>
               </div>
@@ -403,179 +544,6 @@ const EmployeeService = () => {
         )}
       </AnimatePresence>
 
-      {/* <AnimatePresence>
-        {showAdvisor && (
-          <motion.div
-            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
-            variants={modalOverlay}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-          >
-            <motion.div
-              className="bg-white rounded-xl max-w-xl w-full"
-              variants={modalContent}
-            >
-              <div className="p-8">
-                <div className="flex justify-between items-center mb-6">
-                  <h3 className="text-2xl font-bold text-gray-900 flex items-center">
-                    <motion.span
-                      animate={{ rotate: [0, -10, 0] }}
-                      transition={{ repeat: Infinity, duration: 3 }}
-                    >
-                      <FaUserTie className="mr-2 text-blue-600" />
-                    </motion.span>
-                    Speak to an Advisor
-                  </h3>
-                  <motion.button
-                    onClick={() => setShowAdvisor(false)}
-                    className="text-gray-400 hover:text-gray-600"
-                    whileHover={{ rotate: 90 }}
-                  >
-                    <FaTimes className="w-6 h-6" />
-                  </motion.button>
-                </div>
-                <div className="mb-8 bg-blue-50 p-6 rounded-lg">
-                  <h4 className="text-lg font-semibold text-blue-800 mb-3">
-                    Why speak with an advisor?
-                  </h4>
-                  <ul className="space-y-2 text-blue-700">
-                    <li className="flex items-start">
-                      <svg
-                        className="w-5 h-5 mt-0.5 mr-2 text-blue-600 flex-shrink-0"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M5 13l4 4L19 7"
-                        ></path>
-                      </svg>
-                      <span>Personalized career strategy</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg
-                        className="w-5 h-5 mt-0.5 mr-2 text-blue-600 flex-shrink-0"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M5 13l4 4L19 7"
-                        ></path>
-                      </svg>
-                      <span>Industry-specific insights</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg
-                        className="w-5 h-5 mt-0.5 mr-2 text-blue-600 flex-shrink-0"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M5 13l4 4L19 7"
-                        ></path>
-                      </svg>
-                      <span>Salary negotiation advice</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <form onSubmit={handleSubmit}>
-                  <div className="flex items-center w-full gap-2">
-                    <div className="mb-6 w-full">
-                      <label
-                        htmlFor="advisor-name"
-                        className="block text-sm font-medium text-gray-700 mb-1"
-                      >
-                        Full Name*
-                      </label>
-                      <input
-                        type="text"
-                        id="advisor-name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
-                      />
-                    </div>
-                    <div className="mb-6 w-full">
-                      <label
-                        htmlFor="advisor-email"
-                        className="block text-sm font-medium text-gray-700 mb-1"
-                      >
-                        Email*
-                      </label>
-                      <input
-                        type="email"
-                        id="advisor-email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
-                      />
-                    </div>
-                  </div>
-                  <div className="mb-6">
-                    <label
-                      htmlFor="advisor-phone"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      Phone Number*
-                    </label>
-                    <input
-                      type="tel"
-                      id="advisor-phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
-                    />
-                  </div>
-                  <div className="mb-6">
-                    <label
-                      htmlFor="availability"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      Best Time to Call
-                    </label>
-                    <select
-                      id="availability"
-                      name="availability"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
-                    >
-                      <option value="">Any time</option>
-                      <option value="morning">Morning (9am-12pm)</option>
-                      <option value="afternoon">Afternoon (12pm-5pm)</option>
-                      <option value="evening">Evening (5pm-8pm)</option>
-                    </select>
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 flex items-center justify-center"
-                  >
-                    <FaPhoneAlt className="mr-2" />
-                    Request Call Back
-                  </button>
-                </form>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence> */}
       <CalendlyPopup
         show={showCalendly}
         onClose={() => setShowCalendly(false)}

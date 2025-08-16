@@ -21,7 +21,7 @@ import service8 from "../../assets/impact/education.png?url";
 import service9 from "../../assets/impact/tourism.webp?url";
 import service10 from "../../assets/impact/smes-entrepreneurs.webp?url";
 import service11 from "../../assets/impact/science.webp?url";
-import service12 from "../../assets/impact/retail-store.webp?url";
+import service12 from "../../assets/impact/retail.avif?url";
 
 const services = [
   { image: service1, title: "Recruitment", link: "/" },
@@ -57,7 +57,6 @@ const Service = () => {
     offset: ["start end", "end start"],
   });
 
-  // Enhanced gradient background with more color stops
   const backgroundColor = useTransform(
     scrollYProgress,
     [0, 0.2, 0.4, 0.6, 0.8, 1],
@@ -71,7 +70,6 @@ const Service = () => {
     ]
   );
 
-  // Parallax effects for images
   const yImage1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const yImage2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
   const yImage3 = useTransform(scrollYProgress, [0, 1], [0, -200]);

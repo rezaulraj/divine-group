@@ -12,18 +12,17 @@ const RetailProgress = () => {
     offset: ["start end", "end start"],
   });
 
-  // Enhanced gradient background with more color stops
   const backgroundColor = useTransform(
     scrollYProgress,
     [0, 0.17, 0.34, 0.51, 0.68, 0.85, 1],
     [
-      "linear-gradient(135deg, #6e45e2 0%, #88d3ce 100%)", // Purple/teal
-      "linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)", // Bright blue
-      "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)", // Green gradient
-      "linear-gradient(135deg, #f46b45 0%, #eea849 100%)", // Orange/yellow
-      "linear-gradient(135deg, #ee0979 0%, #ff6a00 100%)", // Pink/orange
-      "linear-gradient(135deg, #7b4397 0%, #dc2430 100%)", // Purple/red
-      "linear-gradient(135deg, #43cea2 0%, #185a9d 100%)", // Teal/blue
+      "linear-gradient(135deg, #6e45e2 0%, #88d3ce 100%)",
+      "linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)",
+      "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
+      "linear-gradient(135deg, #f46b45 0%, #eea849 100%)",
+      "linear-gradient(135deg, #ee0979 0%, #ff6a00 100%)",
+      "linear-gradient(135deg, #7b4397 0%, #dc2430 100%)",
+      "linear-gradient(135deg, #43cea2 0%, #185a9d 100%)",
     ]
   );
 
