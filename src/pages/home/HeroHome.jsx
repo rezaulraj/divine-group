@@ -31,7 +31,7 @@ import service12 from "../../assets/impact/retail.avif?url";
 const services = [
   {
     id: 1,
-    name: "Recruitment",
+    name: "Recruitment Services",
     icon: service1,
     iconComponent: <FaUserTie className="text-3xl" />,
     tagline: "Connecting talent with opportunity",
@@ -287,7 +287,7 @@ const HeroHome = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-50">
+      {/* <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {services.map((_, index) => (
           <button
             key={index}
@@ -297,7 +297,7 @@ const HeroHome = () => {
             }`}
           />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
