@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   FaUserTie,
   FaLaptopCode,
@@ -13,12 +15,11 @@ import {
   FaFlask,
   FaLightbulb,
 } from "react-icons/fa";
-import { motion, AnimatePresence } from "framer-motion";
 import service1 from "../../assets/impact/recuitment.png?url";
 import service2 from "../../assets/impact/ict.png?url";
 import service3 from "../../assets/impact/real-state.jpg?url";
 import service4 from "../../assets/impact/hospitality.webp?url";
-import service5 from "../../assets/impact/media-scaled.webp?url";
+import service5 from "../../assets/impact/recuitment.png?url";
 import service6 from "../../assets/impact/design.webp?url";
 import service7 from "../../assets/impact/manufacturing-logistics-scaled.webp?url";
 import service8 from "../../assets/impact/education.png?url";
@@ -125,335 +126,177 @@ const services = [
     link: "/retail",
   },
 ];
-const HeroHome = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [nextIndex, setNextIndex] = useState(1);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [direction, setDirection] = useState(1); // 1 for forward, -1 for backward
-  const [isHovering, setIsHovering] = useState(false);
-  const timeoutRef = useRef(null);
 
-  const resetTimeout = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-  };
+const HeroHome = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    resetTimeout();
-    timeoutRef.current = setTimeout(
-      () => {
-        goToNext();
-      },
-      isHovering ? 10000 : 6000
-    );
+    const interval = setInterval(() => {
+      if (!isHovered) {
+        setActiveIndex((prev) => (prev + 1) % services.length);
+      }
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [services.length, isHovered]);
 
-    return () => {
-      resetTimeout();
-    };
-  }, [currentIndex, isHovering]);
+  const getCardPosition = (index) => {
+    const total = services.length;
+    const relativeIndex = (index - activeIndex + total) % total;
 
-  const goToNext = () => {
-    if (isAnimating) return;
-    setDirection(1);
-    const newIndex =
-      currentIndex === services.length - 1 ? 0 : currentIndex + 1;
-    setNextIndex(newIndex);
-    setIsAnimating(true);
-    setTimeout(() => {
-      setCurrentIndex(newIndex);
-      setIsAnimating(false);
-    }, 1000);
-  };
-
-  const goToPrev = () => {
-    if (isAnimating) return;
-    setDirection(-1);
-    const newIndex =
-      currentIndex === 0 ? services.length - 1 : currentIndex - 1;
-    setNextIndex(newIndex);
-    setIsAnimating(true);
-    setTimeout(() => {
-      setCurrentIndex(newIndex);
-      setIsAnimating(false);
-    }, 1000);
-  };
-
-  const handleDotClick = (index) => {
-    if (isAnimating || index === currentIndex) return;
-    setDirection(index > currentIndex ? 1 : -1);
-    setNextIndex(index);
-    setIsAnimating(true);
-    setTimeout(() => {
-      setCurrentIndex(index);
-      setIsAnimating(false);
-    }, 1000);
-    resetTimeout();
-  };
-
-  // Page flip animation variants
-  const pageVariants = {
-    enter: (direction) => ({
-      rotateY: direction > 0 ? 90 : -90,
-      x: direction > 0 ? "100%" : "-100%",
-      opacity: 0,
-      zIndex: 1,
-    }),
-    center: {
-      rotateY: 0,
-      x: "0%",
-      opacity: 1,
-      zIndex: 2,
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 30,
-      },
-    },
-    exit: (direction) => ({
-      rotateY: direction < 0 ? 90 : -90,
-      x: direction < 0 ? "100%" : "-100%",
-      opacity: 0,
-      zIndex: 1,
-      transition: {
-        duration: 0.7,
-      },
-    }),
-  };
-
-  // Background flip animation
-  const bgVariants = {
-    enter: (direction) => ({
-      rotateY: direction > 0 ? 15 : -15,
-      scale: 0.95,
-      opacity: 0,
-    }),
-    center: {
-      rotateY: 0,
-      scale: 1,
-      opacity: 1,
-      transition: {
-        duration: 1,
-        ease: "easeInOut",
-      },
-    },
-    exit: (direction) => ({
-      rotateY: direction < 0 ? 15 : -15,
-      scale: 0.95,
-      opacity: 0,
-      transition: {
-        duration: 1,
-        ease: "easeInOut",
-      },
-    }),
-  };
-
-  // Content animation variants
-  const contentVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.1 + 0.5,
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    }),
+    if (relativeIndex === total - 1)
+      return { x: -180, z: 0, scale: 0.8, opacity: 0.7 };
+    if (relativeIndex === 0) return { x: 0, z: 50, scale: 1, opacity: 1 };
+    if (relativeIndex === 1) return { x: 180, z: 0, scale: 0.8, opacity: 0.7 };
+    return { x: 0, z: -100, scale: 0, opacity: 0 };
   };
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
-      {/* Background images with book flip effect */}
-      <div className="absolute inset-0 perspective-1000">
-        <AnimatePresence custom={direction}>
-          {isAnimating && (
-            <motion.div
-              key={`next-${nextIndex}`}
-              className="absolute inset-0 bg-cover bg-center origin-center"
-              style={{
-                backgroundImage: `url(${services[nextIndex].icon})`,
-              }}
-              custom={direction}
-              variants={bgVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-            />
-          )}
+    <div className="relative w-full min-h-screen flex flex-col md:flex-row overflow-hidden shadow-lg">
+      <div
+        className="absolute inset-0 bg-black/60 z-0"
+        style={{
+          backgroundImage: `url(${services[activeIndex].icon})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          transition: "background-image 0.5s ease",
+        }}
+      />
+      <div className="absolute inset-0 bg-black/50"></div>
+
+      <div className="relative z-10 w-full md:w-1/2 flex flex-col justify-center px-6 md:px-10 py-10 text-white">
+        <div className="flex items-center mb-4">
+          <div className="text-white bg-[#0A1F44]/70 p-3 rounded-full mr-4">
+            {services[activeIndex].iconComponent}
+          </div>
+          <h3 className="text-lg font-semibold">Our Services</h3>
+        </div>
+        <AnimatePresence mode="wait">
           <motion.div
-            key={`current-${currentIndex}`}
-            className="absolute inset-0 bg-cover bg-center origin-center"
-            style={{
-              backgroundImage: `url(${services[currentIndex].icon})`,
-            }}
-            custom={direction}
-            variants={bgVariants}
-            initial="center"
-            animate={isAnimating ? "exit" : "center"}
-          />
+            key={services[activeIndex].id}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              {services[activeIndex].name}
+            </h2>
+            <p className="mb-6 text-gray-200 italic">
+              "{services[activeIndex].tagline}"
+            </p>
+            <Link
+              to={services[activeIndex].link}
+              className="inline-block bg-[#0A1F44] text-white px-5 py-2 rounded-full shadow hover:bg-gray-200 transition"
+            >
+              Discover More →
+            </Link>
+          </motion.div>
         </AnimatePresence>
       </div>
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/60 to-transparent flex items-center">
-        <div className="container mx-auto px-6 z-10">
-          <div className="max-w-2xl overflow-hidden perspective-1000">
-            <AnimatePresence custom={direction} mode="wait">
+      <div className="relative z-10 w-full md:w-1/2 flex items-center justify-center overflow-visible">
+        <div
+          className="relative h-[400px] w-full flex items-center justify-center"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          {services.map((service, index) => {
+            const position = getCardPosition(index);
+
+            return (
               <motion.div
-                key={currentIndex}
-                className="w-full origin-left"
-                custom={direction}
-                variants={pageVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
+                key={service.id}
+                className={`absolute cursor-pointer rounded-xl overflow-hidden shadow-lg`}
+                initial={false}
+                animate={{
+                  x: position.x,
+                  zIndex: index === activeIndex ? 50 : position.z,
+                  scale: position.scale,
+                  opacity: position.opacity,
+                }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                onClick={() => setActiveIndex(index)}
+                style={{
+                  width: 260,
+                  height: 320,
+                  backgroundImage: `url(${service.icon})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
               >
-                {/* Navigation arrows */}
-                <div className="absolute -left-20 top-1/2 transform -translate-y-1/2 z-10">
-                  <motion.button
-                    onClick={goToPrev}
-                    className="p-2 text-white/70 hover:text-white"
-                    whileHover={{ scale: 1.2 }}
-                    whileTap={{ scale: 0.9 }}
+                <div className="w-full h-full bg-black/40 flex items-end p-4">
+                  <motion.p
+                    className="text-white text-sm font-medium"
+                    animate={{
+                      opacity: position.scale === 1 ? 1 : 0.7,
+                      fontSize: position.scale === 1 ? "1rem" : "0.875rem",
+                    }}
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M15 18l-6-6 6-6" />
-                    </svg>
-                  </motion.button>
+                    {service.name}
+                  </motion.p>
                 </div>
-                <div className="absolute -right-20 top-1/2 transform -translate-y-1/2 z-10">
-                  <motion.button
-                    onClick={goToNext}
-                    className="p-2 text-white/70 hover:text-white"
-                    whileHover={{ scale: 1.2 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M9 18l6-6-6-6" />
-                    </svg>
-                  </motion.button>
-                </div>
-
-                {/* Icon and heading */}
-                <motion.div
-                  className="flex items-center mb-4"
-                  variants={contentVariants}
-                  custom={0}
-                >
-                  <motion.div
-                    className="text-white bg-primary/80 p-3 rounded-full mr-4"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {services[currentIndex].iconComponent}
-                  </motion.div>
-                  <motion.h1
-                    className="text-3xl md:text-5xl font-bold font-bebasneue text-white/80"
-                    variants={contentVariants}
-                    custom={1}
-                  >
-                    {services[currentIndex].name}
-                  </motion.h1>
-                </motion.div>
-
-                {/* Positive tagline */}
-                <motion.p
-                  className="text-sm md:text-xl text-white mb-6 font-light font-raleway italic"
-                  variants={contentVariants}
-                  custom={2}
-                >
-                  "{services[currentIndex].tagline}"
-                </motion.p>
-
-                {/* Border-only button */}
-                <motion.button
-                  className="px-8 py-3 border-2 border-white font-raleway text-white hover:bg-white/10"
-                  variants={contentVariants}
-                  custom={3}
-                  whileHover={{
-                    scale: 1.05,
-                    backgroundColor: "rgba(255, 255, 255, 0.1)",
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <a
-                    href={services[currentIndex].link}
-                    className="flex items-center tracking-wider"
-                  >
-                    Discover More
-                    <motion.span
-                      className="ml-2"
-                      animate={{ x: [0, 5, 0] }}
-                      transition={{
-                        repeat: Infinity,
-                        duration: 1.5,
-                        ease: "easeInOut",
-                      }}
-                    >
-                      →
-                    </motion.span>
-                  </a>
-                </motion.button>
               </motion.div>
-            </AnimatePresence>
-          </div>
+            );
+          })}
+
+          <button
+            className="absolute left-4 z-60 cursor-pointer bg-white/30 hover:bg-white/50 rounded-full p-2 backdrop-blur-sm"
+            onClick={() =>
+              setActiveIndex(
+                (prev) => (prev - 1 + services.length) % services.length
+              )
+            }
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <button
+            className="absolute right-4 cursor-pointer z-60 bg-white/30 hover:bg-white/50 rounded-full p-2 backdrop-blur-sm"
+            onClick={() =>
+              setActiveIndex((prev) => (prev + 1) % services.length)
+            }
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
         </div>
       </div>
 
-      {/* Right side vertical navigation */}
-      <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20">
-        <div className="flex flex-col space-y-4">
-          {services.map((_, index) => (
-            <motion.button
-              key={index}
-              onClick={() => handleDotClick(index)}
-              onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => setIsHovering(false)}
-              className="relative group focus:outline-none"
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <div
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex
-                    ? "bg-primary scale-125"
-                    : "bg-white/60"
-                }`}
-              />
-              {index === currentIndex && (
-                <motion.div
-                  className="absolute left-6 top-1/2 transform -translate-y-1/2 bg-black/70 text-white text-xs px-2 py-1 rounded whitespace-nowrap"
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -10 }}
-                >
-                  {services[index].name}
-                </motion.div>
-              )}
-            </motion.button>
-          ))}
-        </div>
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-50">
+        {services.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setActiveIndex(index)}
+            className={`w-3 h-3 rounded-full transition-colors ${
+              index === activeIndex ? "bg-white" : "bg-white/50"
+            }`}
+          />
+        ))}
       </div>
     </div>
   );
