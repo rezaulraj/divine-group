@@ -207,15 +207,24 @@ const HeroHome = () => {
             return (
               <motion.div
                 key={service.id}
-                className={`absolute cursor-pointer rounded-xl overflow-hidden shadow-lg`}
+                className={`absolute cursor-pointer rounded-xl overflow-hidden shadow-2xl`}
                 initial={false}
                 animate={{
                   x: position.x,
                   zIndex: index === activeIndex ? 50 : position.z,
                   scale: position.scale,
                   opacity: position.opacity,
+                  filter:
+                    index === activeIndex
+                      ? "drop-shadow(0 25px 25px rgba(0, 0, 0, 0.5))"
+                      : "drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3))",
                 }}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 30,
+                  filter: { duration: 0.3 },
+                }}
                 onClick={() => setActiveIndex(index)}
                 style={{
                   width: 260,
@@ -223,6 +232,10 @@ const HeroHome = () => {
                   backgroundImage: `url(${service.icon})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
+                  boxShadow:
+                    index === activeIndex
+                      ? "0 25px 50px -12px rgba(0, 0, 0, 0.5)"
+                      : "0 20px 25px -5px rgba(0, 0, 0, 0.3)",
                 }}
               >
                 <div className="w-full h-full bg-black/40 flex items-end p-4">
@@ -239,51 +252,52 @@ const HeroHome = () => {
               </motion.div>
             );
           })}
-
-          <button
-            className="absolute left-4 z-60 cursor-pointer bg-white/30 hover:bg-white/50 rounded-full p-2 backdrop-blur-sm"
-            onClick={() =>
-              setActiveIndex(
-                (prev) => (prev - 1 + services.length) % services.length
-              )
-            }
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+          <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 flex space-x-4">
+            <button
+              className="cursor-pointer bg-white/30 hover:bg-white/50 rounded-full p-2 backdrop-blur-sm"
+              onClick={() =>
+                setActiveIndex(
+                  (prev) => (prev - 1 + services.length) % services.length
+                )
+              }
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-          <button
-            className="absolute right-4 cursor-pointer z-60 bg-white/30 hover:bg-white/50 rounded-full p-2 backdrop-blur-sm"
-            onClick={() =>
-              setActiveIndex((prev) => (prev + 1) % services.length)
-            }
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+            <button
+              className=" cursor-pointer z-60 bg-white/30 hover:bg-white/50 rounded-full p-2 backdrop-blur-sm"
+              onClick={() =>
+                setActiveIndex((prev) => (prev + 1) % services.length)
+              }
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
