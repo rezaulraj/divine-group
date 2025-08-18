@@ -187,7 +187,7 @@ const HeroHome = () => {
             </p>
             <Link
               to={services[activeIndex].link}
-              className="inline-block bg-[#0A1F44] text-white px-5 py-2 rounded-full shadow hover:bg-gray-200 transition"
+              className="inline-block bg-[#0A1F44] text-white px-5 py-2 rounded-full shadow hover:bg-[#06142c] transition"
             >
               Discover More →
             </Link>

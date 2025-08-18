@@ -14,7 +14,7 @@ const HeroEmployer = () => {
       <div className="relative z-10 h-full flex items-center">
         <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-lg text-white">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 font-bebasneue">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 font-bebasneue leading-tight">
               Struggling to Find Quality Employees?
             </h1>
             <p className="text-4xl md:text-5xl font-bold mb-6 font-bebasneue">

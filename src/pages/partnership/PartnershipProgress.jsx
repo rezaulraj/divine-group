@@ -177,7 +177,7 @@ const PartnershipProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
+                className="text-[#80C3FF] sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -290,7 +290,7 @@ const PartnershipProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
+                className="text-[#80C3FF] sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
@@ -363,7 +363,7 @@ const PartnershipProgress = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-white sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
+                className="text-[#80C3FF] sm:text-3xl md:text-3xl lg:text-4xl font-bold font-bebasneue"
                 style={{
                   textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 }}
