@@ -208,7 +208,7 @@ const EmployeeService = () => {
       <motion.div className="text-center mb-16" variants={itemVariants}>
         <h1 className="text-4xl md:text-5xl max-w-2xl mx-auto font-bold text-gray-900 mb-4">
           Your Dream Career Starts with{" "}
-          <span className="text-primary">Divine Group</span>
+          <span className="text-[#80C3FF]">Divine Group</span>
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
           Whether you're looking for your first job or your next big
@@ -277,7 +277,7 @@ const EmployeeService = () => {
               <div className="p-8">
                 <div className="flex items-center mb-6">
                   <motion.div
-                    className="p-3 bg-blue-50 rounded-lg mr-4"
+                    className="p-3 bg-blue-50 rounded-lg mr-4 "
                     whileHover={{ rotate: 10 }}
                   >
                     {service.icon}
@@ -419,7 +419,7 @@ const EmployeeService = () => {
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <motion.button
             onClick={() => setShowGetStarted(true)}
-            className="bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg shadow-lg"
+            className="bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg shadow-lg cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -427,7 +427,7 @@ const EmployeeService = () => {
           </motion.button>
           <motion.button
             onClick={() => setShowCalendly(true)}
-            className="bg-transparent border-2 border-white text-white hover:bg-blue-700 font-bold py-3 px-8 rounded-full text-lg"
+            className="bg-transparent border-2 border-white text-white hover:bg-blue-700 font-bold py-3 px-8 rounded-full text-lg cursor-pointer"
             whileHover={{ scale: 1.05 }}
           >
             Speak to a Recruiter

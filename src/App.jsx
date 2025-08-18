@@ -23,6 +23,7 @@ import Partnership from "./pages/partnership/Partnership";
 import EmployerService from "./pages/employer/EmployerService";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import ScrollToTop from "./components/ScrollToTop";
+import ThankYou from "./components/ThankYou";
 function App() {
   return (
     <>
@@ -55,6 +56,7 @@ function App() {
             path="/manufacturing-and-logistics"
             element={<ManufacturingLogic />}
           />
+          <Route path="/thank-you" element={<ThankYou />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

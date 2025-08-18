@@ -13,6 +13,8 @@ import CalendlyPopup from "../../components/CalendlyPopup";
 
 const HeroContact = () => {
   const [showCalendly, setShowCalendly] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -25,56 +27,10 @@ const HeroContact = () => {
       },
     },
   };
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    message: "",
-  });
-  const [showPopup, setShowPopup] = useState(false);
-
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [id]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Check if all fields are filled
-    if (
-      formData.name &&
-      formData.email &&
-      formData.phone &&
-      formData.company &&
-      formData.message
-    ) {
-      // Here you would typically send the form data to your backend
-      console.log("Form submitted:", formData);
-
-      // Show thank you popup
-      setShowPopup(true);
-
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        message: "",
-      });
-
-      // Hide popup after 3 seconds
-      setTimeout(() => setShowPopup(false), 3000);
-    }
-  };
 
   return (
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 py-16 md:py-28 px-4 sm:px-6 lg:px-8">
+      {/* ✅ Thank You Popup */}
       <AnimatePresence>
         {showPopup && (
           <motion.div
@@ -106,6 +62,7 @@ const HeroContact = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
@@ -121,7 +78,21 @@ const HeroContact = () => {
             <h2 className="text-3xl font-bold text-gray-800 mb-6 font-bebasneue">
               Get in Touch
             </h2>
-            <form className="space-y-6" onSubmit={handleSubmit}>
+
+            {/* ✅ FormSubmit.io Integration */}
+            <form
+              action="https://formsubmit.co/380b013455232943a006028a6c501869"
+              method="POST"
+              className="space-y-6"
+            >
+              {/* Disable CAPTCHA */}
+              <input type="hidden" name="_captcha" value="false" />
+              <input
+                type="hidden"
+                name="_next"
+                value="https://divinegroup.netlify.app/thank-you"
+              />
+              <input type="hidden" name="_template" value="table" />
               <motion.div variants={fadeIn}>
                 <label
                   htmlFor="name"
@@ -132,8 +103,7 @@ const HeroContact = () => {
                 <input
                   type="text"
                   id="name"
-                  value={formData.name}
-                  onChange={handleChange}
+                  name="name"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-all"
                   placeholder="Your name"
                   required
@@ -150,13 +120,13 @@ const HeroContact = () => {
                 <input
                   type="email"
                   id="email"
-                  value={formData.email}
-                  onChange={handleChange}
+                  name="email"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-all"
                   placeholder="your.email@example.com"
                   required
                 />
               </motion.div>
+
               <motion.div variants={fadeIn}>
                 <label
                   htmlFor="phone"
@@ -167,8 +137,7 @@ const HeroContact = () => {
                 <input
                   type="tel"
                   id="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
+                  name="phone"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-all"
                   placeholder="+4533-434343"
                   required
@@ -185,8 +154,7 @@ const HeroContact = () => {
                 <input
                   type="text"
                   id="company"
-                  value={formData.company}
-                  onChange={handleChange}
+                  name="company"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-all"
                   placeholder="Your company"
                   required
@@ -202,9 +170,8 @@ const HeroContact = () => {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows="4"
-                  value={formData.message}
-                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-all"
                   placeholder="Your message..."
                   required
@@ -215,7 +182,7 @@ const HeroContact = () => {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-lg transition-all flex items-center justify-center"
+                className="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-lg transition-all flex items-center justify-center cursor-pointer"
               >
                 <FaPaperPlane className="mr-2" /> Send Message
               </motion.button>
@@ -306,6 +273,7 @@ const HeroContact = () => {
                     contact@thedivinegroup.eu
                   </a>
                 </div>
+
                 {/* New Book a Call Section */}
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center font-bebasneue">
@@ -343,6 +311,7 @@ const HeroContact = () => {
           </motion.div>
         </motion.div>
       </div>
+
       <CalendlyPopup
         show={showCalendly}
         onClose={() => setShowCalendly(false)}
