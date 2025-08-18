@@ -8,6 +8,7 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import TestimonialSlider from "../../components/TestimonialSlider";
 
 const Partnership = () => {
   const [showPartnerForm, setShowPartnerForm] = useState(false);
@@ -185,28 +186,9 @@ const Partnership = () => {
       </div>
 
       {/* Testimonial */}
-      <div className="bg-white rounded-xl shadow-xl p-10 mb-16 border border-gray-100">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="text-blue-600 text-6xl mb-4">"</div>
-          <blockquote className="text-xl md:text-2xl text-gray-700 mb-6 font-medium">
-            Our partnership has exceeded all expectations, delivering 40% growth
-            in our first year together and opening doors we couldn't have
-            accessed alone.
-          </blockquote>
-          <div className="flex items-center justify-center">
-            <img
-              src="https://randomuser.me/api/portraits/men/32.jpg"
-              alt="Michael Chen"
-              className="w-12 h-12 rounded-full mr-4 object-cover border-2 border-blue-200"
-            />
-            <div>
-              <p className="font-semibold text-gray-800">Michael Chen</p>
-              <p className="text-gray-600">
-                Director of Strategic Partnerships, Divine Group
-              </p>
-            </div>
-          </div>
-        </div>
+      <div className="mb-16">
+        <h1 className="text-4xl font-bold text-center text-[#0A1F44] mb-6">What Our Partner Say About Divine Group</h1>
+        <TestimonialSlider />
       </div>
 
       {/* CTA Section */}
