@@ -5,7 +5,7 @@ import timeLine1 from "../../assets/impact/recuitment.png";
 import timeLine2 from "../../assets/impact/ict.png";
 import timeLine3 from "../../assets/impact/real-state.jpg";
 import timeLine4 from "../../assets/impact/hospitality.webp";
-import timeLine5 from "../../assets/impact/media-scaled.webp";
+import timeLine5 from "../../assets/impact/recuitment.png";
 import timeLine6 from "../../assets/impact/design.webp";
 import timeLine7 from "../../assets/impact/manufacturing-logistics-scaled.webp";
 import timeLine8 from "../../assets/impact/education.png";
@@ -49,55 +49,55 @@ const TimeLineProgress = () => {
     },
     {
       companyLogo: timeLine4,
-      year: "2018",
+      year: "2012",
       title: "Hospitality Growth",
       text: "Expanded into hospitality with luxury resorts and smart hotels that blend technology with exceptional guest experiences.",
     },
     {
       companyLogo: timeLine5,
-      year: "2019",
+      year: "2017",
       title: "Media Division",
       text: "Established our media arm, creating platforms for storytelling and digital content creation.",
     },
     {
       companyLogo: timeLine6,
-      year: "2020",
+      year: "2012",
       title: "Design Innovation",
       text: "Launched our design studio, specializing in architectural and interior design solutions.",
     },
     {
       companyLogo: timeLine7,
-      year: "2021",
+      year: "2014",
       title: "Logistics Network",
       text: "Built a state-of-the-art logistics and manufacturing network across three countries.",
     },
     {
       companyLogo: timeLine8,
-      year: "2022",
+      year: "2011",
       title: "Education Initiatives",
       text: "Invested in educational technology and vocational training centers to empower future generations.",
     },
     {
       companyLogo: timeLine9,
-      year: "2023",
+      year: "2013",
       title: "Tourism Expansion",
       text: "Developed eco-tourism projects that showcase local heritage while preserving natural resources.",
     },
     {
       companyLogo: timeLine10,
-      year: "2024",
+      year: "2016",
       title: "SME Support",
       text: "Launched our entrepreneurship program to nurture small and medium enterprises across our markets.",
     },
     {
       companyLogo: timeLine11,
-      year: "2025",
+      year: "2018",
       title: "Science & Research",
       text: "Established partnerships with research institutions to drive innovation in sustainable technologies.",
     },
     {
       companyLogo: timeLine12,
-      year: "2026",
+      year: "2015",
       title: "Retail Transformation",
       text: "Revolutionized retail experiences with AI-powered stores and seamless omnichannel platforms.",
     },
@@ -231,7 +231,9 @@ const TimeLineProgress = () => {
                           <h3 className="text-blue-600 text-3xl font-bold mb-2 font-bebasneue">
                             {item.title}
                           </h3>
-                          <p className="text-gray-700 font-raleway">{item.text}</p>
+                          <p className="text-gray-700 font-raleway">
+                            {item.text}
+                          </p>
                         </div>
                       </motion.div>
                     )}
@@ -256,7 +258,9 @@ const TimeLineProgress = () => {
                           <h3 className="text-blue-600 text-3xl font-bold mb-2 font-bebasneue">
                             {item.title}
                           </h3>
-                          <p className="text-gray-700 font-raleway">{item.text}</p>
+                          <p className="text-gray-700 font-raleway">
+                            {item.text}
+                          </p>
                         </div>
                       </motion.div>
                     ) : (

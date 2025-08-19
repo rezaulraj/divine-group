@@ -7,6 +7,7 @@ import {
   FaLinkedin,
   FaYoutube,
   FaPinterest,
+  FaTiktok,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -68,13 +69,13 @@ const Footer = () => {
             >
               <FaFacebook className="h-8 w-8" />
             </a>
-            <a
+            {/* <a
               href="https://x.com/DivineGroup817"
               target="_blank"
               className="text-gray-200 hover:text-white transition-colors"
             >
               <FaTwitter className="h-8 w-8" />
-            </a>
+            </a> */}
             <a
               href="https://www.instagram.com/divinegroup20/"
               target="_blank"
@@ -82,13 +83,13 @@ const Footer = () => {
             >
               <FaInstagram className="h-8 w-8" />
             </a>
-            <a
+            {/* <a
               href="https://www.linkedin.com/company/106544941/admin/dashboard/"
               target="_blank"
               className="text-gray-200 hover:text-white transition-colors"
             >
               <FaLinkedin className="h-8 w-8" />
-            </a>
+            </a> */}
 
             <a
               href="https://www.youtube.com/@DivineGroup25"
@@ -98,11 +99,18 @@ const Footer = () => {
               <FaYoutube className="h-8 w-8" />
             </a>
             <a
-              href="https://www.pinterest.com/divinegroup25/"
+              href="https://www.pinterest.com/divinegroup817/"
               target="_blank"
               className="text-gray-200 hover:text-white transition-colors"
             >
               <FaPinterest className="h-8 w-8" />
+            </a>
+            <a
+              href="https://www.tiktok.com/@divinegroup25?lang=en"
+              target="_blank"
+              className="text-gray-200 hover:text-white transition-colors"
+            >
+              <FaTiktok className="h-8 w-8" />
             </a>
           </div>
         </div>

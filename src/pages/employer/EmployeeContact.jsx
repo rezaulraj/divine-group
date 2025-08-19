@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   FaUserTie,
@@ -12,35 +12,20 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 import { TbLoader } from "react-icons/tb";
-import emailjs from "@emailjs/browser";
+
 const EmployeeContact = () => {
   const [submitRign, setSubmitRing] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
-  const form = useRef();
-  const publicKey = "vqs8cPefiJoNphzzB";
-  const serviceId = "service_55ubscz";
-  const templeteId = "template_be7y4a9";
-  const sendEmail = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitRing(true);
-    emailjs
-      .sendForm(serviceId, templeteId, form.current, {
-        publicKey: publicKey,
-      })
-      .then(
-        () => {
-          console.log("SUCCESS!");
-          setShowPopup(true);
-          setSubmitRing(false);
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-          alert(
-            "Someting is error sending data do not panic we will resolve soon. Please Email us"
-          );
-          setSubmitRing(false);
-        }
-      );
+
+    // FormSubmit will handle the submission, we just need to show the success message
+    setTimeout(() => {
+      setSubmitRing(false);
+      setShowPopup(true);
+    }, 1000);
   };
 
   const formVariants = {
@@ -141,7 +126,7 @@ const EmployeeContact = () => {
                       Email: contact@thedivinegroup.eu
                     </span>
                     <span className="block">Romania: +40763316510</span>
-                    <span className="block">Malta: +35699394497</span>
+                    {/* <span className="block">Malta: +35699394497</span> */}
                   </p>
                 </div>
               </motion.div>
@@ -150,13 +135,28 @@ const EmployeeContact = () => {
             {/* Form Content */}
             <div className="md:w-3/5 p-8 md:p-10">
               <motion.form
-                ref={form}
-                onSubmit={sendEmail}
+                action="https://formsubmit.co/380b013455232943a006028a6c501869"
+                method="POST"
+                onSubmit={handleSubmit}
                 variants={formVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: false }}
               >
+                {/* FormSubmit hidden fields */}
+                <input type="hidden" name="_captcha" value="false" />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://thedivinegroup.eu/thank-you"
+                />
+                <input type="hidden" name="_template" value="table" />
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="New Workforce Solutions Inquiry"
+                />
+
                 <motion.div variants={itemVariants} className="mb-6">
                   <label
                     htmlFor="name"
@@ -216,7 +216,7 @@ const EmployeeContact = () => {
                       <input
                         type="tel"
                         id="phone"
-                        name="number"
+                        name="phone"
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                         placeholder="+1 (555) 123-4567"
                         required
@@ -262,7 +262,7 @@ const EmployeeContact = () => {
                       <input
                         type="url"
                         id="website"
-                        // name="website"
+                        name="website"
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                         placeholder="https://yourcompany.com"
                       />
@@ -280,7 +280,7 @@ const EmployeeContact = () => {
                     </label>
                     <select
                       id="workforceSize"
-                      name="size"
+                      name="workforce_size"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-white"
                       required
                     >
@@ -302,7 +302,7 @@ const EmployeeContact = () => {
                     </label>
                     <select
                       id="serviceNeeded"
-                      name="need"
+                      name="service_needed"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-white"
                       required
                     >
@@ -339,10 +339,16 @@ const EmployeeContact = () => {
                     type="submit"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className={`w-full py-4 px-6 cursor-pointer bg-gradient-to-r from-[#1A9695] to-[#1A9695]/90 text-white font-bold rounded-lg shadow-md hover:shadow-lg transition `}
+                    className={`w-full py-4 px-6 cursor-pointer bg-gradient-to-r from-[#1A9695] to-[#1A9695]/90 text-white font-bold rounded-lg shadow-md hover:shadow-lg transition ${
+                      submitRign ? "opacity-80" : ""
+                    }`}
+                    disabled={submitRign}
                   >
                     {submitRign ? (
-                      <TbLoader className="animate-spin w-4 h-4" />
+                      <div className="flex items-center justify-center">
+                        <TbLoader className="animate-spin w-5 h-5 mr-2" />
+                        Submitting...
+                      </div>
                     ) : (
                       "Request Workforce Consultation"
                     )}
@@ -375,11 +381,12 @@ const EmployeeContact = () => {
                 Thank You!
               </h3>
               <p className="text-gray-600 mb-6">
-                We've received your application and will contact you shortly.
+                We've received your inquiry and will contact you within 24
+                hours.
               </p>
               <button
                 onClick={() => setShowPopup(false)}
-                className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+                className="px-6 py-2 bg-[#1A9695] text-white rounded-lg hover:bg-[#1A9695]/90 transition-colors"
               >
                 Close
               </button>

@@ -19,33 +19,6 @@ import CalendlyPopup from "../../components/CalendlyPopup";
 const EmployeeService = () => {
   const [showCalendly, setShowCalendly] = useState(false);
   const [showGetStarted, setShowGetStarted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    interest: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    setShowGetStarted(false);
-    alert("Thank you for your submission! We will contact you shortly.");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      interest: "",
-    });
-  };
 
   const services = [
     {
@@ -463,7 +436,22 @@ const EmployeeService = () => {
                   </motion.button>
                 </div>
 
-                <form onSubmit={handleSubmit}>
+                <form
+                  action="https://formsubmit.co/380b013455232943a006028a6c501869"
+                  method="POST"
+                >
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input
+                    type="hidden"
+                    name="_next"
+                    value="https://thedivinegroup.eu/thank-you"
+                  />
+                  <input type="hidden" name="_template" value="table" />
+                  <input
+                    type="hidden"
+                    name="_subject"
+                    value="New Employee Solutions Inquiry"
+                  />
                   <div className="mb-6">
                     <label className="block text-sm font-medium text-gray-700 mb-1">
                       Full Name*
@@ -471,8 +459,6 @@ const EmployeeService = () => {
                     <input
                       type="text"
                       name="name"
-                      value={formData.name}
-                      onChange={handleChange}
                       required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                     />
@@ -484,8 +470,6 @@ const EmployeeService = () => {
                     <input
                       type="email"
                       name="email"
-                      value={formData.email}
-                      onChange={handleChange}
                       required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                     />
@@ -497,8 +481,6 @@ const EmployeeService = () => {
                     <input
                       type="tel"
                       name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
                       required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                     />
@@ -509,8 +491,6 @@ const EmployeeService = () => {
                     </label>
                     <select
                       name="interest"
-                      value={formData.interest}
-                      onChange={handleChange}
                       required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                     >

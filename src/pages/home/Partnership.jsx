@@ -12,39 +12,7 @@ import TestimonialSlider from "../../components/TestimonialSlider";
 
 const Partnership = () => {
   const [showPartnerForm, setShowPartnerForm] = useState(false);
-  const [showContactForm, setShowContactForm] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    message: "",
-  });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you would typically send the data to your backend
-    console.log("Form submitted:", formData);
-    // Close the modal after submission
-    setShowPartnerForm(false);
-    setShowContactForm(false);
-    // Show success message
-    alert("Thank you for your submission! We will contact you shortly.");
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      company: "",
-      message: "",
-    });
-  };
   const benefits = [
     {
       icon: <FaHandshake className="w-10 h-10 text-blue-600" />,
@@ -187,7 +155,9 @@ const Partnership = () => {
 
       {/* Testimonial */}
       <div className="mb-16">
-        <h1 className="text-4xl font-bold text-center text-[#0A1F44] mb-6">What Our Partner Say About Divine Group</h1>
+        <h1 className="text-4xl font-bold text-center text-[#0A1F44] mb-6">
+          What Our Partner Say About Divine Group
+        </h1>
         <TestimonialSlider />
       </div>
 
@@ -250,7 +220,22 @@ const Partnership = () => {
                 </ul>
               </div>
 
-              <form onSubmit={handleSubmit}>
+              <form
+                action="https://formsubmit.co/380b013455232943a006028a6c501869"
+                method="POST"
+              >
+                <input type="hidden" name="_captcha" value="false" />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://thedivinegroup.eu/thank-you"
+                />
+                <input type="hidden" name="_template" value="table" />
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="New Partner Inquiry"
+                />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
                     <label
@@ -263,8 +248,6 @@ const Partnership = () => {
                       type="text"
                       id="name"
                       name="name"
-                      value={formData.name}
-                      onChange={handleChange}
                       required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                     />
@@ -280,8 +263,6 @@ const Partnership = () => {
                       type="email"
                       id="email"
                       name="email"
-                      value={formData.email}
-                      onChange={handleChange}
                       required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                     />
@@ -297,8 +278,6 @@ const Partnership = () => {
                       type="text"
                       id="company"
                       name="company"
-                      value={formData.company}
-                      onChange={handleChange}
                       required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                     />
@@ -314,8 +293,6 @@ const Partnership = () => {
                       type="tel"
                       id="phone"
                       name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                     />
                   </div>
@@ -331,8 +308,6 @@ const Partnership = () => {
                     id="message"
                     name="message"
                     rows="4"
-                    value={formData.message}
-                    onChange={handleChange}
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                   ></textarea>
@@ -344,127 +319,6 @@ const Partnership = () => {
                   Submit Partnership Request
                 </button>
               </form>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Contact Our Team Modal */}
-      {showContactForm && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-xl max-w-md w-full">
-            <div className="p-8">
-              <div className="flex justify-between items-center mb-6">
-                <h3 className="text-2xl font-bold text-gray-900">
-                  Contact Our Team
-                </h3>
-                <button
-                  onClick={() => setShowContactForm(false)}
-                  className="text-gray-400 hover:text-gray-600"
-                >
-                  <FaTimes className="w-6 h-6" />
-                </button>
-              </div>
-
-              <form onSubmit={handleSubmit}>
-                <div className="mb-6">
-                  <label
-                    htmlFor="contact-name"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Name*
-                  </label>
-                  <input
-                    type="text"
-                    id="contact-name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
-                  />
-                </div>
-                <div className="mb-6">
-                  <label
-                    htmlFor="contact-email"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Email*
-                  </label>
-                  <input
-                    type="email"
-                    id="contact-email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
-                  />
-                </div>
-                <div className="mb-6">
-                  <label
-                    htmlFor="contact-message"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    How can we help you?*
-                  </label>
-                  <textarea
-                    id="contact-message"
-                    name="message"
-                    rows="4"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300"
-                >
-                  Send Message
-                </button>
-              </form>
-
-              <div className="mt-8 pt-6 border-t border-gray-200">
-                <h4 className="text-lg font-semibold text-gray-800 mb-3">
-                  Other ways to reach us
-                </h4>
-                <div className="space-y-2 text-gray-600">
-                  <p className="flex items-start">
-                    <svg
-                      className="w-5 h-5 mr-2 mt-0.5 text-blue-600 flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                      ></path>
-                    </svg>
-                    <span>Romania: +40763316510</span>
-                  </p>
-                  <p className="flex items-start">
-                    <svg
-                      className="w-5 h-5 mr-2 mt-0.5 text-blue-600 flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      ></path>
-                    </svg>
-                    <span>contact@thedivinegroup.eu</span>
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import logo from "/logo-blue.png";
+import logo from "/divinelogo.png";
 import divineGroup from "../../assets/impact/recuitment.png?url";
 import mission from "../../assets/about/mission.avif?url";
 import value from "../../assets/about/value.avif?url";
@@ -101,13 +101,13 @@ const AboutUsProgress = () => {
           transition={{ duration: 0.8 }}
           className="max-w-screen-xl mx-auto flex items-center justify-center relative p-3 mb-[15rem] sm:mb-[18rem] md:mb-[32rem] lg:mb-[40rem] p-4"
         >
-          <div className="bg-white/90 backdrop-blur-sm w-[20rem] h-[20rem] md:w-[35rem] md:h-[35rem] lg:w-[45rem] lg:h-[45rem] rounded-full absolute -top-32 flex flex-col items-center justify-center shadow-xl">
+          <div className="bg-[#0C3F75]/90 backdrop-blur-sm w-[20rem] h-[20rem] md:w-[35rem] md:h-[35rem] lg:w-[45rem] lg:h-[45rem] rounded-full absolute -top-32 flex flex-col items-center justify-center shadow-xl">
             <img
               src={logo}
               alt="Company Logo"
               className="h-24 sm:h-28 md:h-32 lg:h-44 mb-9 md:mb-12 lg:mb-16"
             />
-            <h2 className="text-[#0C3F75] text-3xl md:text-5xl lg:text-6xl font-bold mt-4 font-bebasneue uppercase">
+            <h2 className="text-white/90 text-3xl md:text-5xl lg:text-6xl font-bold mt-4 font-bebasneue uppercase">
               About Us
             </h2>
           </div>
@@ -267,12 +267,12 @@ const AboutUsProgress = () => {
                 whileInView={{ scale: 1, opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.8 }}
-                className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[30rem] lg:h-[30rem] rounded-full bg-white backdrop-blur-sm flex items-center justify-center shadow-xl relative"
+                className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[30rem] lg:h-[30rem] rounded-full bg-white flex items-center justify-center shadow-xl relative"
               >
                 <img
                   src={logo}
                   alt="Company Logo"
-                  className="h-24 sm:h-28 md:h-32 lg:h-44 mb-9 md:mb-12 lg:mb-16 relative z-10"
+                  className="h-24 sm:h-28 md:h-32 lg:h-44 mb-9 md:mb-12 lg:mb-16 relative z-10 bg-[#0C3F75] "
                 />
                 <motion.div
                   className="absolute inset-0 w-full h-full rounded-full -left-30 z-0"
@@ -745,7 +745,7 @@ const AboutUsProgress = () => {
                 <img
                   src={logo}
                   alt="Company Logo"
-                  className="h-24 sm:h-28 md:h-32 lg:h-44 mb-9 md:mb-12 lg:mb-16 relative z-10"
+                  className="h-24 sm:h-28 md:h-32 lg:h-44 mb-9 md:mb-12 lg:mb-16 relative z-10 bg-[#0C3F75]"
                 />
                 <motion.div
                   className="absolute inset-0 w-full h-full rounded-full left-30 z-0"
@@ -838,7 +838,7 @@ const AboutUsProgress = () => {
                 <img
                   src={logo}
                   alt="Company Logo"
-                  className="h-24 sm:h-28 md:h-32 lg:h-44 mb-9 md:mb-12 lg:mb-16 relative z-10"
+                  className="h-24 sm:h-28 md:h-32 lg:h-44 mb-9 md:mb-12 lg:mb-16 relative z-10 bg-[#0C3F75]"
                 />
                 <motion.div
                   className="absolute inset-0 w-full h-full rounded-full -left-30 z-0"

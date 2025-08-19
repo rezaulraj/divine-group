@@ -90,9 +90,14 @@ const HeroContact = () => {
               <input
                 type="hidden"
                 name="_next"
-                value="https://divinegroup.netlify.app/thank-you"
+                value="https://thedivinegroup.eu/thank-you"
               />
               <input type="hidden" name="_template" value="table" />
+              <input
+                type="hidden"
+                name="_subject"
+                value="New Contact Inquiry"
+              />
               <motion.div variants={fadeIn}>
                 <label
                   htmlFor="name"
@@ -203,14 +208,14 @@ const HeroContact = () => {
                     Hub Location
                   </h3>
                   <ul className="space-y-3 text-gray-600">
-                    <li className="flex">
+                    {/* <li className="flex">
                       <span className="font-medium text-gray-800 mr-2">
                         Malta (HQ):
                       </span>
                       <span>
                         9C M.A. Vassalli Street, VALLETTA, VLT1310, Malta
                       </span>
-                    </li>
+                    </li> */}
                     <li className="flex">
                       <span className="font-medium text-gray-800 mr-2">
                         Romania:
@@ -252,12 +257,12 @@ const HeroContact = () => {
                       </span>
                       <span>+40763316510</span>
                     </li>
-                    <li className="flex items-center">
+                    {/* <li className="flex items-center">
                       <span className="font-medium text-gray-800 mr-2">
                         Malta:
                       </span>
                       <span>+35699394497</span>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
 
@@ -299,7 +304,7 @@ const HeroContact = () => {
             {/* Map Iframe */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3230.566365235208!2d14.50687631526966!3d35.89965898013704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDUzJzU4LjgiTiAxNMKwMzAnMzEuOSJF!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d73021.89630415295!2d23.56734560822468!3d46.74421286807511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47490dc9add6e9af%3A0xb6f35d2528128ff3!2sa%20b10%2C%20Strada%20Augustin%20Buzura%201%2C%20Cluj-Napoca%2C%20Romania!5e1!3m2!1sen!2sbd!4v1755608863033!5m2!1sen!2sbd"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}
