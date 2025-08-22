@@ -5,7 +5,7 @@ import media_innovation_platform from "../../assets/portfolio/media/media_innova
 import broadcast_ad_network from "../../assets/portfolio/media/broadcast_ad_network.avif?url";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 const MediaProgress = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({

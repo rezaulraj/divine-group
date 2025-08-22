@@ -4,7 +4,7 @@ import design_industry_hub from "../../assets/portfolio/design/design_industry_h
 import creative_community_events from "../../assets/portfolio/design/creative_community_events.jpg?url";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 const DesignProgress = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({

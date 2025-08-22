@@ -15,7 +15,7 @@ import {
   FaIndustry,
 } from "react-icons/fa";
 import CalendlyPopup from "../../components/CalendlyPopup";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 const EmployeeService = () => {
   const [showCalendly, setShowCalendly] = useState(false);

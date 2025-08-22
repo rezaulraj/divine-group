@@ -5,7 +5,7 @@ import sme_training_workshop from "../../assets/portfolio/sme/sme-training-works
 import startup_innovation_lab from "../../assets/portfolio/sme/startup-innovation-lab.avif?url";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 const SmeProgress = () => {
   const containerRef = useRef(null);

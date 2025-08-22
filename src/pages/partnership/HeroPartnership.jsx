@@ -1,6 +1,6 @@
 import React from "react";
 import heroPartnership from "../../assets/partnership/partnership.jpg?url";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 const HeroPartnership = () => {
   return (

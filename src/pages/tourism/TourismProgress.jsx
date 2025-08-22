@@ -7,7 +7,7 @@ import trosium4 from "../../assets/portfolio/trosion/topimage4.avif?url";
 import trosium5 from "../../assets/portfolio/trosion/topimage5.avif?url";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 const TourismProgress = () => {
   const containerRef = useRef(null);

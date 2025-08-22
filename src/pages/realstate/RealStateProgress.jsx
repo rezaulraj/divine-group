@@ -5,7 +5,7 @@ import commercial_residential from "../../assets/portfolio/realstate/commercial_
 import retail_facility from "../../assets/portfolio/realstate/retail_facility.avif?url";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 const RealStateProgress = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({

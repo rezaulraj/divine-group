@@ -10,7 +10,7 @@ import {
   FaCalendarAlt,
 } from "react-icons/fa";
 import CalendlyPopup from "../../components/CalendlyPopup";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 const HeroContact = () => {
   const [showCalendly, setShowCalendly] = useState(false);

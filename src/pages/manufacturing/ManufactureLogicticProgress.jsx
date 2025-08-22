@@ -5,7 +5,7 @@ import industrial_infrastructure from "../../assets/portfolio/infastucter/indust
 import manufacturing_facilities from "../../assets/portfolio/infastucter/manufacturing_facilities.jpg?url";
 import supply_chain_growth from "../../assets/portfolio/infastucter/supply_chain_growth.jpg?url";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 const ManufactureLogicticProgress = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({

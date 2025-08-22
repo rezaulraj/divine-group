@@ -5,7 +5,7 @@ import retail1 from "../../assets/portfolio/retail/retail1.avif?url";
 import retail2 from "../../assets/portfolio/retail/retail2.avif?url";
 import retail3 from "../../assets/portfolio/retail/retail3.jpg?url";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 const RetailProgress = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({

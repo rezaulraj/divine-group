@@ -8,7 +8,7 @@ import employer4 from "../../assets/employer/employ3.avif?url";
 import employer5 from "../../assets/employer/employ4.avif?url";
 import employer6 from "../../assets/employer/employ5.avif?url";
 import employer7 from "../../assets/employer/employ6.avif?url";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 const EmployerProgress = () => {
   const containerRef = useRef(null);

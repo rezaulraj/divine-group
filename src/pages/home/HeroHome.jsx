@@ -27,7 +27,7 @@ import service9 from "../../assets/impact/tourism.webp?url";
 import service10 from "../../assets/impact/smes-entrepreneurs.webp?url";
 import service11 from "../../assets/impact/science.webp?url";
 import service12 from "../../assets/impact/retail.avif?url";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 const services = [
   {

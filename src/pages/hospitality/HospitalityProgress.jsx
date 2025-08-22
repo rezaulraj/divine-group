@@ -5,7 +5,7 @@ import wellness_dining from "../../assets/portfolio/hospitality/wellness_dining.
 import eco_adventure_global from "../../assets/portfolio/hospitality/eco_adventure_global.avif?url";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 const HospitalityProgress = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({

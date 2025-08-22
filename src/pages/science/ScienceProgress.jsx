@@ -5,7 +5,7 @@ import science_lab from "../../assets/portfolio/science/science_lab.avif?url";
 import science_ecosystem from "../../assets/portfolio/science/science_ecosystem.jpg?url";
 import collaboration from "../../assets/portfolio/science/collaboration.jpg?url";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 const ScienceProgress = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({

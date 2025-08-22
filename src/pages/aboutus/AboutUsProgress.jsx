@@ -10,7 +10,7 @@ import {
   useInView,
   AnimatePresence,
 } from "framer-motion";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 const AboutUsProgress = () => {
   const [activeValue, setActiveValue] = useState(null);

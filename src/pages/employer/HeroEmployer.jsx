@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import heroEmployer from "../../assets/employer/heroemployee.jpg?url";
 import { FiCheckCircle } from "react-icons/fi";
 import CalendlyPopup from "../../components/CalendlyPopup";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 const HeroEmployer = () => {
   const [showCalendly, setShowCalendly] = useState(false);

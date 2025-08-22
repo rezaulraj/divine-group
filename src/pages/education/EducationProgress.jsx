@@ -6,7 +6,7 @@ import executive_learning from "../../assets/portfolio/education/executive_learn
 import global_academic_partnerships from "../../assets/portfolio/education/global_academic_partnerships.webp?url";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 const EducationProgress = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({

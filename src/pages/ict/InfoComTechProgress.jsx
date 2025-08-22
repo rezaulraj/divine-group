@@ -7,7 +7,7 @@ import ictGrobal from "../../assets/portfolio/ict/ictgrobal.jpg?url";
 import ictTelecom from "../../assets/portfolio/ict/telecom.jpg?url";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 const InfoComTechProgress = () => {
   const containerRef = useRef(null);

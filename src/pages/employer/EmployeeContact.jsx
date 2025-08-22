@@ -12,7 +12,7 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 import { TbLoader } from "react-icons/tb";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 const EmployeeContact = () => {
   const [submitRign, setSubmitRing] = useState(false);

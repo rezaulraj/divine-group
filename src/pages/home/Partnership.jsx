@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import TestimonialSlider from "../../components/TestimonialSlider";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 const Partnership = () => {
   const [showPartnerForm, setShowPartnerForm] = useState(false);
