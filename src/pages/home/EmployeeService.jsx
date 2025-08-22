@@ -15,6 +15,7 @@ import {
   FaIndustry,
 } from "react-icons/fa";
 import CalendlyPopup from "../../components/CalendlyPopup";
+import { Helmet } from "react-helmet-async";
 
 const EmployeeService = () => {
   const [showCalendly, setShowCalendly] = useState(false);
@@ -178,6 +179,46 @@ const EmployeeService = () => {
       animate="visible"
       variants={containerVariants}
     >
+      <Helmet>
+        <meta
+          name="description"
+          content="Explore top recruitment services for job seekers. Find opportunities in ICT, hospitality, education, logistics, and more. Build your career today."
+        />
+        <meta
+          name="keywords"
+          content="jobs, recruitment, employment, career, ICT jobs, hospitality jobs, education jobs, logistics jobs"
+        />
+
+        <meta
+          property="og:title"
+          content="Job Seekers | Recruitment & Career Services"
+        />
+        <meta
+          property="og:description"
+          content="We connect job seekers with the right employers across multiple industries. Start your career journey today."
+        />
+
+        <meta
+          property="og:url"
+          content="https://thedivinegroup.eu/employer-services"
+        />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Job Seekers | Recruitment & Career Services"
+        />
+        <meta
+          name="twitter:description"
+          content="Discover jobs in ICT, hospitality, education, and more. Empower your career with our recruitment services."
+        />
+
+        <link
+          rel="canonical"
+          href="https://thedivinegroup.eu/employer-services"
+        />
+      </Helmet>
       <motion.div className="text-center mb-16" variants={itemVariants}>
         <h1 className="text-4xl md:text-5xl max-w-2xl mx-auto font-bold text-gray-900 mb-4">
           Your Dream Career Starts with{" "}

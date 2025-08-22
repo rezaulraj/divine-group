@@ -4,6 +4,7 @@ import design_industry_hub from "../../assets/portfolio/design/design_industry_h
 import creative_community_events from "../../assets/portfolio/design/creative_community_events.jpg?url";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 const DesignProgress = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -30,6 +31,30 @@ const DesignProgress = () => {
 
   return (
     <div className="min-h-screen relative pb-20" ref={containerRef}>
+      <Helmet>
+        <title>
+          Creative Design District & Industry Support | Divine Group
+        </title>
+        <meta
+          name="description"
+          content="Divine Group advances the global design industry with a dedicated creative district for fashion, architecture, interior, and product design. Explore innovation, collaboration, and community growth."
+        />
+        <meta
+          name="keywords"
+          content="creative design district, design innovation, design community, fashion design, architecture, interior design, product design, Divine Group"
+        />
+        <meta
+          property="og:title"
+          content="Creative Design District & Industry Support | Divine Group"
+        />
+        <meta
+          property="og:description"
+          content="Divine Group advances the global design industry with a dedicated creative district for fashion, architecture, interior, and product design. Explore innovation, collaboration, and community growth."
+        />
+        <meta property="og:image" content={topDesign} />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://thedivinegroup.eu/design" />
+      </Helmet>
       <motion.div
         className="fixed inset-0 -z-10"
         style={{

@@ -27,6 +27,7 @@ import service9 from "../../assets/impact/tourism.webp?url";
 import service10 from "../../assets/impact/smes-entrepreneurs.webp?url";
 import service11 from "../../assets/impact/science.webp?url";
 import service12 from "../../assets/impact/retail.avif?url";
+import { Helmet } from "react-helmet-async";
 
 const services = [
   {
@@ -153,6 +154,59 @@ const HeroHome = () => {
 
   return (
     <div className="relative w-full min-h-screen flex flex-col md:flex-row overflow-hidden shadow-lg">
+      <Helmet>
+        <title>Divine Group | Our Services | Impact Group</title>
+        <meta
+          name="description"
+          content="Explore Impact Group’s services including recruitment, ICT, real estate, hospitality, media, design, manufacturing, education, tourism, SMEs, science, and retail."
+        />
+        <meta
+          name="keywords"
+          content="recruitment, ICT, real estate, hospitality, media, design, manufacturing, education, tourism, SMEs, entrepreneurship, science, retail"
+        />
+        <link rel="canonical" href="https://thedivinegroup.eu/" />
+
+        <meta
+          property="og:title"
+          content="Divine Group | Our Services | Impact Group"
+        />
+        <meta
+          property="og:description"
+          content="Connecting talent, industries, and innovation — discover our full suite of services across recruitment, technology, hospitality, education, and more."
+        />
+        <meta property="og:image" content={services[0].icon} />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Divine Group | Our Services | Impact Group"
+        />
+        <meta
+          name="twitter:description"
+          content="Explore our recruitment, ICT, hospitality, tourism, science, education, and more services."
+        />
+        <meta name="twitter:image" content={services[0].icon} />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Divine Group",
+            url: "https://thedivinegroup.eu/",
+            logo: "https://thedivinegroup.eu/divinelogo.png",
+            sameAs: ["https://www.facebook.com/divinegroup6061"],
+            contactPoint: [
+              {
+                "@type": "ContactPoint",
+                telephone: "+44-2031234567",
+                contactType: "customer service",
+                email: "contact@thedivinegroup.eu",
+              },
+            ],
+          })}
+        </script>
+      </Helmet>
       <div
         className="absolute inset-0 bg-black/60 z-0"
         style={{

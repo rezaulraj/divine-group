@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import TestimonialSlider from "../../components/TestimonialSlider";
+import { Helmet } from "react-helmet-async";
 
 const Partnership = () => {
   const [showPartnerForm, setShowPartnerForm] = useState(false);
@@ -48,7 +49,50 @@ const Partnership = () => {
 
   return (
     <div className="max-w-7xl mx-auto my-10 px-4 py-16 sm:px-6 lg:px-8 lg:py-24 bg-white">
-      {/* Header Section */}
+      <Helmet>
+        <meta
+          name="description"
+          content="Partner with Divine Group to unlock global opportunities, share expertise, and create innovative solutions through strategic collaborations."
+        />
+        <meta
+          name="keywords"
+          content="Divine Group partnership, strategic alliances, business collaboration, global partnerships, joint ventures"
+        />
+        <meta name="author" content="Divine Group" />
+
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://thedivinegroup.eu/strategic-partnership"
+        />
+        <meta
+          property="og:title"
+          content="Strategic Partnerships | Divine Group"
+        />
+        <meta
+          property="og:description"
+          content="Join forces with Divine Group to expand your reach, drive growth, and build lasting impact through strategic partnerships."
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:url"
+          content="https://thedivinegroup.eu/strategic-partnership"
+        />
+        <meta
+          name="twitter:title"
+          content="Strategic Partnerships | Divine Group"
+        />
+        <meta
+          name="twitter:description"
+          content="Unlock new opportunities with Divine Group through strategic collaborations and global alliances."
+        />
+
+        <link
+          rel="canonical"
+          href="https://thedivinegroup.eu/strategic-partnership"
+        />
+      </Helmet>
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
           <span className="text-primary">Elevate Together</span> Through
@@ -60,7 +104,6 @@ const Partnership = () => {
         </p>
       </div>
 
-      {/* Partnership Benefits */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-20">
         {benefits.map((benefit, index) => (
           <div

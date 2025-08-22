@@ -10,6 +10,7 @@ import {
   FaCalendarAlt,
 } from "react-icons/fa";
 import CalendlyPopup from "../../components/CalendlyPopup";
+import { Helmet } from "react-helmet-async";
 
 const HeroContact = () => {
   const [showCalendly, setShowCalendly] = useState(false);
@@ -30,6 +31,37 @@ const HeroContact = () => {
 
   return (
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 py-16 md:py-28 px-4 sm:px-6 lg:px-8">
+      <Helmet>
+        <title>Contact Divine Group | Get in Touch with Our Team</title>
+        <meta
+          name="description"
+          content="Reach out to Divine Group's recruitment team. Contact us via email, phone, or schedule a call to discuss opportunities and services."
+        />
+        <meta
+          name="keywords"
+          content="Divine Group, Contact, Recruitment, Email, Phone, Schedule a Call, Workforce Hub"
+        />
+        <link rel="canonical" href="https://thedivinegroup.eu/contact-us" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Divine Group",
+            url: "https://www.divinegroup.com",
+            logo: "https://thedivinegroup.eu/divinelogo.png",
+            contactPoint: [
+              {
+                "@type": "ContactPoint",
+                telephone: "+4402031234567",
+                contactType: "customer service",
+                email: "contact@thedivinegroup.eu",
+              },
+            ],
+            sameAs: ["https://www.facebook.com/divinegroup6061"],
+          })}
+        </script>
+      </Helmet>
       {/* ✅ Thank You Popup */}
       <AnimatePresence>
         {showPopup && (
@@ -218,11 +250,10 @@ const HeroContact = () => {
                     </li> */}
                     <li className="flex">
                       <span className="font-medium text-gray-800 mr-2">
-                        Romania:
+                        UK Headoffice:
                       </span>
                       <span>
-                        Str. Augustin Buzura 1 Bl. A Ap. B10, Loc. Cluj Napoca,
-                        Cluj
+                        62 Tudor Drive, Morden, Surrey, England, SM4 4PF
                       </span>
                     </li>
                     <li className="flex">
@@ -245,7 +276,7 @@ const HeroContact = () => {
                   </ul>
                 </div>
 
-                <div>
+                {/*  <div>
                   <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center font-bebasneue">
                     <FaPhone className="mr-2 text-primary" /> Speak to a
                     Recruiter
@@ -257,14 +288,14 @@ const HeroContact = () => {
                       </span>
                       <span>+40763316510</span>
                     </li>
-                    {/* <li className="flex items-center">
+                     <li className="flex items-center">
                       <span className="font-medium text-gray-800 mr-2">
                         Malta:
                       </span>
                       <span>+35699394497</span>
-                    </li> */}
+                    </li> 
                   </ul>
-                </div>
+                </div>*/}
 
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center font-bebasneue">
@@ -304,7 +335,7 @@ const HeroContact = () => {
             {/* Map Iframe */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d73021.89630415295!2d23.56734560822468!3d46.74421286807511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47490dc9add6e9af%3A0xb6f35d2528128ff3!2sa%20b10%2C%20Strada%20Augustin%20Buzura%201%2C%20Cluj-Napoca%2C%20Romania!5e1!3m2!1sen!2sbd!4v1755608863033!5m2!1sen!2sbd"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317043.19287511153!2d-0.3577228949958104!3d51.28388377107554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876085f0b2df529%3A0xecc57bc84f049463!2s62%20Tudor%20Dr%2C%20Morden%20SM4%204PF%2C%20UK!5e1!3m2!1sen!2sbd!4v1755869559767!5m2!1sen!2sbd"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}

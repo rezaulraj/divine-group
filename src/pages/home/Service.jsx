@@ -22,6 +22,7 @@ import service9 from "../../assets/impact/tourism.webp?url";
 import service10 from "../../assets/impact/smes-entrepreneurs.webp?url";
 import service11 from "../../assets/impact/science.webp?url";
 import service12 from "../../assets/impact/retail.avif?url";
+import { Helmet } from "react-helmet-async";
 
 const services = [
   { image: service1, title: "Recruitment", link: "/" },
@@ -106,7 +107,27 @@ const Service = () => {
   }, []);
   return (
     <div className="min-h-screen relative pb-20" ref={containerRef}>
-      {/* Animated Background with Gradient Mesh */}
+      <Helmet>
+        <meta
+          name="description"
+          content="Explore Divine Group's impact across recruitment, ICT, real estate, hospitality, media, design, manufacturing, logistics, education, tourism, SMEs, science, and retail industries."
+        />
+        <meta
+          name="keywords"
+          content="Recruitment services, ICT solutions, Real estate projects, Hospitality, Media, Design, Manufacturing, Logistics, Education, Tourism, Entrepreneurs, Science, Retail"
+        />
+        <meta
+          property="og:title"
+          content="Our Services & Impact | Divine Group"
+        />
+        <meta
+          property="og:description"
+          content="Driving global impact across 12 industries — recruitment, ICT, real estate, tourism, and more."
+        />
+        <meta property="og:image" content={service1} />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://www.divinegroup.com/" />
+      </Helmet>
       <motion.div
         className="fixed inset-0 -z-10"
         style={{

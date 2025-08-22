@@ -7,6 +7,7 @@ import trosium4 from "../../assets/portfolio/trosion/topimage4.avif?url";
 import trosium5 from "../../assets/portfolio/trosion/topimage5.avif?url";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const TourismProgress = () => {
   const containerRef = useRef(null);
@@ -40,6 +41,61 @@ const TourismProgress = () => {
 
   return (
     <div className="min-h-screen relative pb-20" ref={containerRef}>
+      <Helmet>
+        <title>Tourism & Leisure Innovation | Divine Group</title>
+        <meta
+          name="description"
+          content="Divine Group develops and manages world-class tourism, leisure, and entertainment destinations including theme parks, waterparks, and cultural experiences."
+        />
+        <meta
+          name="keywords"
+          content="tourism, leisure, theme parks, waterparks, cultural experiences, adventure tourism, eco-tourism, entertainment venues"
+        />
+        <meta name="robots" content="index, follow" />
+
+        <meta
+          property="og:title"
+          content="Tourism & Leisure Innovation | Divine Group"
+        />
+        <meta
+          property="og:description"
+          content="Explore Divine Group’s portfolio of immersive tourism, leisure, and entertainment destinations designed for visitors worldwide."
+        />
+        <meta property="og:image" content={topImage} />
+        <meta property="og:url" content="https://thedivinegroup.eu/tourism" />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Tourism & Leisure Innovation | Divine Group"
+        />
+        <meta
+          name="twitter:description"
+          content="Explore Divine Group’s portfolio of immersive tourism, leisure, and entertainment destinations designed for visitors worldwide."
+        />
+        <meta name="twitter:image" content={topImage} />
+
+        <script type="application/ld+json">
+          {`
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Tourism & Leisure Innovation",
+          "description": "Divine Group develops and manages world-class tourism, leisure, and entertainment destinations including theme parks, waterparks, and cultural experiences.",
+          "url": https://thedivinegroup.eu/tourism",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Divine Group",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://thedivinegroup.eu/divinelogo.png"
+            }
+          }
+        }
+        `}
+        </script>
+      </Helmet>
       <motion.div
         className="fixed inset-0 -z-10"
         style={{

@@ -5,6 +5,7 @@ import retail1 from "../../assets/portfolio/retail/retail1.avif?url";
 import retail2 from "../../assets/portfolio/retail/retail2.avif?url";
 import retail3 from "../../assets/portfolio/retail/retail3.jpg?url";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 const RetailProgress = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -33,6 +34,61 @@ const RetailProgress = () => {
 
   return (
     <div className="min-h-screen relative pb-20" ref={containerRef}>
+      <Helmet>
+        <title>Retail Development & Urban Destinations | Divine Group</title>
+        <meta
+          name="description"
+          content="Divine Group creates vibrant retail environments, lifestyle malls, and community hubs, blending urban planning with retail innovation."
+        />
+        <meta
+          name="keywords"
+          content="retail development, lifestyle malls, urban planning, community hubs, retail management"
+        />
+        <meta name="robots" content="index, follow" />
+
+        <meta
+          property="og:title"
+          content="Retail Development & Urban Destinations | Divine Group"
+        />
+        <meta
+          property="og:description"
+          content="Designing and managing dynamic retail spaces that foster social connection and economic vitality."
+        />
+        <meta property="og:image" content={topRetail} />
+        <meta property="og:url" content="https://thedivinegroup.eu/retail" />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Retail Development & Urban Destinations | Divine Group"
+        />
+        <meta
+          name="twitter:description"
+          content="Designing and managing dynamic retail spaces that foster social connection and economic vitality."
+        />
+        <meta name="twitter:image" content={topRetail} />
+
+        <script type="application/ld+json">
+          {`
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Retail Development & Urban Destinations",
+          "description": "Divine Group creates vibrant retail environments, lifestyle malls, and community hubs, blending urban planning with retail innovation.",
+          "url": "https://thedivinegroup.eu/retail",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Divine Group",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://thedivinegroup.eu/divinelogo.png"
+            }
+          }
+        }
+      `}
+        </script>
+      </Helmet>
       {/* Animated Background with Gradient Mesh */}
       <motion.div
         className="fixed inset-0 -z-10"

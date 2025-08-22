@@ -10,6 +10,7 @@ import {
   useInView,
   AnimatePresence,
 } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 
 const AboutUsProgress = () => {
   const [activeValue, setActiveValue] = useState(null);
@@ -82,7 +83,30 @@ const AboutUsProgress = () => {
 
   return (
     <div className="min-h-screen relative pb-20" ref={containerRef}>
-      {/* Animated Background */}
+      <Helmet>
+        <title>About Divine Group | Vision, Mission & Values</title>
+        <meta
+          name="description"
+          content="Learn about Divine Group's mission, vision, core values, and leadership. Discover how we create sustainable impact across UAE, Malta, Romania, and beyond."
+        />
+        <meta
+          name="keywords"
+          content="Divine Group, About Us, Mission, Vision, Values, Leadership, Innovation, Sustainability"
+        />
+        <link rel="canonical" href="https://thedivinegroup.eu/about-us" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Divine Group",
+            url: "https://www.divinegroup.com",
+            logo: "https://thedivinegroup.eu/divinelogo.png",
+            sameAs: ["https://www.facebook.com/divinegroup6061"],
+          })}
+        </script>
+      </Helmet>
+
       <motion.div
         className="fixed inset-0 -z-10"
         style={{
@@ -91,7 +115,6 @@ const AboutUsProgress = () => {
         }}
       />
 
-      {/* Content Container */}
       <div className="relative">
         {/* Hero Section */}
         <motion.div

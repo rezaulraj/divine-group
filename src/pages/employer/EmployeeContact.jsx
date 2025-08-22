@@ -12,6 +12,7 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 import { TbLoader } from "react-icons/tb";
+import { Helmet } from "react-helmet-async";
 
 const EmployeeContact = () => {
   const [submitRign, setSubmitRing] = useState(false);
@@ -51,6 +52,45 @@ const EmployeeContact = () => {
       id="employee-service"
       className="py-16 bg-gradient-to-b from-blue-50 to-gray-100"
     >
+      <Helmet>
+        <meta
+          name="description"
+          content="Request a consultation with Divine Group to find skilled professionals and tailored workforce solutions for your business."
+        />
+        <meta
+          name="keywords"
+          content="workforce solutions, staffing services, hire employees, recruitment, Divine Group"
+        />
+        <link
+          rel="canonical"
+          href="https://thedivinegroup.eu/employer-services"
+        />
+
+        <meta
+          property="og:title"
+          content="Workforce Solutions Inquiry | Divine Group"
+        />
+        <meta
+          property="og:description"
+          content="Connect with Divine Group to access skilled professionals and custom workforce solutions."
+        />
+        <meta property="og:image" content="" />
+        <meta
+          property="og:url"
+          content="https://thedivinegroup.eu/employer-services"
+        />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Workforce Solutions Inquiry | Divine Group"
+        />
+        <meta
+          name="twitter:description"
+          content="Request workforce solutions consultation from Divine Group to hire vetted professionals."
+        />
+      </Helmet>
       <div className="container mx-auto px-4 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -76,7 +116,6 @@ const EmployeeContact = () => {
           viewport={{ once: true }}
         >
           <div className="md:flex">
-            {/* Form Illustration */}
             <div className="hidden md:block md:w-2/5 bg-gradient-to-br from-primary to-[#1A9695]/90 p-8">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -125,14 +164,13 @@ const EmployeeContact = () => {
                     <span className="block">
                       Email: contact@thedivinegroup.eu
                     </span>
-                    <span className="block">Romania: +40763316510</span>
+                    {/* <span className="block">Romania: +40763316510</span>*/}
                     {/* <span className="block">Malta: +35699394497</span> */}
                   </p>
                 </div>
               </motion.div>
             </div>
 
-            {/* Form Content */}
             <div className="md:w-3/5 p-8 md:p-10">
               <motion.form
                 action="https://formsubmit.co/380b013455232943a006028a6c501869"

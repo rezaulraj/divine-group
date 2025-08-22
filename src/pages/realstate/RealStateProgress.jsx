@@ -5,6 +5,7 @@ import commercial_residential from "../../assets/portfolio/realstate/commercial_
 import retail_facility from "../../assets/portfolio/realstate/retail_facility.avif?url";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 const RealStateProgress = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -32,6 +33,64 @@ const RealStateProgress = () => {
 
   return (
     <div className="min-h-screen relative pb-20" ref={containerRef}>
+      <Helmet>
+        <title>Real Estate & Urban Development | Divine Group</title>
+        <meta
+          name="description"
+          content="Divine Group delivers world-class real estate development, master planning, commercial & residential solutions, and retail management services."
+        />
+        <meta
+          name="keywords"
+          content="real estate development, urban planning, commercial real estate, residential properties, retail management"
+        />
+        <meta name="robots" content="index, follow" />
+
+        <meta
+          property="og:title"
+          content="Real Estate & Urban Development | Divine Group"
+        />
+        <meta
+          property="og:description"
+          content="Transforming urban landscapes and delivering premium commercial, residential, and retail real estate solutions."
+        />
+        <meta property="og:image" content={topRealState} />
+        <meta
+          property="og:url"
+          content="https://thedivinegroup.eu/real-estate"
+        />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Real Estate & Urban Development | Divine Group"
+        />
+        <meta
+          name="twitter:description"
+          content="Transforming urban landscapes and delivering premium commercial, residential, and retail real estate solutions."
+        />
+        <meta name="twitter:image" content={topRealState} />
+
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Real Estate & Urban Development",
+            "description": "Divine Group delivers world-class real estate development, master planning, commercial & residential solutions, and retail management services.",
+            "url": "https://thedivinegroup.eu/real-estate",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Divine Group",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://thedivinegroup.eu/divinelogo.png"
+              }
+            }
+          }
+          `}
+        </script>
+      </Helmet>
       <motion.div
         className="fixed inset-0 -z-10"
         style={{

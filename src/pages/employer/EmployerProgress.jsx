@@ -8,6 +8,7 @@ import employer4 from "../../assets/employer/employ3.avif?url";
 import employer5 from "../../assets/employer/employ4.avif?url";
 import employer6 from "../../assets/employer/employ5.avif?url";
 import employer7 from "../../assets/employer/employ6.avif?url";
+import { Helmet } from "react-helmet-async";
 
 const EmployerProgress = () => {
   const containerRef = useRef(null);
@@ -18,7 +19,6 @@ const EmployerProgress = () => {
     offset: ["start end", "end start"],
   });
 
-  // Progress line animation
   const scaleY = useTransform(scrollYProgress, [0, 1], [0.05, 1]);
 
   const backgroundColor = useTransform(
@@ -43,7 +43,6 @@ const EmployerProgress = () => {
   const yImage4 = useTransform(scrollYProgress, [0, 1], [0, -250]);
   const yImage5 = useTransform(scrollYProgress, [0, 1], [0, -300]);
 
-  // Progress markers
   const sectionProgress = [
     { title: "What We Offer", emoji: "🧩", progress: 0.07 },
     { title: "Tailored Solutions", emoji: "🤝", progress: 0.19 },
@@ -57,7 +56,46 @@ const EmployerProgress = () => {
 
   return (
     <div className="min-h-screen relative pb-20" ref={containerRef}>
-      {/* Progress Line */}
+      <Helmet>
+        <meta
+          name="description"
+          content="Divine Group helps employers hire skilled candidates efficiently. From talent acquisition to global staffing, we provide tailored recruitment solutions."
+        />
+        <meta
+          name="keywords"
+          content="employer services, hire employees, recruitment solutions, staffing, talent acquisition, Divine Group"
+        />
+        <link
+          rel="canonical"
+          href="https://thedivinegroup.eu/employer-services"
+        />
+
+        <meta
+          property="og:title"
+          content="Employer Recruitment Solutions | Divine Group"
+        />
+        <meta
+          property="og:description"
+          content="Streamline hiring and access pre-screened skilled candidates with Divine Group's recruitment services."
+        />
+        <meta property="og:image" content={employer1} />
+        <meta
+          property="og:url"
+          content="https://thedivinegroup.eu/employer-services"
+        />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Employer Recruitment Solutions | Divine Group"
+        />
+        <meta
+          name="twitter:description"
+          content="Looking for top talent? Divine Group provides end-to-end recruitment solutions to help employers hire efficiently."
+        />
+        <meta name="twitter:image" content={employer1} />
+      </Helmet>
       <div className="fixed left-8 top-1/2 -translate-y-1/2 h-2/3 w-1 bg-white/20 rounded-full z-50 hidden md:block">
         <motion.div
           ref={progressRef}
@@ -65,7 +103,6 @@ const EmployerProgress = () => {
           style={{ scaleY }}
         />
 
-        {/* Progress Markers */}
         {sectionProgress.map((section, index) => (
           <motion.div
             key={index}

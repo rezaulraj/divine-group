@@ -1,5 +1,6 @@
 import React from "react";
 import heroPartnership from "../../assets/partnership/partnership.jpg?url";
+import { Helmet } from "react-helmet-async";
 
 const HeroPartnership = () => {
   return (
@@ -7,6 +8,47 @@ const HeroPartnership = () => {
       className="w-full min-h-screen bg-cover bg-center bg-no-repeat relative overflow-hidden flex items-center py-20"
       style={{ backgroundImage: `url(${heroPartnership})` }}
     >
+      <Helmet>
+        <title>Your Strategic Recruitment Partner | Divine Group</title>
+        <meta
+          name="description"
+          content="Partner with Divine Group to access pre-vetted candidates, hire 90% faster, and leverage industry-specific recruitment expertise with a 12-month replacement guarantee."
+        />
+        <meta
+          name="keywords"
+          content="recruitment, talent acquisition, pre-vetted candidates, hiring process, recruitment partner"
+        />
+        <link
+          rel="canonical"
+          href="https://thedivinegroup.eu/strategic-partnership"
+        />
+
+        <meta
+          property="og:title"
+          content="Your Strategic Recruitment Partner | Divine Group"
+        />
+        <meta
+          property="og:description"
+          content="Partner with Divine Group to access top talent quickly and efficiently with industry-specific expertise."
+        />
+        <meta property="og:image" content={heroPartnership} />
+        <meta
+          property="og:url"
+          content="https://thedivinegroup.eu/strategic-partnership"
+        />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Your Strategic Recruitment Partner | Divine Group"
+        />
+        <meta
+          name="twitter:description"
+          content="Partner with Divine Group to access pre-vetted candidates and streamline your hiring process."
+        />
+        <meta name="twitter:image" content={heroPartnership} />
+      </Helmet>
       <div className="absolute inset-0 bg-black/70"></div>
 
       <div className="relative z-10 px-8 md:px-16 lg:px-24 text-white max-w-2xl">

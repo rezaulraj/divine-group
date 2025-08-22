@@ -7,6 +7,7 @@ import ictGrobal from "../../assets/portfolio/ict/ictgrobal.jpg?url";
 import ictTelecom from "../../assets/portfolio/ict/telecom.jpg?url";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const InfoComTechProgress = () => {
   const containerRef = useRef(null);
@@ -39,6 +40,41 @@ const InfoComTechProgress = () => {
 
   return (
     <div className="min-h-screen relative pb-20" ref={containerRef}>
+      <Helmet>
+        <title>ICT Solutions & Digital Transformation | Divine Group</title>
+        <meta
+          name="description"
+          content="Discover Divine Group's ICT solutions, innovation hubs, outsourcing support, global ICT expansion, and strategic telecom investments for enterprise growth."
+        />
+        <meta property="og:title" content="Divine Group ICT Solutions" />
+        <meta
+          property="og:description"
+          content="Partner with Divine Group to transform your digital infrastructure through ICT innovation hubs, outsourcing support, and telecom investments."
+        />
+        <meta property="og:image" content={topIct} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Divine Group ICT Solutions" />
+        <meta
+          name="twitter:description"
+          content="Explore global ICT solutions, business-ready innovation hubs, outsourcing support, and telecom investments with Divine Group."
+        />
+        <meta name="twitter:image" content={topIct} />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Divine Group",
+            url: "https://thedivinegroup.eu/information-communication-technology",
+            logo: topIct,
+            description:
+              "Providing ICT solutions, innovation hubs, outsourcing support, global expansion, and strategic telecom investments for businesses worldwide.",
+            sameAs: ["https://www.facebook.com/divinegroup6061"],
+          })}
+        </script>
+      </Helmet>
+
       <motion.div
         className="fixed inset-0 -z-10"
         style={{

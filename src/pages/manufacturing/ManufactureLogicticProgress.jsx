@@ -5,6 +5,7 @@ import industrial_infrastructure from "../../assets/portfolio/infastucter/indust
 import manufacturing_facilities from "../../assets/portfolio/infastucter/manufacturing_facilities.jpg?url";
 import supply_chain_growth from "../../assets/portfolio/infastucter/supply_chain_growth.jpg?url";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 const ManufactureLogicticProgress = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -32,6 +33,47 @@ const ManufactureLogicticProgress = () => {
 
   return (
     <div className="min-h-screen relative pb-20" ref={containerRef}>
+      <Helmet>
+        <title>Industrial Infrastructure & Logistics | Divine Group</title>
+        <meta
+          name="description"
+          content="Explore Divine Group's industrial infrastructure, manufacturing facilities, logistics hubs, and supply chain solutions driving global trade and business growth."
+        />
+        <meta
+          property="og:title"
+          content="Divine Group Industrial Infrastructure"
+        />
+        <meta
+          property="og:description"
+          content="Divine Group enables scalable manufacturing, sectoral support, and global logistics networks for sustainable industrial growth."
+        />
+        <meta property="og:image" content={topImage} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Divine Group Industrial Infrastructure"
+        />
+        <meta
+          name="twitter:description"
+          content="Discover Divine Group's industrial hubs, manufacturing facilities, and supply chain solutions for efficient business enablement."
+        />
+        <meta name="twitter:image" content={topImage} />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Divine Group",
+            url: "https://thedivinegroup.eu/manufacturing-and-logistics",
+            logo: topImage,
+            description:
+              "Providing industrial infrastructure, manufacturing facilities, logistics hubs, and supply chain solutions to drive global business growth.",
+            sameAs: ["https://www.facebook.com/divinegroup6061"],
+          })}
+        </script>
+      </Helmet>
       <motion.div
         className="fixed inset-0 -z-10"
         style={{

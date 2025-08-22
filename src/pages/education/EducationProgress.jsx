@@ -6,6 +6,7 @@ import executive_learning from "../../assets/portfolio/education/executive_learn
 import global_academic_partnerships from "../../assets/portfolio/education/global_academic_partnerships.webp?url";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 const EducationProgress = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -33,6 +34,42 @@ const EducationProgress = () => {
   const yImage4 = useTransform(scrollYProgress, [0, 1], [0, -150]);
   return (
     <div className="min-h-screen relative pb-20" ref={containerRef}>
+      <Helmet>
+        <title>
+          Education Progress & Global Academic Development | Divine Group
+        </title>
+        <meta
+          name="description"
+          content="Explore Divine Group's global academic districts, executive learning, research programs, and international collaborations to shape the future of education."
+        />
+        <meta property="og:title" content="Divine Group Education Progress" />
+        <meta
+          property="og:description"
+          content="Discover academic hubs, talent development centers, and global collaborations with Divine Group."
+        />
+        <meta property="og:image" content={topImage} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Divine Group Education Progress" />
+        <meta
+          name="twitter:description"
+          content="Explore global academic programs, research initiatives, and executive learning with Divine Group."
+        />
+        <meta name="twitter:image" content={topImage} />
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            name: "Divine Group",
+            url: "https://thedivinegroup.eu/education",
+            logo: topImage,
+            description:
+              "Global academic hubs, executive learning, research programs, and collaborations shaping the future of education.",
+            sameAs: ["https://www.facebook.com/divinegroup6061"],
+          })}
+        </script>
+      </Helmet>
       <motion.div
         className="fixed inset-0 -z-10"
         style={{

@@ -5,6 +5,7 @@ import wellness_dining from "../../assets/portfolio/hospitality/wellness_dining.
 import eco_adventure_global from "../../assets/portfolio/hospitality/eco_adventure_global.avif?url";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 const HospitalityProgress = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -32,6 +33,46 @@ const HospitalityProgress = () => {
 
   return (
     <div className="min-h-screen relative pb-20" ref={containerRef}>
+      <Helmet>
+        <title>
+          Hospitality Development & Iconic Destinations | Divine Group
+        </title>
+        <meta
+          name="description"
+          content="Divine Group redefines hospitality with luxury hotels, resorts, restaurants, wellness destinations, and adventure retreats. Explore our iconic global developments."
+        />
+        <meta
+          name="keywords"
+          content="hospitality, hotels, resorts, wellness, restaurants, adventure retreats, luxury destinations, Divine Group"
+        />
+        <link rel="canonical" href="https://thedivinegroup.eu/hospitality" />
+
+        <meta
+          property="og:title"
+          content="Hospitality Development & Iconic Destinations | Divine Group"
+        />
+        <meta
+          property="og:description"
+          content="Discover Divine Group's luxury hospitality portfolio: hotels, resorts, wellness, culinary, and adventure destinations across the globe."
+        />
+        <meta property="og:image" content={topHospitality} />
+        <meta
+          property="og:url"
+          content="https://thedivinegroup.eu/hospitality"
+        />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Hospitality Development & Iconic Destinations | Divine Group"
+        />
+        <meta
+          name="twitter:description"
+          content="Explore Divine Group's portfolio of luxury hotels, resorts, wellness and adventure destinations, redefining global hospitality."
+        />
+        <meta name="twitter:image" content={topHospitality} />
+      </Helmet>
       <motion.div
         className="fixed inset-0 -z-10"
         style={{
@@ -80,7 +121,7 @@ const HospitalityProgress = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
-          transition={{ duration: 0.8, }}
+          transition={{ duration: 0.8 }}
           className="flex items-center justify-center relative p-3 mb-[15rem] sm:mb-[18rem] md:mb-[32rem] lg:mb-[40rem] p-4"
           style={{
             y: useTransform(scrollYProgress, [0, 0.5], [0, -50]),

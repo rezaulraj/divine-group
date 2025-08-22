@@ -5,6 +5,7 @@ import sme_training_workshop from "../../assets/portfolio/sme/sme-training-works
 import startup_innovation_lab from "../../assets/portfolio/sme/startup-innovation-lab.avif?url";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const SmeProgress = () => {
   const containerRef = useRef(null);
@@ -33,6 +34,64 @@ const SmeProgress = () => {
 
   return (
     <div className="min-h-screen relative pb-20" ref={containerRef}>
+      <Helmet>
+        <title>SME Growth & Startup Innovation | Divine Group</title>
+        <meta
+          name="description"
+          content="Divine Group empowers SMEs and startups with tailored resources, collaborative ecosystems, and business incubation programs to drive economic growth and innovation."
+        />
+        <meta
+          name="keywords"
+          content="SME support, startup incubation, business growth, entrepreneurship, innovation ecosystem, mentorship, funding opportunities"
+        />
+        <meta name="robots" content="index, follow" />
+
+        <meta
+          property="og:title"
+          content="SME Growth & Startup Innovation | Divine Group"
+        />
+        <meta
+          property="og:description"
+          content="Supporting SMEs and startups with access to resources, mentorship, and innovation-focused ecosystems for sustainable business growth."
+        />
+        <meta property="og:image" content={topSme} />
+        <meta
+          property="og:url"
+          content="https://thedivinegroup.eu/smes-and-entrepreneurship"
+        />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="SME Growth & Startup Innovation | Divine Group"
+        />
+        <meta
+          name="twitter:description"
+          content="Supporting SMEs and startups with access to resources, mentorship, and innovation-focused ecosystems for sustainable business growth."
+        />
+        <meta name="twitter:image" content={topSme} />
+
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "SME Growth & Startup Innovation",
+            "description": "Divine Group empowers SMEs and startups with tailored resources, collaborative ecosystems, and business incubation programs to drive economic growth and innovation.",
+            "url": "https://thedivinegroup.eu/smes-and-entrepreneurship",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Divine Group",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://thedivinegroup.eu/divinelogo.png"
+              }
+            }
+          }
+        `}
+        </script>
+      </Helmet>
       <motion.div
         className="fixed inset-0 -z-10"
         style={{

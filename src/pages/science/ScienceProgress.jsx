@@ -5,6 +5,7 @@ import science_lab from "../../assets/portfolio/science/science_lab.avif?url";
 import science_ecosystem from "../../assets/portfolio/science/science_ecosystem.jpg?url";
 import collaboration from "../../assets/portfolio/science/collaboration.jpg?url";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 const ScienceProgress = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -34,7 +35,64 @@ const ScienceProgress = () => {
 
   return (
     <div className="min-h-screen relative pb-20" ref={containerRef}>
-      {/* Animated Background with Gradient Mesh */}
+      <Helmet>
+        <title>Science & Technology Innovation | Divine Group</title>
+        <meta
+          name="description"
+          content="Divine Group empowers science and technology enterprises through purpose-built innovation ecosystems, flexible labs, and collaborative business environments."
+        />
+        <meta
+          name="keywords"
+          content="science park, technology hub, biotech, life sciences, research ecosystem, innovation center, R&D facilities"
+        />
+        <meta name="robots" content="index, follow" />
+
+        
+        <meta
+          property="og:title"
+          content="Science & Technology Innovation | Divine Group"
+        />
+        <meta
+          property="og:description"
+          content="Supporting startups, SMEs, and corporations with world-class science and technology infrastructures and collaborative ecosystems."
+        />
+        <meta property="og:image" content={topImage} />
+        <meta property="og:url" content="https://thedivinegroup.eu/science" />
+        <meta property="og:type" content="website" />
+
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Science & Technology Innovation | Divine Group"
+        />
+        <meta
+          name="twitter:description"
+          content="Supporting startups, SMEs, and corporations with world-class science and technology infrastructures and collaborative ecosystems."
+        />
+        <meta name="twitter:image" content={topImage} />
+
+        
+        <script type="application/ld+json">
+          {`
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Science & Technology Innovation",
+          "description": "Divine Group empowers science and technology enterprises through purpose-built innovation ecosystems, flexible labs, and collaborative business environments.",
+          "url": "https://thedivinegroup.eu/science",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Divine Group",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://thedivinegroup.eu/divinelogo.png"
+            }
+          }
+        }
+      `}
+        </script>
+      </Helmet>
       <motion.div
         className="fixed inset-0 -z-10"
         style={{

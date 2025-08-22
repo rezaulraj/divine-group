@@ -5,6 +5,7 @@ import media_innovation_platform from "../../assets/portfolio/media/media_innova
 import broadcast_ad_network from "../../assets/portfolio/media/broadcast_ad_network.avif?url";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 const MediaProgress = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -32,6 +33,40 @@ const MediaProgress = () => {
 
   return (
     <div className="min-h-screen relative pb-20" ref={containerRef}>
+      <Helmet>
+        <title>Media Infrastructure & Creative Ecosystems | Divine Group</title>
+        <meta
+          name="description"
+          content="Divine Group empowers global media and entertainment with innovative infrastructure, creative hubs, and multimedia solutions."
+        />
+        <meta
+          name="keywords"
+          content="Media infrastructure, Creative ecosystems, Broadcasting, Media startups, Digital distribution"
+        />
+        <meta name="robots" content="index, follow" />
+
+        <meta
+          property="og:title"
+          content="Media Infrastructure & Creative Ecosystems | Divine Group"
+        />
+        <meta
+          property="og:description"
+          content="Explore Divine Group's media hubs, broadcasting, and creative platforms for innovation."
+        />
+
+        <meta property="og:url" content="https://thedivinegroup.eu/media" />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Media Infrastructure & Creative Ecosystems | Divine Group"
+        />
+        <meta
+          name="twitter:description"
+          content="Explore Divine Group's media hubs, broadcasting, and creative platforms for innovation."
+        />
+      </Helmet>
       <motion.div
         className="fixed inset-0 -z-10"
         style={{
