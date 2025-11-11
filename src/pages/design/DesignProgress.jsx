@@ -259,7 +259,7 @@ const DesignProgress = () => {
             </ImageContent>
           </SectionWrapper>
 
-          {/* Second Section */}
+          
           <SectionWrapper reverse>
             <ImageContent>
               <motion.div

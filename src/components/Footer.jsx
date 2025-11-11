@@ -15,14 +15,11 @@ const Footer = () => {
     <footer className="bg-primary text-white pt-16 pb-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-12">
-          {/* Logo and Social Media */}
           <div className="space-y-6">
             <a href="/">
               <img src={logo} alt="Company Logo" className="h-24 w-auto" />
             </a>
           </div>
-
-          {/* Quick Links */}
           <div>
             <ul className="space-y-3 flex flex-wrap gap-6">
               <li>
@@ -60,7 +57,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Company */}
           <div className="flex space-x-4">
             <a
               href="https://www.facebook.com/divinegroup6061"
@@ -115,10 +111,8 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Divider */}
         <div className="border-t border-gray-800 my-8"></div>
 
-        {/* Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-300 text-sm">
             Divine Group Company © Copyright {new Date().getFullYear()} All

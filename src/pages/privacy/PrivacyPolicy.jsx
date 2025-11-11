@@ -18,7 +18,6 @@ const PrivacyPolicy = () => {
   return (
     <div className="bg-gray-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
-        {/* Header */}
         <div className="bg-gradient-to-r from-blue-600 to-blue-800 p-8 text-white">
           <div className="flex items-center">
             <FaShieldAlt className="text-4xl mr-4" />
@@ -31,9 +30,8 @@ const PrivacyPolicy = () => {
           </div>
         </div>
 
-        {/* Content */}
+   
         <div className="p-8 font-raleway">
-          {/* Introduction */}
           <div className="mb-12">
             <div className="flex items-start mb-6">
               <MdPrivacyTip className="text-2xl text-blue-600 mr-4 mt-1" />
@@ -59,7 +57,6 @@ const PrivacyPolicy = () => {
             </div>
           </div>
 
-          {/* Who We Are */}
           <div className="mb-12">
             <div className="flex items-start mb-6">
               <RiContactsBookLine className="text-2xl text-blue-600 mr-4 mt-1" />
@@ -85,7 +82,6 @@ const PrivacyPolicy = () => {
             </div>
           </div>
 
-          {/* Information Covered */}
           <div className="mb-12">
             <div className="flex items-start mb-6">
               <MdDataUsage className="text-2xl text-blue-600 mr-4 mt-1" />
@@ -146,7 +142,6 @@ const PrivacyPolicy = () => {
             </div>
           </div>
 
-          {/* Cookies */}
           <div className="mb-12">
             <div className="flex items-start mb-6">
               <FaCookieBite className="text-2xl text-blue-600 mr-4 mt-1" />
@@ -165,7 +160,6 @@ const PrivacyPolicy = () => {
             </div>
           </div>
 
-          {/* Data Collection */}
           <div className="mb-12">
             <div className="flex items-start mb-6">
               <FaUserShield className="text-2xl text-blue-600 mr-4 mt-1" />
@@ -290,7 +284,6 @@ const PrivacyPolicy = () => {
             </div>
           </div>
 
-          {/* CCTV */}
           <div className="mb-12">
             <div className="flex items-start mb-6">
               <FaCamera className="text-2xl text-blue-600 mr-4 mt-1" />
@@ -307,7 +300,6 @@ const PrivacyPolicy = () => {
             </div>
           </div>
 
-          {/* Data from Others */}
           <div className="mb-12">
             <div className="flex items-start mb-6">
               <FaExchangeAlt className="text-2xl text-blue-600 mr-4 mt-1" />
@@ -346,7 +338,6 @@ const PrivacyPolicy = () => {
             </div>
           </div>
 
-          {/* Legal Basis */}
           <div className="mb-12">
             <div className="flex items-start mb-6">
               <FaLock className="text-2xl text-blue-600 mr-4 mt-1" />
@@ -397,7 +388,6 @@ const PrivacyPolicy = () => {
             </div>
           </div>
 
-          {/* Data Retention */}
           <div className="mb-12">
             <div className="flex items-start mb-6">
               <FaLock className="text-2xl text-blue-600 mr-4 mt-1" />
@@ -424,7 +414,6 @@ const PrivacyPolicy = () => {
             </div>
           </div>
 
-          {/* Data Sharing */}
           <div className="mb-12">
             <div className="flex items-start mb-6">
               <FaExchangeAlt className="text-2xl text-blue-600 mr-4 mt-1" />
@@ -512,7 +501,6 @@ const PrivacyPolicy = () => {
             </div>
           </div>
 
-          {/* Security */}
           <div className="mb-12">
             <div className="flex items-start mb-6">
               <FaLock className="text-2xl text-blue-600 mr-4 mt-1" />
@@ -531,7 +519,6 @@ const PrivacyPolicy = () => {
             </div>
           </div>
 
-          {/* Your Rights */}
           <div className="mb-12">
             <div className="flex items-start mb-6">
               <FaUserShield className="text-2xl text-blue-600 mr-4 mt-1" />
@@ -561,7 +548,6 @@ const PrivacyPolicy = () => {
             </div>
           </div>
 
-          {/* AI Implications */}
           <div className="mb-12">
             <div className="flex items-start mb-6">
               <FaRobot className="text-2xl text-blue-600 mr-4 mt-1" />
@@ -634,7 +620,6 @@ const PrivacyPolicy = () => {
             </div>
           </div>
 
-          {/* Contact */}
           <div className="mb-12">
             <div className="flex items-start mb-6">
               <FaEnvelope className="text-2xl text-blue-600 mr-4 mt-1" />
@@ -699,7 +684,6 @@ const PrivacyPolicy = () => {
             </div>
           </div>
 
-          {/* Changes */}
           <div className="mb-6">
             <div className="flex items-start">
               <MdPrivacyTip className="text-2xl text-blue-600 mr-4 mt-1" />

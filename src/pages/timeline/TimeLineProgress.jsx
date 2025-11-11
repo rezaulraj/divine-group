@@ -103,7 +103,6 @@ const TimeLineProgress = () => {
     },
   ];
 
-  // Animation values based on scroll
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
   const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
@@ -128,7 +127,6 @@ const TimeLineProgress = () => {
 
   return (
     <div className="bg-blue-500 relative pb-40" ref={containerRef}>
-      {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -145,16 +143,14 @@ const TimeLineProgress = () => {
         </div>
       </motion.div>
 
-      {/* Timeline with Year Markers */}
       <div className="max-w-screen-xl mx-auto px-4 relative">
-        {/* Central Timeline Line */}
+
         <div className="absolute left-1/2 h-full w-1 bg-white/30 top-0 -translate-x-1/2 hidden md:block">
           <motion.div
             style={{ scaleY: scrollYProgress }}
             className="absolute top-0 left-0 w-full h-full bg-white origin-top"
           />
 
-          {/* Year Circles on Timeline */}
           {timelineData.map((item, index) => {
             const position = (index / (timelineData.length - 1)) * 100;
             return (
@@ -181,13 +177,11 @@ const TimeLineProgress = () => {
           })}
         </div>
 
-        {/* Timeline Items */}
         <div className="space-y-32 md:space-y-64 pt-12">
           {timelineData.map((item, index) => {
             const isEven = index % 2 === 0;
             return (
               <div key={index} className="relative pt-24 md:pt-0">
-                {/* Mobile Year Circle */}
                 <div className="md:hidden absolute top-0 left-0 w-full flex justify-center">
                   <motion.div
                     initial={{ scale: 0 }}
@@ -200,7 +194,6 @@ const TimeLineProgress = () => {
                 </div>
 
                 <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
-                  {/* Left Side - Image for even, Text for odd */}
                   <motion.div
                     initial={{ scale: 0.8, opacity: 0, x: 100 }}
                     whileInView={{ scale: 1, opacity: 1, x: 0 }}
@@ -239,7 +232,6 @@ const TimeLineProgress = () => {
                     )}
                   </motion.div>
 
-                  {/* Right Side - Text for even, Image for odd */}
                   <motion.div
                     initial={{ scale: 0.8, opacity: 0, x: -100 }}
                     whileInView={{ scale: 1, opacity: 1, x: 0 }}
@@ -284,7 +276,6 @@ const TimeLineProgress = () => {
         </div>
       </div>
 
-      {/* Floating decorative elements */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.3 }}

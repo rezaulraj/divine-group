@@ -62,7 +62,6 @@ const HeroContact = () => {
           })}
         </script>
       </Helmet>
-      {/* ✅ Thank You Popup */}
       <AnimatePresence>
         {showPopup && (
           <motion.div
@@ -102,7 +101,7 @@ const HeroContact = () => {
           variants={staggerContainer}
           className="grid grid-cols-1 lg:grid-cols-2 gap-12"
         >
-          {/* Contact Form */}
+ 
           <motion.div
             variants={fadeIn}
             className="bg-white rounded-xl shadow-lg p-8"
@@ -111,13 +110,12 @@ const HeroContact = () => {
               Get in Touch
             </h2>
 
-            {/* ✅ FormSubmit.io Integration */}
             <form
               action="https://formsubmit.co/380b013455232943a006028a6c501869"
               method="POST"
               className="space-y-6"
             >
-              {/* Disable CAPTCHA */}
+             
               <input type="hidden" name="_captcha" value="false" />
               <input
                 type="hidden"
@@ -225,8 +223,6 @@ const HeroContact = () => {
               </motion.button>
             </form>
           </motion.div>
-
-          {/* Contact Information */}
           <motion.div variants={fadeIn} className="space-y-8">
             <div className="bg-white/50 rounded-xl shadow-lg p-8">
               <h2 className="text-3xl font-bold text-gray-800 mb-6">
@@ -310,7 +306,6 @@ const HeroContact = () => {
                   </a>
                 </div>
 
-                {/* New Book a Call Section */}
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center font-bebasneue">
                     <FaCalendarAlt className="mr-2 text-blue-500" /> Schedule a
@@ -332,7 +327,6 @@ const HeroContact = () => {
               </div>
             </div>
 
-            {/* Map Iframe */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317043.19287511153!2d-0.3577228949958104!3d51.28388377107554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876085f0b2df529%3A0xecc57bc84f049463!2s62%20Tudor%20Dr%2C%20Morden%20SM4%204PF%2C%20UK!5e1!3m2!1sen!2sbd!4v1755869559767!5m2!1sen!2sbd"

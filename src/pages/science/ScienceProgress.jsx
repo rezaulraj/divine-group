@@ -13,25 +13,21 @@ const ScienceProgress = () => {
     offset: ["start end", "end start"],
   });
 
-  // Enhanced gradient background with more color stops
+
   const backgroundColor = useTransform(
     scrollYProgress,
     [0, 0.17, 0.34, 0.51, 0.68, 0.85, 1],
     [
-      "linear-gradient(135deg, #6e45e2 0%, #88d3ce 100%)", // Purple/teal
-      "linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)", // Bright blue
-      "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)", // Green gradient
-      "linear-gradient(135deg, #f46b45 0%, #eea849 100%)", // Orange/yellow
-      "linear-gradient(135deg, #ee0979 0%, #ff6a00 100%)", // Pink/orange
-      "linear-gradient(135deg, #7b4397 0%, #dc2430 100%)", // Purple/red
-      "linear-gradient(135deg, #43cea2 0%, #185a9d 100%)", // Teal/blue
+      "linear-gradient(135deg, #6e45e2 0%, #88d3ce 100%)",
+      "linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)",
+      "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
+      "linear-gradient(135deg, #f46b45 0%, #eea849 100%)",
+      "linear-gradient(135deg, #ee0979 0%, #ff6a00 100%)",
+      "linear-gradient(135deg, #7b4397 0%, #dc2430 100%)",
+      "linear-gradient(135deg, #43cea2 0%, #185a9d 100%)",
     ]
   );
 
-  // Parallax effects for images
-  const yImage1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  const yImage2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
-  const yImage3 = useTransform(scrollYProgress, [0, 1], [0, -200]);
 
   return (
     <div className="min-h-screen relative pb-20" ref={containerRef}>
@@ -100,7 +96,6 @@ const ScienceProgress = () => {
           transition: "background 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
         }}
       >
-        {/* Subtle animated mesh pattern */}
         <motion.div
           className="absolute inset-0 opacity-10"
           style={{
@@ -113,7 +108,6 @@ const ScienceProgress = () => {
         />
       </motion.div>
 
-      {/* Floating Particles */}
       {[...Array(15)].map((_, i) => (
         <motion.div
           key={i}
@@ -138,9 +132,9 @@ const ScienceProgress = () => {
         />
       ))}
 
-      {/* Content Container */}
+  
       <div className="relative max-w-7xl mx-auto">
-        {/* Hero Section with Floating Effect */}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -167,9 +161,8 @@ const ScienceProgress = () => {
           </motion.div>
         </motion.div>
 
-        {/* Content Sections */}
         <div className="flex flex-col items-center space-y-32 lg:space-y-48 justify-center p-4">
-          {/* First Section */}
+
           <SectionWrapper>
             <TextContent>
               <motion.h1
@@ -305,7 +298,6 @@ const ScienceProgress = () => {
             </ImageContent>
           </SectionWrapper>
 
-          {/* Second Section */}
           <SectionWrapper reverse>
             <ImageContent>
               <motion.div
@@ -436,7 +428,7 @@ const ScienceProgress = () => {
             </TextContent>
           </SectionWrapper>
 
-          {/* Third Section */}
+        
           <SectionWrapper>
             <TextContent>
               <motion.h1
@@ -568,7 +560,7 @@ const ScienceProgress = () => {
             </ImageContent>
           </SectionWrapper>
 
-          {/* CTA Section */}
+     
           <motion.div
             className="w-full py-16 text-center"
             initial={{ opacity: 0, y: 50 }}
@@ -603,7 +595,6 @@ const ScienceProgress = () => {
   );
 };
 
-// Enhanced Reusable Components
 const SectionWrapper = ({ children, reverse = false }) => {
   return (
     <motion.div

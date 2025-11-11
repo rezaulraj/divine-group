@@ -12,7 +12,7 @@ const ThankYou = () => {
         transition={{ duration: 0.6 }}
         className="bg-white shadow-2xl rounded-2xl p-10 max-w-lg text-center"
       >
-        {/* Success Icon */}
+
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -22,18 +22,17 @@ const ThankYou = () => {
           <FaCheckCircle className="text-green-500 text-7xl" />
         </motion.div>
 
-        {/* Heading */}
+
         <h1 className="text-4xl font-extrabold text-gray-800 mb-4">
           Thank You!
         </h1>
 
-        {/* Message */}
+
         <p className="text-lg text-gray-600 mb-8">
           We’ve received your message. Our recruitment team will get back to you
           shortly.
         </p>
 
-        {/* Button Back to Home */}
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Link
             to="/"

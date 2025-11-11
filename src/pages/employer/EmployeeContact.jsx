@@ -22,7 +22,6 @@ const EmployeeContact = () => {
     e.preventDefault();
     setSubmitRing(true);
 
-    // FormSubmit will handle the submission, we just need to show the success message
     setTimeout(() => {
       setSubmitRing(false);
       setShowPopup(true);
@@ -181,7 +180,6 @@ const EmployeeContact = () => {
                 whileInView="visible"
                 viewport={{ once: false }}
               >
-                {/* FormSubmit hidden fields */}
                 <input type="hidden" name="_captcha" value="false" />
                 <input
                   type="hidden"

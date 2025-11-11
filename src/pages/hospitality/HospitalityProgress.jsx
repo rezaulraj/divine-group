@@ -144,7 +144,6 @@ const HospitalityProgress = () => {
         </motion.div>
 
         <div className="flex flex-col items-center space-y-32 lg:space-y-48 justify-center p-4">
-          {/* First Section */}
           <SectionWrapper>
             <TextContent>
               <motion.h1
@@ -280,7 +279,7 @@ const HospitalityProgress = () => {
             </ImageContent>
           </SectionWrapper>
 
-          {/* Second Section */}
+       
           <SectionWrapper reverse>
             <ImageContent>
               <motion.div
@@ -414,7 +413,7 @@ const HospitalityProgress = () => {
             </TextContent>
           </SectionWrapper>
 
-          {/* Third Section */}
+     
           <SectionWrapper>
             <TextContent>
               <motion.h1
@@ -547,7 +546,7 @@ const HospitalityProgress = () => {
             </ImageContent>
           </SectionWrapper>
 
-          {/* CTA Section */}
+       
           <motion.div
             className="w-full py-16 text-center"
             initial={{ opacity: 0, y: 50 }}
@@ -582,7 +581,6 @@ const HospitalityProgress = () => {
   );
 };
 
-// Enhanced Reusable Components
 const SectionWrapper = ({ children, reverse = false }) => {
   return (
     <motion.div

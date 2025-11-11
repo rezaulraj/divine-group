@@ -34,7 +34,7 @@ const TestimonialSlider = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % testimonials.length);
-    }, 4000); // auto slide every 4s
+    }, 4000); 
     return () => clearInterval(interval);
   }, []);
 
@@ -62,7 +62,6 @@ const TestimonialSlider = () => {
           </motion.div>
         </AnimatePresence>
 
-        {/* Dots Navigation */}
         <div className="flex justify-center mt-6 space-x-2">
           {testimonials.map((_, i) => (
             <button

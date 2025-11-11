@@ -11,7 +11,14 @@ import clineLogo5 from "../assets/cliend/cl5.png?url";
 import clineLogo6 from "../assets/cliend/cl6.png?url";
 import clineLogo7 from "../assets/cliend/cl7.png?url";
 import clineLogo8 from "../assets/cliend/cl8.png?url";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import {
+  FaArrowLeft,
+  FaArrowRight,
+  FaRocket,
+  FaStar,
+  FaBriefcase,
+  FaRegGem,
+} from "react-icons/fa";
 
 const navItem = [
   { label: "Home", path: "/" },
@@ -102,9 +109,34 @@ const Header = () => {
   const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
   const [hoveredNavItem, setHoveredNavItem] = useState(null);
+  const [careerEffectActive, setCareerEffectActive] = useState(false);
+  const [floatingParticles, setFloatingParticles] = useState([]);
   const containerRef = useRef(null);
 
-  // Animate on route change
+  useEffect(() => {
+    const careerEffectState = sessionStorage.getItem("careerEffectActive");
+    const careerClickedState = sessionStorage.getItem("careerClicked");
+
+    if (careerEffectState === "true" && careerClickedState !== "true") {
+      setCareerEffectActive(true);
+    } else {
+      setCareerEffectActive(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (careerEffectActive && navOpen) {
+      const particles = Array.from({ length: 12 }, (_, i) => ({
+        id: i,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        delay: Math.random() * 2,
+        size: Math.random() * 20 + 10,
+      }));
+      setFloatingParticles(particles);
+    }
+  }, [careerEffectActive, navOpen]);
+
   useEffect(() => {
     setShowIntro(true);
     const timer = setTimeout(() => {
@@ -114,7 +146,6 @@ const Header = () => {
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
-  // Auto-rotate client logos with smooth sliding effect
   useEffect(() => {
     if (navOpen && !isHovering) {
       const interval = setInterval(() => {
@@ -134,9 +165,56 @@ const Header = () => {
     );
   };
 
+  const handleCareerClick = () => {
+    sessionStorage.setItem("careerClicked", "true");
+    sessionStorage.setItem("careerEffectActive", "false");
+
+    setCareerEffectActive(false);
+    setNavOpen(false);
+    setLogoVisible(true);
+  };
+
+  const handleSvgClick = () => {
+    const careerEffectState = sessionStorage.getItem("careerEffectActive");
+    const careerClickedState = sessionStorage.getItem("careerClicked");
+
+    const shouldActivateEffect =
+      (careerEffectState === null || careerEffectState === "true") &&
+      careerClickedState !== "true";
+
+    if (shouldActivateEffect) {
+      setCareerEffectActive(true);
+      sessionStorage.setItem("careerEffectActive", "true");
+    } else {
+      setCareerEffectActive(false);
+    }
+
+    setNavOpen(!navOpen);
+    if (!navOpen) {
+      setLogoVisible(false);
+    } else {
+      setLogoVisible(true);
+    }
+  };
+
+  const handleOtherNavClick = () => {
+    setNavOpen(false);
+    setLogoVisible(true);
+  };
+
+  const getNavItemClass = (item) => {
+    const baseClass =
+      "text-gray-100/80 hover:text-gray-200 text-2xl md:text-4xl hover:translate-x-6 transition-all duration-500 leading-tight uppercase font-bebasneue font-extrabold relative z-10 flex items-center";
+
+    if (item.label === "Career" && careerEffectActive) {
+      return `${baseClass} career-special-effect`;
+    }
+
+    return baseClass;
+  };
+
   return (
     <>
-      {/* Intro Animation Overlay */}
       <AnimatePresence>
         {showIntro && (
           <motion.div
@@ -163,11 +241,10 @@ const Header = () => {
         )}
       </AnimatePresence>
 
-      {/* Fixed Logo - Top Right */}
       <AnimatePresence>
         {logoVisible && !navOpen && !showIntro && (
           <motion.a
-            href="/" // Add your link destination here
+            href="/" 
             key="top-logo-link"
             className="absolute top-0 right-12 z-50"
             initial={{ opacity: 0, y: -30, scale: 0.8 }}
@@ -192,8 +269,6 @@ const Header = () => {
           </motion.a>
         )}
       </AnimatePresence>
-
-      {/* Sticky SVG Menu Icon - Top Left */}
       <motion.div
         className="fixed top-0 left-2 z-[70] cursor-pointer"
         style={{ height: "70px" }}
@@ -205,20 +280,11 @@ const Header = () => {
           stiffness: 400,
           damping: 17,
         }}
-        onClick={() => {
-          setNavOpen(!navOpen);
-          if (!navOpen) {
-            setLogoVisible(false);
-          } else {
-            setLogoVisible(true);
-          }
-        }}
+        onClick={handleSvgClick}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="transition-all duration-500 w-[110px] h-[60%] hover:h-[70%] md:w-[160.73px] md:h-[90%] hover:md:h-[100%]"
-          // width="160.722"
-          // height="90%"
           viewBox="0 0 214.722 92.42"
         >
           <defs>
@@ -278,11 +344,9 @@ const Header = () => {
         </svg>
       </motion.div>
 
-      {/* Nav Menu with Logo and Items */}
       <AnimatePresence>
         {navOpen && (
           <>
-            {/* Background with bottom-left rounded animation */}
             <motion.div
               className="fixed inset-0 bg-primary z-[64]"
               initial={{ clipPath: "circle(0% at right top)" }}
@@ -291,7 +355,6 @@ const Header = () => {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             />
 
-            {/* Nav content */}
             <motion.div
               className="fixed inset-0 z-[65] flex flex-col items-center justify-center gap-8 text-2xl font-semibold"
               initial={{ opacity: 0, y: -30 }}
@@ -309,8 +372,51 @@ const Header = () => {
               />
 
               <div className="flex items-center justify-around gap-10 w-full px-20">
-                {/* Left side - Navigation */}
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3 relative">
+                  {careerEffectActive &&
+                    floatingParticles.map((particle) => (
+                      <motion.div
+                        key={particle.id}
+                        className="absolute pointer-events-none z-0"
+                        style={{
+                          left: `${particle.x}%`,
+                          top: `${particle.y}%`,
+                        }}
+                        initial={{
+                          opacity: 0,
+                          scale: 0,
+                          rotate: 0,
+                        }}
+                        animate={{
+                          opacity: [0, 1, 0],
+                          scale: [0, 1, 0],
+                          rotate: 360,
+                          y: [0, -100, -200],
+                          x: [
+                            0,
+                            Math.random() * 100 - 50,
+                            Math.random() * 100 - 50,
+                          ],
+                        }}
+                        transition={{
+                          duration: 4,
+                          delay: particle.delay,
+                          repeat: Infinity,
+                          ease: "easeOut",
+                        }}
+                      >
+                        <div className="text-[#80C3FF]">
+                          {particle.id % 3 === 0 ? (
+                            <FaStar />
+                          ) : particle.id % 3 === 1 ? (
+                            <FaRegGem />
+                          ) : (
+                            <FaBriefcase />
+                          )}
+                        </div>
+                      </motion.div>
+                    ))}
+
                   {navItem.map((item, i) => (
                     <motion.div
                       key={i}
@@ -323,13 +429,34 @@ const Header = () => {
                     >
                       <a
                         href={item.path}
-                        className="text-gray-100/80 hover:text-gray-200 text-2xl md:text-4xl hover:translate-x-6 transition-transform duration-500 leading-tight uppercase font-bebasneue font-extrabold relative z-10 flex items-center"
+                        className={getNavItemClass(item)}
                         onClick={() => {
-                          setNavOpen(false);
-                          setLogoVisible(true);
+                          if (item.label === "Career") {
+                            handleCareerClick();
+                          } else {
+                            handleOtherNavClick();
+                          }
                         }}
                       >
+                        {item.label === "Career" && careerEffectActive && (
+                          <motion.span
+                            className="mr-3"
+                            animate={{
+                              rotate: [0, 15, -15, 0],
+                              scale: [1, 1.2, 1],
+                            }}
+                            transition={{
+                              duration: 2,
+                              repeat: Infinity,
+                              ease: "easeInOut",
+                            }}
+                          >
+                            <FaRocket className="text-[#80C3FF]" />
+                          </motion.span>
+                        )}
+
                         {item.label}
+
                         {item.subNav && (
                           <motion.span
                             className="ml-2"
@@ -342,8 +469,67 @@ const Header = () => {
                           </motion.span>
                         )}
                       </a>
+                      {item.label === "Career" && careerEffectActive && (
+                        <>
+                          <motion.div
+                            className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#80C3FF]/20 to-[#0A1F44]/20 border-2 border-[#80C3FF]"
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{
+                              scale: 1,
+                              opacity: 1,
+                              backgroundPosition: ["0% 0%", "100% 100%"],
+                            }}
+                            transition={{
+                              duration: 2,
+                              backgroundPosition: {
+                                duration: 3,
+                                repeat: Infinity,
+                                repeatType: "reverse",
+                              },
+                            }}
+                            style={{
+                              backgroundSize: "200% 200%",
+                            }}
+                          />
 
-                      {/* Subnav indicator */}
+                          <motion.div
+                            className="absolute inset-0 rounded-xl border-2 border-[#80C3FF]"
+                            initial={{ scale: 1, opacity: 0.7 }}
+                            animate={{
+                              scale: [1, 1.1, 1],
+                              opacity: [0.7, 1, 0.7],
+                            }}
+                            transition={{
+                              duration: 2,
+                              repeat: Infinity,
+                              ease: "easeInOut",
+                            }}
+                          />
+
+                          {[0, 1, 2].map((dot) => (
+                            <motion.div
+                              key={dot}
+                              className="absolute w-2 h-2 bg-[#80C3FF] rounded-full"
+                              style={{
+                                top: `${20 + dot * 30}%`,
+                                right: dot % 2 === 0 ? "-10px" : "auto",
+                                left: dot % 2 !== 0 ? "-10px" : "auto",
+                              }}
+                              animate={{
+                                scale: [0, 1, 0],
+                                opacity: [0, 1, 0],
+                              }}
+                              transition={{
+                                duration: 1.5,
+                                delay: dot * 0.5,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                              }}
+                            />
+                          ))}
+                        </>
+                      )}
+
                       {hoveredNavItem === i && (
                         <motion.div
                           className="absolute left-0 right-0 h-1 bg-white/50 bottom-0"
@@ -354,7 +540,6 @@ const Header = () => {
                         />
                       )}
 
-                      {/* Subnav items */}
                       {item.subNav && hoveredNavItem === i && (
                         <motion.div
                           className="ml-6 mt-2 flex flex-col gap-3"
@@ -368,10 +553,7 @@ const Header = () => {
                               key={subIndex}
                               href={subItem.path}
                               className="text-white/80 hover:text-white text-xl font-bebasneue font-medium transition-all duration-300 pl-4 py-1 border-l-2 border-white/50 hover:border-white/70 hover:pl-6"
-                              onClick={() => {
-                                setNavOpen(false);
-                                setLogoVisible(true);
-                              }}
+                              onClick={handleOtherNavClick}
                             >
                               {subItem.label}
                             </a>
@@ -382,14 +564,12 @@ const Header = () => {
                   ))}
                 </div>
 
-                {/* Right side - Enhanced Client Logo Carousel */}
                 <div
                   className="hidden md:inline-flex relative h-96 w-96"
                   ref={containerRef}
                   onMouseEnter={() => setIsHovering(true)}
                   onMouseLeave={() => setIsHovering(false)}
                 >
-                  {/* Sunburst background animation */}
                   <motion.div
                     className="absolute inset-0 opacity-20 rounded-full"
                     animate={{
@@ -408,7 +588,6 @@ const Header = () => {
                     }}
                   />
 
-                  {/* Continuous Border Animation */}
                   <motion.div
                     className="absolute inset-0 border-4 border-white/90 rounded-full"
                     style={{
@@ -426,7 +605,6 @@ const Header = () => {
                     }}
                   />
 
-                  {/* Dashed Border for Loading Effect */}
                   <motion.div
                     className="absolute inset-0 border-4 border-dashed border-white rounded-full opacity-40"
                     animate={{
@@ -439,12 +617,11 @@ const Header = () => {
                     }}
                   />
 
-                  {/* Logo Container with Smooth Slide Animation */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <AnimatePresence custom={currentLogoIndex} mode="wait">
                       <motion.div
                         key={currentLogoIndex}
-                        className="bg-white rounded-full h-64 w-64 flex items-center justify-center overflow-hidden shadow-lg"
+                        className="bg-[#80C3FF]/50 rounded-full h-64 w-64 flex items-center justify-center overflow-hidden shadow-lg"
                         initial={{ x: 300, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
                         exit={{ x: -300, opacity: 0 }}
@@ -463,7 +640,6 @@ const Header = () => {
                     </AnimatePresence>
                   </div>
 
-                  {/* Navigation Arrows */}
                   {isHovering && (
                     <>
                       <motion.button
@@ -499,7 +675,6 @@ const Header = () => {
                     </>
                   )}
 
-                  {/* Navigation Dots */}
                   <div className="absolute bottom-0 left-0 right-0 flex justify-center gap-2 pb-4">
                     {clientLogos.map((_, index) => (
                       <motion.button
@@ -521,6 +696,70 @@ const Header = () => {
           </>
         )}
       </AnimatePresence>
+
+      <style jsx>{`
+        .career-special-effect {
+          position: relative;
+          z-index: 10;
+          background: linear-gradient(45deg, #ffffff, #80c3ff, #ffffff);
+          background-size: 200% 200%;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          animation: career-shine 3s ease-in-out infinite,
+            career-float 3s ease-in-out infinite;
+        }
+
+        @keyframes career-shine {
+          0%,
+          100% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+        }
+
+        @keyframes career-float {
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-5px);
+          }
+        }
+
+        .career-special-effect::before {
+          content: "";
+          position: absolute;
+          top: -5px;
+          left: -5px;
+          right: -5px;
+          bottom: -5px;
+          background: linear-gradient(45deg, #80c3ff, #0a1f44, #80c3ff);
+          background-size: 200% 200%;
+          border-radius: 12px;
+          z-index: -1;
+          opacity: 0.3;
+          animation: career-border 4s linear infinite;
+        }
+
+        @keyframes career-border {
+          0% {
+            background-position: 0% 50%;
+            opacity: 0.3;
+          }
+          50% {
+            background-position: 100% 50%;
+            opacity: 0.6;
+          }
+          100% {
+            background-position: 0% 50%;
+            opacity: 0.3;
+          }
+        }
+      `}</style>
     </>
   );
 };

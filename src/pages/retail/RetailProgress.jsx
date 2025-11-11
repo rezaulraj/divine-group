@@ -27,7 +27,6 @@ const RetailProgress = () => {
     ]
   );
 
-  // Parallax effects for images
   const yImage1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const yImage2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
   const yImage3 = useTransform(scrollYProgress, [0, 1], [0, -200]);
@@ -89,7 +88,7 @@ const RetailProgress = () => {
       `}
         </script>
       </Helmet>
-      {/* Animated Background with Gradient Mesh */}
+
       <motion.div
         className="fixed inset-0 -z-10"
         style={{
@@ -97,7 +96,6 @@ const RetailProgress = () => {
           transition: "background 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
         }}
       >
-        {/* Subtle animated mesh pattern */}
         <motion.div
           className="absolute inset-0 opacity-10"
           style={{
@@ -110,7 +108,6 @@ const RetailProgress = () => {
         />
       </motion.div>
 
-      {/* Floating Particles */}
       {[...Array(15)].map((_, i) => (
         <motion.div
           key={i}
@@ -135,9 +132,9 @@ const RetailProgress = () => {
         />
       ))}
 
-      {/* Content Container */}
+ 
       <div className="relative max-w-7xl mx-auto">
-        {/* Hero Section with Floating Effect */}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -164,9 +161,7 @@ const RetailProgress = () => {
           </motion.div>
         </motion.div>
 
-        {/* Content Sections */}
         <div className="flex flex-col items-center space-y-32 lg:space-y-48 justify-center p-4">
-          {/* First Section */}
           <SectionWrapper>
             <TextContent>
               <motion.h1
@@ -287,7 +282,6 @@ const RetailProgress = () => {
             </ImageContent>
           </SectionWrapper>
 
-          {/* Second Section */}
           <SectionWrapper reverse>
             <ImageContent>
               <motion.div
@@ -432,7 +426,7 @@ const RetailProgress = () => {
             </TextContent>
           </SectionWrapper>
 
-          {/* Third Section */}
+
           <SectionWrapper>
             <TextContent>
               <motion.h1
@@ -552,7 +546,6 @@ const RetailProgress = () => {
             </ImageContent>
           </SectionWrapper>
 
-          {/* CTA Section */}
           <motion.div
             className="w-full py-16 text-center"
             initial={{ opacity: 0, y: 50 }}

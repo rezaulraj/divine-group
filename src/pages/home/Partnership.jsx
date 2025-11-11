@@ -121,7 +121,6 @@ const Partnership = () => {
         ))}
       </div>
 
-      {/* Divine Group Section */}
       <div className="bg-gradient-to-r from-primary to-primary/90 rounded-2xl overflow-hidden mb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="p-12 lg:p-16">
@@ -191,20 +190,18 @@ const Partnership = () => {
             </Link>
           </div>
           <div className="hidden lg:block bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center">
-            {/* Image background */}
+           
           </div>
         </div>
       </div>
 
-      {/* Testimonial */}
+ 
       <div className="mb-16">
         <h1 className="text-4xl font-bold text-center text-[#0A1F44] mb-6">
           What Our Partner Say About Divine Group
         </h1>
         <TestimonialSlider />
       </div>
-
-      {/* CTA Section */}
       <div className="text-center">
         <h2 className="text-3xl font-bold text-gray-900 mb-6">
           Ready to explore partnership opportunities?

@@ -44,13 +44,11 @@ const CalendlyPopup = ({ show, onClose }) => {
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-50 overflow-hidden"
         >
-          {/* Background overlay */}
           <motion.div
             className="absolute inset-0 bg-black/50"
             onClick={onClose}
           />
 
-          {/* Main container */}
           <motion.div
             className="absolute inset-0 flex items-center justify-center p-4"
             layout
@@ -70,14 +68,12 @@ const CalendlyPopup = ({ show, onClose }) => {
                 <FiX size={24} />
               </button>
 
-              {/* Loader */}
               {loading && (
                 <div className="flex-1 flex items-center justify-center">
                   <div className="animate-spin rounded-full h-22 w-22 border-t-4 border-primary border-opacity-75"></div>
                 </div>
               )}
 
-              {/* Calendly Widget */}
               <div
                 className="calendly-inline-widget flex-1"
                 data-url="https://calendly.com/divinerecruitment-meeting/30min"

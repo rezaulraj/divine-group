@@ -5,7 +5,6 @@ const HeroCareer = () => {
     <div className="min-h-screen bg-gradient-to-br from-[#0A1F44] to-[#1a3a6b] py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
           <div className="space-y-8">
             <div className="space-y-4">
               <span className="inline-block px-4 py-2 bg-[#80C3FF]/20 rounded-full text-[#80C3FF] font-medium text-sm">
@@ -21,7 +20,6 @@ const HeroCareer = () => {
               </p>
             </div>
 
-            {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-4">
               <div className="text-center">
                 <div className="text-3xl font-bold text-[#80C3FF]">50+</div>
@@ -32,12 +30,11 @@ const HeroCareer = () => {
                 <div className="text-gray-400 text-sm">Countries</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#80C3FF]">950%</div>
+                <div className="text-3xl font-bold text-[#80C3FF]">95%</div>
                 <div className="text-gray-400 text-sm">Client Satisfaction</div>
               </div>
             </div>
 
-            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
               <button className="bg-[#80C3FF] hover:bg-[#6ab0f0] text-[#0A1F44] font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
                 View Open Positions

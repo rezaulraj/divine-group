@@ -18,7 +18,7 @@ const TermAndCondition = () => {
   return (
     <div className="bg-gray-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8 font-bebasneue">
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
-        {/* Header */}
+        
         <div className="bg-gradient-to-r from-blue-800 to-blue-600 p-8 text-white">
           <div className="flex items-center">
             <FaBalanceScale className="text-4xl mr-4" />
@@ -31,9 +31,9 @@ const TermAndCondition = () => {
           </div>
         </div>
 
-        {/* Content */}
+       
         <div className="p-8">
-          {/* Introduction */}
+
           <div className="mb-12">
             <div className="flex items-start mb-6">
               <FaRegHandshake className="text-2xl text-blue-600 mr-4 mt-1" />
@@ -53,7 +53,7 @@ const TermAndCondition = () => {
             </div>
           </div>
 
-          {/* 1.0 Use of the Website */}
+
           <div className="mb-12">
             <div className="flex items-start mb-6">
               <FaLaptop className="text-2xl text-blue-600 mr-4 mt-1" />
@@ -128,7 +128,6 @@ const TermAndCondition = () => {
             </div>
           </div>
 
-          {/* 2.0 Intellectual Property */}
           <div className="mb-12">
             <div className="flex items-start mb-6">
               <FaCopyright className="text-2xl text-blue-600 mr-4 mt-1" />
@@ -149,7 +148,6 @@ const TermAndCondition = () => {
             </div>
           </div>
 
-          {/* 3.0 Disclaimer */}
           <div className="mb-12">
             <div className="flex items-start mb-6">
               <FaExclamationTriangle className="text-2xl text-blue-600 mr-4 mt-1" />
@@ -237,7 +235,6 @@ const TermAndCondition = () => {
             </div>
           </div>
 
-          {/* 4.0 General */}
           <div className="mb-6">
             <div className="flex items-start mb-6">
               <MdGavel className="text-2xl text-blue-600 mr-4 mt-1" />

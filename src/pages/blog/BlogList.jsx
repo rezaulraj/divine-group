@@ -334,7 +334,6 @@ const BlogList = () => {
     setActiveIndex((prev) => (prev === blogs.length - 1 ? 0 : prev + 1));
   };
 
-  // optional autoplay
   useEffect(() => {
     const timer = setInterval(next, 4000);
     return () => clearInterval(timer);
@@ -344,7 +343,6 @@ const BlogList = () => {
     <div className="relative w-full h-[500px] flex items-center justify-center overflow-hidden bg-amber-100">
       <div className="relative flex w-full h-full justify-center items-center">
         {blogs.map((blog, idx) => {
-          // calculate position relative to activeIndex
           const offset = (idx - activeIndex + blogs.length) % blogs.length;
 
           let className =
@@ -352,19 +350,15 @@ const BlogList = () => {
           let style = {};
 
           if (offset === 0) {
-            // center (active)
             className += " w-[60%] h-[80%] z-20";
             style = { transform: "translateX(0) scale(1)" };
           } else if (offset === 1) {
-            // right
             className += " w-[40%] h-[65%] z-10";
             style = { transform: "translateX(70%) scale(0.9)" };
           } else if (offset === blogs.length - 1) {
-            // left
             className += " w-[40%] h-[65%] z-10";
             style = { transform: "translateX(-70%) scale(0.9)" };
           } else {
-            // hidden
             className += " opacity-0 pointer-events-none";
           }
 
@@ -380,7 +374,7 @@ const BlogList = () => {
               }}
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-              {/* Show content only on active */}
+
               {offset === 0 && (
                 <div className="absolute bottom-8 left-8 text-white max-w-md">
                   <h2 className="text-3xl font-bold">{blog.title}</h2>
@@ -395,7 +389,6 @@ const BlogList = () => {
         })}
       </div>
 
-      {/* Controls */}
       <button
         onClick={prev}
         className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-white/30 hover:bg-white/50 rounded-full"

@@ -16,7 +16,6 @@ const PartnershipProgress = () => {
     offset: ["start end", "end start"],
   });
 
-  // Progress line animation
   const scaleY = useTransform(scrollYProgress, [0, 1], [0.05, 1]);
 
   const backgroundColor = useTransform(
@@ -39,7 +38,6 @@ const PartnershipProgress = () => {
   const yImage3 = useTransform(scrollYProgress, [0, 1], [0, -200]);
   const yImage4 = useTransform(scrollYProgress, [0, 1], [0, -250]);
 
-  // Progress markers
   const sectionProgress = [
     { title: "Why Partner", emoji: "🤝", progress: 0.08 },
     { title: "Our Approach", emoji: "🌍", progress: 0.24 },
@@ -50,7 +48,6 @@ const PartnershipProgress = () => {
 
   return (
     <div className="min-h-screen relative pb-20" ref={containerRef}>
-      {/* Progress Line */}
       <div className="fixed left-8 top-1/2 -translate-y-1/2 h-2/3 w-1 bg-white/20 rounded-full z-50 hidden md:block">
         <motion.div
           ref={progressRef}
@@ -58,7 +55,6 @@ const PartnershipProgress = () => {
           style={{ scaleY }}
         />
 
-        {/* Progress Markers */}
         {sectionProgress.map((section, index) => (
           <motion.div
             key={index}
@@ -169,7 +165,6 @@ const PartnershipProgress = () => {
         </motion.div>
 
         <div className="flex flex-col items-center space-y-32 lg:space-y-48 justify-center p-4">
-          {/* First Section */}
           <SectionWrapper>
             <TextContent>
               <motion.h1
@@ -225,7 +220,6 @@ const PartnershipProgress = () => {
             </ImageContent>
           </SectionWrapper>
 
-          {/* Second Section */}
           <SectionWrapper reverse>
             <ImageContent>
               <motion.div
@@ -282,7 +276,7 @@ const PartnershipProgress = () => {
             </TextContent>
           </SectionWrapper>
 
-          {/* Third Section */}
+
           <SectionWrapper>
             <TextContent>
               <motion.h1
@@ -338,7 +332,6 @@ const PartnershipProgress = () => {
             </ImageContent>
           </SectionWrapper>
 
-          {/* Fourth Section - Grow Together */}
           <SectionWrapper reverse>
             <ImageContent>
               <motion.div
@@ -395,7 +388,6 @@ const PartnershipProgress = () => {
             </TextContent>
           </SectionWrapper>
 
-          {/* CTA Section */}
           <motion.div
             className="w-full py-16 text-center"
             initial={{ opacity: 0, y: 50 }}
@@ -430,7 +422,6 @@ const PartnershipProgress = () => {
   );
 };
 
-// Reusable Components
 const SectionWrapper = ({ children, reverse = false }) => {
   return (
     <motion.div

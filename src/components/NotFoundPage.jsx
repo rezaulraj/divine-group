@@ -6,7 +6,6 @@ import logowhite from "/logo-white.png?url";
 const NotFoundPage = () => {
   return (
     <div className="min-h-screen bg-[#712D8C] flex flex-col items-center justify-center text-white p-8 overflow-hidden">
-      {/* Content */}
       <motion.div
         className="relative z-10 flex flex-col items-center text-center max-w-2xl"
         initial={{ opacity: 0, y: 50 }}
@@ -63,7 +62,6 @@ const NotFoundPage = () => {
         </motion.div>
       </motion.div>
 
-      {/* Floating particles */}
       {[...Array(15)].map((_, i) => (
         <motion.div
           key={i}

@@ -20,17 +20,16 @@ const AboutUsProgress = () => {
     offset: ["start end", "end start"],
   });
 
-  // Gradient background transformations
   const backgroundColor = useTransform(
     scrollYProgress,
     [0, 0.2, 0.4, 0.6, 0.8, 1],
     [
-      "linear-gradient(135deg, #667eea 0%, #764ba2 100%)", // Purple/blue
-      "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)", // Green/teal
-      "linear-gradient(135deg, #f46b45 0%, #eea849 100%)", // Orange/yellow
-      "linear-gradient(135deg, #ee0979 0%, #ff6a00 100%)", // Pink/orange
-      "linear-gradient(135deg, #7b4397 0%, #dc2430 100%)", // Purple/red
-      "linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)", // Blue gradient
+      "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+      "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
+      "linear-gradient(135deg, #f46b45 0%, #eea849 100%)",
+      "linear-gradient(135deg, #ee0979 0%, #ff6a00 100%)",
+      "linear-gradient(135deg, #7b4397 0%, #dc2430 100%)",
+      "linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)",
     ]
   );
 
@@ -116,7 +115,6 @@ const AboutUsProgress = () => {
       />
 
       <div className="relative">
-        {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -136,9 +134,7 @@ const AboutUsProgress = () => {
           </div>
         </motion.div>
 
-        {/* Content Sections */}
         <div className="max-w-screen-xl mx-auto flex flex-col items-center space-y-32 justify-center p-4">
-          {/* First Section */}
           <SectionWrapper>
             <TextContent>
               <motion.h1
@@ -282,7 +278,7 @@ const AboutUsProgress = () => {
             </ImageContent>
           </SectionWrapper>
 
-          {/* Second Section */}
+
           <SectionWrapper reverse>
             <ImageContent>
               <motion.div
@@ -398,7 +394,7 @@ const AboutUsProgress = () => {
             </TextContent>
           </SectionWrapper>
 
-          {/* Third Section */}
+         
           <SectionWrapper>
             <TextContent>
               <motion.h1
@@ -535,7 +531,6 @@ const AboutUsProgress = () => {
             </ImageContent>
           </SectionWrapper>
 
-          {/* Fourth Section - Our Values */}
           <SectionWrapper reverse>
             <ImageContent>
               <motion.div
@@ -701,7 +696,7 @@ const AboutUsProgress = () => {
             </TextContent>
           </SectionWrapper>
 
-          {/* Fifth Section */}
+
           <SectionWrapper>
             <TextContent>
               <motion.div
@@ -848,7 +843,6 @@ const AboutUsProgress = () => {
             </ImageContent>
           </SectionWrapper>
 
-          {/* Sixth Section */}
           <SectionWrapper reverse>
             <ImageContent>
               <motion.div
@@ -1018,7 +1012,7 @@ const AboutUsProgress = () => {
   );
 };
 
-// Reusable components for better organization
+
 const SectionWrapper = ({ children, reverse = false }) => {
   return (
     <div

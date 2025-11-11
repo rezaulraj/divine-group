@@ -9,7 +9,7 @@ import {
 import science_ecosystem from "../../assets/impact/busniess.webp?url";
 import collaboration from "../../assets/impact/recuitsolution.jpg?url";
 import sustent from "../../assets/impact/sustent.jpg?url";
-// servucess image
+
 import service1 from "../../assets/impact/recuitment.png?url";
 import service2 from "../../assets/impact/ict.png?url";
 import service3 from "../../assets/impact/real-state.jpg?url";
@@ -79,13 +79,13 @@ const Service = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setVisibleIndex((prev) => (prev + 1) % services.length);
-    }, 5000); // Change image every 2.5 seconds
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [services.length]);
 
   const sectionRefs = useRef([]);
-  sectionRefs.current = []; // Reset every render
+  sectionRefs.current = [];
 
   const addToRefs = (el) => {
     if (el && !sectionRefs.current.includes(el)) {
@@ -135,7 +135,6 @@ const Service = () => {
           transition: "background 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
         }}
       >
-        {/* Subtle animated mesh pattern */}
         <motion.div
           className="absolute inset-0 opacity-10"
           style={{
@@ -154,7 +153,6 @@ const Service = () => {
         }}
       />
 
-      {/* Dots on the Progress Line */}
       {dotPositions.map((pos, idx) => (
         <motion.div
           key={idx}
@@ -180,7 +178,6 @@ const Service = () => {
           }}
         />
       ))}
-      {/* Floating Particles */}
       {[...Array(15)].map((_, i) => (
         <motion.div
           key={i}
@@ -205,9 +202,8 @@ const Service = () => {
         />
       ))}
 
-      {/* Content Container */}
+
       <div className="relative max-w-7xl mx-auto">
-        {/* Hero Section with Floating Effect */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -234,9 +230,7 @@ const Service = () => {
           </motion.div>
         </motion.div>
 
-        {/* Content Sections */}
         <div className="flex flex-col items-center space-y-32 lg:space-y-48 justify-center p-4">
-          {/* First Section */}
           <SectionWrapper>
             <TextContent>
               <motion.h1
@@ -274,7 +268,6 @@ const Service = () => {
                 className="w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full border-4 border-white/50 shadow-2xl relative bg-white backdrop-blur-sm"
                 // style={{ y: yImage1 }}
               >
-                {/* 💫 Backface loading shimmer effect */}
                 <motion.div
                   className="absolute inset-0 w-full h-full left-30 rounded-full z-0"
                   animate={{ rotate: 360 }}
@@ -378,7 +371,6 @@ const Service = () => {
             </ImageContent>
           </SectionWrapper>
 
-          {/* Second Section */}
           <SectionWrapper reverse>
             <ImageContent>
               <motion.div
@@ -499,7 +491,6 @@ const Service = () => {
             </TextContent>
           </SectionWrapper>
 
-          {/* Third Section */}
           <SectionWrapper>
             <TextContent>
               <motion.h1
@@ -619,7 +610,7 @@ const Service = () => {
               </motion.div>
             </ImageContent>
           </SectionWrapper>
-          {/* Forth Section */}
+         
           <SectionWrapper>
             <ImageContent>
               <motion.div
@@ -755,7 +746,7 @@ const Service = () => {
   );
 };
 
-// Enhanced Reusable Components
+
 const SectionWrapper = ({ children, reverse = false }) => {
   return (
     <motion.div

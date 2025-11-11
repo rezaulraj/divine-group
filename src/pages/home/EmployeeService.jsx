@@ -231,7 +231,7 @@ const EmployeeService = () => {
         </p>
       </motion.div>
 
-      {/* Why Choose Us Section */}
+
       <motion.div className="mb-20" variants={itemVariants}>
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
           Why Job Seekers Choose Our Agency
@@ -272,7 +272,7 @@ const EmployeeService = () => {
         </div>
       </motion.div>
 
-      {/* All Services */}
+
       <motion.div className="mb-20" variants={itemVariants}>
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
           Comprehensive Career Services
@@ -307,7 +307,6 @@ const EmployeeService = () => {
         </motion.div>
       </motion.div>
 
-      {/* Blue Collar Specialization */}
       <motion.div className="mb-20" variants={itemVariants}>
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
           Specialized Blue Collar Placement
@@ -356,7 +355,6 @@ const EmployeeService = () => {
         </motion.div> */}
       </motion.div>
 
-      {/* Success Stats */}
       <motion.div
         className="bg-primary rounded-xl p-8 mb-16"
         variants={itemVariants}
@@ -380,7 +378,6 @@ const EmployeeService = () => {
         </div>
       </motion.div>
 
-      {/* Testimonials */}
       <motion.div className="mb-20" variants={itemVariants}>
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
           Success Stories From Our Candidates
@@ -417,7 +414,6 @@ const EmployeeService = () => {
         </div>
       </motion.div>
 
-      {/* CTA Section */}
       <motion.div
         className="text-center bg-gradient-to-r from-primary to-blue-600 rounded-xl p-12"
         variants={itemVariants}
@@ -449,7 +445,6 @@ const EmployeeService = () => {
         </div>
       </motion.div>
 
-      {/* Get Started Modal */}
       <AnimatePresence>
         {showGetStarted && (
           <motion.div
