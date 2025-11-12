@@ -20,6 +20,7 @@ const JobSection = () => {
   const [error, setError] = useState(null);
   const [selectedIndustry, setSelectedIndustry] = useState("All Industries");
   const [activeTab, setActiveTab] = useState("all");
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [jobsPerPage] = useState(6);
@@ -73,9 +74,16 @@ const JobSection = () => {
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
+      // Check file size (5MB limit)
+      if (file.size > 5 * 1024 * 1024) {
+        alert("File size too large. Please select a file smaller than 5MB.");
+        return;
+      }
+
       setIsUploading(true);
       setUploadProgress(0);
 
+      // Simulate file upload progress
       const interval = setInterval(() => {
         setUploadProgress((prev) => {
           if (prev >= 100) {
@@ -90,12 +98,58 @@ const JobSection = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    console.log("Job:", selectedJob);
 
-    setShowPopup(false);
+    if (!formData.cv) {
+      alert("Please upload your CV/Resume");
+      return;
+    }
+
+    try {
+      setIsUploading(true);
+
+      const submitFormData = new FormData();
+      submitFormData.append("fullName", formData.fullName);
+      submitFormData.append("email", formData.email);
+      submitFormData.append("phone", formData.phone);
+      submitFormData.append("subject", formData.subject);
+      submitFormData.append("coverLetter", formData.coverLetter);
+      submitFormData.append(
+        "message",
+        formData.message || "No additional message"
+      );
+      submitFormData.append("jobTitle", selectedJob?.Title || "");
+      submitFormData.append("jobCountry", selectedJob?.Country || "");
+      submitFormData.append("jobIndustry", selectedJob?.Industry || "");
+      submitFormData.append("cv", formData.cv);
+
+      const response = await fetch(
+        "https://formsubmit.co/e5f95e5f919bb49b61a5a035e8c1de60",
+        {
+          method: "POST",
+          body: submitFormData,
+        }
+      );
+
+      if (response.ok) {
+        setShowSuccessPopup(true);
+        setShowPopup(false);
+        resetForm();
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert(
+        "There was an error submitting your application. Please try again."
+      );
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
+  const resetForm = () => {
     setFormData({
       fullName: "",
       email: "",
@@ -697,6 +751,26 @@ const JobSection = () => {
         )}
       </div>
 
+      {showSuccessPopup && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50 animate-fadeIn">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 text-center animate-slideUp">
+            <div className="text-green-500 text-6xl mb-4">✓</div>
+            <h3 className="text-2xl font-bold text-gray-800 mb-2">
+              Application Submitted!
+            </h3>
+            <p className="text-gray-600 mb-6">
+              Thank you for applying to {selectedJob?.Title}. We've received
+              your application and will contact you soon.
+            </p>
+            <button
+              onClick={() => setShowSuccessPopup(false)}
+              className="bg-[#80C3FF] text-[#0A1F44] px-6 py-3 rounded-lg hover:bg-[#6ab0f0] transition-colors font-semibold"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
       {showPopup && selectedJob && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50 animate-fadeIn">
           <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto animate-slideUp">
@@ -752,7 +826,25 @@ const JobSection = () => {
               </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="p-6 space-y-6">
+            <form
+              onSubmit={handleSubmit}
+              className="p-6 space-y-6"
+              encType="multipart/form-data"
+            >
+              {/* Hidden fields for FormSubmit */}
+              <input type="hidden" name="_captcha" value="false" />
+              <input
+                type="hidden"
+                name="_subject"
+                value={`Job Application: ${selectedJob.Title}`}
+              />
+              <input type="hidden" name="_template" value="table" />
+              <input
+                type="hidden"
+                name="_autoresponse"
+                value={`Thank you for applying to ${selectedJob.Title} at Divine Group. We have received your application and will review it carefully. Our team will contact you within 3-5 business days.`}
+              />
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -846,15 +938,17 @@ const JobSection = () => {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Upload CV/Resume *
+                  Upload CV/Resume * (Max. 5MB)
                 </label>
                 <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center transition-all duration-200 hover:border-[#80C3FF] hover:bg-[#80C3FF]/5">
                   <input
                     type="file"
-                    accept=".pdf,.doc,.docx"
+                    name="cv"
+                    accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
                     onChange={handleFileUpload}
                     className="hidden"
                     id="cv-upload"
+                    required
                   />
                   <label htmlFor="cv-upload" className="cursor-pointer">
                     <svg
@@ -877,7 +971,7 @@ const JobSection = () => {
                       or drag and drop
                     </p>
                     <p className="text-xs text-gray-500">
-                      PDF, DOC, DOCX (Max. 5MB)
+                      PDF, DOC, DOCX, JPG, PNG (Max. 5MB)
                     </p>
                   </label>
                 </div>
@@ -929,6 +1023,7 @@ const JobSection = () => {
                   type="button"
                   onClick={() => setShowPopup(false)}
                   className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-200"
+                  disabled={isUploading}
                 >
                   Cancel
                 </button>
@@ -937,7 +1032,7 @@ const JobSection = () => {
                   disabled={!formData.cv || isUploading}
                   className="flex-1 px-6 py-3 bg-[#80C3FF] text-[#0A1F44] font-semibold rounded-lg hover:bg-[#6ab0f0] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 transform hover:scale-105"
                 >
-                  Submit Application
+                  {isUploading ? "Submitting..." : "Submit Application"}
                 </button>
               </div>
             </form>

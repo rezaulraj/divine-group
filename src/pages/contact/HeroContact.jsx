@@ -101,7 +101,6 @@ const HeroContact = () => {
           variants={staggerContainer}
           className="grid grid-cols-1 lg:grid-cols-2 gap-12"
         >
- 
           <motion.div
             variants={fadeIn}
             className="bg-white rounded-xl shadow-lg p-8"
@@ -111,11 +110,10 @@ const HeroContact = () => {
             </h2>
 
             <form
-              action="https://formsubmit.co/380b013455232943a006028a6c501869"
+              action="https://formsubmit.co/e5f95e5f919bb49b61a5a035e8c1de60"
               method="POST"
               className="space-y-6"
             >
-             
               <input type="hidden" name="_captcha" value="false" />
               <input
                 type="hidden"
