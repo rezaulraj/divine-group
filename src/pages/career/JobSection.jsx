@@ -298,8 +298,8 @@ const JobSection = () => {
 
   const getJobCategoryName = (category) => {
     const names = {
-      HandsOn_Jobs: "Hands-on Jobs",
-      Administrative_Jobs: "Administrative Jobs",
+      HandsOn_Jobs: "Trade & Labor Jobs",
+      Administrative_Jobs: "Office & Administrative Roles",
     };
     return names[category] || category;
   };
