@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import ReactCountryFlag from "react-country-flag";
 
 const JobSection = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -14,171 +15,43 @@ const JobSection = () => {
   });
   const [uploadProgress, setUploadProgress] = useState(0);
   const [isUploading, setIsUploading] = useState(false);
+  const [jobs, setJobs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [selectedIndustry, setSelectedIndustry] = useState("All Industries");
+  const [activeTab, setActiveTab] = useState("all");
 
-  const jobs = [
-    {
-      id: 1,
-      title: "Hotel Operations Manager",
-      location: "Dubai, UAE",
-      country: "United Arab Emirates",
-      type: "Full-time",
-      department: "Hospitality",
-      salary: "$65,000 - $85,000",
-      experience: "5+ years",
-      description:
-        "Oversee daily hotel operations and ensure exceptional guest experiences in a luxury hotel environment.",
-      responsibilities: [
-        "Manage front desk, housekeeping, and maintenance teams",
-        "Implement quality standards and service protocols",
-        "Handle guest complaints and special requests",
-        "Monitor inventory and supply chain management",
-      ],
-      requirements: [
-        "Bachelor's in Hospitality Management",
-        "Proven experience in hotel operations",
-        "Excellent leadership and communication skills",
-      ],
-      eligibleCountries: ["USA", "UK", "UAE", "India", "Philippines"],
-      applyWithin: "14 days",
-    },
-    {
-      id: 2,
-      title: "UX/UI Product Designer",
-      location: "Berlin, Germany",
-      country: "Germany",
-      type: "Full-time",
-      department: "Design",
-      salary: "€55,000 - €75,000",
-      experience: "3+ years",
-      description:
-        "Create beautiful and intuitive user experiences for our digital products and platforms.",
-      responsibilities: [
-        "Design user interfaces and interactive prototypes",
-        "Conduct user research and usability testing",
-        "Collaborate with development teams",
-        "Create design systems and maintain brand consistency",
-      ],
-      requirements: [
-        "Portfolio showcasing UX/UI projects",
-        "Proficiency in Figma, Sketch, or Adobe XD",
-        "Understanding of responsive design principles",
-      ],
-      eligibleCountries: ["Germany", "EU Countries", "UK", "Canada"],
-      applyWithin: "30 days",
-    },
-    {
-      id: 3,
-      title: "Tourism Marketing Specialist",
-      location: "Bali, Indonesia",
-      country: "Indonesia",
-      type: "Full-time",
-      department: "Tourism",
-      salary: "$35,000 - $50,000",
-      experience: "2+ years",
-      description:
-        "Develop and execute marketing strategies to promote tourism packages and travel experiences.",
-      responsibilities: [
-        "Create digital marketing campaigns for travel packages",
-        "Manage social media and content creation",
-        "Collaborate with travel agencies and partners",
-        "Analyze market trends and customer feedback",
-      ],
-      requirements: [
-        "Degree in Marketing or Tourism",
-        "Experience in travel industry marketing",
-        "Strong copywriting and SEO skills",
-      ],
-      eligibleCountries: [
-        "Indonesia",
-        "Malaysia",
-        "Singapore",
-        "Thailand",
-        "Australia",
-      ],
-      applyWithin: "21 days",
-    },
-    {
-      id: 4,
-      title: "Retail Store Manager",
-      location: "London, UK",
-      country: "United Kingdom",
-      type: "Full-time",
-      department: "Retail",
-      salary: "£40,000 - £55,000",
-      experience: "4+ years",
-      description:
-        "Lead a high-performing retail team and drive sales in our flagship London store.",
-      responsibilities: [
-        "Manage daily store operations and staff scheduling",
-        "Achieve sales targets and KPIs",
-        "Train and develop retail team members",
-        "Maintain visual merchandising standards",
-      ],
-      requirements: [
-        "Proven retail management experience",
-        "Strong leadership and customer service skills",
-        "Inventory management knowledge",
-      ],
-      eligibleCountries: ["UK", "Ireland", "EU Countries"],
-      applyWithin: "10 days",
-    },
-    {
-      id: 5,
-      title: "Production Supervisor",
-      location: "Tokyo, Japan",
-      country: "Japan",
-      type: "Full-time",
-      department: "Manufacturing",
-      salary: "¥6,000,000 - ¥8,000,000",
-      experience: "5+ years",
-      description:
-        "Oversee manufacturing operations and ensure production efficiency and quality control.",
-      responsibilities: [
-        "Supervise production line operations",
-        "Implement quality control procedures",
-        "Manage production schedules and deadlines",
-        "Train and mentor production staff",
-      ],
-      requirements: [
-        "Engineering or manufacturing background",
-        "Experience in lean manufacturing",
-        "Strong problem-solving skills",
-      ],
-      eligibleCountries: ["Japan", "South Korea", "Taiwan", "Singapore"],
-      applyWithin: "20 days",
-    },
-    {
-      id: 6,
-      title: "Executive Chef",
-      location: "Paris, France",
-      country: "France",
-      type: "Full-time",
-      department: "Hospitality",
-      salary: "€60,000 - €80,000",
-      experience: "8+ years",
-      description:
-        "Lead kitchen operations and create exceptional culinary experiences in a Michelin-star restaurant.",
-      responsibilities: [
-        "Develop menus and culinary concepts",
-        "Manage kitchen staff and operations",
-        "Maintain food quality and safety standards",
-        "Control food costs and inventory",
-      ],
-      requirements: [
-        "Culinary degree or equivalent experience",
-        "Extensive fine dining experience",
-        "Leadership and creative culinary skills",
-      ],
-      eligibleCountries: ["France", "EU Countries", "Switzerland"],
-      applyWithin: "15 days",
-    },
-  ];
+  // Fetch jobs from API
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(
+          "https://script.google.com/macros/s/AKfycbxSihU_-lx49-gr1h4oe6w1H621Nxy2QHfMEx87gGGQKzfvwyQ3V3TMOxx9ypsR_JFdow/exec?site=Divine_Group"
+        );
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch jobs");
+        }
+
+        const data = await response.json();
+        setJobs(data);
+      } catch (err) {
+        setError(err.message);
+        console.error("Error fetching jobs:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchJobs();
+  }, []);
 
   const handleApplyClick = (job) => {
     setSelectedJob(job);
     setFormData((prev) => ({
       ...prev,
-      subject: `Application for ${job.title}`,
+      subject: `Application for ${job.Title}`,
     }));
     setShowPopup(true);
   };
@@ -229,171 +102,577 @@ const JobSection = () => {
     setUploadProgress(0);
   };
 
-  const getDepartmentColor = (department) => {
+  const getDepartmentColor = (industry) => {
     const colors = {
       Hospitality: "bg-blue-100 text-blue-800 border-blue-200",
-      Design: "bg-purple-100 text-purple-800 border-purple-200",
-      Tourism: "bg-green-100 text-green-800 border-green-200",
-      Retail: "bg-orange-100 text-orange-800 border-orange-200",
-      Manufacturing: "bg-red-100 text-red-800 border-red-200",
+      Construction: "bg-orange-100 text-orange-800 border-orange-200",
+      Automotive: "bg-red-100 text-red-800 border-red-200",
+      Manufacturing: "bg-purple-100 text-purple-800 border-purple-200",
+      Technology: "bg-indigo-100 text-indigo-800 border-indigo-200",
+      Healthcare: "bg-green-100 text-green-800 border-green-200",
     };
-    return colors[department] || "bg-gray-100 text-gray-800 border-gray-200";
+    return colors[industry] || "bg-gray-100 text-gray-800 border-gray-200";
   };
 
-  const getCountryFlag = (country) => {
-    const flags = {
-      "United Arab Emirates": "🇦🇪",
-      Germany: "🇩🇪",
-      Indonesia: "🇮🇩",
-      "United Kingdom": "🇬🇧",
-      Japan: "🇯🇵",
-      France: "🇫🇷",
+  const getCountryCode = (countryName) => {
+    const countryMap = {
+      // Europe
+      Albania: "AL",
+      Andorra: "AD",
+      Armenia: "AM",
+      Austria: "AT",
+      Azerbaijan: "AZ",
+      Belarus: "BY",
+      Belgium: "BE",
+      Bosnia_and_Herzegovina: "BA",
+      Bulgaria: "BG",
+      Croatia: "HR",
+      Cyprus: "CY",
+      Czech_Republic: "CZ",
+      Denmark: "DK",
+      Estonia: "EE",
+      Finland: "FI",
+      France: "FR",
+      Georgia: "GE",
+      Germany: "DE",
+      Greece: "GR",
+      Hungary: "HU",
+      Iceland: "IS",
+      Ireland: "IE",
+      Italy: "IT",
+      Kazakhstan: "KZ",
+      Kosovo: "XK",
+      Latvia: "LV",
+      Liechtenstein: "LI",
+      Lithuania: "LT",
+      Luxembourg: "LU",
+      Malta: "MT",
+      Moldova: "MD",
+      Monaco: "MC",
+      Montenegro: "ME",
+      Netherlands: "NL",
+      North_Macedonia: "MK",
+      Norway: "NO",
+      Poland: "PL",
+      Portugal: "PT",
+      Romania: "RO",
+      Russia: "RU",
+      San_Marino: "SM",
+      Serbia: "RS",
+      Slovakia: "SK",
+      Slovenia: "SI",
+      Spain: "ES",
+      Sweden: "SE",
+      Switzerland: "CH",
+      Turkey: "TR",
+      Ukraine: "UA",
+      United_Kingdom: "GB",
+      Vatican_City: "VA",
+
+      // Asia
+      Afghanistan: "AF",
+      Armenia_: "AM", // also counted in Europe sometimes
+      Azerbaijan_: "AZ",
+      Bahrain: "BH",
+      Bangladesh: "BD",
+      Bhutan: "BT",
+      Brunei: "BN",
+      Cambodia: "KH",
+      China: "CN",
+      Cyprus_: "CY",
+      Georgia_: "GE",
+      India: "IN",
+      Indonesia: "ID",
+      Iran: "IR",
+      Iraq: "IQ",
+      Israel: "IL",
+      Japan: "JP",
+      Jordan: "JO",
+      Kazakhstan_: "KZ",
+      Kuwait: "KW",
+      Kyrgyzstan: "KG",
+      Laos: "LA",
+      Lebanon: "LB",
+      Malaysia: "MY",
+      Maldives: "MV",
+      Mongolia: "MN",
+      Myanmar: "MM",
+      Nepal: "NP",
+      North_Korea: "KP",
+      Oman: "OM",
+      Pakistan: "PK",
+      Palestine: "PS",
+      Philippines: "PH",
+      Qatar: "QA",
+      Saudi_Arabia: "SA",
+      Singapore: "SG",
+      South_Korea: "KR",
+      Sri_Lanka: "LK",
+      Syria: "SY",
+      Taiwan: "TW",
+      Tajikistan: "TJ",
+      Thailand: "TH",
+      Timor_Leste: "TL",
+      Turkmenistan: "TM",
+      United_Arab_Emirates: "AE",
+      Uzbekistan: "UZ",
+      Vietnam: "VN",
+      Yemen: "YE",
+
+      // Extras (you already had)
+      USA: "US",
+      Canada: "CA",
+      Australia: "AU",
+      New_Zealand: "NZ",
+      Brazil: "BR",
+      Mexico: "MX",
+      Egypt: "EG",
+      Nigeria: "NG",
+      Kenya: "KE",
+      South_Africa: "ZA",
     };
-    return flags[country] || "🌍";
+    return countryMap[countryName] || "US";
   };
+
+  const formatSalary = (salary) => {
+    return salary || "Negotiable";
+  };
+
+  const formatExperience = (experience) => {
+    return experience === "No Need"
+      ? "No experience required"
+      : `${experience} years experience`;
+  };
+
+  const formatDate = (dateString) => {
+    return new Date(dateString).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+  };
+
+  const getUniqueIndustries = () => {
+    const industries = [...new Set(jobs.map((job) => job.Industry))];
+    return ["All Industries", ...industries];
+  };
+
+  // Filter jobs based on active tab and industry
+  const filteredJobs = jobs.filter((job) => {
+    // Tab filtering
+    const tabFilter =
+      activeTab === "all"
+        ? true
+        : activeTab === "handson"
+        ? job.JobCategory === "HandsOn_Jobs"
+        : activeTab === "administrative"
+        ? job.JobCategory === "Administrative_Jobs"
+        : true;
+
+    // Industry filtering
+    const industryFilter =
+      selectedIndustry === "All Industries"
+        ? true
+        : job.Industry === selectedIndustry;
+
+    return tabFilter && industryFilter;
+  });
+
+  // Get candidate origin badge color
+  const getCandidateOriginColor = (origin) => {
+    const colors = {
+      "Nepalese Only": "bg-gradient-to-r from-red-500 to-orange-500",
+      "Romania Only": "bg-gradient-to-r from-blue-500 to-cyan-500",
+      "All Nationalities": "bg-gradient-to-r from-green-500 to-emerald-500",
+      "EU Only": "bg-gradient-to-r from-purple-500 to-indigo-500",
+      "Asian Countries": "bg-gradient-to-r from-yellow-500 to-amber-500",
+    };
+    return colors[origin] || "bg-gradient-to-r from-gray-500 to-gray-600";
+  };
+
+  // Get job category display name
+  const getJobCategoryName = (category) => {
+    const names = {
+      HandsOn_Jobs: "Hands-on Jobs",
+      Administrative_Jobs: "Administrative Jobs",
+    };
+    return names[category] || category;
+  };
+
+  // Skeleton Loader Component
+  const JobCardSkeleton = () => (
+    <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden flex flex-col h-full animate-pulse">
+      <div className="p-6 border-b border-gray-100">
+        <div className="flex justify-between items-start mb-4">
+          <div className="h-6 bg-gray-200 rounded-full w-24"></div>
+          <div className="h-4 bg-gray-200 rounded w-16"></div>
+        </div>
+
+        <div className="h-7 bg-gray-200 rounded mb-3"></div>
+        <div className="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>
+
+        <div className="flex gap-2 mb-4">
+          <div className="h-6 bg-gray-200 rounded w-16"></div>
+          <div className="h-6 bg-gray-200 rounded w-20"></div>
+        </div>
+
+        <div className="space-y-2">
+          <div className="h-3 bg-gray-200 rounded"></div>
+          <div className="h-3 bg-gray-200 rounded w-5/6"></div>
+          <div className="h-3 bg-gray-200 rounded w-4/6"></div>
+        </div>
+      </div>
+
+      <div className="px-6 py-3 bg-gray-50 border-b border-gray-100">
+        <div className="flex justify-between">
+          <div className="h-4 bg-gray-200 rounded w-12"></div>
+          <div className="h-4 bg-gray-200 rounded w-20"></div>
+        </div>
+      </div>
+
+      <div className="p-6 border-b border-gray-100 flex-grow">
+        <div className="h-5 bg-gray-200 rounded w-32 mb-3"></div>
+        <div className="space-y-2">
+          <div className="h-3 bg-gray-200 rounded"></div>
+          <div className="h-3 bg-gray-200 rounded"></div>
+          <div className="h-3 bg-gray-200 rounded w-4/5"></div>
+        </div>
+      </div>
+
+      <div className="p-6 border-b border-gray-100">
+        <div className="h-5 bg-gray-200 rounded w-36 mb-3"></div>
+        <div className="flex gap-2">
+          <div className="h-6 bg-gray-200 rounded w-16"></div>
+          <div className="h-6 bg-gray-200 rounded w-14"></div>
+          <div className="h-6 bg-gray-200 rounded w-12"></div>
+        </div>
+      </div>
+
+      <div className="p-6">
+        <div className="h-12 bg-gray-200 rounded-lg"></div>
+      </div>
+    </div>
+  );
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-16 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-6xl mb-4">😔</div>
+          <h3 className="text-2xl font-bold text-gray-800 mb-2">
+            Unable to load jobs
+          </h3>
+          <p className="text-gray-600 mb-4">{error}</p>
+          <button
+            onClick={() => window.location.reload()}
+            className="px-6 py-3 bg-[#80C3FF] text-[#0A1F44] font-semibold rounded-lg hover:bg-[#6ab0f0] transition-colors"
+          >
+            Try Again
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-16 px-4 sm:px-6 lg:px-8">
+    <div
+      id="jobs"
+      className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-16 px-4 sm:px-6 lg:px-8"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#0A1F44] mb-4">
             Explore Career Opportunities
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Join our diverse team across multiple industries. Find your perfect
-            role in hospitality, design, tourism, retail, or manufacturing.
+            Discover amazing job opportunities across various industries and
+            locations. Join our team and build your career with us.
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-4 justify-center mb-12">
-          <button className="px-6 py-3 bg-[#80C3FF] text-[#0A1F44] font-semibold rounded-full hover:bg-[#6ab0f0] transition-colors">
-            All Departments
-          </button>
-          {["Hospitality", "Design", "Tourism", "Retail", "Manufacturing"].map(
-            (dept) => (
+        {/* Job Category Tabs */}
+        <div className="flex justify-center mb-12">
+          <div className="bg-white rounded-2xl shadow-lg p-2 border border-gray-200">
+            <div className="flex space-x-2">
               <button
-                key={dept}
-                className="px-6 py-3 bg-white text-[#0A1F44] border border-gray-300 font-semibold rounded-full hover:bg-[#80C3FF] hover:border-[#80C3FF] transition-colors"
+                onClick={() => setActiveTab("all")}
+                className={`px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-500 ease-in-out ${
+                  activeTab === "all"
+                    ? "bg-gradient-to-r from-[#80C3FF] to-[#0A1F44] text-white shadow-lg transform scale-105"
+                    : "text-gray-600 hover:text-[#0A1F44] hover:bg-gray-50"
+                }`}
               >
-                {dept}
+                All Jobs
+                <span className="ml-2 text-sm opacity-80">({jobs.length})</span>
               </button>
-            )
+
+              <button
+                onClick={() => setActiveTab("handson")}
+                className={`px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-500 ease-in-out ${
+                  activeTab === "handson"
+                    ? "bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg transform scale-105"
+                    : "text-gray-600 hover:text-orange-600 hover:bg-orange-50"
+                }`}
+              >
+                Hands-on Jobs
+                <span className="ml-2 text-sm opacity-80">
+                  (
+                  {
+                    jobs.filter((job) => job.JobCategory === "HandsOn_Jobs")
+                      .length
+                  }
+                  )
+                </span>
+              </button>
+
+              <button
+                onClick={() => setActiveTab("administrative")}
+                className={`px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-500 ease-in-out ${
+                  activeTab === "administrative"
+                    ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg transform scale-105"
+                    : "text-gray-600 hover:text-blue-600 hover:bg-blue-50"
+                }`}
+              >
+                Administrative Jobs
+                <span className="ml-2 text-sm opacity-80">
+                  (
+                  {
+                    jobs.filter(
+                      (job) => job.JobCategory === "Administrative_Jobs"
+                    ).length
+                  }
+                  )
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Industry Filter Buttons */}
+        <div className="flex flex-wrap gap-4 justify-center mb-12">
+          {getUniqueIndustries().map((industry) => (
+            <button
+              key={industry}
+              onClick={() => setSelectedIndustry(industry)}
+              className={`px-6 py-3 font-semibold rounded-full transition-all duration-300 ${
+                selectedIndustry === industry
+                  ? "bg-[#80C3FF] text-[#0A1F44] shadow-md transform scale-105"
+                  : "bg-white text-[#0A1F44] border border-gray-300 hover:bg-[#80C3FF] hover:border-[#80C3FF]"
+              }`}
+            >
+              {industry}
+            </button>
+          ))}
+        </div>
+
+        {/* Jobs Count */}
+        {!loading && (
+          <div className="text-center mb-8">
+            <p className="text-lg text-gray-600">
+              Showing {filteredJobs.length} job
+              {filteredJobs.length !== 1 ? "s" : ""}
+              {activeTab !== "all" &&
+                ` in ${getJobCategoryName(
+                  activeTab === "handson"
+                    ? "HandsOn_Jobs"
+                    : "Administrative_Jobs"
+                )}`}
+              {selectedIndustry !== "All Industries" &&
+                ` • ${selectedIndustry}`}
+            </p>
+          </div>
+        )}
+
+        {/* Jobs Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {loading ? (
+            // Show skeleton loaders while loading
+            Array.from({ length: 6 }).map((_, index) => (
+              <JobCardSkeleton key={index} />
+            ))
+          ) : filteredJobs.length === 0 ? (
+            // No jobs found
+            <div className="col-span-full text-center py-12">
+              <div className="text-6xl mb-4">🔍</div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">
+                No Jobs Available
+              </h3>
+              <p className="text-gray-600">
+                {activeTab !== "all" || selectedIndustry !== "All Industries"
+                  ? "Try changing your filters to see more opportunities."
+                  : "Check back later for new opportunities."}
+              </p>
+            </div>
+          ) : (
+            // Display actual jobs
+            filteredJobs.map((job) => (
+              <div
+                key={job.SL_No}
+                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 overflow-hidden flex flex-col h-full"
+              >
+                <div className="p-6 border-b border-gray-100">
+                  <div className="flex justify-between items-start mb-4">
+                    <div className="flex flex-col gap-2">
+                      <span
+                        className={`px-3 py-1 rounded-full text-sm font-medium border ${getDepartmentColor(
+                          job.Industry
+                        )} w-fit`}
+                      >
+                        {job.Industry}
+                      </span>
+                      <span
+                        className={`px-3 py-1 rounded-full text-xs font-medium text-white ${getCandidateOriginColor(
+                          job.CandidatesOrigin
+                        )} w-fit`}
+                      >
+                        {job.CandidatesOrigin}
+                      </span>
+                    </div>
+                    <span className="text-sm text-gray-500">
+                      {formatDate(job.Date)}
+                    </span>
+                  </div>
+
+                  <h3 className="text-xl font-bold text-[#0A1F44] mb-2">
+                    {job.Title}
+                  </h3>
+
+                  <div className="flex items-center text-gray-600 mb-3">
+                    <ReactCountryFlag
+                      countryCode={getCountryCode(job.Country)}
+                      svg
+                      style={{
+                        width: "1.5em",
+                        height: "1.5em",
+                        marginRight: "8px",
+                        borderRadius: "2px",
+                      }}
+                      title={job.Country}
+                    />
+                    <span className="font-medium">{job.Country}</span>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-sm">
+                      {job.JobType}
+                    </span>
+                    <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-sm">
+                      {formatExperience(job.Experience)}
+                    </span>
+                    <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-sm">
+                      {job.Vacancies} vacancy{job.Vacancies !== 1 ? "ies" : ""}
+                    </span>
+                  </div>
+
+                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                    {job.Description}
+                  </p>
+                </div>
+
+                <div className="px-6 py-3 bg-[#80C3FF]/10 border-b border-gray-100">
+                  <div className="flex justify-between items-center">
+                    <span className="font-semibold text-[#0A1F44]">
+                      Salary:
+                    </span>
+                    <span className="font-bold text-[#0A1F44]">
+                      {formatSalary(job.Salary)}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="p-6 border-b border-gray-100 flex-grow">
+                  <h4 className="font-semibold text-[#0A1F44] mb-3">
+                    Job Details:
+                  </h4>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    <li className="flex justify-between">
+                      <span>Shift:</span>
+                      <span className="font-medium">{job.Shift}</span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span>Gender:</span>
+                      <span className="font-medium">{job.Gender}</span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span>Category:</span>
+                      <span className="font-medium">
+                        {getJobCategoryName(job.JobCategory)}
+                      </span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span>Job Type:</span>
+                      <span className="font-medium">{job.JobType}</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="p-6 border-b border-gray-100">
+                  <h4 className="font-semibold text-[#0A1F44] mb-3">
+                    Requirements:
+                  </h4>
+                  <p className="text-sm text-gray-600 line-clamp-2">
+                    {job.Requirements}
+                  </p>
+                </div>
+
+                <div className="p-6 mt-auto">
+                  <button
+                    onClick={() => handleApplyClick(job)}
+                    className="w-full bg-gradient-to-r from-[#80C3FF] to-[#0A1F44] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md cursor-pointer"
+                  >
+                    Apply Now
+                  </button>
+                </div>
+              </div>
+            ))
           )}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {jobs.map((job) => (
-            <div
-              key={job.id}
-              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 overflow-hidden flex flex-col h-full"
-            >
-              <div className="p-6 border-b border-gray-100">
-                <div className="flex justify-between items-start mb-4">
-                  <span
-                    className={`px-3 py-1 rounded-full text-sm font-medium border ${getDepartmentColor(
-                      job.department
-                    )}`}
-                  >
-                    {job.department}
-                  </span>
-                  <span className="text-sm text-gray-500">
-                    {job.applyWithin} to apply
-                  </span>
-                </div>
-
-                <h3 className="text-xl font-bold text-[#0A1F44] mb-2">
-                  {job.title}
-                </h3>
-
-                <div className="flex items-center text-gray-600 mb-3">
-                  <span className="mr-2 text-lg">
-                    {getCountryFlag(job.country)}
-                  </span>
-                  <span>{job.location}</span>
-                </div>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-sm">
-                    {job.type}
-                  </span>
-                  <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-sm">
-                    {job.experience}
-                  </span>
-                </div>
-
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {job.description}
-                </p>
-              </div>
-
-              <div className="px-6 py-3 bg-[#80C3FF]/10 border-b border-gray-100">
-                <div className="flex justify-between items-center">
-                  <span className="font-semibold text-[#0A1F44]">Salary:</span>
-                  <span className="font-bold text-[#0A1F44]">{job.salary}</span>
-                </div>
-              </div>
-
-              <div className="p-6 border-b border-gray-100 flex-grow">
-                <h4 className="font-semibold text-[#0A1F44] mb-3">
-                  Key Responsibilities:
-                </h4>
-                <ul className="space-y-2">
-                  {job.responsibilities
-                    .slice(0, 3)
-                    .map((responsibility, index) => (
-                      <li
-                        key={index}
-                        className="flex items-start text-sm text-gray-600"
-                      >
-                        <span className="text-[#80C3FF] mr-2">•</span>
-                        {responsibility}
-                      </li>
-                    ))}
-                </ul>
-              </div>
-
-              <div className="p-6 border-b border-gray-100">
-                <h4 className="font-semibold text-[#0A1F44] mb-3">
-                  Eligible Countries:
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {job.eligibleCountries.slice(0, 3).map((country, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1 bg-[#0A1F44] text-white text-sm rounded-full"
-                    >
-                      {country}
-                    </span>
-                  ))}
-                  {job.eligibleCountries.length > 3 && (
-                    <span className="px-3 py-1 bg-gray-200 text-gray-700 text-sm rounded-full">
-                      +{job.eligibleCountries.length - 3} more
-                    </span>
-                  )}
-                </div>
-              </div>
-
-              <div className="p-6 mt-auto">
-                <button
-                  onClick={() => handleApplyClick(job)}
-                  className="w-full bg-[#80C3FF] hover:bg-[#0A1F44] hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md cursor-pointer"
-                >
-                  Apply Now
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* Load More Button (if needed) */}
+        {!loading && filteredJobs.length > 0 && (
+          <div className="text-center mt-12">
+            <button className="px-8 py-3 bg-white text-[#0A1F44] border border-gray-300 font-semibold rounded-lg hover:bg-[#80C3FF] hover:border-[#80C3FF] transition-all duration-300">
+              Load More Jobs
+            </button>
+          </div>
+        )}
       </div>
 
-      {showPopup && (
+      {/* Application Popup */}
+      {showPopup && selectedJob && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50 animate-fadeIn">
           <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto animate-slideUp">
             <div className="sticky top-0 bg-white border-b border-gray-200 p-6 rounded-t-2xl">
               <div className="flex justify-between items-center">
-                <h3 className="text-2xl font-bold text-[#0A1F44]">
-                  Apply for {selectedJob?.title}
-                </h3>
+                <div>
+                  <h3 className="text-2xl font-bold text-[#0A1F44]">
+                    Apply for {selectedJob.Title}
+                  </h3>
+                  <div className="flex items-center mt-2 space-x-4">
+                    <div className="flex items-center">
+                      <ReactCountryFlag
+                        countryCode={getCountryCode(selectedJob.Country)}
+                        svg
+                        style={{
+                          width: "1.2em",
+                          height: "1.2em",
+                          marginRight: "8px",
+                          borderRadius: "2px",
+                        }}
+                      />
+                      <span className="text-gray-600">
+                        {selectedJob.Country}
+                      </span>
+                    </div>
+                    <span
+                      className={`px-3 py-1 rounded-full text-xs font-medium text-white ${getCandidateOriginColor(
+                        selectedJob.CandidatesOrigin
+                      )}`}
+                    >
+                      {selectedJob.CandidatesOrigin}
+                    </span>
+                  </div>
+                </div>
                 <button
                   onClick={() => setShowPopup(false)}
                   className="text-gray-400 hover:text-gray-600 transition-colors"
@@ -413,10 +692,11 @@ const JobSection = () => {
                   </svg>
                 </button>
               </div>
-              <p className="text-gray-600 mt-2">{selectedJob?.location}</p>
             </div>
 
+            {/* Rest of the popup form remains the same */}
             <form onSubmit={handleSubmit} className="p-6 space-y-6">
+              {/* Form fields remain the same as before */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -610,6 +890,18 @@ const JobSection = () => {
       )}
 
       <style jsx>{`
+        .line-clamp-2 {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .line-clamp-3 {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
         @keyframes fadeIn {
           from {
             opacity: 0;

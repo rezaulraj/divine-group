@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "/logo-blue.png?url";
 import logowhite from "/divinelogo.png?url";
 import clineLogo1 from "../assets/cliend/cl1.png?url";
 import clineLogo2 from "../assets/cliend/cl2.png?url";
@@ -244,7 +243,7 @@ const Header = () => {
       <AnimatePresence>
         {logoVisible && !navOpen && !showIntro && (
           <motion.a
-            href="/" 
+            href="/"
             key="top-logo-link"
             className="absolute top-0 right-12 z-50"
             initial={{ opacity: 0, y: -30, scale: 0.8 }}

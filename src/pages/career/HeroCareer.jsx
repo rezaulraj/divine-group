@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HeroCareer = () => {
   return (
@@ -36,12 +37,21 @@ const HeroCareer = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
-              <button className="bg-[#80C3FF] hover:bg-[#6ab0f0] text-[#0A1F44] font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+              <button
+                onClick={() => {
+                  const section = document.querySelector("#jobs");
+                  section?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="bg-[#80C3FF] hover:bg-[#6ab0f0] text-[#0A1F44] font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
+              >
                 View Open Positions
               </button>
-              <button className="border-2 border-[#80C3FF] text-[#80C3FF] hover:bg-[#80C3FF] hover:text-[#0A1F44] font-semibold py-3 px-8 rounded-lg transition-all duration-300">
+              <Link
+                to={"/about-us"}
+                className="border-2 border-[#80C3FF] text-[#80C3FF] hover:bg-[#80C3FF] hover:text-[#0A1F44] font-semibold py-3 px-8 rounded-lg transition-all duration-300"
+              >
                 Learn About Culture
-              </button>
+              </Link>
             </div>
           </div>
         </div>
