@@ -21,7 +21,9 @@ const JobSection = () => {
   const [selectedIndustry, setSelectedIndustry] = useState("All Industries");
   const [activeTab, setActiveTab] = useState("all");
 
-  // Fetch jobs from API
+  const [currentPage, setCurrentPage] = useState(1);
+  const [jobsPerPage] = useState(6);
+
   useEffect(() => {
     const fetchJobs = async () => {
       try {
@@ -46,6 +48,10 @@ const JobSection = () => {
 
     fetchJobs();
   }, []);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [activeTab, selectedIndustry]);
 
   const handleApplyClick = (job) => {
     setSelectedJob(job);
@@ -116,7 +122,6 @@ const JobSection = () => {
 
   const getCountryCode = (countryName) => {
     const countryMap = {
-      // Europe
       Albania: "AL",
       Andorra: "AD",
       Armenia: "AM",
@@ -169,9 +174,8 @@ const JobSection = () => {
       United_Kingdom: "GB",
       Vatican_City: "VA",
 
-      // Asia
       Afghanistan: "AF",
-      Armenia_: "AM", // also counted in Europe sometimes
+      Armenia_: "AM",
       Azerbaijan_: "AZ",
       Bahrain: "BH",
       Bangladesh: "BD",
@@ -219,7 +223,6 @@ const JobSection = () => {
       Vietnam: "VN",
       Yemen: "YE",
 
-      // Extras (you already had)
       USA: "US",
       Canada: "CA",
       Australia: "AU",
@@ -257,9 +260,7 @@ const JobSection = () => {
     return ["All Industries", ...industries];
   };
 
-  // Filter jobs based on active tab and industry
   const filteredJobs = jobs.filter((job) => {
-    // Tab filtering
     const tabFilter =
       activeTab === "all"
         ? true
@@ -269,7 +270,6 @@ const JobSection = () => {
         ? job.JobCategory === "Administrative_Jobs"
         : true;
 
-    // Industry filtering
     const industryFilter =
       selectedIndustry === "All Industries"
         ? true
@@ -278,7 +278,13 @@ const JobSection = () => {
     return tabFilter && industryFilter;
   });
 
-  // Get candidate origin badge color
+  const indexOfLastJob = currentPage * jobsPerPage;
+  const indexOfFirstJob = indexOfLastJob - jobsPerPage;
+  const currentJobs = filteredJobs.slice(indexOfFirstJob, indexOfLastJob);
+  const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   const getCandidateOriginColor = (origin) => {
     const colors = {
       "Nepalese Only": "bg-gradient-to-r from-red-500 to-orange-500",
@@ -290,7 +296,6 @@ const JobSection = () => {
     return colors[origin] || "bg-gradient-to-r from-gray-500 to-gray-600";
   };
 
-  // Get job category display name
   const getJobCategoryName = (category) => {
     const names = {
       HandsOn_Jobs: "Hands-on Jobs",
@@ -299,7 +304,26 @@ const JobSection = () => {
     return names[category] || category;
   };
 
-  // Skeleton Loader Component
+  const getPageNumbers = () => {
+    const pageNumbers = [];
+    const maxPagesToShow = 5;
+
+    if (totalPages <= maxPagesToShow) {
+      for (let i = 1; i <= totalPages; i++) {
+        pageNumbers.push(i);
+      }
+    } else {
+      const startPage = Math.max(1, currentPage - 2);
+      const endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
+
+      for (let i = startPage; i <= endPage; i++) {
+        pageNumbers.push(i);
+      }
+    }
+
+    return pageNumbers;
+  };
+
   const JobCardSkeleton = () => (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden flex flex-col h-full animate-pulse">
       <div className="p-6 border-b border-gray-100">
@@ -390,7 +414,6 @@ const JobSection = () => {
           </p>
         </div>
 
-        {/* Job Category Tabs */}
         <div className="flex justify-center mb-12">
           <div className="bg-white rounded-2xl shadow-lg p-2 border border-gray-200">
             <div className="flex space-x-2">
@@ -414,7 +437,7 @@ const JobSection = () => {
                     : "text-gray-600 hover:text-orange-600 hover:bg-orange-50"
                 }`}
               >
-                Hands-on Jobs
+                Trade & Labor Jobs
                 <span className="ml-2 text-sm opacity-80">
                   (
                   {
@@ -433,7 +456,7 @@ const JobSection = () => {
                     : "text-gray-600 hover:text-blue-600 hover:bg-blue-50"
                 }`}
               >
-                Administrative Jobs
+                Office & Administrative Roles
                 <span className="ml-2 text-sm opacity-80">
                   (
                   {
@@ -448,7 +471,6 @@ const JobSection = () => {
           </div>
         </div>
 
-        {/* Industry Filter Buttons */}
         <div className="flex flex-wrap gap-4 justify-center mb-12">
           {getUniqueIndustries().map((industry) => (
             <button
@@ -465,12 +487,12 @@ const JobSection = () => {
           ))}
         </div>
 
-        {/* Jobs Count */}
         {!loading && (
           <div className="text-center mb-8">
             <p className="text-lg text-gray-600">
-              Showing {filteredJobs.length} job
-              {filteredJobs.length !== 1 ? "s" : ""}
+              Showing {indexOfFirstJob + 1}-
+              {Math.min(indexOfLastJob, filteredJobs.length)} of{" "}
+              {filteredJobs.length} jobs
               {activeTab !== "all" &&
                 ` in ${getJobCategoryName(
                   activeTab === "handson"
@@ -483,15 +505,12 @@ const JobSection = () => {
           </div>
         )}
 
-        {/* Jobs Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {loading ? (
-            // Show skeleton loaders while loading
             Array.from({ length: 6 }).map((_, index) => (
               <JobCardSkeleton key={index} />
             ))
-          ) : filteredJobs.length === 0 ? (
-            // No jobs found
+          ) : currentJobs.length === 0 ? (
             <div className="col-span-full text-center py-12">
               <div className="text-6xl mb-4">🔍</div>
               <h3 className="text-2xl font-bold text-gray-800 mb-2">
@@ -504,8 +523,7 @@ const JobSection = () => {
               </p>
             </div>
           ) : (
-            // Display actual jobs
-            filteredJobs.map((job) => (
+            currentJobs.map((job) => (
               <div
                 key={job.SL_No}
                 className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 overflow-hidden flex flex-col h-full"
@@ -628,17 +646,57 @@ const JobSection = () => {
           )}
         </div>
 
-        {/* Load More Button (if needed) */}
-        {!loading && filteredJobs.length > 0 && (
-          <div className="text-center mt-12">
-            <button className="px-8 py-3 bg-white text-[#0A1F44] border border-gray-300 font-semibold rounded-lg hover:bg-[#80C3FF] hover:border-[#80C3FF] transition-all duration-300">
-              Load More Jobs
+        {!loading && filteredJobs.length > jobsPerPage && (
+          <div className="flex justify-center items-center space-x-2 mt-12">
+            <button
+              onClick={() => paginate(currentPage - 1)}
+              disabled={currentPage === 1}
+              className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 ${
+                currentPage === 1
+                  ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                  : "bg-white text-[#0A1F44] border border-gray-300 hover:bg-[#80C3FF] hover:border-[#80C3FF] hover:scale-105"
+              }`}
+            >
+              ← Previous
             </button>
+
+            {getPageNumbers().map((number) => (
+              <button
+                key={number}
+                onClick={() => paginate(number)}
+                className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 ${
+                  currentPage === number
+                    ? "bg-gradient-to-r from-[#80C3FF] to-[#0A1F44] text-white shadow-lg transform scale-105"
+                    : "bg-white text-[#0A1F44] border border-gray-300 hover:bg-[#80C3FF] hover:border-[#80C3FF]"
+                }`}
+              >
+                {number}
+              </button>
+            ))}
+
+            <button
+              onClick={() => paginate(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 ${
+                currentPage === totalPages
+                  ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                  : "bg-white text-[#0A1F44] border border-gray-300 hover:bg-[#80C3FF] hover:border-[#80C3FF] hover:scale-105"
+              }`}
+            >
+              Next →
+            </button>
+          </div>
+        )}
+
+        {!loading && filteredJobs.length > 0 && (
+          <div className="text-center mt-4">
+            <p className="text-gray-600">
+              Page {currentPage} of {totalPages}
+            </p>
           </div>
         )}
       </div>
 
-      {/* Application Popup */}
       {showPopup && selectedJob && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50 animate-fadeIn">
           <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto animate-slideUp">
@@ -694,9 +752,7 @@ const JobSection = () => {
               </div>
             </div>
 
-            {/* Rest of the popup form remains the same */}
             <form onSubmit={handleSubmit} className="p-6 space-y-6">
-              {/* Form fields remain the same as before */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
