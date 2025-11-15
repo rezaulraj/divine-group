@@ -74,7 +74,6 @@ const JobSection = () => {
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
-      // Check file size (5MB limit)
       if (file.size > 5 * 1024 * 1024) {
         alert("File size too large. Please select a file smaller than 5MB.");
         return;
@@ -83,7 +82,6 @@ const JobSection = () => {
       setIsUploading(true);
       setUploadProgress(0);
 
-      // Simulate file upload progress
       const interval = setInterval(() => {
         setUploadProgress((prev) => {
           if (prev >= 100) {
@@ -831,7 +829,6 @@ const JobSection = () => {
               className="p-6 space-y-6"
               encType="multipart/form-data"
             >
-              {/* Hidden fields for FormSubmit */}
               <input type="hidden" name="_captcha" value="false" />
               <input
                 type="hidden"

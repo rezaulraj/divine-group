@@ -242,15 +242,16 @@ const HeroContact = () => {
                         9C M.A. Vassalli Street, VALLETTA, VLT1310, Malta
                       </span>
                     </li> */}
-                    <li className="flex">
+                    <li className="">
                       <span className="font-medium text-gray-800 mr-2">
                         UK Headoffice:
                       </span>
                       <span>
-                        62 Tudor Drive, Morden, Surrey, England, SM4 4PF
+                        Chessington Business Centre, Chessington KT9 1SD,
+                        Surrey, United Kingdom
                       </span>
                     </li>
-                    <li className="flex">
+                    <li className="">
                       <span className="font-medium text-gray-800 mr-2">
                         USA:
                       </span>
@@ -258,7 +259,7 @@ const HeroContact = () => {
                         991 US Hwy 22 West Suite 200, Bridgewater, NJ 08807
                       </span>
                     </li>
-                    <li className="flex">
+                    <li className="">
                       <span className="font-medium text-gray-800 mr-2">
                         UAE:
                       </span>
@@ -324,10 +325,9 @@ const HeroContact = () => {
                 </div>
               </div>
             </div>
-
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317043.19287511153!2d-0.3577228949958104!3d51.28388377107554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876085f0b2df529%3A0xecc57bc84f049463!2s62%20Tudor%20Dr%2C%20Morden%20SM4%204PF%2C%20UK!5e1!3m2!1sen!2sbd!4v1755869559767!5m2!1sen!2sbd"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d617356.7960757591!2d-0.2996691034924614!3d51.335209531717275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sbd!4v1763201944806!5m2!1sen!2sbd"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}
