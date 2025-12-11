@@ -236,7 +236,16 @@ const HeroContact = () => {
                   <ul className="space-y-3 text-gray-600">
                     <li className="">
                       <span className="font-medium text-gray-800 mr-2">
-                        Croatia HeadOffice:
+                        UAE Head Office:
+                      </span>
+                      <span>
+                        Cuber Business Centre, Al Khazna Tower -18th Floor - Al
+                        Najda Street - Al Danah - Zone 1 - Abu Dhabi
+                      </span>
+                    </li>
+                    <li className="">
+                      <span className="font-medium text-gray-800 mr-2">
+                        Croatia:
                       </span>
                       <span>Trg Drage Iblera 10, 10000, Zagreb, Croatia</span>
                     </li>
@@ -257,15 +266,6 @@ const HeroContact = () => {
                         991 US Hwy 22 West Suite 200, Bridgewater, NJ 08807
                       </span>
                     </li>
-                    <li className="">
-                      <span className="font-medium text-gray-800 mr-2">
-                        UAE:
-                      </span>
-                      <span>
-                        Cuber Business Centre, Al Khazna Tower -18th Floor - Al
-                        Najda Street - Al Danah - Zone 1 - Abu Dhabi
-                      </span>
-                    </li>
                   </ul>
                 </div>
 
@@ -283,7 +283,6 @@ const HeroContact = () => {
                     </li>
                   </ul>
                 </div>
-
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center font-bebasneue">
                     <FaEnvelope className="mr-2 text-primary" /> Recruitment
