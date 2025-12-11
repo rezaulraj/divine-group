@@ -83,10 +83,10 @@ const AboutUsProgress = () => {
   return (
     <div className="min-h-screen relative pb-20" ref={containerRef}>
       <Helmet>
-        <title>About Divine Group | Vision, Mission & Values</title>
+        <title>About Us</title>
         <meta
           name="description"
-          content="Learn about Divine Group's mission, vision, core values, and leadership. Discover how we create sustainable impact across UAE, Malta, Romania, and beyond."
+          content="Learn about Divine Group's mission, vision, core values, and leadership. Discover how we create sustainable impact across UAE, Croatia, Romania, and beyond."
         />
         <meta
           name="keywords"
@@ -157,9 +157,8 @@ const AboutUsProgress = () => {
                 transformation and growth across the region boldly reshaping
                 industries, empowering communities, and driving economic
                 diversification. From the heart of the UAE to the shores of
-                Malta, Croatia, Bulgaria, Romania, Serbia, and Macedonia, our
-                impact is both wide-reaching and deeply rooted in innovation and
-                progress.
+                Croatia, Bulgaria, Romania, Serbia, and Macedonia, our impact is
+                both wide-reaching and deeply rooted in innovation and progress.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, x: -50 }}
@@ -278,7 +277,6 @@ const AboutUsProgress = () => {
             </ImageContent>
           </SectionWrapper>
 
-
           <SectionWrapper reverse>
             <ImageContent>
               <motion.div
@@ -389,12 +387,11 @@ const AboutUsProgress = () => {
                 Today, Divine Group is proud to be home to over 350
                 professionals, managing assets worth more than million dolar,
                 and shaping the future across three dynamic countries: UAE,
-                Malta, and Romania.
+                Croatia, and Romania.
               </motion.p>
             </TextContent>
           </SectionWrapper>
 
-         
           <SectionWrapper>
             <TextContent>
               <motion.h1
@@ -696,7 +693,6 @@ const AboutUsProgress = () => {
             </TextContent>
           </SectionWrapper>
 
-
           <SectionWrapper>
             <TextContent>
               <motion.div
@@ -952,7 +948,7 @@ const AboutUsProgress = () => {
               >
                 At Divine Group, our corporate culture is the foundation of
                 everything we do. It drives how we lead, innovate, and
-                collaborate across our operations in the UAE, Malta, and
+                collaborate across our operations in the UAE, Croatia, and
                 Romania. As a diversified investment and development group, we
                 recognize that sustainable success starts from within with a
                 people-first approach that values talent, diversity, and
@@ -1011,7 +1007,6 @@ const AboutUsProgress = () => {
     </div>
   );
 };
-
 
 const SectionWrapper = ({ children, reverse = false }) => {
   return (

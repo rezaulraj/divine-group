@@ -110,16 +110,13 @@ const Service = () => {
       <Helmet>
         <meta
           name="description"
-          content="Explore Divine Group's impact across recruitment, ICT, real estate, hospitality, media, design, manufacturing, logistics, education, tourism, SMEs, science, and retail industries."
+          content="Explore Divine Group's impact across construction workers, helpers, technicians, cleaners, and other labor positions—along with recruitment, ICT, real estate, hospitality, media, design, manufacturing, education, tourism, SMEs, science, and retail industries."
         />
         <meta
           name="keywords"
-          content="Recruitment services, ICT solutions, Real estate projects, Hospitality, Media, Design, Manufacturing, Logistics, Education, Tourism, Entrepreneurs, Science, Retail"
+          content="recruitment services, construction, technicians, helpers, cleaners, ict solutions,  Real estate projects, Hospitality, Media, Design, Manufacturing, Logistics, Education, Tourism, Entrepreneurs, Science, Retail"
         />
-        <meta
-          property="og:title"
-          content="Our Services & Impact | Divine Group"
-        />
+        <meta property="og:title" content="Services" />
         <meta
           property="og:description"
           content="Driving global impact across 12 industries — recruitment, ICT, real estate, tourism, and more."
@@ -201,7 +198,6 @@ const Service = () => {
           }}
         />
       ))}
-
 
       <div className="relative max-w-7xl mx-auto">
         <motion.div
@@ -610,7 +606,7 @@ const Service = () => {
               </motion.div>
             </ImageContent>
           </SectionWrapper>
-         
+
           <SectionWrapper>
             <ImageContent>
               <motion.div
@@ -745,7 +741,6 @@ const Service = () => {
     </div>
   );
 };
-
 
 const SectionWrapper = ({ children, reverse = false }) => {
   return (

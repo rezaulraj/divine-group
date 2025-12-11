@@ -155,21 +155,18 @@ const HeroHome = () => {
   return (
     <div className="relative w-full min-h-screen flex flex-col md:flex-row overflow-hidden shadow-lg">
       <Helmet>
-        <title>Divine Group | Our Services | Impact Group</title>
+        <title>Divine Group</title>
         <meta
           name="description"
-          content="Explore Impact Group’s services including recruitment, ICT, real estate, hospitality, media, design, manufacturing, education, tourism, SMEs, science, and retail."
+          content="Explore Divine Group services offering all-category job solutions—including C-category roles such as construction workers, helpers, technicians, cleaners, and other labor positions—along with recruitment, ICT, real estate, hospitality, media, design, manufacturing, education, tourism, SMEs, science, and retail."
         />
         <meta
           name="keywords"
-          content="recruitment, ICT, real estate, hospitality, media, design, manufacturing, education, tourism, SMEs, entrepreneurship, science, retail"
+          content="recruitment, construction, technicians, helpers, cleaners, ict, real estate, hospitality, media, design, manufacturing, education, tourism, SMEs, entrepreneurship, science, retail"
         />
         <link rel="canonical" href="https://thedivinegroup.eu/" />
 
-        <meta
-          property="og:title"
-          content="Divine Group | Our Services | Impact Group"
-        />
+        <meta property="og:title" content="Divine Group" />
         <meta
           property="og:description"
           content="Connecting talent, industries, and innovation — discover our full suite of services across recruitment, technology, hospitality, education, and more."
@@ -178,10 +175,7 @@ const HeroHome = () => {
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Divine Group | Our Services | Impact Group"
-        />
+        <meta name="twitter:title" content="Divine Group" />
         <meta
           name="twitter:description"
           content="Explore our recruitment, ICT, hospitality, tourism, science, education, and more services."

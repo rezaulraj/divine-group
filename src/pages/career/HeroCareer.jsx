@@ -1,9 +1,24 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 const HeroCareer = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0A1F44] to-[#1a3a6b] py-20 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+      <Helmet>
+        <title>Careers</title>
+        <meta
+          name="description"
+          content="Explore Divine Group Careers we offering all-category job solutions—including C-category roles such as construction workers, helpers, technicians, cleaners, and other labor positions—along with recruitment, ICT, real estate, hospitality, media, design, manufacturing, education, tourism, SMEs, science, and retail."
+        />
+        <meta
+          name="keywords"
+          content="recruitment, construction, technicians, helpers, cleaners, ict, real estate, hospitality, media, design, manufacturing, education, tourism, SMEs, entrepreneurship, science, retail"
+        />
+        <link rel="canonical" href="https://thedivinegroup.eu/career/" />
+
+        <meta property="og:title" content="Careers" />
+      </Helmet>
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">

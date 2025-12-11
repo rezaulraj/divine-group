@@ -32,7 +32,7 @@ const HeroContact = () => {
   return (
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 py-16 md:py-28 px-4 sm:px-6 lg:px-8">
       <Helmet>
-        <title>Contact Divine Group | Get in Touch with Our Team</title>
+        <title>Contact Divine Group</title>
         <meta
           name="description"
           content="Reach out to Divine Group's recruitment team. Contact us via email, phone, or schedule a call to discuss opportunities and services."
@@ -53,7 +53,7 @@ const HeroContact = () => {
             contactPoint: [
               {
                 "@type": "ContactPoint",
-                telephone: "+4402031234567",
+                telephone: "+385 955880747",
                 contactType: "customer service",
                 email: "contact@thedivinegroup.eu",
               },
@@ -234,21 +234,19 @@ const HeroContact = () => {
                     Hub Location
                   </h3>
                   <ul className="space-y-3 text-gray-600">
-                    {/* <li className="flex">
-                      <span className="font-medium text-gray-800 mr-2">
-                        Malta (HQ):
-                      </span>
-                      <span>
-                        9C M.A. Vassalli Street, VALLETTA, VLT1310, Malta
-                      </span>
-                    </li> */}
                     <li className="">
                       <span className="font-medium text-gray-800 mr-2">
-                        UK Headoffice:
+                        Croatia HeadOffice:
+                      </span>
+                      <span>Trg Drage Iblera 10, 10000, Zagreb, Croatia</span>
+                    </li>
+                    <li className="">
+                      <span className="font-medium text-gray-800 mr-2">
+                        Romania:
                       </span>
                       <span>
-                        Chessington Business Centre, Chessington KT9 1SD,
-                        Surrey, United Kingdom
+                        Str. Augustin Buzura 1 Bl. A Ap. B10,Loc. Cluj Napoca,
+                        Cluj
                       </span>
                     </li>
                     <li className="">
@@ -264,33 +262,27 @@ const HeroContact = () => {
                         UAE:
                       </span>
                       <span>
-                        Cuber Business Centre, Al Khazna Tower -18th Floor – Al
-                        Najda Street – Al Danah – Zone 1 – Abu Dhabi
+                        Cuber Business Centre, Al Khazna Tower -18th Floor - Al
+                        Najda Street - Al Danah - Zone 1 - Abu Dhabi
                       </span>
                     </li>
                   </ul>
                 </div>
 
-                {/*  <div>
+                <div>
                   <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center font-bebasneue">
-                    <FaPhone className="mr-2 text-primary" /> Speak to a
-                    Recruiter
+                    <FaPhone className="mr-2 text-primary rotate-90" />
+                    Speak to a Recruiter
                   </h3>
                   <ul className="space-y-2 text-gray-600">
                     <li className="flex items-center">
                       <span className="font-medium text-gray-800 mr-2">
-                        Romania:
+                        Croatia:
                       </span>
-                      <span>+40763316510</span>
+                      <span>+385955880747</span>
                     </li>
-                     <li className="flex items-center">
-                      <span className="font-medium text-gray-800 mr-2">
-                        Malta:
-                      </span>
-                      <span>+35699394497</span>
-                    </li> 
                   </ul>
-                </div>*/}
+                </div>
 
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center font-bebasneue">
@@ -325,9 +317,10 @@ const HeroContact = () => {
                 </div>
               </div>
             </div>
+            
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d617356.7960757591!2d-0.2996691034924614!3d51.335209531717275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sbd!4v1763201944806!5m2!1sen!2sbd"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6870959.505381532!2d20.17426871933866!3d43.29664875099214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d6ffff74e75b%3A0xdad8e8d1ce891acb!2sTrg%20Drage%20Iblera%2010%2C%2010000%2C%20Zagreb%2C%20Croatia!5e0!3m2!1sen!2sbd!4v1765439122717!5m2!1sen!2sbd"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}
