@@ -279,7 +279,7 @@ const HeroContact = () => {
                       <span className="font-medium text-gray-800 mr-2">
                         Croatia:
                       </span>
-                      <span>+385955880747</span>
+                      <span>+385 91 783 2256</span>
                     </li>
                   </ul>
                 </div>
@@ -317,7 +317,7 @@ const HeroContact = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6870959.505381532!2d20.17426871933866!3d43.29664875099214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d6ffff74e75b%3A0xdad8e8d1ce891acb!2sTrg%20Drage%20Iblera%2010%2C%2010000%2C%20Zagreb%2C%20Croatia!5e0!3m2!1sen!2sbd!4v1765439122717!5m2!1sen!2sbd"
