@@ -90,7 +90,7 @@ const AboutUsProgress = () => {
         />
         <meta
           name="keywords"
-          content="Divine Group, About Us, Mission, Vision, Values, Leadership, Innovation, Sustainability"
+          content="Divine Group, About Us, Mission, Vision, Values, Leadership, Innovation, Sustainability, Global Impact, UAE, Croatia, Romania, Business Growth, Corporate Responsibility, regional development, industry diversification, economic growth, corporate values, company culture, business ethics"
         />
         <link rel="canonical" href="https://thedivinegroup.eu/about-us" />
 

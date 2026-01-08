@@ -13,7 +13,7 @@ const HeroCareer = () => {
         />
         <meta
           name="keywords"
-          content="recruitment, construction, technicians, helpers, cleaners, ict, real estate, hospitality, media, design, manufacturing, education, tourism, SMEs, entrepreneurship, science, retail"
+          content="recruitment, construction, technicians, helpers, cleaners, ict, real estate, hospitality, media, design, manufacturing, education, tourism, SMEs, entrepreneurship, science, retail, job solutions, talent acquisition, staffing agency, workforce solutions, top recruitment agency, job placement, employment services, career opportunities, job openings, professional growth"
         />
         <link rel="canonical" href="https://thedivinegroup.eu/career/" />
 

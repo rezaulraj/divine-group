@@ -162,7 +162,7 @@ const HeroHome = () => {
         />
         <meta
           name="keywords"
-          content="recruitment, construction, technicians, helpers, cleaners, ict, real estate, hospitality, media, design, manufacturing, education, tourism, SMEs, entrepreneurship, science, retail"
+          content="recruitment, construction, technicians, helpers, cleaners, ict, real estate, hospitality, media, design, manufacturing, education, tourism, SMEs, entrepreneurship, science, retail, recruitment services, labor jobs, job solutions, talent acquisition, staffing agency, workforce solutions, top recruitment agency, job placement, employment services"
         />
         <link rel="canonical" href="https://thedivinegroup.eu/" />
 

@@ -56,7 +56,7 @@ const Partnership = () => {
         />
         <meta
           name="keywords"
-          content="Divine Group partnership, strategic alliances, business collaboration, global partnerships, joint ventures"
+          content="Divine Group partnership, strategic alliances, business collaboration, global partnerships, joint ventures, shared expertise, innovation partnerships, growth opportunities, corporate partnerships, business networking, industry alliances"
         />
         <meta name="author" content="Divine Group" />
 

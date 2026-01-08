@@ -186,7 +186,7 @@ const EmployeeService = () => {
         />
         <meta
           name="keywords"
-          content="jobs, recruitment, employment, career, ICT jobs, hospitality jobs, education jobs, logistics jobs"
+          content="jobs, recruitment, employment, career, ICT jobs, hospitality jobs, education jobs, logistics jobs, job seekers, career services, job placement, workforce solutions, talent acquisition, staffing agency, top recruitment agency, job solutions, blue collar jobs"
         />
 
         <meta

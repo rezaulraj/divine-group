@@ -114,7 +114,7 @@ const Service = () => {
         />
         <meta
           name="keywords"
-          content="recruitment services, construction, technicians, helpers, cleaners, ict solutions,  Real estate projects, Hospitality, Media, Design, Manufacturing, Logistics, Education, Tourism, Entrepreneurs, Science, Retail"
+          content="recruitment services, construction, technicians, helpers, cleaners, ict solutions,  Real estate projects, Hospitality, Media, Design, Manufacturing, Logistics, Education, Tourism, Entrepreneurs, Science, Retail, labor jobs, job solutions, talent acquisition, staffing agency, workforce solutions, top recruitment agency, job placement, employment services, global impact, industry diversification, economic growth"
         />
         <meta property="og:title" content="Services" />
         <meta
