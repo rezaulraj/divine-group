@@ -39,9 +39,15 @@ const HeroContact = () => {
         />
         <meta
           name="keywords"
-          content="Divine Group, Contact, Recruitment, Email, Phone, Schedule a Call, Workforce Hub"
+          content="Divine Group, Contact, Recruitment, Email, Phone, Schedule a Call, Workforce Hub, Customer Service, Global Recruitment, Talent Acquisition, Staffing Solutions, Employment Services, Job Opportunities, Business Inquiries"
         />
         <link rel="canonical" href="https://thedivinegroup.eu/contact-us" />
+        <meta property="og:title" content="Contact" />
+        <meta
+          name="author"
+          content="Divine Group"
+        />
+        <meta property="og:locale" content="en_US" />
 
         <script type="application/ld+json">
           {JSON.stringify({
